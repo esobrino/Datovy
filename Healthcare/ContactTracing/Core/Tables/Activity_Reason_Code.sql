@@ -11,6 +11,8 @@
    [Created_DateTime]      DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Updated_Last_DateTime] DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
-   [Session_Updated_ID]    VARCHAR(40)
+   [Session_Updated_ID]    VARCHAR(40),
+
+   CONSTRAINT pk_Activity_Reason_Code PRIMARY KEY (Code_ID)
 );
 

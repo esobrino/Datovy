@@ -30,11 +30,11 @@
    CONSTRAINT [PK_Activity] PRIMARY KEY CLUSTERED ([Activity_ID] ASC),
    CONSTRAINT [FK_Activity_Activity_Disposition] FOREIGN KEY ([Disposition_ID]) 
       REFERENCES [Core].[Activity_Disposition] ([Disposition_ID]),
-   CONSTRAINT [FK_Activity_ActivityPriorityCode] FOREIGN KEY ([Priority_Code_ID])
+   CONSTRAINT [FK_Activity_Priority_Code] FOREIGN KEY ([Priority_Code_ID])
       REFERENCES [Core].[Activity_Priority_Code] ([Code_ID]),
-   CONSTRAINT [FK_Activity_ActivityReasonCode] FOREIGN KEY ([Reason_Code_ID]) 
+   CONSTRAINT [FK_Activity_Reason_Code] FOREIGN KEY ([Reason_Code_ID]) 
       REFERENCES [Core].[Activity_Reason_Code] ([Code_ID]),
-   CONSTRAINT [FK_Activity_ActivityType] FOREIGN KEY ([Activity_Type_ID]) 
+   CONSTRAINT [FK_Activity_Type] FOREIGN KEY ([Activity_Type_ID]) 
       REFERENCES [Core].[Activity_Type] ([Type_ID]),
    CONSTRAINT [FK_Activity_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID]),
