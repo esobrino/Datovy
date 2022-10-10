@@ -16,3 +16,9 @@ CREATE TABLE [Entity].[Entity_Identification_Type]
    [Session_Updated_ID]    VARCHAR(40) NULL
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.',
+   @level0type = N'SCHEMA',   @level0name = N'Entity',
+   @level1type = N'TABLE',    @level1name = N'Entity_Identification_Type', 
+   @level2type = N'COLUMN',   @level2name = 'Tags';

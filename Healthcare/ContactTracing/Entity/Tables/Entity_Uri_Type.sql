@@ -1,4 +1,4 @@
-﻿CREATE TABLE Code.Entity_Uri_Type
+﻿CREATE TABLE Entity.Entity_Uri_Type
 (
    [Type_ID]               VARCHAR(30) PRIMARY KEY,
    [Description]           VARCHAR(80),

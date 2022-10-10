@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Management].[Case_Type] (
-    [Type_ID]              VARCHAR (30)  NOT NULL,
-    [Description]          VARCHAR (128) NULL,
-    [Category_Code]        VARCHAR (30)  NULL,
+   [Type_ID]               VARCHAR (30)  NOT NULL,
+   [Description]           VARCHAR (128) NULL,
+   [Category_Code]         VARCHAR (30)  NULL,
 
    [Tenant_ID]             VARCHAR(30) NOT NULL,
    [Data_Owner_ID]         VARCHAR(30) NULL,
@@ -13,6 +13,6 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40),
 
-    CONSTRAINT [PK_CaseType] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+   CONSTRAINT [PK_CaseType] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 );
 

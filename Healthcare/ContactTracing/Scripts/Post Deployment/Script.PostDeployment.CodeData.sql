@@ -6,23 +6,26 @@
 EXECUTE sp_addextendedproperty
    @name = N'PRIVACY', 
    @value = 'GDPR', 
-   @level0type = N'SCHEMA', @level0name = N'Core', 
+   @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
    @level2type = N'COLUMN', @level2name = 'Sex_Code_ID';
+GO
 
 EXECUTE sp_addextendedproperty
    @name = N'PRIVACY', 
    @value = 'GDPR', 
-   @level0type = N'SCHEMA', @level0name = N'Core', 
+   @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
-   @level2type = N'COLUMN', @level2name = 'GenderIdentity_Code_ID';
+   @level2type = N'COLUMN', @level2name = 'Gender_Identity_Code_ID';
+GO
 
 EXECUTE sp_addextendedproperty
    @name = N'PRIVACY', 
    @value = 'GDPR', 
-   @level0type = N'SCHEMA', @level0name = N'Core', 
+   @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
-   @level2type = N'COLUMN', @level2name = 'SexualOrientation_Code_ID';
+   @level2type = N'COLUMN', @level2name = 'Sexual_Orientation_Code_ID';
+GO
 
 /*
 INSERT INTO Code.Entity_Identification_Type (Type_ID, Description) VALUES

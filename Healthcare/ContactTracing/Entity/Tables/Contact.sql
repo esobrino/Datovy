@@ -29,12 +29,12 @@
 
    CONSTRAINT [PK_Contact] PRIMARY KEY CLUSTERED ([Contact_ID] ASC),
    CONSTRAINT [FK_Contact_ContactType] FOREIGN KEY ([Contact_Type_ID]) 
-      REFERENCES [Code].[Contact_Type] ([Type_ID]),
+      REFERENCES [Entity].[Contact_Type] ([Type_ID]),
    CONSTRAINT [FK_Contact_Person] FOREIGN KEY ([Person_ID]) 
       REFERENCES [Entity].[Person] ([Person_ID])
 );
-
 GO
+
 EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'have the information for the jurisdiction -- jurisdiction table will be required.',
    @level0type = N'SCHEMA',   @level0name = N'Entity',

@@ -43,51 +43,17 @@
    CONSTRAINT [FK_Activity_Location] FOREIGN KEY ([Location_ID]) 
       REFERENCES [Core].[Location] ([Location_ID])
 );
-
-
 GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_Activity_Disposition]
-    ON [Core].[Activity]([Disposition_ID] ASC);
 
-
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Example : CDCNotifiedDate  CDC Notification is an activity and CDC Notified Date is the activity Date Example: DateFirstReportedToPublicHealth -- Date First Reported to Public Health (Activity or Event) Date is the activity date. Activity -- Individual Events ', 
+   @level0type = N'SCHEMA',   @level0name = N'Core', 
+   @level1type = N'TABLE',    @level1name = N'Activity';
 GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_ActivityPriorityCode]
-    ON [Core].[Activity]([Priority_Code_ID] ASC);
 
-
-GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_ActivityReasonCode]
-    ON [Core].[Activity]([Reason_Code_ID] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_ActivityType]
-    ON [Core].[Activity]([Activity_Type_ID] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_Case]
-    ON [Core].[Activity]([Case_ID] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_Contact]
-    ON [Core].[Activity]([Contact_ID] ASC);
-
-
-GO
-CREATE NONCLUSTERED INDEX [IXFK_Activity_Location]
-    ON [Core].[Activity]([Location_ID] ASC);
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Example : CDCNotifiedDate  CDC Notification is an activity and CDC Notified Date is the activity Date
-
-Example: DateFirstReportedToPublicHealth -- Date First Reported to Public Health (Activity or Event)
-Date is the activity date.
-Activity -- Individual Events ', @level0type = N'SCHEMA', @level0name = N'Core', @level1type = N'TABLE', @level1name = N'Activity';
-
-
-GO
-EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Laboratory Results', @level0type = N'SCHEMA', @level0name = N'Core', @level1type = N'TABLE', @level1name = N'Activity', @level2type = N'COLUMN', @level2name = N'Activity_Type_ID';
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Laboratory Results', 
+   @level0type = N'SCHEMA',   @level0name = N'Core', 
+   @level1type = N'TABLE',    @level1name = N'Activity', 
+   @level2type = N'COLUMN',   @level2name = N'Activity_Type_ID';
 

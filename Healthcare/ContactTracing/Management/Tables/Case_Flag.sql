@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Core].[Case_Flag] (
+﻿CREATE TABLE [Management].[Case_Flag] (
    [Case_Flag_ID]          VARCHAR(30)  NOT NULL,
    [Case_ID]               VARCHAR(30)  NULL,
    [Flag_Code_ID]          VARCHAR(30)  NULL,

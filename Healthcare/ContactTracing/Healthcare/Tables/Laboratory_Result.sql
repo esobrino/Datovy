@@ -26,7 +26,4 @@
 );
 GO
 
-CREATE NONCLUSTERED INDEX [IXFK_Laboratory_Result_Laboratory]
-    ON [Healthcare].[Laboratory_Result]([Laboratory_ID] ASC);
-
 

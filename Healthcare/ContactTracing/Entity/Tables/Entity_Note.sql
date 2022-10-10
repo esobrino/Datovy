@@ -27,5 +27,5 @@
    [Session_Updated_ID]    VARCHAR(40),
 
    CONSTRAINT FK_Entity_Note_Type FOREIGN KEY ([Note_Type_ID])
-      REFERENCES Code.Entity_Note_Type(Type_ID)
+      REFERENCES Entity.Entity_Note_Type(Type_ID)
 )

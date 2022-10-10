@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Code].[Entity_Note_Type]
+﻿CREATE TABLE [Entity].[Entity_Note_Type]
 (
    [Type_ID]               VARCHAR(30) PRIMARY KEY,
    [Description]           VARCHAR(80),

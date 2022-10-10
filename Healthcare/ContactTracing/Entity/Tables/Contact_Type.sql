@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Code].[Contact_Type] (
+﻿CREATE TABLE [Entity].[Contact_Type] (
     [Type_ID]               VARCHAR (30)  NOT NULL,
     [Description]           VARCHAR (128) NULL,
     [Category_Code]         VARCHAR (30)  NULL,

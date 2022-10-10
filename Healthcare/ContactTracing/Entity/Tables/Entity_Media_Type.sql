@@ -1,4 +1,4 @@
-﻿CREATE TABLE [Code].[Entity_Media_Type]
+﻿CREATE TABLE [Entity].[Entity_Media_Type]
 (
    [Type_ID]               VARCHAR(30) PRIMARY KEY,
    [Description]           VARCHAR(80),

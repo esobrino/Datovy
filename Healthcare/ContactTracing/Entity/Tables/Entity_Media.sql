@@ -34,6 +34,6 @@
    [Session_Updated_ID]      VARCHAR(40),
 
    CONSTRAINT FK_Entity_Media_Type FOREIGN KEY ([Type_ID])
-      REFERENCES Code.Entity_Media_Type(Type_ID)
+      REFERENCES Entity.Entity_Media_Type(Type_ID)
 )
 GO

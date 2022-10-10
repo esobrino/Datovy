@@ -13,6 +13,6 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40),
 
-    CONSTRAINT [PK_Flag] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+   CONSTRAINT [PK_Flag] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 );
 

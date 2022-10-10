@@ -31,9 +31,9 @@
    CONSTRAINT [FK_Vita_Participant] FOREIGN KEY ([Participant_ID]) 
       REFERENCES [Core].[Participant] ([Participant_ID]),
    CONSTRAINT [FK_Vitals_BodyPositionCode] FOREIGN KEY ([BodyPositionCodeID]) 
-      REFERENCES [Code].[Body_Position_Code] ([Code_ID]),
+      REFERENCES [Healthcare].[Body_Position_Code] ([Code_ID]),
    CONSTRAINT [FK_Vitals_BodySiteCode] FOREIGN KEY ([BodySiteCodeID]) 
-      REFERENCES [Code].[Body_Site_Code] ([Code_ID]),
+      REFERENCES [Healthcare].[Body_Site_Code] ([Code_ID]),
    CONSTRAINT [FK_Vitals_DeviceCode] FOREIGN KEY ([Device_Code_ID])
       REFERENCES [Healthcare].[Device_Code] ([Code_ID]),
    CONSTRAINT [FK_Vitals_UnitCode] FOREIGN KEY ([Unit_Code_ID])

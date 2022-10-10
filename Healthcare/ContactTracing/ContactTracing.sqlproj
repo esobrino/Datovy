@@ -103,9 +103,6 @@
     <Build Include="Tracing\Tables\Assessment_Questionnaire.sql" />
     <Build Include="Tracing\Tables\Profile.sql" />
     <Build Include="Tracing\Tables\Profile_Condition.sql" />
-    <Build Include="Tracing\Tables\Referral.sql" />
-    <Build Include="Tracing\Tables\Schedule_Event.sql" />
-    <Build Include="Tracing\Tables\Session_Log.sql" />
     <Build Include="Tracing\Tables\Travel_Detail.sql" />
     <Build Include="Security\Entity.sql" />
     <Build Include="Security\Management.sql" />
@@ -130,7 +127,6 @@
     <Build Include="Entity\Tables\Contact_Type.sql" />
     <Build Include="Security\Application.sql" />
     <Build Include="Application\Tables\AccessToken.sql" />
-    <Build Include="Application\Tables\Session.sql" />
     <Build Include="Management\Tables\Case_Flag.sql" />
     <Build Include="Management\Tables\Case.sql" />
     <Build Include="Management\Tables\Case_Disposition.sql" />
@@ -148,12 +144,19 @@
     <Build Include="Healthcare\Tables\Unit_Code.sql" />
     <Build Include="Healthcare\Tables\Device_Code.sql" />
     <Build Include="Tracing\Tables\Answer_Type.sql" />
+    <Build Include="Application\Tables\Session.sql" />
+    <Build Include="Management\Tables\Referral.sql" />
+    <Build Include="Management\Tables\Referral_Type.sql" />
+    <Build Include="Management\Tables\Schedule_Event.sql" />
+    <Build Include="Entity\Tables\Entity_Flag_Code.sql" />
+    <Build Include="Entity\Tables\Officer.sql" />
+    <Build Include="Entity\Tables\Officer_Type.sql" />
+    <Build Include="Core\Tables\Status_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity_Reason_Code.sql" />
     <Build Include="Core\Tables\Activity_Type.sql" />
     <Build Include="Tracing\Tables\Assessment_Type.sql" />
     <Build Include="Tracing\Tables\Profile_Type.sql" />
-    <Build Include="Tracing\Tables\Referral_Type.sql" />
   </ItemGroup>
 </Project>

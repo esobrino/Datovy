@@ -25,6 +25,6 @@ CREATE TABLE Core.Entity_Uri
    [Session_Updated_ID]    VARCHAR(40),
 
    CONSTRAINT FK_EntityUriType FOREIGN KEY ([Type_ID])
-      REFERENCES Code.Entity_Uri_Type(Type_ID)
+      REFERENCES Entity.Entity_Uri_Type(Type_ID)
 )
 GO

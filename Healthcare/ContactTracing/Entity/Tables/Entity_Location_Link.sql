@@ -23,7 +23,7 @@
    CONSTRAINT [FK_Entity_Location_Link_Location] FOREIGN KEY ([Location_ID])
       REFERENCES [Core].[Location] ([Location_ID]),
    CONSTRAINT [FK_Entity_Location_Link_Organization] FOREIGN KEY ([Organization_ID])
-      REFERENCES [Core].[Organization] ([Organization_ID]),
+      REFERENCES [Entity].[Organization] ([Organization_ID]),
    CONSTRAINT [FK_Entity_Location_Link_Person] FOREIGN KEY ([Person_ID])
       REFERENCES [Entity].[Person] ([Person_ID]),
    CONSTRAINT [FK_Entity_Location_Link_Provider] FOREIGN KEY ([Provider_ID])

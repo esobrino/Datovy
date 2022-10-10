@@ -22,9 +22,8 @@
 
    CONSTRAINT [PK_Medical_Condition] PRIMARY KEY CLUSTERED ([Medical_Condition_ID] ASC)
 );
-
-
 GO
+
 EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Symptoms, conditions, susceptibility, and other qualifiers ',
    @level0type = N'SCHEMA',   @level0name = N'Healthcare',
