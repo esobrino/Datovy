@@ -11,26 +11,27 @@
    [Dosage_Ordered_Unit_Code_ID]  VARCHAR(30)   NULL,
    [Dosage_Strength]              DECIMAL(5, 3) NULL,
    [Dosage_Strength_Unit_Code_ID] VARCHAR(30)   NULL,
-   [UnitOfMeasure]                DECIMAL(5, 3) NULL,
-   [UnitOfMeasure_Unit_Code_ID]   VARCHAR(30)   NULL,
+   [Measure_Unit]                 DECIMAL(5, 3) NULL,
+   [Measure_Unit_Code_ID]         VARCHAR(30)   NULL,
    [Dosage_Calculated]            VARCHAR(30)   NULL,
    [Frequency_Code_ID]            VARCHAR(30)   NULL,
    [AdditionalInstruction]        VARCHAR(256)  NULL,
    
    [Status_Code_ID]        VARCHAR(30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
-   [Start_DateTime]        DATETIMEOFFSET NULL,
-   [End_DateTime]          DATETIMEOFFSET NULL,
 
+   -- record management
    [Tenant_ID]             VARCHAR(30) NOT NULL,
    [Data_Owner_ID]         VARCHAR(30) NULL,
    [Agency_Reporting_ID]   VARCHAR(30) NULL,
-   [Sequence_Number]       INTEGER NULL,
-   [Version_Number]        VARCHAR(20),
+   [Sequence_Number]       INTEGER NULL DEFAULT 0,
+   [Start_DateTime]        DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [End_DateTime]          DATETIMEOFFSET NULL,
+   [Version_Number]        VARCHAR(20) NULL DEFAULT '0',
    [Created_DateTime]      DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Updated_Last_DateTime] DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
-   [Session_Updated_ID]    VARCHAR(40),
+   [Session_Updated_ID]    VARCHAR(40) NULL,
 
    CONSTRAINT [PK_Medication] PRIMARY KEY CLUSTERED ([Medication_ID] ASC),
    CONSTRAINT [FK_Medication_DosageForm] FOREIGN KEY ([Dose_Form_Code_ID]) 
@@ -64,7 +65,7 @@ EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Unit of Measure per 2 mL per capsule per tablet', 
    @level0type = N'SCHEMA',   @level0name = N'Healthcare',
    @level1type = N'TABLE',    @level1name = N'Medication',
-   @level2type = N'COLUMN',   @level2name = N'UnitOfMeasure';
+   @level2type = N'COLUMN',   @level2name = N'Measure_Unit';
 GO
 
 EXECUTE sp_addextendedproperty 

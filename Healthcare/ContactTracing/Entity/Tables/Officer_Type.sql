@@ -7,6 +7,8 @@
    [Data_Owner_ID]         VARCHAR(30) NULL,
    [Agency_Reporting_ID]   VARCHAR(30) NULL,
    [Version_Number]        VARCHAR(20),
+   [Start_DateTime]        DATETIMEOFFSET NULL,
+   [End_DateTime]          DATETIMEOFFSET NULL,
    [Sequence_Number]       INTEGER NULL,
    [Created_DateTime]      DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),
    [Updated_Last_DateTime] DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),

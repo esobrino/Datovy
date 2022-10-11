@@ -106,12 +106,9 @@
     <Build Include="Tracing\Tables\Travel_Detail.sql" />
     <Build Include="Security\Entity.sql" />
     <Build Include="Security\Management.sql" />
-    <Build Include="Entity\Tables\Entity_Communication.sql" />
-    <Build Include="Entity\Tables\Entity_Identification.sql" />
-    <Build Include="Entity\Tables\Entity_Location_Link.sql" />
-    <Build Include="Entity\Tables\Entity_Media.sql" />
-    <Build Include="Entity\Tables\Entity_Note.sql" />
-    <Build Include="Entity\Tables\Entity_Uri.sql" />
+    <Build Include="Entity\Tables\Communication.sql" />
+    <Build Include="Entity\Tables\Identification.sql" />
+    <Build Include="Entity\Tables\Location_Link.sql" />
     <Build Include="Entity\Tables\Person_Flag.sql" />
     <Build Include="Entity\Tables\Person.sql" />
     <Build Include="Entity\Tables\Person_Credential.sql" />
@@ -120,10 +117,7 @@
     <Build Include="Entity\Tables\Contact.sql" />
     <Build Include="Entity\Tables\Person_Credential_Type.sql" />
     <Build Include="Entity\Tables\Person_Type.sql" />
-    <Build Include="Entity\Tables\Entity_Identification_Type.sql" />
-    <Build Include="Entity\Tables\Entity_Media_Type.sql" />
-    <Build Include="Entity\Tables\Entity_Note_Type.sql" />
-    <Build Include="Entity\Tables\Entity_Uri_Type.sql" />
+    <Build Include="Entity\Tables\Identification_Type.sql" />
     <Build Include="Entity\Tables\Contact_Type.sql" />
     <Build Include="Security\Application.sql" />
     <Build Include="Application\Tables\AccessToken.sql" />
@@ -148,15 +142,24 @@
     <Build Include="Management\Tables\Referral.sql" />
     <Build Include="Management\Tables\Referral_Type.sql" />
     <Build Include="Management\Tables\Schedule_Event.sql" />
-    <Build Include="Entity\Tables\Entity_Flag_Code.sql" />
+    <Build Include="Entity\Tables\Flag_Code.sql" />
     <Build Include="Entity\Tables\Officer.sql" />
     <Build Include="Entity\Tables\Officer_Type.sql" />
     <Build Include="Core\Tables\Status_Code.sql" />
+    <Build Include="Core\Tables\Media.sql" />
+    <Build Include="Core\Tables\Media_Type.sql" />
+    <Build Include="Core\Tables\Note.sql" />
+    <Build Include="Core\Tables\Note_Type.sql" />
+    <Build Include="Core\Tables\Uri_Type.sql" />
+    <Build Include="Core\Tables\Uri.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity_Reason_Code.sql" />
     <Build Include="Core\Tables\Activity_Type.sql" />
     <Build Include="Tracing\Tables\Assessment_Type.sql" />
     <Build Include="Tracing\Tables\Profile_Type.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ContactTracing.refactorlog" />
   </ItemGroup>
 </Project>
