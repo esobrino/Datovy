@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ContactTracing", "Healthcare\ContactTracing\ContactTracing.sqlproj", "{E75C77A8-0800-47CF-95EF-244893D7D30C}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Disease_Surveillance", "Healthcare\Communicable Diseases\Disease_Surveillance.sqlproj", "{E75C77A8-0800-47CF-95EF-244893D7D30C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

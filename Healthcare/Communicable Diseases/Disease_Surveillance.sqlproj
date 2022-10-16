@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Disease_Surveillance</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e75c77a8-0800-47cf-95ef-244893d7d30c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ContactTracing</RootNamespace>
+    <AssemblyName>ContactTracing</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DacApplicationName>Diseases_Surveillance</DacApplicationName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Core" />
+    <Folder Include="Core\Tables" />
+    <Folder Include="Healthcare" />
+    <Folder Include="Healthcare\Tables" />
+    <Folder Include="Management" />
+    <Folder Include="Management\Tables" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post Deployment" />
+    <Folder Include="Scripts\Pre Deployment" />
+    <Folder Include="Scripts\Testing" />
+    <Folder Include="Security" />
+    <Folder Include="Surveillance" />
+    <Folder Include="Surveillance\Tables" />
+    <Folder Include="Entity" />
+    <Folder Include="Entity\Tables" />
+    <Folder Include="Application" />
+    <Folder Include="Application\Tables" />
+    <Folder Include="Scripts\Sql-Scripts" />
+    <Folder Include="Application\Sequences" />
+    <Folder Include="Application\Functions" />
+    <Folder Include="Helper" />
+    <Folder Include="Entity\Scripts" />
+    <Folder Include="Scripts\PowerScript" />
+    <Folder Include="Helper\Procedures" />
+    <Folder Include="Message" />
+    <Folder Include="Message\Tables" />
+    <Folder Include="Message\Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Core\Tables\Activity.sql" />
+    <Build Include="Core\Tables\Activity_Disposition.sql" />
+    <Build Include="Core\Tables\Event.sql" />
+    <Build Include="Core\Tables\Item.sql" />
+    <Build Include="Core\Tables\Item_Reference_Link.sql" />
+    <Build Include="Core\Tables\Location.sql" />
+    <Build Include="Core\Tables\Participant.sql" />
+    <Build Include="Healthcare\Tables\Immunization.sql" />
+    <Build Include="Healthcare\Tables\Laboratory.sql" />
+    <Build Include="Healthcare\Tables\Lab_Result.sql" />
+    <Build Include="Healthcare\Tables\Medical_Condition.sql" />
+    <Build Include="Healthcare\Tables\Medication.sql" />
+    <Build Include="Healthcare\Tables\Provider.sql" />
+    <Build Include="Healthcare\Tables\Treatment.sql" />
+    <Build Include="Healthcare\Tables\Vitals.sql" />
+    <None Include="Scripts\Testing\Show Properties.sql" />
+    <Build Include="Security\Core.sql" />
+    <Build Include="Security\Healthcare.sql" />
+    <Build Include="Security\Helper.sql" />
+    <Build Include="Security\Surveillance.sql" />
+    <Build Include="Surveillance\Tables\Assessment.sql" />
+    <Build Include="Surveillance\Tables\Assessment_Answer.sql" />
+    <Build Include="Surveillance\Tables\Assessment_Question.sql" />
+    <Build Include="Surveillance\Tables\Assessment_Questionnaire.sql" />
+    <Build Include="Surveillance\Tables\Profile.sql" />
+    <Build Include="Surveillance\Tables\Profile_Condition.sql" />
+    <Build Include="Surveillance\Tables\Travel_Detail.sql" />
+    <Build Include="Security\Entity.sql" />
+    <Build Include="Security\Management.sql" />
+    <Build Include="Entity\Tables\Communication.sql" />
+    <Build Include="Entity\Tables\Identification.sql" />
+    <Build Include="Entity\Tables\Entity_Location_Link.sql" />
+    <Build Include="Entity\Tables\Person_Flag.sql" />
+    <Build Include="Entity\Tables\Person.sql" />
+    <Build Include="Entity\Tables\Person_Death.sql" />
+    <Build Include="Entity\Tables\Organization.sql" />
+    <Build Include="Entity\Tables\Contact.sql" />
+    <Build Include="Entity\Tables\Person_Type.sql" />
+    <Build Include="Entity\Tables\Identification_Type.sql" />
+    <Build Include="Entity\Tables\Contact_Type.sql" />
+    <Build Include="Security\Application.sql" />
+    <Build Include="Application\Tables\AccessToken.sql" />
+    <Build Include="Management\Tables\Case_Flag.sql" />
+    <Build Include="Management\Tables\Case.sql" />
+    <Build Include="Management\Tables\Case_Disposition.sql" />
+    <Build Include="Management\Tables\Case_Priority_Code.sql" />
+    <Build Include="Management\Tables\Case_Type.sql" />
+    <Build Include="Entity\Tables\Emergency_Contact.sql" />
+    <Build Include="Core\Tables\Activity_Priority_Code.sql" />
+    <Build Include="Core\Tables\Participant_Type.sql" />
+    <Build Include="Management\Tables\Case_Flag_Code.sql" />
+    <Build Include="Core\Tables\Role_Code.sql" />
+    <Build Include="Entity\Tables\Device_Type.sql" />
+    <Build Include="Healthcare\Tables\Dosage_Form_Code.sql" />
+    <Build Include="Healthcare\Tables\Body_Position_Code.sql" />
+    <Build Include="Healthcare\Tables\Body_Site_Code.sql" />
+    <Build Include="Healthcare\Tables\Unit_Code.sql" />
+    <Build Include="Healthcare\Tables\Device_Code.sql" />
+    <Build Include="Surveillance\Tables\Answer_Type.sql" />
+    <Build Include="Application\Tables\Session.sql" />
+    <Build Include="Management\Tables\Referral.sql" />
+    <Build Include="Management\Tables\Referral_Type.sql" />
+    <Build Include="Management\Tables\Schedule_Event.sql" />
+    <Build Include="Entity\Tables\Officer.sql" />
+    <Build Include="Entity\Tables\Officer_Type.sql" />
+    <Build Include="Core\Tables\Status_Code.sql" />
+    <Build Include="Core\Tables\Media.sql" />
+    <Build Include="Core\Tables\Media_Type.sql" />
+    <Build Include="Core\Tables\Note.sql" />
+    <Build Include="Core\Tables\Note_Type.sql" />
+    <Build Include="Core\Tables\Uri_Type.sql" />
+    <Build Include="Core\Tables\Uri.sql" />
+    <Build Include="Entity\Tables\Organization_Type.sql" />
+    <Build Include="Core\Tables\Flag_Code.sql" />
+    <None Include="Scripts\Sql-Scripts\00010 - Data Initialization.sql" />
+    <None Include="Scripts\Sql-Scripts\00020 - Identification Codes.sql" />
+    <Build Include="Application\Sequences\ID_Number.sql" />
+    <Build Include="Application\Functions\ID_Number_Generate.sql" />
+    <Build Include="Entity\Scripts\Privacy_Security_Tagging.sql" />
+    <Build Include="Entity\Tables\Name_Type.sql" />
+    <Build Include="Entity\Tables\Name.sql" />
+    <Build Include="Entity\Tables\Race_Code.sql" />
+    <Build Include="Entity\Tables\Ethnicity_Code.sql" />
+    <Build Include="Management\Tables\Class_Status_Code.sql" />
+    <Build Include="Management\Tables\Age_Unit_Code.sql" />
+    <Build Include="Healthcare\Tables\Lab_Test_Type.sql" />
+    <Build Include="Healthcare\Tables\Specimen_Type.sql" />
+    <Build Include="Entity\Tables\Sex_Code.sql" />
+    <Build Include="Healthcare\Tables\Lab_Result_Type.sql" />
+    <Build Include="Healthcare\Tables\Lab_Type.sql" />
+    <Build Include="Helper\Procedures\Comment_Column_Add.sql" />
+    <Build Include="Healthcare\Tables\Clinical_Syndrome_Code.sql" />
+    <Build Include="Healthcare\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
+    <Build Include="Healthcare\Tables\Clinical_Syndrome_Secondary_Code.sql" />
+    <Build Include="Healthcare\Tables\Disease_Condition_Code.sql" />
+    <Build Include="Healthcare\Tables\Virus_Type.sql" />
+    <Build Include="Surveillance\Tables\Report.sql" />
+    <Build Include="Security\Message.sql" />
+    <Build Include="Message\Tables\Submission.sql" />
+    <Build Include="Message\Procedures\Submission_Upsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Core\Tables\Activity_Reason_Code.sql" />
+    <Build Include="Core\Tables\Activity_Type.sql" />
+    <Build Include="Surveillance\Tables\Assessment_Type.sql" />
+    <Build Include="Surveillance\Tables\Profile_Type.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PowerScript\dbinit.ps1" />
+    <None Include="Scripts\Sql-Scripts\00030 - Entity Data Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00100 - Surveillance Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00040 - Management Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00050 - Healthcare Codes.sql" />
+  </ItemGroup>
+</Project>
