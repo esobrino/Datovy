@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [Core].[Item] (
    [Item_ID]               VARCHAR(30) NOT NULL,
-   [Item_Name]             VARCHAR(50) NULL,
-   [Item_Type_ID]          VARCHAR(30) NULL,
-   [Item_Value_Amount]     DECIMAL(12, 2) NULL,
-   [Item_Quantity]         DECIMAL(12) NULL,
+   [Name]                  VARCHAR(50) NULL,
+   [Type_ID]               VARCHAR(30) NULL,
+
+   [Value_Amount]          DECIMAL(12, 2) NULL,
+   [Quantity]              DECIMAL(12) NULL,
    
    [Status_Code_ID]        VARCHAR(30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
@@ -21,14 +22,15 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-    CONSTRAINT [pk_Item] PRIMARY KEY CLUSTERED ([Item_ID] ASC)
+   CONSTRAINT [pk_Item] PRIMARY KEY CLUSTERED ([Item_ID] ASC),
+   CONSTRAINT [fk_Item_Type] FOREIGN KEY ([Type_ID])
+      REFERENCES [Core].[Item_Type]([Type_ID])
 );
-
-
 GO
+
 EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Item Type = ''Service''', 
    @level0type = N'SCHEMA',   @level0name = N'Core', 
    @level1type = N'TABLE',    @level1name = N'Item', 
-   @level2type = N'COLUMN',   @level2name = 'Item_Type_ID';
+   @level2type = N'COLUMN',   @level2name = 'Type_ID';
 

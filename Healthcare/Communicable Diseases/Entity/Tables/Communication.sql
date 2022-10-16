@@ -1,7 +1,6 @@
 ﻿CREATE TABLE [Entity].[Communication] (
    [Communication_ID]        VARCHAR(30) NOT NULL,
-   [Entity_ID]               VARCHAR(30) NULL,
-   [Entity_Type_ID]          VARCHAR(30) NULL,
+
    [Device_Code_ID]          VARCHAR(30) NULL,
    [Device_Usage_Code_ID]    VARCHAR(20) NULL,
    [Phone_Country_Code_ID]   VARCHAR(5)  NULL,
@@ -11,6 +10,25 @@
 
    [Status_Code_ID]          VARCHAR(30) NULL,
    [Status_DateTime]         DATETIMEOFFSET NULL,
+
+   -- management relationship 
+   [Case_ID]               VARCHAR (30) NULL,
+
+   CONSTRAINT [fk_Communication_Case] FOREIGN KEY ([Case_ID])
+      REFERENCES [Management].[Case] ([Case_ID]),
+
+   -- healthcare relationship 
+   [Provider_ID]           VARCHAR (30) NULL,
+
+   CONSTRAINT [fk_Communication_Provider] FOREIGN KEY ([Provider_ID])
+      REFERENCES [Healthcare].[Provider] ([Provider_ID]),
+
+   -- entity relationship (only one should be instantiated)
+   [Entity_Type_ID]        VARCHAR(30) NULL,
+   [Person_ID]             VARCHAR(30) NULL,
+   [Organization_ID]       VARCHAR(30) NULL,
+   [Officer_ID]            VARCHAR(30) NULL,
+   [Contact_ID]            VARCHAR(30) NULL,
 
    -- record management
    [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -25,11 +43,7 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Communication] PRIMARY KEY CLUSTERED ([Communication_ID] ASC),
-   CONSTRAINT [fk_Communication_Contact] FOREIGN KEY ([Entity_ID]) 
-      REFERENCES [Entity].[Contact] ([Contact_ID]),
-   CONSTRAINT [fk_Communication_Person] FOREIGN KEY ([Entity_ID]) 
-      REFERENCES [Entity].[Person] ([Person_ID])
+   CONSTRAINT [pk_Communication] PRIMARY KEY CLUSTERED ([Communication_ID] ASC)
 );
 GO
 

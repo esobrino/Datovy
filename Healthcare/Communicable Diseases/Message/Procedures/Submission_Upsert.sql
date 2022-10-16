@@ -2,76 +2,67 @@
 -- The following is based on KnowTech Submission Registry
 
 CREATE PROCEDURE Message.Submission_Upsert
--- @SessionID             VARCHAR(40) = '',
-   @SubmissionID          VARCHAR(20) = '',   -- unique submission ID (if new will be null or empty)
-   @SubmissionDate        VARCHAR(20) = NULL,    -- date and time submission was prepared
-   @ReceiveDate           VARCHAR(20) = NULL,    -- received date and time
-   @ContentType           VARCHAR(20),        -- content type
-   @IncidentID            VARCHAR(20) = NULL, -- Incident ID
-   @SourceAgencyID        VARCHAR(20),        -- submitter Agency ID
-   @SourceLocalID         VARCHAR(20) = '',   -- e.g. CFS Local ID
-   @DataOwnerAgencyID     VARCHAR(20) = '',   -- data owner Agency ID as specified in payload.DataOwner
-   @DataItemID            VARCHAR(20) = '',   -- submission DataOwner.DataItemID as specified in payload
-   @MessageData           VARCHAR(MAX),       -- CLOB xml message 
-   @ContentReferenceID    VARCHAR(20) = '',   -- e.g. GlobalID for CFS
-   @OutSubmissionID       VARCHAR(20) OUTPUT
+   @Session_ID          VARCHAR(40) = '',
+   @Submission_ID       VARCHAR(20) = '',   -- unique submission ID (if new will be null or empty)
+   @Submission_DateTime VARCHAR(20) = NULL,    -- date and time submission was prepared
+   @Received_DateTime   VARCHAR(20) = NULL,    -- received date and time
+   @Content_Type_ID     VARCHAR(30),        -- content type
+   @Reference_ID        VARCHAR(30) = NULL, -- Incident ID
+   @Source_ID           VARCHAR(40),        -- submitter Agency ID
+   @Source_Local_ID     VARCHAR(40) = '',   -- e.g. CFS Local ID
+   @Data_Owner_ID       VARCHAR(20) = '',   -- data owner Agency ID as specified in payload.DataOwner
+   @Data_Item_ID        VARCHAR(20) = '',   -- submission DataOwner.Data_Item_ID as specified in payload
+   @Message_Data        VARCHAR(MAX),       -- CLOB xml message 
+   @Content_ID          VARCHAR(20) = '',   -- e.g. GlobalID for CFS
+   @Submission_ID_Out   VARCHAR(20) OUTPUT
 AS
 BEGIN
    SET NOCOUNT ON
 
-   IF NOT EXISTS(SELECT * FROM Common.ContentType
-                  WHERE ContentType = @ContentType)
-      RETURN -4003  -- invalid content-type
+   --IF NOT EXISTS(SELECT * FROM Common.Content_Type
+   --               WHERE Content_Type = @Content_Type)
+   --   RETURN -4003  -- invalid content-type
 
-   IF @SubmissionDate is null
-      SET @SubmissionDate = getdate()
-   IF @ReceiveDate is null
-      SET @ReceiveDate = getdate()
-
-   -- get year-month from submission date
-   DECLARE @ym CHAR(6),
-           @fd CHAR(10),
-           @dt DATETIME
-   SET @fd = convert(varchar(10), @SubmissionDate, 120)
-   -- SELECT @fd
-   SET @ym = substring(@fd,1,4) + substring(@fd,6,2)
-   -- SELECT @ym
+   IF @Submission_DateTime is null
+      SET @Submission_DateTime = getutcdate()
+   IF @Received_DateTime is null
+      SET @Received_DateTime = getutcdate()
 
    DECLARE @MessageLengthInBytes  INTEGER,
            @rval                  INTEGER
-   SET @MessageLengthInBytes = len(@MessageData)
+   SET @MessageLengthInBytes = len(@Message_Data)
 
    -- prepare a unique submission id and/or reference id as necessary...
-   IF @SubmissionID = '' OR @SubmissionID IS NULL
+   IF @Submission_ID = '' OR @Submission_ID IS NULL
    BEGIN
-      EXEC @rval = Common.IdBaseGetNewPrefixedYmdhmId
-           '', @SourceAgencyID, 'SB', @SubmissionID OUTPUT
+      SET @Submission_ID = [Application].[ID_Number_Generate] 
+         ('SUB', next value for [Application].[Submission_Number])
    END
-   SET @OutSubmissionID = @SubmissionID
+   SET @Submission_ID_Out = @Submission_ID
 
-   IF @DataItemID IS NULL OR @DataItemID = ''
-      SET @DataItemID = @OutSubmissionID
+   IF @Data_Item_ID IS NULL OR @Data_Item_ID = ''
+      SET @Data_Item_ID = @Submission_ID_Out
    
    -- try to insert submisison now
    --BEGIN TRANSACTION
 
-   IF NOT EXISTS (SELECT * FROM Common.Submission with(nolock)
-                   WHERE SubmissionID = @SubmissionID)
+   IF NOT EXISTS (SELECT * FROM [Message].[Submission] with(nolock)
+                   WHERE [Submission_ID] = @Submission_ID)
    BEGIN
 
       -- StateNo = 1 = Registered
-      INSERT INTO Common.Submission
-         ( SubmissionID,     SubmissionDate,        ReceiveDate,
-           ContentType,      SourceAgencyID,
-           SourceLocalID,    DataOwnerAgencyID,     DataItemID,
-           MessageData,      MessageLengthInBytes,  ContentReferenceID,
-           MessageCount,     IncidentID,            MessageDateTime)
+      INSERT INTO [Message].[Submission]
+         ([Submission_ID],    [Submission_DateTime], [Received_DateTime],
+          [Content_Type_ID],  [Source_ID],           [Source_Local_ID],
+          [Data_Owner_ID],    [Data_Item_ID],        [Content_ID],
+          [Message_Data],     [Message_Count],       [Message_Length_InBytes],
+          [Message_DateTime], [Reference_ID],        [Session_Updated_ID])
       VALUES
-         (@SubmissionID,    @SubmissionDate,       @ReceiveDate,
-          @ContentType,     @SourceAgencyID,
-          @SourceLocalID,   @DataOwnerAgencyID,    @DataItemID,
-          @MessageData,     @MessageLengthInBytes, @ContentReferenceID,
-          1,                @IncidentID,           @ReceiveDate)
+         (@Submission_ID,     @Submission_DateTime,  @Received_DateTime,
+          @Content_Type_ID,   @Source_ID,            @Source_Local_ID,
+          @Data_Owner_ID,     @Data_Item_ID,         @Content_ID,
+          @Message_Data,      1,                     @MessageLengthInBytes,
+          @Received_DateTime, @Reference_ID,         @Session_ID)
 
       IF @@ERROR <> 0
       BEGIN
@@ -81,9 +72,9 @@ BEGIN
    END
    ELSE
    BEGIN
-      UPDATE Common.Submission
-         SET MessageCount = MessageCount + 1
-       WHERE SubmissionID = @SubmissionID
+      UPDATE [Message].[Submission]
+         SET Message_Count = Message_Count + 1
+       WHERE Submission_ID = @Submission_ID
 
       IF @@ERROR <> 0
       BEGIN

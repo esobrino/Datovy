@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Lab_Test_Type]
+﻿CREATE TABLE [Healthcare].[Lab_Test_Type]
 (
    [Type_ID]               VARCHAR(30)  NOT NULL,
    [Description]           VARCHAR(128) NULL,

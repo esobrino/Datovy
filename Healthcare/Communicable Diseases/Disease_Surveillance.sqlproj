@@ -90,7 +90,7 @@
     <Build Include="Core\Tables\Activity_Disposition.sql" />
     <Build Include="Core\Tables\Event.sql" />
     <Build Include="Core\Tables\Item.sql" />
-    <Build Include="Core\Tables\Item_Reference_Link.sql" />
+    <Build Include="Core\Tables\Item_Entity_Link.sql" />
     <Build Include="Core\Tables\Location.sql" />
     <Build Include="Core\Tables\Participant.sql" />
     <Build Include="Healthcare\Tables\Immunization.sql" />
@@ -133,7 +133,7 @@
     <Build Include="Management\Tables\Case_Disposition.sql" />
     <Build Include="Management\Tables\Case_Priority_Code.sql" />
     <Build Include="Management\Tables\Case_Type.sql" />
-    <Build Include="Entity\Tables\Emergency_Contact.sql" />
+    <Build Include="Entity\Tables\Contact_Emergency.sql" />
     <Build Include="Core\Tables\Activity_Priority_Code.sql" />
     <Build Include="Core\Tables\Participant_Type.sql" />
     <Build Include="Management\Tables\Case_Flag_Code.sql" />
@@ -186,6 +186,19 @@
     <Build Include="Security\Message.sql" />
     <Build Include="Message\Tables\Submission.sql" />
     <Build Include="Message\Procedures\Submission_Upsert.sql" />
+    <Build Include="Application\Sequences\Submission_Number.sql" />
+    <Build Include="Message\Tables\Content_Type.sql" />
+    <Build Include="Entity\Tables\Entity_Type.sql" />
+    <Build Include="Entity\Tables\Employment.sql" />
+    <Build Include="Entity\Tables\Employment_Type.sql" />
+    <Build Include="Core\Tables\Item_Type.sql" />
+    <Build Include="Entity\Tables\Gender_Identity_Code.sql" />
+    <Build Include="Entity\Tables\Sexual_Orientation_Code.sql" />
+    <Build Include="Surveillance\Tables\Report_Type.sql" />
+    <Build Include="Core\Tables\Element.sql" />
+    <Build Include="Core\Tables\Element_Value.sql" />
+    <Build Include="Core\Tables\Element_Type.sql" />
+    <Build Include="Core\Tables\Element_Value_Type.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity_Reason_Code.sql" />

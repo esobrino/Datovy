@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Sex_Code]
+﻿CREATE TABLE [Entity].[Sex_Code]
 (
    [Code_ID]               VARCHAR(30)  NOT NULL,
    [Description]           VARCHAR(128) NULL,

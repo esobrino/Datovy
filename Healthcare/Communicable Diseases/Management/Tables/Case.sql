@@ -1,12 +1,13 @@
 ﻿CREATE TABLE [Management].[Case] (
    [Case_ID]               VARCHAR (30) NOT NULL,
-   [Alternate_ID]          VARCHAR (40) NULL,
    [Case_Type_ID]          VARCHAR (30) NULL,
+   [Alternate_ID]          VARCHAR (40) NULL,
    
    [Officer_ID]            VARCHAR (30) NULL,
    [Person_ID]             VARCHAR (30) NULL,
    [Provider_ID]           VARCHAR (30) NULL,
    [Organization_ID]       VARCHAR (30) NULL,
+
    [Disposition_ID]        VARCHAR (30) NULL,
    [Medication_ID]         VARCHAR (30) NULL,
    [Medical_Condition_ID]  VARCHAR (30) NULL,

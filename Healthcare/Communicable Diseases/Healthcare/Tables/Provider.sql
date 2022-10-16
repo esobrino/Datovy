@@ -1,12 +1,13 @@
 ﻿CREATE TABLE [Healthcare].[Provider] (
    [Provider_ID]           VARCHAR (30) NOT NULL,
    [Alternate_ID]          VARCHAR (40) NULL,
+
+   [Person_ID]             VARCHAR (30) NULL,
    [Organization_ID]       VARCHAR (30) NULL,
    [Provider_Type_ID]      VARCHAR (30) NULL,
-   [Provider_GivenName]    VARCHAR (80) NULL,
-   [Provider_MiddleName]   VARCHAR (50) NULL,
-   [Provider_SurName]      VARCHAR (80) NULL,
-   
+
+   [Name_ID]               VARCHAR (30) NULL,
+
    [Status_Code_ID]        VARCHAR(30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
@@ -24,8 +25,13 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Practitioner] PRIMARY KEY CLUSTERED ([Provider_ID] ASC),
+   CONSTRAINT [fk_Provider_Name] FOREIGN KEY ([Name_ID])
+      REFERENCES [Entity].[Name]([Name_ID]),
+
    CONSTRAINT [fk_Provider_Organization] FOREIGN KEY ([Organization_ID]) 
-      REFERENCES [Entity].[Organization] ([Organization_ID])
+      REFERENCES [Entity].[Organization] ([Organization_ID]),
+   CONSTRAINT [fk_Provider_Entity] FOREIGN KEY ([Person_ID]) 
+      REFERENCES [Entity].[Person] ([Person_ID])
 );
 GO
 

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Age_Unit_Code]
+﻿CREATE TABLE [Management].[Age_Unit_Code]
 (
    [Code_ID]               VARCHAR(30)  NOT NULL,
    [Description]           VARCHAR(128) NULL,

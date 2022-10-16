@@ -6,6 +6,7 @@
    [Birth_Date]                      DATE NULL,
    [Birth_Date_Text]                 VARCHAR(50)  NULL,
    [Birth_Location_ID]               VARCHAR(30)  NULL,
+
    [Name_Type_ID]                    VARCHAR(30)  NULL,
    [Name_Given]                      VARCHAR(80)  NULL,
    [Name_Middle]                     VARCHAR(80)  NULL,
@@ -13,6 +14,7 @@
    [Name_Prefix_Code_ID]             VARCHAR(30)  NULL,
    [Name_Suffix_Code_ID]             VARCHAR(30)  NULL,
    [Name_Full]                       VARCHAR(128) NULL,
+
    [Sex_Birth_Code_ID]               VARCHAR(30)  NULL,
    [Sex_Code_ID]                     VARCHAR(30)  NULL,
    [Gender_Identity_Code_ID]         VARCHAR(30)  NULL,
@@ -48,10 +50,18 @@
       REFERENCES [Entity].[Person_Type] ([Type_ID]),
    CONSTRAINT [fk_Person_Name_Type] FOREIGN KEY ([Name_Type_ID])
       REFERENCES [Entity].[Name_Type] ([Type_ID]),
+
    CONSTRAINT [fk_Person_Ethnicity_Code] FOREIGN KEY ([Ethnicity_Code_ID])
       REFERENCES [Entity].[Ethnicity_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Race_Code] FOREIGN KEY ([Race_Code_ID])
-      REFERENCES [Entity].[Race_Code] ([Code_ID])
+      REFERENCES [Entity].[Race_Code] ([Code_ID]),
+
+   CONSTRAINT [fk_Person_Sex_Code] FOREIGN KEY ([Sex_Code_ID])
+      REFERENCES [Entity].[Sex_Code] ([Code_ID]),
+   CONSTRAINT [fk_Person_Gender_Identity_Code] FOREIGN KEY ([Gender_Identity_Code_ID])
+      REFERENCES [Entity].[Gender_Identity_Code] ([Code_ID]),
+   CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID])
+      REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID])
 );
 GO
 
