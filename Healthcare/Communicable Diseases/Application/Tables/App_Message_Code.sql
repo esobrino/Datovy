@@ -13,7 +13,7 @@
    Pretending that issues will never happend or repeat... well... good luck with that. 
  */
 
-CREATE TABLE [dbo].[App_Message_Code]
+CREATE TABLE [Application].[App_Message_Code]
 (
    [Code_Number]           INT NOT NULL,
    [Code_ID]               VARCHAR(60) NULL,
