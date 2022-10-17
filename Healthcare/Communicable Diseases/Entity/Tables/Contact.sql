@@ -2,18 +2,34 @@
    [Contact_ID]            VARCHAR(30)  NOT NULL,
    [Alternate_ID]          VARCHAR(40)  NULL,
    [Type_ID]               VARCHAR(30)  NULL,
-   [Person_ID]             VARCHAR(30)  NULL,
+
    [Name]                  VARCHAR(128) NULL,
    [Description]           VARCHAR(256) NULL,
    [Sex_Code_ID]           VARCHAR(30)  NULL,
    [Phone_Number]          VARCHAR(20)  NULL,
    [Email_Addresss]        VARCHAR(128) NULL,
+
    [Risk_Code_ID]          VARCHAR(30)  NULL,
    [Priority_Code_ID]      VARCHAR(30)  NULL,
    [Jurisdiction_Code_ID]  VARCHAR(30)  NULL,
     
    [Status_Code_ID]        VARCHAR(30)  NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
+
+   -- entity relationship (only one should be instantiated)
+   [Entity_Type_ID]        VARCHAR(30) NULL,
+   [Person_ID]             VARCHAR(30) NULL,
+   [Organization_ID]       VARCHAR(30) NULL,
+   [Officer_ID]            VARCHAR(30) NULL,
+
+   CONSTRAINT [fk_Contact_Entity_Type] FOREIGN KEY ([Entity_Type_ID])
+      REFERENCES [Entity].[Entity_Type]([Type_ID]),
+   CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Contact_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Contact_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
 
    -- record management
    [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -31,8 +47,6 @@
    CONSTRAINT [pk_Contact] PRIMARY KEY CLUSTERED ([Contact_ID] ASC),
    CONSTRAINT [fk_Contact_ContactType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Entity].[Contact_Type] ([Type_ID]),
-   CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID]) 
-      REFERENCES [Entity].[Person] ([Person_ID])
 );
 GO
 

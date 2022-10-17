@@ -26,16 +26,23 @@ $passWd = "#12!98z@l0k1t0!"
 write "initialize database ($db) in ($sqlsvr)."
 write "Initialize Database adding base Organization and sample data."
 sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00010 - Data Initialization.sql"
-write "Initialize Identification Code Set."
-sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00020 - Identification Codes.sql"
-write "Initialize Identification Code Set."
+
+write "Initialize Application Code Sets."
+sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00020 - Application Codes.sql"
+
+write "Initialize Entity Code Sets."
 sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00030 - Entity Data Codes.sql"
-write "Initialize Identification Code Set."
-sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00040 - Management Codes.sql"
-write "Initialize Identification Code Set."
+
+write "Initialize Identification Code Sets."
+sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00040 - Identification Codes.sql"
+
+write "Initialize Healthcare Code Sets."
 sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00050 - Healthcare Codes.sql"
 
-write "Initialize Identification Code Set."
+write "Initialize Management Code Sets."
+sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00060 - Management Codes.sql"
+
+write "Initialize Identification Code Sets."
 sqlcmd -S "$sqlsvr" -U $userId -P $passWd -d $db -i "../sql-scripts/00100 - Surveillance Codes.sql"
 
 write "done."

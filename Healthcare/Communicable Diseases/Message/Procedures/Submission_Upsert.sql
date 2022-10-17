@@ -19,9 +19,9 @@ AS
 BEGIN
    SET NOCOUNT ON
 
-   --IF NOT EXISTS(SELECT * FROM Common.Content_Type
-   --               WHERE Content_Type = @Content_Type)
-   --   RETURN -4003  -- invalid content-type
+   IF NOT EXISTS(SELECT * FROM Message.Content_Type
+                  WHERE [Type_ID] = @Content_Type_ID)
+      RETURN -4003  -- invalid content-type
 
    IF @Submission_DateTime is null
       SET @Submission_DateTime = getutcdate()
@@ -36,7 +36,7 @@ BEGIN
    IF @Submission_ID = '' OR @Submission_ID IS NULL
    BEGIN
       SET @Submission_ID = [Application].[ID_Number_Generate] 
-         ('SUB', next value for [Application].[Submission_Number])
+         ('SUB', next value for [Message].[Submission_Number])
    END
    SET @Submission_ID_Out = @Submission_ID
 
@@ -44,7 +44,7 @@ BEGIN
       SET @Data_Item_ID = @Submission_ID_Out
    
    -- try to insert submisison now
-   --BEGIN TRANSACTION
+   BEGIN TRANSACTION SubmissionUpsert
 
    IF NOT EXISTS (SELECT * FROM [Message].[Submission] with(nolock)
                    WHERE [Submission_ID] = @Submission_ID)
@@ -66,7 +66,7 @@ BEGIN
 
       IF @@ERROR <> 0
       BEGIN
-         --ROLLBACK TRAN
+         ROLLBACK TRAN SubmissionUpsert
          RETURN -3001    -- failed inserting submission...
       END
    END
@@ -78,12 +78,12 @@ BEGIN
 
       IF @@ERROR <> 0
       BEGIN
-         --ROLLBACK TRAN
+         ROLLBACK TRAN SubmissionUpsert
          RETURN -3002    -- failed updating submission count...
       END
    END
 
-   --COMMIT TRANSACTION
+   COMMIT TRANSACTION SubmissionUpsert
 END
 GO
 

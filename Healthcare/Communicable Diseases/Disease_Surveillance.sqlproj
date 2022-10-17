@@ -84,6 +84,9 @@
     <Folder Include="Message" />
     <Folder Include="Message\Tables" />
     <Folder Include="Message\Procedures" />
+    <Folder Include="Message\Sequences" />
+    <Folder Include="Generic" />
+    <Folder Include="Generic\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity.sql" />
@@ -161,7 +164,7 @@
     <Build Include="Entity\Tables\Organization_Type.sql" />
     <Build Include="Core\Tables\Flag_Code.sql" />
     <None Include="Scripts\Sql-Scripts\00010 - Data Initialization.sql" />
-    <None Include="Scripts\Sql-Scripts\00020 - Identification Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00040 - Identification Codes.sql" />
     <Build Include="Application\Sequences\ID_Number.sql" />
     <Build Include="Application\Functions\ID_Number_Generate.sql" />
     <Build Include="Entity\Scripts\Privacy_Security_Tagging.sql" />
@@ -186,7 +189,6 @@
     <Build Include="Security\Message.sql" />
     <Build Include="Message\Tables\Submission.sql" />
     <Build Include="Message\Procedures\Submission_Upsert.sql" />
-    <Build Include="Application\Sequences\Submission_Number.sql" />
     <Build Include="Message\Tables\Content_Type.sql" />
     <Build Include="Entity\Tables\Entity_Type.sql" />
     <Build Include="Entity\Tables\Employment.sql" />
@@ -195,10 +197,13 @@
     <Build Include="Entity\Tables\Gender_Identity_Code.sql" />
     <Build Include="Entity\Tables\Sexual_Orientation_Code.sql" />
     <Build Include="Surveillance\Tables\Report_Type.sql" />
-    <Build Include="Core\Tables\Element.sql" />
-    <Build Include="Core\Tables\Element_Value.sql" />
-    <Build Include="Core\Tables\Element_Type.sql" />
-    <Build Include="Core\Tables\Element_Value_Type.sql" />
+    <Build Include="Message\Sequences\Submission_Number.sql" />
+    <Build Include="Application\Tables\App_Message_Code.sql" />
+    <Build Include="Security\Generic.sql" />
+    <Build Include="Generic\Tables\Element.sql" />
+    <Build Include="Generic\Tables\Element_Type.sql" />
+    <Build Include="Generic\Tables\Element_Value.sql" />
+    <Build Include="Generic\Tables\Element_Value_Type.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity_Reason_Code.sql" />
@@ -210,7 +215,8 @@
     <None Include="Scripts\PowerScript\dbinit.ps1" />
     <None Include="Scripts\Sql-Scripts\00030 - Entity Data Codes.sql" />
     <None Include="Scripts\Sql-Scripts\00100 - Surveillance Codes.sql" />
-    <None Include="Scripts\Sql-Scripts\00040 - Management Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00060 - Management Codes.sql" />
     <None Include="Scripts\Sql-Scripts\00050 - Healthcare Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00020 - Application Codes.sql" />
   </ItemGroup>
 </Project>
