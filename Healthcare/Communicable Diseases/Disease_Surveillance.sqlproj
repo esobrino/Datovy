@@ -219,4 +219,7 @@
     <None Include="Scripts\Sql-Scripts\00050 - Healthcare Codes.sql" />
     <None Include="Scripts\Sql-Scripts\00020 - Application Codes.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Disease_Surveillance.refactorlog" />
+  </ItemGroup>
 </Project>
