@@ -27,9 +27,12 @@ CREATE TABLE [Generic].[Element_Value]
    [Reference_Date]        DATE NULL,
    [Reference_Time]        TIME NULL,
 
-   -- answered value relate to the following entity...
-   [Entity_Type_ID]        VARCHAR(30) NOT NULL,
-   [Entity_ID]             VARCHAR(30) NOT NULL,
+   -- answered value relate to the following entity (assign only one)...
+   [Entity_Type_ID]        VARCHAR(30) NULL,
+   [Case_ID]               VARCHAR(30) NULL,
+   [Referral_ID]           VARCHAR(30) NULL,
+   [Contact_ID]            VARCHAR(30) NULL,
+   [Person_ID]             VARCHAR(30) NULL,
 
    -- item values
    [Checked]               BIT,
@@ -58,7 +61,16 @@ CREATE TABLE [Generic].[Element_Value]
       REFERENCES [Generic].[Element] ([Element_ID]),
    CONSTRAINT [fk_Element_Value_ID] FOREIGN KEY ([Type_ID])
       REFERENCES [Generic].[Element_Value_Type] ([Type_ID]),
+
    CONSTRAINT [fk_Element_Value_Entity] FOREIGN KEY ([Entity_Type_ID])
-      REFERENCES [Entity].[Entity_Type] ([Type_ID])
+      REFERENCES [Entity].[Entity_Type]([Type_ID]),
+   CONSTRAINT [fk_Element_Value_Case] FOREIGN KEY ([Case_ID])
+      REFERENCES [Management].[Case]([Case_Id]),
+   CONSTRAINT [fk_Element_Value_Referral] FOREIGN KEY ([Referral_ID])
+      REFERENCES [Management].[Referral]([Referral_Id]),
+   CONSTRAINT [fk_Element_Value_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_Id]),
+   CONSTRAINT [fk_Element_Value_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_Id])
 )
 GO

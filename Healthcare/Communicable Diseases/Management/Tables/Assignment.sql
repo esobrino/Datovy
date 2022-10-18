@@ -9,10 +9,8 @@
    [Status_Code_ID]        VARCHAR (30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
-   -- assigned concept (see Generic.Element_Group)
-   [Concept_ID]            VARCHAR(30) NULL,
-
-   -- assigned item
+   -- assigned item (assign only one)
+   [Entity_Type_ID]        VARCHAR(30) NULL,
    [Case_ID]               VARCHAR(30) NULL,
    [Referral_ID]           VARCHAR(30) NULL,
    [Contact_ID]            VARCHAR(30) NULL,
@@ -35,6 +33,15 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC),
-   CONSTRAINT [pk_Assignment_Concept] FOREIGN KEY ([Concept_ID])
-      REFERENCES [Generic].[Element_Group](Group_ID)
+
+   CONSTRAINT [fk_Element_Value_Entity] FOREIGN KEY ([Entity_Type_ID])
+      REFERENCES [Entity].[Entity_Type]([Type_ID]),
+   CONSTRAINT [fk_Assignment_Case] FOREIGN KEY ([Case_ID])
+      REFERENCES [Management].[Case]([Case_Id]),
+   CONSTRAINT [fk_Assignment_Referral] FOREIGN KEY ([Referral_ID])
+      REFERENCES [Management].[Referral]([Referral_Id]),
+   CONSTRAINT [fk_Assignment_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_Id]),
+   CONSTRAINT [fk_Assignment_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_Id])
 )
