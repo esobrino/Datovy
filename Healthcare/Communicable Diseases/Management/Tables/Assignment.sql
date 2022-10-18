@@ -14,7 +14,7 @@
 
    -- assigned item
    [Case_ID]               VARCHAR(30) NULL,
-   [Refferal_ID]           VARCHAR(30) NULL,
+   [Referral_ID]           VARCHAR(30) NULL,
    [Contact_ID]            VARCHAR(30) NULL,
    [Person_ID]             VARCHAR(30) NULL,
 
