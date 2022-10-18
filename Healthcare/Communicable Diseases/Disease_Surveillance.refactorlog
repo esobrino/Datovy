@@ -42,4 +42,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Effective_DateTime" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="ece3d268-c5fd-4067-8d41-09647bd2b527" ChangeDateTime="10/18/2022 15:37:43">
+    <Property Name="ElementName" Value="[Generic].[Element_Group].[Type_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Generic].[Element_Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Group_ID" />
+  </Operation>
 </Operations>

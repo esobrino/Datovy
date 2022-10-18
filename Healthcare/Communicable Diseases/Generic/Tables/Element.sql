@@ -17,7 +17,7 @@
 CREATE TABLE [Generic].[Element]
 (
    [Element_ID]            VARCHAR(30) NOT NULL,
-   [Type_ID]               VARCHAR(30) NOT NULL,
+   [Group_ID]              VARCHAR(30) NOT NULL,
    [Label_Text]            VARCHAR(128),
 
    [Sequence_No]           INT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE [Generic].[Element]
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Element] PRIMARY KEY CLUSTERED ([Element_ID] ASC),
-   CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Type_ID])
-      REFERENCES [Generic].[Element_Type]([Type_ID]),
+   CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Group_ID])
+      REFERENCES [Generic].[Element_Group]([Group_ID]),
    CONSTRAINT [fk_Element_Value_Type] FOREIGN KEY ([Value_Type_ID])
       REFERENCES [Generic].[Element_Value_Type] ([Type_ID])
 )

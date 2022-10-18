@@ -201,9 +201,10 @@
     <Build Include="Application\Tables\App_Message_Code.sql" />
     <Build Include="Security\Generic.sql" />
     <Build Include="Generic\Tables\Element.sql" />
-    <Build Include="Generic\Tables\Element_Type.sql" />
+    <Build Include="Generic\Tables\Element_Group.sql" />
     <Build Include="Generic\Tables\Element_Value.sql" />
     <Build Include="Generic\Tables\Element_Value_Type.sql" />
+    <Build Include="Management\Tables\Assignment.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Core\Tables\Activity_Reason_Code.sql" />
