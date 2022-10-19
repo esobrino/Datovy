@@ -131,7 +131,7 @@
     <Build Include="Management\Tables\Flag.sql" />
     <Build Include="Management\Tables\Case.sql" />
     <Build Include="Management\Tables\Disposition.sql" />
-    <Build Include="Management\Tables\Case_Priority_Code.sql" />
+    <Build Include="Management\Tables\Priority_Code.sql" />
     <Build Include="Management\Tables\Case_Type.sql" />
     <Build Include="Entity\Tables\Contact_Emergency.sql" />
     <Build Include="Management\Tables\Flag_Code.sql" />
@@ -157,7 +157,7 @@
     <Build Include="Entity\Tables\Name.sql" />
     <Build Include="Entity\Tables\Race_Code.sql" />
     <Build Include="Entity\Tables\Ethnicity_Code.sql" />
-    <Build Include="Management\Tables\Class_Status_Code.sql" />
+    <Build Include="Management\Tables\Status_Code.sql" />
     <Build Include="Management\Tables\Age_Unit_Code.sql" />
     <Build Include="Healthcare\Tables\Lab_Test_Type.sql" />
     <Build Include="Healthcare\Tables\Specimen_Type.sql" />

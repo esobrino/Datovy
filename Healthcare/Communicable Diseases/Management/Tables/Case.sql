@@ -38,7 +38,7 @@
    CONSTRAINT [fk_Case_Case_Disposition] FOREIGN KEY ([Disposition_ID]) 
       REFERENCES [Management].[Disposition] ([Disposition_ID]),
    CONSTRAINT [fk_Case_CasePriorityCode] FOREIGN KEY ([Priority_Code_ID]) 
-      REFERENCES [Management].[Case_Priority_Code] ([Code_ID]),
+      REFERENCES [Management].[Priority_Code] ([Code_ID]),
    CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Case_Type_ID]) 
       REFERENCES [Management].[Case_Type] ([Type_ID]),
    CONSTRAINT [fk_Case_Medical_Condition] FOREIGN KEY ([Medical_Condition_ID]) 
@@ -50,7 +50,7 @@
    CONSTRAINT [fk_Case_Person] FOREIGN KEY ([Person_ID]) 
       REFERENCES [Entity].[Person] ([Person_ID]),
    CONSTRAINT [fk_Case_Class_Status] FOREIGN KEY ([Class_Status_Code_ID]) 
-      REFERENCES [Management].[Class_Status_Code] ([Code_ID]),
+      REFERENCES [Management].[Status_Code] ([Code_ID]),
    CONSTRAINT [fk_Case_Profile_Group] FOREIGN KEY ([Profile_ID]) 
       REFERENCES [Surveillance].[Profile] ([Profile_ID]),
    CONSTRAINT [fk_Case_Provider] FOREIGN KEY ([Provider_ID]) 
