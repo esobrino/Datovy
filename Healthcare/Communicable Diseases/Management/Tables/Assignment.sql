@@ -9,12 +9,14 @@
    [Status_Code_ID]        VARCHAR (30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
-   -- assigned concept (see Generic.Element_Group)
-   [Concept_ID]            VARCHAR(30) NULL,
-
    -- assigned item
    [Case_ID]               VARCHAR(30) NULL,
    [Referral_ID]           VARCHAR(30) NULL,
+
+   -- external assigned concept (see Generic.Element.Element_ID)
+   [Concept_ID]            VARCHAR(30) NULL,
+
+   -- external references
    [Contact_ID]            VARCHAR(30) NULL,
    [Person_ID]             VARCHAR(30) NULL,
 
@@ -34,7 +36,5 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC),
-   CONSTRAINT [pk_Assignment_Concept] FOREIGN KEY ([Concept_ID])
-      REFERENCES [Generic].[Element_Group](Group_ID)
+   CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC)
 )

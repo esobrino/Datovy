@@ -219,6 +219,9 @@
     <Build Include="Generic\Tables\Entity.sql" />
     <Build Include="Generic\Tables\Entity_Type.sql" />
     <Build Include="Management\Tables\Assignment_Link.sql" />
+    <Build Include="Security\Clinical.sql" />
+    <Build Include="Security\Provider.sql" />
+    <Build Include="Security\Laboratory.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
