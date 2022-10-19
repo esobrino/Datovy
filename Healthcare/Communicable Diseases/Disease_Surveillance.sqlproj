@@ -186,12 +186,9 @@
     <Build Include="Application\Tables\App_Message_Code.sql" />
     <Build Include="Security\Generic.sql" />
     <Build Include="Generic\Tables\Element.sql" />
-    <Build Include="Generic\Tables\Entity.sql" />
     <Build Include="Generic\Tables\Element_Value.sql" />
     <Build Include="Generic\Tables\Element_Value_Type.sql" />
     <Build Include="Management\Tables\Assignment.sql" />
-    <Build Include="Management\Tables\Assignment_Link.sql" />
-    <Build Include="Generic\Tables\Entity_Type.sql" />
     <Build Include="Entity\Tables\Media.sql" />
     <Build Include="Entity\Tables\Media_Type.sql" />
     <Build Include="Entity\Tables\Note.sql" />
@@ -219,6 +216,9 @@
     <Build Include="Security\Article.sql" />
     <Build Include="Entity\Tables\Item_Entity_Link.sql" />
     <Build Include="Action\Tables\Schedule_Event.sql" />
+    <Build Include="Generic\Tables\Entity.sql" />
+    <Build Include="Generic\Tables\Entity_Type.sql" />
+    <Build Include="Management\Tables\Assignment_Link.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

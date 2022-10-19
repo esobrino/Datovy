@@ -52,7 +52,7 @@ CREATE TABLE [Generic].[Element]
 
    CONSTRAINT [pk_Element] PRIMARY KEY CLUSTERED ([Element_ID] ASC),
    CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Group_ID])
-      REFERENCES [Generic].[Element_Group]([Group_ID]),
+      REFERENCES [Generic].[Entity]([Entity_ID]),
    CONSTRAINT [fk_Element_Value_Type] FOREIGN KEY ([Value_Type_ID])
       REFERENCES [Generic].[Element_Value_Type] ([Type_ID])
 )
