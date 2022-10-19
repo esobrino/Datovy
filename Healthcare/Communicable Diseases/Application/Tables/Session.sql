@@ -5,8 +5,25 @@
 
    [Referral_ID]           VARCHAR(30) NULL,
    [Case_ID]               VARCHAR(30) NULL,
-   [Officier_ID]           VARCHAR(30) NULL,
+
+   
+    -- Officer relationship 
+   [Officer_ID]           VARCHAR(30) NULL,
+  
+   CONSTRAINT fk_Officer_Session FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
+
+    -- Contact relationship
    [Contact_ID]            VARCHAR(30) NULL,
+
+    CONSTRAINT fk_Officer_Contact FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_ID]),
+
+    -- Session relationship 
+   [Token_ID]              VARCHAR(40) NULL,
+  
+   CONSTRAINT fk_AccessToken_Session FOREIGN KEY ([Token_ID])
+      REFERENCES [Application].[AccessToken]([Token_ID]),
 
    -- record management
    [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',

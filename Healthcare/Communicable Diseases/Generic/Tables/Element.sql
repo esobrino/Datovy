@@ -16,43 +16,43 @@
 
 CREATE TABLE [Generic].[Element]
 (
-   [Entity_ID]              VARCHAR(30) NOT NULL,
-   [Element_ID]             VARCHAR(30) NOT NULL,
-   [Name]                   VARCHAR(128),
+   [Element_ID]            VARCHAR(30) NOT NULL,
+   [Group_ID]              VARCHAR(30) NOT NULL,
+   [Label_Text]            VARCHAR(128),
 
-   [Sequence_No]            INT NULL,
-   [Period_To_Comply]       VARCHAR(30) NULL DEFAULT('P0Y0M0DT0H0M0S'),
-   [Required_Code_ID]       VARCHAR(30) NULL,
-   [Value_Type_ID]          VARCHAR(30) NULL,
+   [Sequence_No]           INT NULL,
+   [Period_To_Comply]      VARCHAR(30) NULL DEFAULT('P0Y0M0DT0H0M0S'),
+   [Required_Code_ID]      VARCHAR(30) NULL,
+   [Value_Type_ID]         VARCHAR(30) NULL,
 
    -- identify the code set that supports the value (if any)
-   [Code_Type_ID]           VARCHAR(30) NULL,
+   [Code_Type_ID]          VARCHAR(30) NULL,
 
    -- default values, or valid range details
-   [Checked]                BIT,
-   [Start_Date]             DATE,
-   [End_Date]               DATE,
-   [Start_Value]            DECIMAL,
-   [End_Value]              DECIMAL,
-   [Value_Numeric]          DECIMAL,
-   [Value_Text]             VARCHAR(128),
+   [Checked]               BIT,
+   [Start_Date]            DATE,
+   [End_Date]              DATE,
+   [Start_Value]           DECIMAL,
+   [End_Value]             DECIMAL,
+   [Value_Numeric]         DECIMAL,
+   [Value_Text]            VARCHAR(128),
 
    -- record management
-   [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]          VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]    VARCHAR(30) NULL,
-   [Sequence_Number]        INTEGER NULL DEFAULT 0,
+   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
-   [Version_Number]         VARCHAR(20) NULL DEFAULT '0',
-   [Created_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Updated_Last_DateTime]  DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
-   [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
+   [Version_Number]        VARCHAR(20) NULL DEFAULT '0',
+   [Created_DateTime]      DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Updated_Last_DateTime] DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
+   [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Element] PRIMARY KEY CLUSTERED ([Element_ID] ASC),
-   CONSTRAINT [fk_Element_Entity] FOREIGN KEY ([Entity_ID])
-      REFERENCES [Generic].[Entity]([Entity_ID]),
+   CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Group_ID])
+      REFERENCES [Generic].[Element_Group]([Group_ID]),
    CONSTRAINT [fk_Element_Value_Type] FOREIGN KEY ([Value_Type_ID])
       REFERENCES [Generic].[Element_Value_Type] ([Type_ID])
 )
