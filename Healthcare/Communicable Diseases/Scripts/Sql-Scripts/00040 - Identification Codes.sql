@@ -5,13 +5,13 @@ INSERT INTO Entity.Identification_Type (Type_ID, Description, Tags) VALUES
    ('password-num',       'Passport Number', '')
 GO
 
-INSERT INTO Core.Uri_Type (Type_ID, Description) VALUES
+INSERT INTO Entity.Uri_Type (Type_ID, Description) VALUES
    ('person-email',   'Personal Email'),
    ('person-website', 'Personal Web Site'),
    ('work-email',     'Work Email')
 GO
 
-INSERT INTO Core.Media_Type (Type_ID, Description) VALUES
+INSERT INTO Entity.Media_Type (Type_ID, Description) VALUES
    ('unknown',   'Not Defined')
 GO
 
