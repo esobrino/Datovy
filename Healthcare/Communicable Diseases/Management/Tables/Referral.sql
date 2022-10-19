@@ -6,8 +6,9 @@
 
    [Case_ID]               VARCHAR(30) NULL,
    [Profile_ID]            VARCHAR(30) NULL,
-
    [Alternate_ID]          VARCHAR(40) NULL,
+
+   -- external reference ID
    [Provider_ID]           VARCHAR(30) NULL,
    [Activity_ID]           VARCHAR(30) NULL,
    
@@ -28,8 +29,6 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Referral] PRIMARY KEY CLUSTERED ([Referral_ID] ASC),
-   CONSTRAINT [fk_Referral_Activity] FOREIGN KEY ([Activity_ID]) 
-      REFERENCES [Core].[Activity] ([Activity_ID]),
    CONSTRAINT [fk_Referral_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID]),
    CONSTRAINT [fk_Referral_Profile] FOREIGN KEY ([Profile_ID]) 

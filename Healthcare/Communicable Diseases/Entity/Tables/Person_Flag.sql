@@ -23,7 +23,7 @@
 
    CONSTRAINT [pk_Person_Flag] PRIMARY KEY CLUSTERED ([Person_Flag_ID] ASC),
    CONSTRAINT [fk_Person_Flag_FlagCode] FOREIGN KEY ([Code_ID]) 
-      REFERENCES [Core].[Flag_Code] ([Code_ID]),
+      REFERENCES [Entity].[Flag_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Flag_Person] FOREIGN KEY ([Person_ID])
       REFERENCES [Entity].[Person] ([Person_ID])
 );

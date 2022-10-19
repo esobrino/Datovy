@@ -1,7 +1,6 @@
 ﻿CREATE TABLE [Healthcare].[Laboratory] (
    [Laboratory_ID]         VARCHAR (30) NOT NULL,
    [Alternate_ID]          VARCHAR (40) NULL,
-   [Activity_ID]           VARCHAR (30) NULL,
    [Lab_Code_ID]           VARCHAR (30) NULL,
    [Lab_Name]              VARCHAR (80) NULL,
    [Type_ID]               VARCHAR (30) NULL,
@@ -10,6 +9,9 @@
    
    [Status_Code_ID]        VARCHAR(30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
+
+   -- external reference
+   [Activity_ID]           VARCHAR (30) NULL,
 
    -- record management
    [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -25,8 +27,6 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Laboratory] PRIMARY KEY CLUSTERED ([Laboratory_ID] ASC),
-   CONSTRAINT [fk_Laboratory_Activity] FOREIGN KEY ([Activity_ID]) 
-      REFERENCES [Core].[Activity] ([Activity_ID]),
    CONSTRAINT [fk_Laboatory_Type] FOREIGN KEY ([Type_ID])
       REFERENCES [Healthcare].[Lab_Type] ([Type_ID])
 );

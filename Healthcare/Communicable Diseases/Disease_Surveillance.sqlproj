@@ -57,8 +57,8 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Core" />
-    <Folder Include="Core\Tables" />
+    <Folder Include="Article" />
+    <Folder Include="Article\Tables" />
     <Folder Include="Healthcare" />
     <Folder Include="Healthcare\Tables" />
     <Folder Include="Management" />
@@ -87,15 +87,13 @@
     <Folder Include="Message\Sequences" />
     <Folder Include="Generic" />
     <Folder Include="Generic\Tables" />
+    <Folder Include="Geography" />
+    <Folder Include="Geography\Tables" />
+    <Folder Include="Action" />
+    <Folder Include="Action\Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Core\Tables\Activity.sql" />
-    <Build Include="Core\Tables\Activity_Disposition.sql" />
-    <Build Include="Core\Tables\Event.sql" />
-    <Build Include="Core\Tables\Item.sql" />
-    <Build Include="Core\Tables\Item_Entity_Link.sql" />
-    <Build Include="Core\Tables\Location.sql" />
-    <Build Include="Core\Tables\Participant.sql" />
+    <Build Include="Article\Tables\Item.sql" />
     <Build Include="Healthcare\Tables\Immunization.sql" />
     <Build Include="Healthcare\Tables\Laboratory.sql" />
     <Build Include="Healthcare\Tables\Lab_Result.sql" />
@@ -105,7 +103,6 @@
     <Build Include="Healthcare\Tables\Treatment.sql" />
     <Build Include="Healthcare\Tables\Vitals.sql" />
     <None Include="Scripts\Testing\Show Properties.sql" />
-    <Build Include="Security\Core.sql" />
     <Build Include="Security\Healthcare.sql" />
     <Build Include="Security\Helper.sql" />
     <Build Include="Security\Surveillance.sql" />
@@ -137,10 +134,7 @@
     <Build Include="Management\Tables\Case_Priority_Code.sql" />
     <Build Include="Management\Tables\Case_Type.sql" />
     <Build Include="Entity\Tables\Contact_Emergency.sql" />
-    <Build Include="Core\Tables\Activity_Priority_Code.sql" />
-    <Build Include="Core\Tables\Participant_Type.sql" />
     <Build Include="Management\Tables\Case_Flag_Code.sql" />
-    <Build Include="Core\Tables\Role_Code.sql" />
     <Build Include="Entity\Tables\Device_Type.sql" />
     <Build Include="Healthcare\Tables\Dosage_Form_Code.sql" />
     <Build Include="Healthcare\Tables\Body_Position_Code.sql" />
@@ -151,18 +145,9 @@
     <Build Include="Application\Tables\Session.sql" />
     <Build Include="Management\Tables\Referral.sql" />
     <Build Include="Management\Tables\Referral_Type.sql" />
-    <Build Include="Management\Tables\Schedule_Event.sql" />
     <Build Include="Entity\Tables\Officer.sql" />
     <Build Include="Entity\Tables\Officer_Type.sql" />
-    <Build Include="Core\Tables\Status_Code.sql" />
-    <Build Include="Core\Tables\Media.sql" />
-    <Build Include="Core\Tables\Media_Type.sql" />
-    <Build Include="Core\Tables\Note.sql" />
-    <Build Include="Core\Tables\Note_Type.sql" />
-    <Build Include="Core\Tables\Uri_Type.sql" />
-    <Build Include="Core\Tables\Uri.sql" />
     <Build Include="Entity\Tables\Organization_Type.sql" />
-    <Build Include="Core\Tables\Flag_Code.sql" />
     <None Include="Scripts\Sql-Scripts\00010 - Data Initialization.sql" />
     <None Include="Scripts\Sql-Scripts\00040 - Identification Codes.sql" />
     <Build Include="Application\Sequences\ID_Number.sql" />
@@ -193,7 +178,7 @@
     <Build Include="Entity\Tables\Entity_Type.sql" />
     <Build Include="Entity\Tables\Employment.sql" />
     <Build Include="Entity\Tables\Employment_Type.sql" />
-    <Build Include="Core\Tables\Item_Type.sql" />
+    <Build Include="Article\Tables\Item_Type.sql" />
     <Build Include="Entity\Tables\Gender_Identity_Code.sql" />
     <Build Include="Entity\Tables\Sexual_Orientation_Code.sql" />
     <Build Include="Surveillance\Tables\Report_Type.sql" />
@@ -207,12 +192,40 @@
     <Build Include="Management\Tables\Assignment.sql" />
     <Build Include="Management\Tables\Assignment_Link.sql" />
     <Build Include="Generic\Tables\Entity_Type.sql" />
+    <Build Include="Entity\Tables\Media.sql" />
+    <Build Include="Entity\Tables\Media_Type.sql" />
+    <Build Include="Entity\Tables\Note.sql" />
+    <Build Include="Entity\Tables\Note_Type.sql" />
+    <Build Include="Security\Geography.sql" />
+    <Build Include="Geography\Tables\Location.sql" />
+    <Build Include="Geography\Tables\Media.sql" />
+    <Build Include="Geography\Tables\Media_Type.sql" />
+    <Build Include="Geography\Tables\Note.sql" />
+    <Build Include="Geography\Tables\Note_Type.sql" />
+    <Build Include="Geography\Tables\Location_Type.sql" />
+    <Build Include="Security\Action.sql" />
+    <Build Include="Action\Tables\Activity.sql" />
+    <Build Include="Action\Tables\Party.sql" />
+    <Build Include="Action\Tables\Party_Type.sql" />
+    <Build Include="Action\Tables\Role_Code.sql" />
+    <Build Include="Action\Tables\Media.sql" />
+    <Build Include="Action\Tables\Media_Type.sql" />
+    <Build Include="Action\Tables\Note.sql" />
+    <Build Include="Action\Tables\Note_Type.sql" />
+    <Build Include="Entity\Tables\Status_Code.sql" />
+    <Build Include="Entity\Tables\Uri_Type.sql" />
+    <Build Include="Entity\Tables\Uri.sql" />
+    <Build Include="Entity\Tables\Flag_Code.sql" />
+    <Build Include="Security\Article.sql" />
+    <Build Include="Entity\Tables\Item_Entity_Link.sql" />
+    <Build Include="Action\Tables\Schedule_Event.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Core\Tables\Activity_Reason_Code.sql" />
-    <Build Include="Core\Tables\Activity_Type.sql" />
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
     <Build Include="Surveillance\Tables\Profile_Type.sql" />
+    <Build Include="Action\Tables\Disposition.sql" />
+    <Build Include="Action\Tables\Priority_Code.sql" />
+    <Build Include="Action\Tables\Reason_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\PowerScript\dbinit.ps1" />
@@ -225,5 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Disease_Surveillance.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Action\Tables\Activity_Type.sql" />
+    <Build Include="Action\Tables\Event.sql" />
   </ItemGroup>
 </Project>

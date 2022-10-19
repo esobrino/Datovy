@@ -15,6 +15,8 @@
 
    -- entity relationship (only one should be instantiated)
    [Entity_Type_ID]        VARCHAR(30) NULL,
+   [Reference_ID]          VARCHAR(30) NULL,
+
    [Person_ID]             VARCHAR(30) NULL,
    [Organization_ID]       VARCHAR(30) NULL,
    [Officer_ID]            VARCHAR(30) NULL,

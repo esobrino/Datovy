@@ -11,20 +11,9 @@
    [Status_Code_ID]          VARCHAR(30) NULL,
    [Status_DateTime]         DATETIMEOFFSET NULL,
 
-   -- management relationship 
-   [Case_ID]               VARCHAR (30) NULL,
-
-   CONSTRAINT [fk_Communication_Case] FOREIGN KEY ([Case_ID])
-      REFERENCES [Management].[Case] ([Case_ID]),
-
-   -- healthcare relationship 
-   [Provider_ID]           VARCHAR (30) NULL,
-
-   CONSTRAINT [fk_Communication_Provider] FOREIGN KEY ([Provider_ID])
-      REFERENCES [Healthcare].[Provider] ([Provider_ID]),
-
    -- entity relationship (only one should be instantiated)
    [Entity_Type_ID]        VARCHAR(30) NULL,
+
    [Person_ID]             VARCHAR(30) NULL,
    [Organization_ID]       VARCHAR(30) NULL,
    [Officer_ID]            VARCHAR(30) NULL,

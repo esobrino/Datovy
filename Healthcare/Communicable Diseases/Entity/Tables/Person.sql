@@ -2,6 +2,7 @@
    [Person_ID]                       VARCHAR(30)  NOT NULL,
    [Alternate_ID]                    VARCHAR(40)  NULL,
    [Type_ID]                         VARCHAR(30)  NULL,
+
    [Birth_DateTime]                  DATETIMEOFFSET NULL,
    [Birth_Date]                      DATE NULL,
    [Birth_Date_Text]                 VARCHAR(50)  NULL,
@@ -63,6 +64,13 @@
    CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID])
       REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID])
 );
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'Birth Location ID is a reference to a location detailed elsewhere', 
+   @level0type = N'SCHEMA',   @level0name = N'Entity',
+   @level1type = N'TABLE',    @level1name = N'Person',
+   @level2type = N'COLUMN',   @level2name = 'Birth_Location_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
