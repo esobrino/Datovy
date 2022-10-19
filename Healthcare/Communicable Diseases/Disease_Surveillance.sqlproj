@@ -128,13 +128,13 @@
     <Build Include="Entity\Tables\Contact_Type.sql" />
     <Build Include="Security\Application.sql" />
     <Build Include="Application\Tables\AccessToken.sql" />
-    <Build Include="Management\Tables\Case_Flag.sql" />
+    <Build Include="Management\Tables\Flag.sql" />
     <Build Include="Management\Tables\Case.sql" />
-    <Build Include="Management\Tables\Case_Disposition.sql" />
+    <Build Include="Management\Tables\Disposition.sql" />
     <Build Include="Management\Tables\Case_Priority_Code.sql" />
     <Build Include="Management\Tables\Case_Type.sql" />
     <Build Include="Entity\Tables\Contact_Emergency.sql" />
-    <Build Include="Management\Tables\Case_Flag_Code.sql" />
+    <Build Include="Management\Tables\Flag_Code.sql" />
     <Build Include="Entity\Tables\Device_Type.sql" />
     <Build Include="Healthcare\Tables\Dosage_Form_Code.sql" />
     <Build Include="Healthcare\Tables\Body_Position_Code.sql" />

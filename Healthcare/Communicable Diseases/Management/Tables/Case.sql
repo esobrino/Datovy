@@ -36,7 +36,7 @@
 
    CONSTRAINT [pk_Case] PRIMARY KEY CLUSTERED ([Case_ID] ASC),
    CONSTRAINT [fk_Case_Case_Disposition] FOREIGN KEY ([Disposition_ID]) 
-      REFERENCES [Management].[Case_Disposition] ([Disposition_ID]),
+      REFERENCES [Management].[Disposition] ([Disposition_ID]),
    CONSTRAINT [fk_Case_CasePriorityCode] FOREIGN KEY ([Priority_Code_ID]) 
       REFERENCES [Management].[Case_Priority_Code] ([Code_ID]),
    CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Case_Type_ID]) 
