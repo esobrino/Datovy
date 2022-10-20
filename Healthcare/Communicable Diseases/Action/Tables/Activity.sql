@@ -52,10 +52,3 @@ EXECUTE sp_addextendedproperty
    @level0type = N'SCHEMA',   @level0name = N'Action', 
    @level1type = N'TABLE',    @level1name = N'Activity';
 GO
-
-EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Laboratory Results', 
-   @level0type = N'SCHEMA',   @level0name = N'Action', 
-   @level1type = N'TABLE',    @level1name = N'Activity', 
-   @level2type = N'COLUMN',   @level2name = N'Type_ID';
-
