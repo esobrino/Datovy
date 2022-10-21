@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [Healthcare].[Vitals] (
-   [Vitals_ID]              VARCHAR(30) NOT NULL,
+   [Vitals_ID]              VARCHAR(40) NOT NULL,
    [Profile_Code_ID]        VARCHAR(30) NULL,
-   [Subject_ID]             VARCHAR(30) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
    [Subject_Type_ID]        VARCHAR(30) NULL,
-   [BodySiteCodeID]         VARCHAR(30) NULL,
-   [BodyPositionCodeID]     VARCHAR(30) NULL,
+   [Body_Site_Code_ID]      VARCHAR(30) NULL,
+   [Body_Position_Code_ID]  VARCHAR(30) NULL,
    [Device_Code_ID]         VARCHAR(30) NULL,
    [Method]                 VARCHAR(50) NULL,
    [Unit_Code_ID]           VARCHAR(30) NULL,
@@ -15,7 +15,7 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external reference
-   [Party_ID]               VARCHAR(30) NULL,
+   [Party_ID]               VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -31,9 +31,9 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Vita] PRIMARY KEY CLUSTERED ([Vitals_ID] ASC),
-   CONSTRAINT [fk_Vitals_BodyPositionCode] FOREIGN KEY ([BodyPositionCodeID]) 
+   CONSTRAINT [fk_Vitals_BodyPositionCode] FOREIGN KEY ([Body_Position_Code_ID]) 
       REFERENCES [Healthcare].[Body_Position_Code] ([Code_ID]),
-   CONSTRAINT [fk_Vitals_BodySiteCode] FOREIGN KEY ([BodySiteCodeID]) 
+   CONSTRAINT [fk_Vitals_BodySiteCode] FOREIGN KEY ([Body_Site_Code_ID]) 
       REFERENCES [Healthcare].[Body_Site_Code] ([Code_ID]),
    CONSTRAINT [fk_Vitals_DeviceCode] FOREIGN KEY ([Device_Code_ID])
       REFERENCES [Healthcare].[Device_Code] ([Code_ID]),

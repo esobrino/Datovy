@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Healthcare].[Immunization] (
-   [Immunization_ID]        VARCHAR (30)  NOT NULL,
+   [Immunization_ID]        VARCHAR (40)  NOT NULL,
    [Type_ID]                VARCHAR (30)  NULL,
    [Administered_DateTime]  DATETIMEOFFSET   NULL,
    [Dosage_Series_Number]   VARCHAR (20)  NULL,
@@ -12,8 +12,8 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external references
-   [Activity_ID]            VARCHAR (30)  NULL,
-   [Organization_ID]        VARCHAR (30)  NULL,
+   [Activity_ID]            VARCHAR (40)  NULL,
+   [Organization_ID]        VARCHAR (40)  NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',

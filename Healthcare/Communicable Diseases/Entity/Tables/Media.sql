@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Entity].[Media]
 (
-   [Media_ID]                VARCHAR(30) NOT NULL,
+   [Media_ID]                VARCHAR(40) NOT NULL,
    [Alternate_ID]            VARCHAR(60) NULL,
 
    [Type_ID]                 VARCHAR(30) NULL,

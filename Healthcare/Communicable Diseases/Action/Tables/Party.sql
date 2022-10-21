@@ -7,8 +7,8 @@
 
    -- external references
    [Contact_ID]             VARCHAR (30) NULL,
-   [Activity_ID]            VARCHAR (30) NULL,
-   [Person_ID]              VARCHAR (30) NULL,
+   [Activity_ID]            VARCHAR (40) NULL,
+   [Person_ID]              VARCHAR (40) NULL,
    
    [Status_Code_ID]         VARCHAR (30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,

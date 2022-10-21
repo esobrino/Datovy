@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Action].[Media]
 (
-	[Entity_ID]               VARCHAR(30) NOT NULL,
-   [Media_ID]                VARCHAR(30) NOT NULL,
+	[Entity_ID]               VARCHAR(40) NOT NULL,
+   [Media_ID]                VARCHAR(40) NOT NULL,
    [Alternate_ID]            VARCHAR(60) NULL,
    [Type_ID]                 VARCHAR(30) NULL,
    [Category_Text]           VARCHAR(80),

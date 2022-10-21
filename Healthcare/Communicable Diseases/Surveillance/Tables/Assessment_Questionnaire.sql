@@ -1,14 +1,14 @@
 ﻿CREATE TABLE [Surveillance].[Assessment_Questionnaire] (
-   [Questionnaire_ID]      VARCHAR(30)  NOT NULL,
+   [Questionnaire_ID]      VARCHAR(40)  NOT NULL,
    [Questionnaire_No]      INT NULL,
    [Title]                 VARCHAR(256) NULL,
    [Description]           VARCHAR(256) NULL,
-   [Assessment_ID]         VARCHAR(30)  NULL,
+   [Assessment_ID]         VARCHAR(40)  NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Entity].[Contact] (
-   [Contact_ID]            VARCHAR(30)  NOT NULL,
+   [Contact_ID]            VARCHAR(40)  NOT NULL,
    [Alternate_ID]          VARCHAR(40)  NULL,
    [Type_ID]               VARCHAR(30)  NULL,
 
@@ -18,9 +18,9 @@
 
    -- entity relationship (only one should be instantiated)
    [Entity_Type_ID]        VARCHAR(30) NULL,
-   [Person_ID]             VARCHAR(30) NULL,
-   [Organization_ID]       VARCHAR(30) NULL,
-   [Officer_ID]            VARCHAR(30) NULL,
+   [Person_ID]             VARCHAR(40) NULL,
+   [Organization_ID]       VARCHAR(40) NULL,
+   [Officer_ID]            VARCHAR(40) NULL,
 
    CONSTRAINT [fk_Contact_Entity_Type] FOREIGN KEY ([Entity_Type_ID])
       REFERENCES [Entity].[Entity_Type]([Type_ID]),
@@ -32,9 +32,9 @@
       REFERENCES [Entity].[Officer]([Officer_ID]),
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

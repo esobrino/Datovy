@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Geography].[Location] (
-   [Location_ID]            VARCHAR(30) NOT NULL,
+   [Location_ID]            VARCHAR(40) NOT NULL,
    [Alternate_ID]           VARCHAR(40) NULL,
    [Alternate_Type]         VARCHAR(20) NULL, 
 

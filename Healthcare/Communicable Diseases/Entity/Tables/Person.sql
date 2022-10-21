@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Entity].[Person] (
-   [Person_ID]                       VARCHAR(30)  NOT NULL,
+   [Person_ID]                       VARCHAR(40)  NOT NULL,
    [Alternate_ID]                    VARCHAR(40)  NULL,
    [Type_ID]                         VARCHAR(30)  NULL,
 
@@ -34,9 +34,9 @@
    [Status_DateTime]                 DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

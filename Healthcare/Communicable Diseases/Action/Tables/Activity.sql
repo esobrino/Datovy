@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [Action].[Activity] (
-   [Activity_ID]            VARCHAR(30)  NOT NULL,
+   [Activity_ID]            VARCHAR(40)  NOT NULL,
    [Alternate_ID]           VARCHAR(40)  NULL,
    [Type_ID]                VARCHAR(30)  NULL,
-   [Disposition_ID]         VARCHAR(30)  NULL,
+   [Disposition_ID]         VARCHAR(40)  NULL,
 
    [Name]                   VARCHAR(80)  NULL,
    [Description]            VARCHAR(256) NULL,
@@ -18,14 +18,14 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external references
-   [Case_ID]                VARCHAR(30)  NULL,
-   [Location_ID]            VARCHAR(30)  NULL,
-   [Contact_ID]             VARCHAR(30)  NULL, 
+   [Case_ID]                VARCHAR(40)  NULL,
+   [Location_ID]            VARCHAR(40)  NULL,
+   [Contact_ID]             VARCHAR(40)  NULL, 
 
    -- record management
-   [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]          VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]    VARCHAR(30) NULL,
+   [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]    VARCHAR(40) NULL,
    [Sequence_Number]        INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

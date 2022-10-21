@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Entity].[Person_Death] (
-   [Person_Death_ID]       VARCHAR(30) NOT NULL,
-   [Person_ID]             VARCHAR(30) NULL,
+   [Person_Death_ID]       VARCHAR(40) NOT NULL,
+   [Person_ID]             VARCHAR(40) NULL,
    [Source_Text]           VARCHAR(256) NULL,
    [Death_Date]            DATETIME2(7) NULL,
    [Death_DateTime]        DATETIMEOFFSET NULL,
@@ -11,9 +11,9 @@
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

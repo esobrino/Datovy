@@ -1,12 +1,12 @@
 ﻿CREATE TABLE [Surveillance].[Profile_Condition] (
-   [Profile_Condition_ID]  VARCHAR(30) NOT NULL,
-   [Profile_ID]            VARCHAR(30) NULL,
+   [Profile_Condition_ID]  VARCHAR(40) NOT NULL,
+   [Profile_ID]            VARCHAR(40) NULL,
    [Condition_Code_ID]     VARCHAR(30) NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [Action].[Note]
 (
-   [Note_ID]                VARCHAR(30) NOT NULL,
+   [Note_ID]                VARCHAR(40) NOT NULL,
    [Note_Type_ID]           VARCHAR(30) NULL,
    [Note_Text]              VARCHAR(4096) NOT NULL,
    [Note_DateTime]          DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),
 
-   [Author_ID]              VARCHAR(30),
+   [Author_ID]              VARCHAR(40),
    [Author_Role_ID]         VARCHAR(30),
    [Author_Name]            VARCHAR(80),
 
@@ -14,8 +14,8 @@
 
    -- entity relationship (only one should be instantiated)
    [Entity_Type_ID]         VARCHAR(30) NULL,
-   [Activity_ID]            VARCHAR(30) NULL,
-   [Event_ID]               VARCHAR(30) NULL,
+   [Activity_ID]            VARCHAR(40) NULL,
+   [Event_ID]               VARCHAR(40) NULL,
 
    CONSTRAINT fk_Note_Entity_Type FOREIGN KEY ([Entity_Type_ID])
       REFERENCES [Entity].[Entity_Type]([Type_ID]),

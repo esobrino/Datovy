@@ -1,39 +1,38 @@
 ﻿CREATE TABLE [Management].[Referral] (
-   [Referral_ID]           VARCHAR(30) NOT NULL,
-   [Referral_Type_ID]      VARCHAR(30) NULL,
-   [Referral_Case_ID]      VARCHAR(30) NULL,
-   [Referral_DateTime]     DATETIMEOFFSET NULL,
+   [Referral_ID]            VARCHAR(40) NOT NULL,
+   [Type_ID]                VARCHAR(30) NULL,
+   [Referral_DateTime]      DATETIMEOFFSET NULL,
 
-   [Case_ID]               VARCHAR(30) NULL,
-   [Profile_ID]            VARCHAR(30) NULL,
-   [Alternate_ID]          VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
+   [Profile_ID]             VARCHAR(40) NULL,
+   [Alternate_ID]           VARCHAR(40) NULL,
 
    -- external reference ID
-   [Provider_ID]           VARCHAR(30) NULL,
-   [Activity_ID]           VARCHAR(30) NULL,
+   [Provider_ID]            VARCHAR(40) NULL,
+   [Activity_ID]            VARCHAR(40) NULL,
    
-   [Status_Code_ID]        VARCHAR(30) NULL,
-   [Status_DateTime]       DATETIMEOFFSET NULL,
+   [Status_Code_ID]         VARCHAR(30) NULL,
+   [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
-   [Sequence_Number]       INTEGER NULL DEFAULT 0,
+   [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]    VARCHAR(40) NULL,
+   [Sequence_Number]        INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
-   [Version_Number]        VARCHAR(20) NULL DEFAULT '0',
-   [Created_DateTime]      DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Updated_Last_DateTime] DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
-   [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
+   [Version_Number]         VARCHAR(20) NULL DEFAULT '0',
+   [Created_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Updated_Last_DateTime]  DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
+   [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Referral] PRIMARY KEY CLUSTERED ([Referral_ID] ASC),
    CONSTRAINT [fk_Referral_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID]),
    CONSTRAINT [fk_Referral_Profile] FOREIGN KEY ([Profile_ID]) 
       REFERENCES [Surveillance].[Profile] ([Profile_ID]),
-   CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Referral_Type_ID]) 
+   CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Referral_Type] ([Type_ID])
 );
 

@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [Entity].[Officer] (
-   [Officer_ID]             VARCHAR(30)  NOT NULL,
+   [Officer_ID]             VARCHAR(40)  NOT NULL,
    [Alternate_ID]           VARCHAR(40)  NULL,
    [Type_ID]                VARCHAR(30)  NULL,
    [Registry_ID]            VARCHAR(40)  NULL,
    [Name]                   VARCHAR(128) NULL,
 
-   [Organization_ID]        VARCHAR(30)  NULL,
-   [Person_ID]              VARCHAR(30)  NULL,
-   [Contact_ID]             VARCHAR(30)  NULL,
+   [Organization_ID]        VARCHAR(40)  NULL,
+   [Person_ID]              VARCHAR(40)  NULL,
+   [Contact_ID]             VARCHAR(40)  NULL,
 
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,

@@ -1,15 +1,16 @@
 ﻿CREATE TABLE [Entity].[Item_Link] (
-   [Item_Link_ID]    VARCHAR (30) NOT NULL,
+   [Item_Link_ID]           VARCHAR(40) NOT NULL,
 
    -- external reference
-   [Item_ID]                VARCHAR(30) NOT NULL,
+   [Item_ID]                VARCHAR(40) NOT NULL,
 
    -- entity relationship (only one should be instantiated)
    [Entity_Type_ID]         VARCHAR(30) NULL,
-   [Person_ID]              VARCHAR(30) NULL,
-   [Organization_ID]        VARCHAR(30) NULL,
-   [Officer_ID]             VARCHAR(30) NULL,
-   [Contact_ID]             VARCHAR(30) NULL,
+
+   [Person_ID]              VARCHAR(40) NULL,
+   [Organization_ID]        VARCHAR(40) NULL,
+   [Officer_ID]             VARCHAR(40) NULL,
+   [Contact_ID]             VARCHAR(40) NULL,
 
    CONSTRAINT [fk_Item_Reference_Link_Entity_Type] FOREIGN KEY ([Entity_Type_ID])
       REFERENCES [Entity].[Entity_Type]([Type_ID]),

@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [Entity].[Employment]
 (
-   [Employment_ID]         VARCHAR(30) NOT NULL,
+   [Employment_ID]         VARCHAR(40) NOT NULL,
 
-   [Employer_ID]           VARCHAR(30) NULL,
-   [Employee_ID]           VARCHAR(30) NULL,
+   [Employer_ID]           VARCHAR(40) NULL,
+   [Employee_ID]           VARCHAR(40) NULL,
 
    [Type_ID]               VARCHAR(30) NULL,
    [Name]                  VARCHAR(80) NULL,
@@ -16,9 +16,9 @@
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Healthcare].[Lab_Result] (
-   [Lab_Result_ID]         VARCHAR(30) NOT NULL,
-   [Laboratory_ID]         VARCHAR(30) NULL,
+   [Lab_Result_ID]         VARCHAR(40) NOT NULL,
+   [Laboratory_ID]         VARCHAR(40) NULL,
    [Lab_Result_DateTime]   DATETIME2(7) NULL,
    [Result_Type_ID]        VARCHAR(30) NULL,
    [Result_Value]          DECIMAL(18, 5) NULL,
@@ -10,9 +10,9 @@
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

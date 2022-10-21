@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Action].[Event] (
-   [Event_ID]               VARCHAR(30) NOT NULL,
+   [Event_ID]               VARCHAR(40) NOT NULL,
    [Alternate_ID]           VARCHAR(50) NULL,
-   [Activity_ID]            VARCHAR(30) NULL,
+   [Activity_ID]            VARCHAR(40) NULL,
    [EventType_ID]           VARCHAR(20) NULL,
    [Description]            VARCHAR(256) NULL,
 

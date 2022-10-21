@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Article].[Item] (
-   [Item_ID]                VARCHAR(30) NOT NULL,
+   [Item_ID]                VARCHAR(40) NOT NULL,
    [Name]                   VARCHAR(50) NULL,
    [Type_ID]                VARCHAR(30) NULL,
 

@@ -16,8 +16,8 @@
 
 CREATE TABLE [Generic].[Element]
 (
-   [Element_ID]            VARCHAR(30) NOT NULL,
-   [Group_ID]              VARCHAR(30) NOT NULL,
+   [Element_ID]            VARCHAR(40) NOT NULL,
+   [Group_ID]              VARCHAR(40) NOT NULL,
    [Label_Text]            VARCHAR(128),
 
    [Sequence_No]           INT NULL,
@@ -38,9 +38,9 @@ CREATE TABLE [Generic].[Element]
    [Value_Text]            VARCHAR(128),
 
    -- record management
-   [Tenant_ID]             VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]         VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]   VARCHAR(30) NULL,
+   [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]   VARCHAR(40) NULL,
    [Sequence_Number]       INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
