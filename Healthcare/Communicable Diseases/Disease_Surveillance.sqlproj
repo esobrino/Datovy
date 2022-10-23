@@ -93,16 +93,14 @@
     <Folder Include="Action\Tables" />
     <Folder Include="Clinical" />
     <Folder Include="Clinical\Tables" />
-    <Folder Include="Laboratory" />
-    <Folder Include="Laboratory\Tables" />
+    <Folder Include="Testing" />
+    <Folder Include="Testing\Tables" />
     <Folder Include="Provider" />
     <Folder Include="Provider\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
     <Build Include="Healthcare\Tables\Immunization.sql" />
-    <Build Include="Healthcare\Tables\Laboratory.sql" />
-    <Build Include="Healthcare\Tables\Lab_Result.sql" />
     <Build Include="Healthcare\Tables\Medical_Condition.sql" />
     <Build Include="Healthcare\Tables\Medication.sql" />
     <Build Include="Healthcare\Tables\Provider.sql" />
@@ -165,11 +163,8 @@
     <Build Include="Entity\Tables\Ethnicity_Code.sql" />
     <Build Include="Management\Tables\Status_Code.sql" />
     <Build Include="Management\Tables\Age_Unit_Code.sql" />
-    <Build Include="Healthcare\Tables\Lab_Test_Type.sql" />
     <Build Include="Healthcare\Tables\Specimen_Type.sql" />
     <Build Include="Entity\Tables\Sex_Code.sql" />
-    <Build Include="Healthcare\Tables\Lab_Result_Type.sql" />
-    <Build Include="Healthcare\Tables\Lab_Type.sql" />
     <Build Include="Helper\Procedures\Comment_Column_Add.sql" />
     <Build Include="Healthcare\Tables\Clinical_Syndrome_Code.sql" />
     <Build Include="Healthcare\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
@@ -227,7 +222,7 @@
     <Build Include="Management\Tables\Assignment_Link.sql" />
     <Build Include="Security\Clinical.sql" />
     <Build Include="Security\Provider.sql" />
-    <Build Include="Security\Laboratory.sql" />
+    <Build Include="Security\Testing.sql" />
     <Build Include="Geography\Tables\Address_Line.sql" />
     <Build Include="Geography\Tables\Address_Structured.sql" />
     <Build Include="Geography\Tables\County_Code.sql" />
@@ -238,6 +233,15 @@
     <Build Include="Geography\Tables\State_Code.sql" />
     <Build Include="Geography\Tables\County_Subdivision_Code.sql" />
     <Build Include="Geography\Tables\Zip_Code.sql" />
+    <Build Include="Testing\Tables\Laboratory.sql" />
+    <Build Include="Testing\Tables\Lab_Result.sql" />
+    <Build Include="Testing\Tables\Lab_Result_Type.sql" />
+    <Build Include="Testing\Tables\Lab_Test_Type.sql" />
+    <Build Include="Testing\Tables\Lab_Type.sql" />
+    <Build Include="Testing\Tables\Media.sql" />
+    <Build Include="Testing\Tables\Media_Type.sql" />
+    <Build Include="Testing\Tables\Note.sql" />
+    <Build Include="Testing\Tables\Note_Type.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
