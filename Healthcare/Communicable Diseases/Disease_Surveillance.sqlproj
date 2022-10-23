@@ -231,8 +231,13 @@
     <Build Include="Geography\Tables\Address_Line.sql" />
     <Build Include="Geography\Tables\Address_Structured.sql" />
     <Build Include="Geography\Tables\County_Code.sql" />
-    <Build Include="Geography\Tables\Country_ISO_3166.sql" />
-    <Build Include="Geography\Tables\LSAD_Code.sql" />
+    <Build Include="Geography\Tables\Country_Code.sql" />
+    <Build Include="Geography\Tables\Area_Description_Code.sql" />
+    <Build Include="Geography\Tables\Class_Feature_Place_Code.sql" />
+    <Build Include="Geography\Tables\Region_Code.sql" />
+    <Build Include="Geography\Tables\State_Code.sql" />
+    <Build Include="Geography\Tables\County_Subdivision_Code.sql" />
+    <Build Include="Geography\Tables\Zip_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
