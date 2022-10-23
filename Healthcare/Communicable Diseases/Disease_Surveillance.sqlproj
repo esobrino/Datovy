@@ -228,6 +228,11 @@
     <Build Include="Security\Clinical.sql" />
     <Build Include="Security\Provider.sql" />
     <Build Include="Security\Laboratory.sql" />
+    <Build Include="Geography\Tables\Address_Line.sql" />
+    <Build Include="Geography\Tables\Address_Structured.sql" />
+    <Build Include="Geography\Tables\County_Code.sql" />
+    <Build Include="Geography\Tables\Country_ISO_3166.sql" />
+    <Build Include="Geography\Tables\LSAD_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
