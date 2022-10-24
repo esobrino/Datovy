@@ -264,6 +264,8 @@
     <None Include="Scripts\Sql-Scripts\00050 - Clinical Resources.sql" />
     <None Include="Scripts\Sql-Scripts\00120 - Laboratory Resources.sql" />
     <None Include="Scripts\Sql-Scripts\00130 - Provider Resources.sql" />
+    <Build Include="Helper\Procedures\Schema_Property_Record_Get.sql" />
+    <Build Include="Helper\Procedures\Schema_Property_Value_Get.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Disease_Surveillance.refactorlog" />
