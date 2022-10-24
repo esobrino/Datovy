@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Assignment_Link]
+﻿CREATE TABLE [Management].[Assignment_Link]
 (
    [Assignment_Link_ID]     VARCHAR(40) NOT NULL,
    [Assignment_ID]          VARCHAR(40) NOT NULL,

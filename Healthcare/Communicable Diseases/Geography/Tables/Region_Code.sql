@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Region_Code]
+﻿CREATE TABLE [Geography].[Region_Code]
 (
    [Code_ID]                VARCHAR(30)  NOT NULL,
    [Description]            VARCHAR(128) NULL,
