@@ -97,6 +97,8 @@
     <Folder Include="Laboratory\Tables" />
     <Folder Include="Provider" />
     <Folder Include="Provider\Tables" />
+    <Folder Include="Other" />
+    <Folder Include="Other\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
@@ -228,6 +230,9 @@
     <Build Include="Security\Clinical.sql" />
     <Build Include="Security\Provider.sql" />
     <Build Include="Security\Laboratory.sql" />
+    <Build Include="Other\Tables\Case_Transmission_Mode_Code.sql" />
+    <Build Include="Security\Other.sql" />
+    <None Include="Scripts\Sql-Scripts\00150 - Other Codes.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
