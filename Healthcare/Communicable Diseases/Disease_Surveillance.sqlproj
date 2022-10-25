@@ -97,6 +97,8 @@
     <Folder Include="Testing\Tables" />
     <Folder Include="Provider" />
     <Folder Include="Provider\Tables" />
+    <Folder Include="Other\Tables" />
+    <Folder Include="Other" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
@@ -242,6 +244,9 @@
     <Build Include="Testing\Tables\Media_Type.sql" />
     <Build Include="Testing\Tables\Note.sql" />
     <Build Include="Testing\Tables\Note_Type.sql" />
+    <Build Include="Security\Other.sql" />
+    <Build Include="Other\Tables\Case_Transmission_Mode_Code.sql" />
+    <Build Include="Scripts\Sql-Scripts\00150 - Other Codes.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
