@@ -10,20 +10,9 @@
 
    [Landmark_Text]          VARCHAR(128) NULL,
    [Address_Full_Text]      VARCHAR(128) NULL,
-    
-   [Address_Text1]          VARCHAR(80) NULL,
-   [Address_Text2]          VARCHAR(80) NULL,
-   [Address_Text3]          VARCHAR(80) NULL,
 
-   [Building_Name]          VARCHAR(80) NULL,
-   [Unit_Number]            VARCHAR(10) NULL,
-   [Mailbox]                VARCHAR(40) NULL,
-   
-   [Street_Number]          VARCHAR(40) NULL,
-   [Street_Name]            VARCHAR(80) NULL,
-   [Street_Direction]       VARCHAR(20) NULL,
-   [Street_Prefix]          VARCHAR(20) NULL,
-   [Street_Suffix]          VARCHAR(20) NULL,
+   [Address_Line_ID]        VARCHAR(40) NULL,
+   [Address_Structured_ID]  VARCHAR(40) NULL,
   
    [City_Name]              VARCHAR(30) NULL,
    [State_Code]             VARCHAR(2) NULL,
@@ -56,7 +45,11 @@
 
    CONSTRAINT [pk_Location] PRIMARY KEY CLUSTERED ([Location_ID] ASC),
    CONSTRAINT [fk_Location_Type] FOREIGN KEY ([Type_ID])
-      REFERENCES [Geography].[Location_Type]([Type_ID])
+      REFERENCES [Geography].[Location_Type]([Type_ID]),
+   CONSTRAINT [fk_Location_Address_Line] FOREIGN KEY ([Address_Line_ID])
+      REFERENCES [Geography].[Address_Line]([Address_Line_ID]),
+   CONSTRAINT [fk_Location_Address_Structured] FOREIGN KEY ([Address_Structured_ID])
+      REFERENCES [Geography].[Address_Structured]([Address_Structured_ID])
 );
 GO
 

@@ -40,11 +40,1059 @@ USE [$(DatabaseName)];
 
 
 GO
+/*
+The column [Application].[AccessToken].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Application].[AccessToken].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Application].[AccessToken])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Application].[App_Message_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Application].[App_Message_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Application].[App_Message_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Application].[Session].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Application].[Session].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Application].[Session].[Officier_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Application].[Session])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Communication].[Case_ID] is being dropped, data loss could occur.
+
+The column [Entity].[Communication].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Communication].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Communication].[Provider_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Communication])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Contact].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Contact].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Contact])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Contact_Emergency].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Contact_Emergency].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Contact_Emergency])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Contact_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Contact_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Contact_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Device_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Device_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Device_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Employment].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Employment].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Employment])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Employment_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Employment_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Employment_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Entity_Location_Link].[Activity_ID] is being dropped, data loss could occur.
+
+The column [Entity].[Entity_Location_Link].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Entity_Location_Link].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Entity_Location_Link].[Provider_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Entity_Location_Link])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Entity_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Entity_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Entity_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Ethnicity_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Ethnicity_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Ethnicity_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Gender_Identity_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Gender_Identity_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Gender_Identity_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Identification].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Identification].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Identification])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Identification_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Identification_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Identification_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Name].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Name].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Name])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Name_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Name_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Name_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Officer].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Officer].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Officer])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Officer_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Officer_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Officer_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Organization].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Organization].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Organization])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Organization_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Organization_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Organization_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Person].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Person].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Person])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Person_Death].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Person_Death].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Person_Death])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Person_Flag].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Person_Flag].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Person_Flag])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Person_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Person_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Person_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Race_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Race_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Race_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Sex_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Sex_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Sex_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Entity].[Sexual_Orientation_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Entity].[Sexual_Orientation_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Entity].[Sexual_Orientation_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Generic].[Element].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Generic].[Element].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Generic].[Element].[Type_ID] is being dropped, data loss could occur.
+
+The column [Generic].[Element].[Group_ID] on table [Generic].[Element] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+*/
+
+IF EXISTS (select top 1 1 from [Generic].[Element])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Generic].[Element_Value].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Generic].[Element_Value].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Generic].[Element_Value])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Generic].[Element_Value_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Generic].[Element_Value_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Generic].[Element_Value_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Body_Position_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Body_Position_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Body_Position_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Body_Site_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Body_Site_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Body_Site_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Clinical_Syndrome_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Clinical_Syndrome_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Clinical_Syndrome_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Clinical_Syndrome_Secondary_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Clinical_Syndrome_Secondary_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Clinical_Syndrome_Secondary_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Device_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Device_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Device_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Disease_Acquired_Jurisdiction_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Disease_Acquired_Jurisdiction_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Disease_Acquired_Jurisdiction_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Disease_Condition_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Disease_Condition_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Disease_Condition_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Dosage_Form_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Dosage_Form_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Dosage_Form_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Immunization].[Dosage_SeriesNumber] is being dropped, data loss could occur.
+
+The column [Healthcare].[Immunization].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Immunization].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Immunization].[Immunization_Type_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Immunization])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Medical_Condition].[Condition_Type_ID] is being dropped, data loss could occur.
+
+The column [Healthcare].[Medical_Condition].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Medical_Condition].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Medical_Condition])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Medication].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Medication].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Medication])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Provider].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Provider].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Provider])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Specimen_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Specimen_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Specimen_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Treatment].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Treatment_Comment] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Treatment_Form] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Treatment_Given_Indicator] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Treatment_Name] is being dropped, data loss could occur.
+
+The column [Healthcare].[Treatment].[Treatment_Quantity] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Treatment])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Unit_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Unit_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Unit_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Virus_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Virus_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Virus_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Healthcare].[Vitals].[BodyPositionCodeID] is being dropped, data loss could occur.
+
+The column [Healthcare].[Vitals].[BodySiteCodeID] is being dropped, data loss could occur.
+
+The column [Healthcare].[Vitals].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Vitals].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Healthcare].[Vitals].[Participant_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Healthcare].[Vitals])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Management].[Age_Unit_Code].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Age_Unit_Code].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Management].[Age_Unit_Code])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Management].[Case].[Case_Type_ID] is being dropped, data loss could occur.
+
+The column [Management].[Case].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Case].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Case].[Person_Age_Unit] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Management].[Case])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Management].[Case_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Case_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Management].[Case_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Management].[Referral].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Referral].[Efective_End_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Referral].[Referral_Case_ID] is being dropped, data loss could occur.
+
+The column [Management].[Referral].[Referral_Type_ID] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Management].[Referral])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Management].[Referral_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Management].[Referral_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Management].[Referral_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Message].[Content_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Message].[Content_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Message].[Content_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Message].[Submission].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Message].[Submission].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Message].[Submission])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Answer_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Answer_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Answer_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Assessment].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Assessment].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Assessment])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Assessment_Answer].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Assessment_Answer].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Assessment_Answer])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Assessment_Question].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Assessment_Question].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Assessment_Question])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Assessment_Questionnaire].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Assessment_Questionnaire].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Assessment_Questionnaire])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Assessment_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Assessment_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Assessment_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Profile].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Profile].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Profile])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Profile_Condition].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Profile_Condition].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Profile_Condition])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Profile_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Profile_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Profile_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Report].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Report].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Report])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Report_Type].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Report_Type].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Report_Type])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
+The column [Surveillance].[Travel_Detail].[Efective_DateTime] is being dropped, data loss could occur.
+
+The column [Surveillance].[Travel_Detail].[Efective_End_DateTime] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [Surveillance].[Travel_Detail])
+    RAISERROR (N'Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+PRINT N'Rename refactoring operation with key ac04e81c-c46e-4cd4-b34d-f37b32db7e65 is skipped, element [Surveillance].[Assessment_Answer].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key 665b05d1-73c9-4292-9dd9-603591342b0d is skipped, element [Surveillance].[Assessment_Answer].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key 8c6859cc-5317-42a7-b05f-8a1958f64d8e is skipped, element [Surveillance].[Assessment_Question].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key abc87f84-dfd7-4cfa-9e4a-6c604194df96 is skipped, element [Surveillance].[Assessment_Question].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key febee88b-3be5-4e34-92b9-638ae87dff12 is skipped, element [Surveillance].[Assessment_Questionnaire].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key 17294624-e7ed-43c4-a0be-c751becbc995 is skipped, element [Surveillance].[Assessment_Questionnaire].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
+
+
+GO
+PRINT N'Rename refactoring operation with key ece3d268-c5fd-4067-8d41-09647bd2b527 is skipped, element [Generic].[Element_Group].[Type_ID] (SqlSimpleColumn) will not be renamed to Group_ID';
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Recor__681373AD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Sessi__690797E6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Updat__671F4F74];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Creat__662B2B3B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Versi__65370702];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Efect__6442E2C9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Seque__634EBE90];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Data___625A9A57];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[AccessToken]...';
+
+
+GO
+ALTER TABLE [Application].[AccessToken] DROP CONSTRAINT [DF__AccessTok__Tenan__6166761E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Sessi__7F36D027];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Recor__7E42ABEE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Updat__7D4E87B5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Creat__7C5A637C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Tenan__7795AE5F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Data___7889D298];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Seque__797DF6D1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Versi__7B663F43];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+
+
+GO
+ALTER TABLE [Application].[App_Message_Code] DROP CONSTRAINT [DF__App_Messa__Efect__7A721B0A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Efectiv__6DCC4D03];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Sequenc__6CD828CA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Data_Ow__6BE40491];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Tenant___6AEFE058];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Session__69FBBC1F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Session__72910220];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Record___719CDDE7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Created__6FB49575];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Updated__70A8B9AE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Application].[Session]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [DF__Session__Version__6EC0713C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Tenan__1AF3F935];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Data___1BE81D6E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Seque__1CDC41A7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Efect__1DD065E0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Versi__1EC48A19];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Creat__1FB8AE52];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Updat__20ACD28B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Recor__21A0F6C4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Communication]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [DF__Communica__Sessi__22951AFD];
+
+
+GO
 PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Data_Ow__50C5FA01];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Sessi__49CEE3AF];
 
 
 GO
@@ -52,7 +1100,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Tenant___4FD1D5C8];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Recor__48DABF76];
 
 
 GO
@@ -60,7 +1108,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Session__5772F790];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Updat__47E69B3D];
 
 
 GO
@@ -68,7 +1116,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Record___567ED357];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Creat__46F27704];
 
 
 GO
@@ -76,7 +1124,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Sequenc__51BA1E3A];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Versi__45FE52CB];
 
 
 GO
@@ -84,7 +1132,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Efectiv__52AE4273];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Efect__450A2E92];
 
 
 GO
@@ -92,7 +1140,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Created__54968AE5];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Seque__44160A59];
 
 
 GO
@@ -100,7 +1148,7 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Version__53A266AC];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Data___4321E620];
 
 
 GO
@@ -108,7 +1156,4535 @@ PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact]...'
 
 
 GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__Contact__Updated__558AAF1E];
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [DF__tmp_ms_xx__Tenan__422DC1E7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Tenan__23893F36];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Data___247D636F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Seque__257187A8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Efect__2665ABE1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Versi__2759D01A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Creat__284DF453];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Updat__2942188C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Recor__2A363CC5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Emergency]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [DF__Contact_E__Sessi__2B2A60FE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Tenan__21D600EE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Data___22CA2527];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Sessi__297722B6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Updat__278EDA44];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Recor__2882FE7D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Creat__269AB60B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Versi__25A691D2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Seque__23BE4960];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Contact_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Type] DROP CONSTRAINT [DF__Contact_T__Efect__24B26D99];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Tenan__1940BAED];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Data___1A34DF26];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Updat__1EF99443];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Recor__1FEDB87C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Sessi__20E1DCB5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Creat__1E05700A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Versi__1D114BD1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Seque__1B29035F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Device_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Device_Type] DROP CONSTRAINT [DF__Device_Ty__Efect__1C1D2798];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Sessi__6E2152BE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Recor__6D2D2E85];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Updat__6C390A4C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Creat__6B44E613];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Efect__695C9DA1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Versi__6A50C1DA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Seque__68687968];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Tenan__668030F6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [DF__Employmen__Data___6774552F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Tenan__5DEAEAF5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Data___5EDF0F2E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Efect__60C757A0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Seque__5FD33367];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Sessi__658C0CBD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Recor__6497E884];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Versi__61BB7BD9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Creat__62AFA012];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment_Type] DROP CONSTRAINT [DF__Employmen__Updat__63A3C44B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Data___4DB4832C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Tenan__4CC05EF3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Seque__4EA8A765];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Efect__4F9CCB9E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Versi__5090EFD7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Sessi__546180BB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Recor__536D5C82];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Updat__52793849];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Location_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [DF__Entity_Lo__Creat__51851410];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Tenan__442B18F2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Data___451F3D2B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Seque__46136164];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Efect__4707859D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Versi__47FBA9D6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Creat__48EFCE0F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Updat__49E3F248];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Recor__4AD81681];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Type] DROP CONSTRAINT [DF__Entity_Ty__Sessi__4BCC3ABA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Tenan__2A6B46EF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Data___2B5F6B28];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Recor__3118447E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Sessi__320C68B7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Creat__2F2FFC0C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Updat__30242045];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Versi__2E3BD7D3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Seque__2C538F61];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Ethnicity_Code] DROP CONSTRAINT [DF__Ethnicity__Efect__2D47B39A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Tenan__789EE131];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Data___7993056A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Efect__7B7B4DDC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Seque__7A8729A3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Recor__7F4BDEC0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Updat__7E57BA87];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Creat__7D63964E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Versi__7C6F7215];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Gender_Identity_Code] DROP CONSTRAINT [DF__Gender_Id__Sessi__004002F9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Sessi__77AABCF8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Recor__76B698BF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Updat__75C27486];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Creat__74CE504D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Versi__73DA2C14];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Efect__72E607DB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Data___70FDBF69];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Seque__71F1E3A2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Juris__6F1576F7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [DF__Identific__Tenan__70099B30];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Tenan__035179CE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Data___04459E07];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Creat__08162EEB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Versi__07220AB2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Efect__062DE679];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Seque__0539C240];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Sessi__0AF29B96];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Updat__090A5324];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification_Type] DROP CONSTRAINT [DF__Identific__Recor__09FE775D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Session_Up__025D5595];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Updated_La__00750D23];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Record_Sta__0169315C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Data_Owner__7BB05806];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Tenant_ID__7ABC33CD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Sequence_N__7CA47C3F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Efective_D__7D98A078];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Version_Nu__7E8CC4B1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [DF__Name__Created_Da__7F80E8EA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Data___0CDAE408];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Tenan__0BE6BFCF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Seque__0DCF0841];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Efect__0EC32C7A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Versi__0FB750B3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Creat__10AB74EC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Updat__119F9925];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Sessi__1387E197];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name_Type] DROP CONSTRAINT [DF__Name_Type__Recor__1293BD5E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Tenant___60FC61CA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Sequenc__62E4AA3C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Data_Ow__61F08603];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Version__64CCF2AE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Efectiv__63D8CE75];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Created__65C116E7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Session__689D8392];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Record___67A95F59];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [DF__Officer__Updated__66B53B20];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer_Type] DROP CONSTRAINT [DF__Officer_T__Data___15702A09];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer_Type] DROP CONSTRAINT [DF__Officer_T__Tenan__147C05D0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer_Type] DROP CONSTRAINT [DF__Officer_T__Creat__16644E42];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer_Type] DROP CONSTRAINT [DF__Officer_T__Updat__1758727B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer_Type] DROP CONSTRAINT [DF__Officer_T__Recor__184C96B4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Tenan__58671BC9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Data___595B4002];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Versi__5C37ACAD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Efect__5B438874];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Seque__5A4F643B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Sessi__60083D91];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Recor__5F141958];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Updat__5E1FF51F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization] DROP CONSTRAINT [DF__Organizat__Creat__5D2BD0E6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Tenan__33008CF0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Data___33F4B129];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Recor__39AD8A7F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Sessi__3AA1AEB8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Updat__38B96646];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Versi__36D11DD4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Creat__37C5420D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Seque__34E8D562];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Organization_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Organization_Type] DROP CONSTRAINT [DF__Organizat__Efect__35DCF99B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Tenant_I__125EB334];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Data_Own__1352D76D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Sequence__1446FBA6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Efective__153B1FDF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Version___162F4418];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Created___17236851];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Updated___18178C8A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Record_S__190BB0C3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [DF__Person__Session___19FFD4FC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Tenan__7226EDCC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Seque__740F363E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Data___731B1205];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Efect__75035A77];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Versi__75F77EB0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Creat__76EBA2E9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Sessi__79C80F94];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Recor__78D3EB5B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [DF__Person_De__Updat__77DFC722];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Tenan__6991A7CB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Data___6A85CC04];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Efect__6C6E1476];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Seque__6B79F03D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Versi__6D6238AF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Creat__6E565CE8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Sessi__7132C993];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Recor__703EA55A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Flag]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [DF__Person_Fl__Updat__6F4A8121];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Seque__573DED66];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Data___5649C92D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Tenan__5555A4F4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Updat__5B0E7E4A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Recor__5C02A283];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Versi__592635D8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Creat__5A1A5A11];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Efect__5832119F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Type] DROP CONSTRAINT [DF__Person_Ty__Sessi__5CF6C6BC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Tenan__3B95D2F1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Data___3C89F72A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Seque__3D7E1B63];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Efect__3E723F9C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Versi__3F6663D5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Creat__405A880E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Updat__414EAC47];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Recor__4242D080];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Race_Code] DROP CONSTRAINT [DF__Race_Code__Sessi__4336F4B9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Tenant__09C96D33];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Data_O__0ABD916C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Sequen__0BB1B5A5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Efecti__0CA5D9DE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Versio__0D99FE17];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Create__0E8E2250];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Update__0F824689];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Record__10766AC2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sex_Code] DROP CONSTRAINT [DF__Sex_Code__Sessio__116A8EFB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Tenan__01342732];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Data___02284B6B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Efect__041093DD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Seque__031C6FA4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Versi__0504B816];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Creat__05F8DC4F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Updat__06ED0088];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Recor__07E124C1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Sexual_Orientation_Code] DROP CONSTRAINT [DF__Sexual_Or__Sessi__08D548FA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Session__6576FE24];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Record___6482D9EB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Version__61A66D40];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Created__629A9179];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Updated__638EB5B2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Tenant___5DD5DC5C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Period___5CE1B823];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Data_Ow__5ECA0095];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Efectiv__60B24907];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [DF__Element__Sequenc__5FBE24CE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Sessi__76A18A26];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Recor__75AD65ED];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Updat__74B941B4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Creat__73C51D7B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Tenan__6F00685E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Data___6FF48C97];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Seque__70E8B0D0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Efect__71DCD509];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [DF__Element_V__Versi__72D0F942];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Sessi__6E0C4425];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Recor__6D181FEC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Updat__6C23FBB3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Creat__6B2FD77A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Tenan__666B225D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Data___675F4696];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Efect__69478F08];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Versi__6A3BB341];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value_Type] DROP CONSTRAINT [DF__Element_V__Seque__68536ACF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Tenan__5F9E293D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Data___60924D76];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Seque__618671AF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Efect__627A95E8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Versi__636EBA21];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Creat__6462DE5A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Updat__65570293];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Recor__664B26CC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Position_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Position_Code] DROP CONSTRAINT [DF__Body_Posi__Sessi__673F4B05];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Tenan__68336F3E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Data___69279377];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Seque__6A1BB7B0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Efect__6B0FDBE9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Versi__6C040022];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Creat__6CF8245B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Updat__6DEC4894];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Recor__6EE06CCD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Body_Site_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Body_Site_Code] DROP CONSTRAINT [DF__Body_Site__Sessi__6FD49106];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Tenan__1BB31344];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Seque__1D9B5BB6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Data___1CA7377D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Recor__226010D3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Updat__216BEC9A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Creat__2077C861];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Efect__1E8F7FEF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Versi__1F83A428];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Code] DROP CONSTRAINT [DF__Clinical___Sessi__2354350C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Tenan__2CDD9F46];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Data___2DD1C37F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Seque__2EC5E7B8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Recor__338A9CD5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Updat__3296789C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Creat__31A25463];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Versi__30AE302A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Efect__2FBA0BF1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code] DROP CONSTRAINT [DF__Clinical___Sessi__347EC10E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Tenan__70C8B53F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Data___71BCD978];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Seque__72B0FDB1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Efect__73A521EA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Versi__74994623];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Creat__758D6A5C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Updat__76818E95];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Recor__7775B2CE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Device_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Device_Code] DROP CONSTRAINT [DF__Device_Co__Sessi__7869D707];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Tenan__24485945];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Seque__2630A1B7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Efect__2724C5F0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Data___253C7D7E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Recor__2AF556D4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Updat__2A01329B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Creat__290D0E62];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Versi__2818EA29];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code] DROP CONSTRAINT [DF__Disease_A__Sessi__2BE97B0D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Tenan__3572E547];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Data___36670980];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Efect__384F51F2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Seque__375B2DB9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Recor__3C1FE2D6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Updat__3B2BBE9D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Creat__3A379A64];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Versi__3943762B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Disease_Condition_Code] DROP CONSTRAINT [DF__Disease_C__Sessi__3D14070F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Tenan__795DFB40];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Data___7A521F79];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Seque__7B4643B2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Efect__7C3A67EB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Versi__7D2E8C24];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Creat__7E22B05D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Updat__7F16D496];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Recor__000AF8CF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Dosage_Form_Code] DROP CONSTRAINT [DF__Dosage_Fo__Sessi__00FF1D08];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Tenan__2C1E8537];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Data___2D12A970];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Seque__2E06CDA9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Efect__2EFAF1E2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Versi__2FEF161B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Creat__30E33A54];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Updat__31D75E8D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Recor__32CB82C6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Immunization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [DF__Immunizat__Sessi__33BFA6FF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Tenan__3D491139];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Data___3E3D3572];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Seque__3F3159AB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Efect__40257DE4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Versi__4119A21D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Creat__420DC656];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Updat__4301EA8F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Recor__43F60EC8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medical_Condition] DROP CONSTRAINT [DF__Medical_C__Sessi__44EA3301];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Tenan__34B3CB38];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Data___35A7EF71];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Seque__369C13AA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Efect__379037E3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Versi__38845C1C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Creat__39788055];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Updat__3A6CA48E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Recor__3B60C8C7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Medication]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [DF__Medicatio__Sessi__3C54ED00];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Versio__5B988E2F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Efecti__5AA469F6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Sequen__59B045BD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Data_O__58BC2184];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Tenant__57C7FD4B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Sessio__5F691F13];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Record__5E74FADA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Update__5D80D6A1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Provider]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [DF__Provider__Create__5C8CB268];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Tenan__0A888742];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Seque__0C70CFB4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Data___0B7CAB7B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Creat__0F4D3C5F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Updat__10416098];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Versi__0E591826];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Efect__0D64F3ED];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Sessi__1229A90A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Specimen_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Specimen_Type] DROP CONSTRAINT [DF__Specimen___Recor__113584D1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Tenan__45DE573A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Data___46D27B73];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Seque__47C69FAC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Efect__48BAC3E5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Versi__49AEE81E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Creat__4AA30C57];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Updat__4B973090];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Recor__4C8B54C9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Treatment]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [DF__Treatment__Sessi__4D7F7902];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Tenan__131DCD43];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Seque__150615B5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Data___1411F17C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Recor__19CACAD2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Updat__18D6A699];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Versi__16EE5E27];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Creat__17E28260];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Efect__15FA39EE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Unit_Code]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Unit_Code] DROP CONSTRAINT [DF__Unit_Code__Sessi__1ABEEF0B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Tenan__3E082B48];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Efect__40E497F3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Seque__3FF073BA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Data___3EFC4F81];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Sessi__45A94D10];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Recor__44B528D7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Updat__43C1049E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Versi__41D8BC2C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Virus_Type]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Virus_Type] DROP CONSTRAINT [DF__Virus_Typ__Creat__42CCE065];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Tenant_I__4E739D3B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Data_Own__4F67C174];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Sequence__505BE5AD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Efective__515009E6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Version___52442E1F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Created___53385258];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Updated___542C7691];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Record_S__55209ACA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Healthcare].[Vitals]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [DF__Vitals__Session___5614BF03];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Tenan__3EC74557];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Seque__40AF8DC9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Efect__41A3B202];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Data___3FBB6990];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Versi__4297D63B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Creat__438BFA74];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Recor__457442E6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Updat__44801EAD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Age_Unit_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Age_Unit_Code] DROP CONSTRAINT [DF__Age_Unit___Sessi__4668671F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Tenant_ID__3631FF56];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Data_Owner__3726238F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Sequence_N__381A47C8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Record_Sta__3CDEFCE5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Created_Da__3AF6B473];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Updated_La__3BEAD8AC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Version_Nu__3A02903A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Efective_D__390E6C01];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [DF__Case__Session_Up__3DD3211E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Seque__1E5A75C5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Tenan__1C722D53];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Data___1D66518C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Updat__222B06A9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Creat__2136E270];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Versi__2042BE37];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Efect__1F4E99FE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Recor__231F2AE2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Case_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Type] DROP CONSTRAINT [DF__Case_Type__Sessi__24134F1B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Tenant__02B25B50];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Data_O__03A67F89];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Sequen__049AA3C2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Efecti__058EC7FB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Versio__0682EC34];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Create__0777106D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Update__086B34A6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Record__095F58DF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [DF__Referral__Sessio__0A537D18];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Sessi__353DDB1D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Tenan__2D9CB955];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Seque__2F8501C7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Data___2E90DD8E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Updat__335592AB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Recor__3449B6E4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Creat__32616E72];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Versi__316D4A39];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Management].[Referral_Type]...';
+
+
+GO
+ALTER TABLE [Management].[Referral_Type] DROP CONSTRAINT [DF__Referral___Efect__30792600];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Tenan__50E5F592];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Recor__5792F321];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Sessi__5887175A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Updat__569ECEE8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Creat__55AAAAAF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Versi__54B68676];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Efect__53C2623D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Data___51DA19CB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Content_Type] DROP CONSTRAINT [DF__Content_T__Seque__52CE3E04];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Submi__475C8B58];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Data___4944D3CA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Tenan__4850AF91];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Seque__4A38F803];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Efect__4B2D1C3C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Sessi__4FF1D159];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Recor__4EFDAD20];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Updat__4E0988E7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Versi__4C214075];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Message].[Submission]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [DF__Submissio__Creat__4D1564AE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Tenan__1590259A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Efect__186C9245];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Versi__1960B67E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Seque__17786E0C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Data___168449D3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Sessi__1D314762];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Recor__1C3D2329];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Creat__1A54DAB7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Answer_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Answer_Type] DROP CONSTRAINT [DF__Answer_Ty__Updat__1B48FEF0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Tenan__597B3B93];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Seque__5B638405];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Efect__5C57A83E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Data___5A6F5FCC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Updat__5F3414E9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Recor__60283922];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Sessi__611C5D5B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Creat__5E3FF0B0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [DF__Assessmen__Versi__5D4BCC77];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Tenan__733B0D96];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Data___742F31CF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Seque__75235608];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Efect__76177A41];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Versi__770B9E7A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Recor__79E80B25];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Sessi__7ADC2F5E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Updat__78F3E6EC];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Answer]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [DF__Assessmen__Creat__77FFC2B3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Tenan__6AA5C795];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Data___6B99EBCE];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Seque__6C8E1007];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Efect__6D823440];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Versi__6E765879];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Sessi__7246E95D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Recor__7152C524];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Updat__705EA0EB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [DF__Assessmen__Creat__6F6A7CB2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Data___6304A5CD];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Tenan__62108194];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Seque__63F8CA06];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Efect__64ECEE3F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Versi__65E11278];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Recor__68BD7F23];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Sessi__69B1A35C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Updat__67C95AEA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Questionnaire] DROP CONSTRAINT [DF__Assessmen__Creat__66D536B1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Tenan__1E256B9B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Versi__21F5FC7F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Creat__22EA20B8];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Efect__2101D846];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Seque__200DB40D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Data___1F198FD4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Sessi__25C68D63];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Recor__24D2692A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Assessment_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Type] DROP CONSTRAINT [DF__Assessmen__Updat__23DE44F1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Tenant___0CFADF99];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Version__10CB707D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Efectiv__0FD74C44];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Sequenc__0EE3280B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Data_Ow__0DEF03D2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Session__149C0161];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Created__11BF94B6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Updated__12B3B8EF];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [DF__Profile__Record___13A7DD28];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Tenan__7BD05397];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Data___7CC477D0];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Seque__7DB89C09];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Efect__7EACC042];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Versi__7FA0E47B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Recor__027D5126];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Sessi__0371755F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Updat__01892CED];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Condition]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [DF__Profile_C__Creat__009508B4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Tenan__26BAB19C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Creat__2B7F66B9];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Efect__29971E47];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Versi__2A8B4280];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Data___27AED5D5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Seque__28A2FA0E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Sessi__2E5BD364];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Recor__2D67AF2B];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Profile_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Type] DROP CONSTRAINT [DF__Profile_T__Updat__2C738AF2];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Tenant_I__37E53D9E];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Created___3CA9F2BB];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Version___3BB5CE82];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Efective__3AC1AA49];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Data_Own__38D961D7];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Sequence__39CD8610];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Session___3F865F66];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Record_S__3E923B2D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [DF__Report__Updated___3D9E16F4];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Tenan__2F4FF79D];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Creat__3414ACBA];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Versi__33208881];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Seque__3138400F];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Efect__322C6448];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Data___30441BD6];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Sessi__36F11965];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Recor__35FCF52C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report_Type] DROP CONSTRAINT [DF__Report_Ty__Updat__3508D0F3];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Tenan__04659998];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Data___0559BDD1];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Seque__064DE20A];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Efect__07420643];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Versi__08362A7C];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Recor__0B129727];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Sessi__0C06BB60];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Creat__092A4EB5];
+
+
+GO
+PRINT N'Dropping Default Constraint unnamed constraint on [Surveillance].[Travel_Detail]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [DF__Travel_De__Updat__0A1E72EE];
 
 
 GO
@@ -117,6 +5693,38 @@ PRINT N'Dropping Foreign Key [Application].[fk_Application_Contact]...';
 
 GO
 ALTER TABLE [Application].[Session] DROP CONSTRAINT [fk_Application_Contact];
+
+
+GO
+PRINT N'Dropping Foreign Key [Application].[fk_Application_Case]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [fk_Application_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Application].[fk_Application_Referral]...';
+
+
+GO
+ALTER TABLE [Application].[Session] DROP CONSTRAINT [fk_Application_Referral];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Communication_Case]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [fk_Communication_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Communication_Provider]...';
+
+
+GO
+ALTER TABLE [Entity].[Communication] DROP CONSTRAINT [fk_Communication_Provider];
 
 
 GO
@@ -133,6 +5741,46 @@ PRINT N'Dropping Foreign Key [Core].[fk_Participant_Contact]...';
 
 GO
 ALTER TABLE [Core].[Participant] DROP CONSTRAINT [fk_Participant_Contact];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_ContactType]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_ContactType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_Officer];
 
 
 GO
@@ -160,30 +5808,6 @@ ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [fk_Travel_Detail_Con
 
 
 GO
-PRINT N'Dropping Foreign Key [Core].[fk_Element_Contact]...';
-
-
-GO
-ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Contact];
-
-
-GO
-PRINT N'Dropping Foreign Key [Entity].[fk_Contact_ContactType]...';
-
-
-GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_ContactType];
-
-
-GO
-PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Person]...';
-
-
-GO
-ALTER TABLE [Entity].[Contact] DROP CONSTRAINT [fk_Contact_Person];
-
-
-GO
 PRINT N'Dropping Foreign Key [Entity].[fk_Officer_Contact]...';
 
 
@@ -208,12 +5832,1057 @@ ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Contact
 
 
 GO
-PRINT N'Creating Schema [Generic]...';
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Emergency_Type]...';
 
 
 GO
-CREATE SCHEMA [Generic]
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [fk_Contact_Emergency_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Contact_Emergency_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] DROP CONSTRAINT [fk_Contact_Emergency_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Employment_Employer]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [fk_Employment_Employer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Employment_Employee]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [fk_Employment_Employee];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] DROP CONSTRAINT [fk_Employment_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Activity]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Activity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Provider]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Provider];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Officer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Entity_Location_Link_Location]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] DROP CONSTRAINT [fk_Entity_Location_Link_Location];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Note_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Core].[Note] DROP CONSTRAINT [fk_Note_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Generic].[fk_Element_Value_Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [fk_Element_Value_Entity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Identification_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Entity_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Ethnicity_Code];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Gender_Identity_Code];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Identification_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Identification_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Identification_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Officer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] DROP CONSTRAINT [fk_Identification_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Provider_Name]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [fk_Provider_Name];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] DROP CONSTRAINT [fk_Name_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Name_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Note_Officer]...';
+
+
+GO
+ALTER TABLE [Core].[Note] DROP CONSTRAINT [fk_Note_Officer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Officer]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Officer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Officer]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Officer];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [fk_Officer_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Officer_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [fk_Officer_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Officer_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] DROP CONSTRAINT [fk_Officer_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Immunization_Organization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [fk_Immunization_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Provider_Organization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [fk_Provider_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Organization]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Note_Organization]...';
+
+
+GO
+ALTER TABLE [Core].[Note] DROP CONSTRAINT [fk_Note_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Organization]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Organization]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Organization];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Race_Code];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Sex_Code];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] DROP CONSTRAINT [fk_Person_Sexual_Orientation_Code];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Provider_Entity]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] DROP CONSTRAINT [fk_Provider_Entity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Participant_Person]...';
+
+
+GO
+ALTER TABLE [Core].[Participant] DROP CONSTRAINT [fk_Participant_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Person]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Note_Person]...';
+
+
+GO
+ALTER TABLE [Core].[Note] DROP CONSTRAINT [fk_Note_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Person]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Travel_Detail_Person]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] DROP CONSTRAINT [fk_Travel_Detail_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Person]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Flag_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [fk_Person_Flag_Person];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] DROP CONSTRAINT [fk_Person_Death];
+
+
+GO
+PRINT N'Dropping Foreign Key [Entity].[fk_Person_Flag_FlagCode]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] DROP CONSTRAINT [fk_Person_Flag_FlagCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Generic].[fk_Element_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [fk_Element_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Generic].[fk_Element_Value_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Element] DROP CONSTRAINT [fk_Element_Value_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Generic].[fk_Element_Value_Element]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [fk_Element_Value_Element];
+
+
+GO
+PRINT N'Dropping Foreign Key [Generic].[fk_Element_Value_ID]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] DROP CONSTRAINT [fk_Element_Value_ID];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Vitals_BodyPositionCode]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [fk_Vitals_BodyPositionCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Vitals_BodySiteCode]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [fk_Vitals_BodySiteCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Vitals_DeviceCode]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [fk_Vitals_DeviceCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Medication_DosageForm]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Medication] DROP CONSTRAINT [fk_Medication_DosageForm];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Immunization_Activity]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] DROP CONSTRAINT [fk_Immunization_Activity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Medical_Condition]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Medical_Condition];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Medication]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Medication];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Provider]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Provider];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Provider]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Provider];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Provider]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Provider];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Treatment_Activity]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Treatment] DROP CONSTRAINT [fk_Treatment_Activity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Vitals_UnitCode]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [fk_Vitals_UnitCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Healthcare].[fk_Vita_Participant]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Vitals] DROP CONSTRAINT [fk_Vita_Participant];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Activity_Case]...';
+
+
+GO
+ALTER TABLE [Core].[Activity] DROP CONSTRAINT [fk_Activity_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Flag_Case]...';
+
+
+GO
+ALTER TABLE [Management].[Case_Flag] DROP CONSTRAINT [fk_Case_Flag_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Referral_Case]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [fk_Referral_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Case_Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Case_Disposition];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_CasePriorityCode]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_CasePriorityCode];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_CaseType]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_CaseType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Class_Status]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Class_Status];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Case_Profile_Group]...';
+
+
+GO
+ALTER TABLE [Management].[Case] DROP CONSTRAINT [fk_Case_Profile_Group];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Item_Reference_Link_Case]...';
+
+
+GO
+ALTER TABLE [Core].[Item_Entity_Link] DROP CONSTRAINT [fk_Item_Reference_Link_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Assessment_Case]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [fk_Assessment_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Core].[fk_Element_Case]...';
+
+
+GO
+ALTER TABLE [Core].[Element] DROP CONSTRAINT [fk_Element_Case];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Referral_Activity]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [fk_Referral_Activity];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Referral_Profile]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [fk_Referral_Profile];
+
+
+GO
+PRINT N'Dropping Foreign Key [Management].[fk_Referral_ReferralType]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] DROP CONSTRAINT [fk_Referral_ReferralType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Message].[fk_Submission_Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] DROP CONSTRAINT [fk_Submission_Content_Type];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Assessment_Question_AnswerType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] DROP CONSTRAINT [fk_Assessment_Question_AnswerType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Assessment_AssessmentType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] DROP CONSTRAINT [fk_Assessment_AssessmentType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [fk_Assessment_Answer_Assessment];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] DROP CONSTRAINT [fk_Assessment_Answer_Assessment_Question];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Profile_Condition_Profile_Group]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] DROP CONSTRAINT [fk_Profile_Condition_Profile_Group];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Profile_ProfileType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] DROP CONSTRAINT [fk_Profile_ProfileType];
+
+
+GO
+PRINT N'Dropping Foreign Key [Surveillance].[fk_Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] DROP CONSTRAINT [fk_Report_Type];
+
+
+GO
+PRINT N'Creating Schema [Action]...';
+
+
+GO
+CREATE SCHEMA [Action]
     AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Creating Schema [Article]...';
+
+
+GO
+CREATE SCHEMA [Article]
+    AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Creating Schema [Clinical]...';
+
+
+GO
+CREATE SCHEMA [Clinical]
+    AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Creating Schema [Geography]...';
+
+
+GO
+CREATE SCHEMA [Geography]
+    AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Creating Schema [Provider]...';
+
+
+GO
+CREATE SCHEMA [Provider]
+    AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Creating Schema [Testing]...';
+
+
+GO
+CREATE SCHEMA [Testing]
+    AUTHORIZATION [dbo];
+
+
+GO
+PRINT N'Starting rebuilding table [Application].[AccessToken]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Application].[tmp_ms_xx_AccessToken] (
+    [Offier_ID]              VARCHAR (40)       NOT NULL,
+    [Token_ID]               VARCHAR (40)       NOT NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_AccessToken1] PRIMARY KEY CLUSTERED ([Token_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Application].[AccessToken])
+    BEGIN
+        INSERT INTO [Application].[tmp_ms_xx_AccessToken] ([Token_ID], [Offier_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Token_ID],
+                 [Offier_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Application].[AccessToken]
+        ORDER BY [Token_ID] ASC;
+    END
+
+DROP TABLE [Application].[AccessToken];
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_AccessToken]', N'AccessToken';
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_constraint_pk_AccessToken1]', N'pk_AccessToken', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Application].[App_Message_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Application].[tmp_ms_xx_App_Message_Code] (
+    [Code_Number]            INT                NOT NULL,
+    [Code_ID]                VARCHAR (60)       NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_App_Message_Code1] PRIMARY KEY CLUSTERED ([Code_Number] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Application].[App_Message_Code])
+    BEGIN
+        INSERT INTO [Application].[tmp_ms_xx_App_Message_Code] ([Code_Number], [Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_Number],
+                 [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Application].[App_Message_Code]
+        ORDER BY [Code_Number] ASC;
+    END
+
+DROP TABLE [Application].[App_Message_Code];
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_App_Message_Code]', N'App_Message_Code';
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_constraint_pk_App_Message_Code1]', N'pk_App_Message_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Application].[Session]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Application].[tmp_ms_xx_Session] (
+    [Session_ID]             VARCHAR (40)       NOT NULL,
+    [Session_Type_ID]        VARCHAR (30)       NULL,
+    [Session_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Referral_ID]            VARCHAR (40)       NULL,
+    [Case_ID]                VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Token_ID]               VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Session1] PRIMARY KEY CLUSTERED ([Session_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Application].[Session])
+    BEGIN
+        INSERT INTO [Application].[tmp_ms_xx_Session] ([Session_ID], [Session_Type_ID], [Session_DateTime], [Referral_ID], [Case_ID], [Contact_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Session_ID],
+                 [Session_Type_ID],
+                 [Session_DateTime],
+                 [Referral_ID],
+                 [Case_ID],
+                 [Contact_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Application].[Session]
+        ORDER BY [Session_ID] ASC;
+    END
+
+DROP TABLE [Application].[Session];
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_Session]', N'Session';
+
+EXECUTE sp_rename N'[Application].[tmp_ms_xx_constraint_pk_Session1]', N'pk_Session', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Communication]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Communication] (
+    [Communication_ID]       VARCHAR (40)       NOT NULL,
+    [Device_Code_ID]         VARCHAR (30)       NULL,
+    [Device_Usage_Code_ID]   VARCHAR (20)       NULL,
+    [Phone_Country_Code_ID]  VARCHAR (5)        NULL,
+    [Phone_Area_Code_ID]     VARCHAR (10)       NULL,
+    [Phone_Number]           VARCHAR (20)       NULL,
+    [Extension]              VARCHAR (10)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Communication1] PRIMARY KEY CLUSTERED ([Communication_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Communication])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Communication] ([Communication_ID], [Device_Code_ID], [Device_Usage_Code_ID], [Phone_Country_Code_ID], [Phone_Area_Code_ID], [Phone_Number], [Extension], [Status_Code_ID], [Status_DateTime], [Entity_Type_ID], [Person_ID], [Organization_ID], [Officer_ID], [Contact_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Communication_ID],
+                 [Device_Code_ID],
+                 [Device_Usage_Code_ID],
+                 [Phone_Country_Code_ID],
+                 [Phone_Area_Code_ID],
+                 [Phone_Number],
+                 [Extension],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Entity_Type_ID],
+                 [Person_ID],
+                 [Organization_ID],
+                 [Officer_ID],
+                 [Contact_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Communication]
+        ORDER BY [Communication_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Communication];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Communication]', N'Communication';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Communication1]', N'pk_Communication', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 
 GO
@@ -228,45 +6897,44 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 SET XACT_ABORT ON;
 
 CREATE TABLE [Entity].[tmp_ms_xx_Contact] (
-    [Contact_ID]            VARCHAR (30)       NOT NULL,
-    [Alternate_ID]          VARCHAR (40)       NULL,
-    [Type_ID]               VARCHAR (30)       NULL,
-    [Name]                  VARCHAR (128)      NULL,
-    [Description]           VARCHAR (256)      NULL,
-    [Sex_Code_ID]           VARCHAR (30)       NULL,
-    [Phone_Number]          VARCHAR (20)       NULL,
-    [Email_Addresss]        VARCHAR (128)      NULL,
-    [Risk_Code_ID]          VARCHAR (30)       NULL,
-    [Priority_Code_ID]      VARCHAR (30)       NULL,
-    [Jurisdiction_Code_ID]  VARCHAR (30)       NULL,
-    [Status_Code_ID]        VARCHAR (30)       NULL,
-    [Status_DateTime]       DATETIMEOFFSET (7) NULL,
-    [Entity_Type_ID]        VARCHAR (30)       NULL,
-    [Person_ID]             VARCHAR (30)       NULL,
-    [Organization_ID]       VARCHAR (30)       NULL,
-    [Officer_ID]            VARCHAR (30)       NULL,
-    [Tenant_ID]             VARCHAR (30)       DEFAULT 'COMMON' NULL,
-    [Data_Owner_ID]         VARCHAR (30)       DEFAULT 'COMMON' NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                DEFAULT 0 NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       DEFAULT '0' NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
-    [Record_Status_Code_ID] CHAR (1)           DEFAULT 'A' NULL,
-    [Session_Updated_ID]    VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    [Contact_ID]             VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Name]                   VARCHAR (128)      NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Sex_Code_ID]            VARCHAR (30)       NULL,
+    [Phone_Number]           VARCHAR (20)       NULL,
+    [Email_Addresss]         VARCHAR (128)      NULL,
+    [Risk_Code_ID]           VARCHAR (30)       NULL,
+    [Priority_Code_ID]       VARCHAR (30)       NULL,
+    [Jurisdiction_Code_ID]   VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
     CONSTRAINT [tmp_ms_xx_constraint_pk_Contact1] PRIMARY KEY CLUSTERED ([Contact_ID] ASC)
 );
 
 IF EXISTS (SELECT TOP 1 1 
            FROM   [Entity].[Contact])
     BEGIN
-        INSERT INTO [Entity].[tmp_ms_xx_Contact] ([Contact_ID], [Alternate_ID], [Type_ID], [Person_ID], [Name], [Description], [Sex_Code_ID], [Phone_Number], [Email_Addresss], [Risk_Code_ID], [Priority_Code_ID], [Jurisdiction_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Efective_DateTime], [Efective_End_DateTime], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        INSERT INTO [Entity].[tmp_ms_xx_Contact] ([Contact_ID], [Alternate_ID], [Type_ID], [Name], [Description], [Sex_Code_ID], [Phone_Number], [Email_Addresss], [Risk_Code_ID], [Priority_Code_ID], [Jurisdiction_Code_ID], [Status_Code_ID], [Status_DateTime], [Entity_Type_ID], [Person_ID], [Organization_ID], [Officer_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
         SELECT   [Contact_ID],
                  [Alternate_ID],
                  [Type_ID],
-                 [Person_ID],
                  [Name],
                  [Description],
                  [Sex_Code_ID],
@@ -277,12 +6945,14 @@ IF EXISTS (SELECT TOP 1 1
                  [Jurisdiction_Code_ID],
                  [Status_Code_ID],
                  [Status_DateTime],
+                 [Entity_Type_ID],
+                 [Person_ID],
+                 [Organization_ID],
+                 [Officer_ID],
                  [Tenant_ID],
                  [Data_Owner_ID],
                  [Agency_Reporting_ID],
                  [Sequence_Number],
-                 [Efective_DateTime],
-                 [Efective_End_DateTime],
                  [Version_Number],
                  [Created_DateTime],
                  [Updated_Last_DateTime],
@@ -304,582 +6974,11075 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
 
 GO
-PRINT N'Creating Table [Generic].[Element_Type]...';
+PRINT N'Starting rebuilding table [Entity].[Contact_Emergency]...';
 
 
 GO
-CREATE TABLE [Generic].[Element_Type] (
-    [Type_ID]               VARCHAR (30)       NOT NULL,
-    [Description]           VARCHAR (80)       NULL,
-    [Category_ID]           VARCHAR (30)       NULL,
-    [Tags]                  VARCHAR (128)      NULL,
-    [CodeSet_Name]          VARCHAR (80)       NULL,
-    [Tenant_ID]             VARCHAR (30)       NULL,
-    [Data_Owner_ID]         VARCHAR (30)       NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) NULL,
-    [Record_Status_Code_ID] CHAR (1)           NULL,
-    [Session_Updated_ID]    VARCHAR (40)       NULL,
-    CONSTRAINT [pk_Element_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Contact_Emergency] (
+    [Contact_Emergency_ID]   VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Name]                   VARCHAR (128)      NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Sex_Code_ID]            VARCHAR (30)       NULL,
+    [Phone_Number]           VARCHAR (20)       NULL,
+    [Email_Addresss]         VARCHAR (128)      NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Contact_Emergency1] PRIMARY KEY CLUSTERED ([Contact_Emergency_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Contact_Emergency])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Contact_Emergency] ([Contact_Emergency_ID], [Type_ID], [Person_ID], [Name], [Description], [Sex_Code_ID], [Phone_Number], [Email_Addresss], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Contact_Emergency_ID],
+                 [Type_ID],
+                 [Person_ID],
+                 [Name],
+                 [Description],
+                 [Sex_Code_ID],
+                 [Phone_Number],
+                 [Email_Addresss],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Contact_Emergency]
+        ORDER BY [Contact_Emergency_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Contact_Emergency];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Contact_Emergency]', N'Contact_Emergency';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Contact_Emergency1]', N'pk_Contact_Emergency', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Contact_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Contact_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_ContactInformationType1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Contact_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Contact_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Contact_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Contact_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Contact_Type]', N'Contact_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_ContactInformationType1]', N'pk_ContactInformationType', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Device_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Device_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Device_Code1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Device_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Device_Type] ([Type_ID], [Description], [Category_ID], [Tags], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [Tags],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Device_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Device_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Device_Type]', N'Device_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Device_Code1]', N'pk_Device_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Employment]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Employment] (
+    [Employment_ID]          VARCHAR (40)       NOT NULL,
+    [Employer_ID]            VARCHAR (40)       NULL,
+    [Employee_ID]            VARCHAR (40)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Start_Date]             DATE               NULL,
+    [Ended_Date]             DATE               NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Employment1] PRIMARY KEY CLUSTERED ([Employment_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Employment])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Employment] ([Employment_ID], [Employer_ID], [Employee_ID], [Type_ID], [Name], [Description], [Start_Date], [Ended_Date], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Employment_ID],
+                 [Employer_ID],
+                 [Employee_ID],
+                 [Type_ID],
+                 [Name],
+                 [Description],
+                 [Start_Date],
+                 [Ended_Date],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Employment]
+        ORDER BY [Employment_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Employment];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Employment]', N'Employment';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Employment1]', N'pk_Employment', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Employment_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Employment_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Employment_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Employment_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Employment_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Employment_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Employment_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Employment_Type]', N'Employment_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Employment_Type1]', N'pk_Employment_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Entity_Location_Link]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Entity_Location_Link] (
+    [Location_Link_ID]       VARCHAR (30)       NOT NULL,
+    [Location_ID]            VARCHAR (30)       NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Entity_Location_Link1] PRIMARY KEY CLUSTERED ([Location_Link_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Entity_Location_Link])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Entity_Location_Link] ([Location_Link_ID], [Location_ID], [Entity_Type_ID], [Person_ID], [Organization_ID], [Officer_ID], [Contact_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Location_Link_ID],
+                 [Location_ID],
+                 [Entity_Type_ID],
+                 [Person_ID],
+                 [Organization_ID],
+                 [Officer_ID],
+                 [Contact_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Entity_Location_Link]
+        ORDER BY [Location_Link_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Entity_Location_Link];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Entity_Location_Link]', N'Entity_Location_Link';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Entity_Location_Link1]', N'pk_Entity_Location_Link', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Entity_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Entity_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Entity_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Entity_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Entity_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Entity_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Entity_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Entity_Type]', N'Entity_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Entity_Type1]', N'pk_Entity_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Ethnicity_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Ethnicity_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Ethnicity1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Ethnicity_Code])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Ethnicity_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Ethnicity_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Ethnicity_Code];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Ethnicity_Code]', N'Ethnicity_Code';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Ethnicity1]', N'pk_Ethnicity', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Gender_Identity_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Gender_Identity_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Gender_Identity_Code1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Gender_Identity_Code])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Gender_Identity_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Gender_Identity_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Gender_Identity_Code];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Gender_Identity_Code]', N'Gender_Identity_Code';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Gender_Identity_Code1]', N'pk_Gender_Identity_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Identification]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Identification] (
+    [Identification_ID]      VARCHAR (40)       NOT NULL,
+    [Identification_Number]  VARCHAR (80)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Class_Code]             VARCHAR (30)       NULL,
+    [Jurisdiction_Code_ID]   VARCHAR (30)       DEFAULT 0 NULL,
+    [Enacted_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Expiration_DateTime]    DATETIMEOFFSET (7) NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Reference_ID]           VARCHAR (40)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Identification1] PRIMARY KEY CLUSTERED ([Identification_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Identification])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Identification] ([Identification_ID], [Identification_Number], [Type_ID], [Class_Code], [Jurisdiction_Code_ID], [Enacted_DateTime], [Expiration_DateTime], [Status_Code_ID], [Status_DateTime], [Entity_Type_ID], [Person_ID], [Organization_ID], [Officer_ID], [Contact_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Identification_ID],
+                 [Identification_Number],
+                 [Type_ID],
+                 [Class_Code],
+                 [Jurisdiction_Code_ID],
+                 [Enacted_DateTime],
+                 [Expiration_DateTime],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Entity_Type_ID],
+                 [Person_ID],
+                 [Organization_ID],
+                 [Officer_ID],
+                 [Contact_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Identification]
+        ORDER BY [Identification_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Identification];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Identification]', N'Identification';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Identification1]', N'pk_Identification', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Identification_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Identification_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Identification_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Identification_Type] ([Type_ID], [Description], [Tags], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Tags],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Identification_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Identification_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Identification_Type]', N'Identification_Type';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Name]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Name] (
+    [Person_ID]              VARCHAR (30)       NULL,
+    [Name_ID]                VARCHAR (30)       NOT NULL,
+    [Name_Type_ID]           VARCHAR (30)       NULL,
+    [Name_Given]             VARCHAR (80)       NULL,
+    [Name_Middle]            VARCHAR (80)       NULL,
+    [Name_Family]            VARCHAR (80)       NULL,
+    [Name_Prefix_Code_ID]    VARCHAR (30)       NULL,
+    [Name_Suffix_Code_ID]    VARCHAR (30)       NULL,
+    [Name_Full]              VARCHAR (128)      NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Name1] PRIMARY KEY CLUSTERED ([Name_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Name])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Name] ([Name_ID], [Person_ID], [Name_Type_ID], [Name_Given], [Name_Middle], [Name_Family], [Name_Prefix_Code_ID], [Name_Suffix_Code_ID], [Name_Full], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Name_ID],
+                 [Person_ID],
+                 [Name_Type_ID],
+                 [Name_Given],
+                 [Name_Middle],
+                 [Name_Family],
+                 [Name_Prefix_Code_ID],
+                 [Name_Suffix_Code_ID],
+                 [Name_Full],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Name]
+        ORDER BY [Name_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Name];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Name]', N'Name';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Name1]', N'pk_Name', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Name_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Name_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Name_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Name_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Name_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Name_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Name_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Name_Type]', N'Name_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Name_Type1]', N'pk_Name_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Officer]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Officer] (
+    [Officer_ID]             VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Registry_ID]            VARCHAR (40)       NULL,
+    [Name]                   VARCHAR (128)      NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Officer1] PRIMARY KEY CLUSTERED ([Officer_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Officer])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Officer] ([Officer_ID], [Alternate_ID], [Type_ID], [Registry_ID], [Organization_ID], [Person_ID], [Contact_ID], [Name], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Officer_ID],
+                 [Alternate_ID],
+                 [Type_ID],
+                 [Registry_ID],
+                 [Organization_ID],
+                 [Person_ID],
+                 [Contact_ID],
+                 [Name],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Officer]
+        ORDER BY [Officer_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Officer];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Officer]', N'Officer';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Officer1]', N'pk_Officer', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Officer_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Officer_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Sequence_Number]        INT                NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NOT NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NOT NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NOT NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Officer_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Officer_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Officer_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Version_Number], [Sequence_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Version_Number],
+                 [Sequence_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Officer_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Officer_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Officer_Type]', N'Officer_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Officer_Type1]', N'pk_Officer_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Organization]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Organization] (
+    [Organization_ID]        VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [URL]                    VARCHAR (256)      NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Organization1] PRIMARY KEY CLUSTERED ([Organization_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Organization])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Organization] ([Organization_ID], [Alternate_ID], [Type_ID], [Name], [URL], [Description], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Organization_ID],
+                 [Alternate_ID],
+                 [Type_ID],
+                 [Name],
+                 [URL],
+                 [Description],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Organization]
+        ORDER BY [Organization_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Organization];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Organization]', N'Organization';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Organization1]', N'pk_Organization', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Organization_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Organization_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Organization_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Organization_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Organization_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Organization_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Organization_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Organization_Type]', N'Organization_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Organization_Type1]', N'pk_Organization_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Person]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Person] (
+    [Person_ID]                       VARCHAR (40)       NOT NULL,
+    [Alternate_ID]                    VARCHAR (40)       NULL,
+    [Type_ID]                         VARCHAR (30)       NULL,
+    [Birth_DateTime]                  DATETIMEOFFSET (7) NULL,
+    [Birth_Date]                      DATE               NULL,
+    [Birth_Date_Text]                 VARCHAR (50)       NULL,
+    [Birth_Location_ID]               VARCHAR (30)       NULL,
+    [Name_Type_ID]                    VARCHAR (30)       NULL,
+    [Name_Given]                      VARCHAR (80)       NULL,
+    [Name_Middle]                     VARCHAR (80)       NULL,
+    [Name_Family]                     VARCHAR (80)       NULL,
+    [Name_Prefix_Code_ID]             VARCHAR (30)       NULL,
+    [Name_Suffix_Code_ID]             VARCHAR (30)       NULL,
+    [Name_Full]                       VARCHAR (128)      NULL,
+    [Sex_Birth_Code_ID]               VARCHAR (30)       NULL,
+    [Sex_Code_ID]                     VARCHAR (30)       NULL,
+    [Gender_Identity_Code_ID]         VARCHAR (30)       NULL,
+    [Sexual_Orientation_Code_ID]      VARCHAR (30)       NULL,
+    [Height]                          INT                NULL,
+    [Height_Unit_Code]                VARCHAR (30)       NULL,
+    [Weight]                          INT                NULL,
+    [Weight_Unit_Code]                VARCHAR (30)       NULL,
+    [Ethnicity_Code_ID]               VARCHAR (30)       NULL,
+    [Race_Code_ID]                    VARCHAR (30)       NULL,
+    [Language_Primary_ID]             VARCHAR (30)       NULL,
+    [Language_Secondary_ID]           VARCHAR (30)       NULL,
+    [Education_Level_Highest_Code_ID] VARCHAR (30)       NULL,
+    [Status_Code_ID]                  VARCHAR (30)       NULL,
+    [Status_DateTime]                 DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]                       VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]                   VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]             VARCHAR (40)       NULL,
+    [Sequence_Number]                 INT                DEFAULT 0 NULL,
+    [Effective_DateTime]              DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime]          DATETIMEOFFSET (7) NULL,
+    [Version_Number]                  VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]                DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]           DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]           CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]              VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Person1] PRIMARY KEY CLUSTERED ([Person_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Person])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Person] ([Person_ID], [Alternate_ID], [Type_ID], [Birth_DateTime], [Birth_Date], [Birth_Date_Text], [Birth_Location_ID], [Name_Type_ID], [Name_Given], [Name_Middle], [Name_Family], [Name_Prefix_Code_ID], [Name_Suffix_Code_ID], [Name_Full], [Sex_Birth_Code_ID], [Sex_Code_ID], [Gender_Identity_Code_ID], [Sexual_Orientation_Code_ID], [Height], [Height_Unit_Code], [Weight], [Weight_Unit_Code], [Ethnicity_Code_ID], [Race_Code_ID], [Language_Primary_ID], [Language_Secondary_ID], [Education_Level_Highest_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Person_ID],
+                 [Alternate_ID],
+                 [Type_ID],
+                 [Birth_DateTime],
+                 [Birth_Date],
+                 [Birth_Date_Text],
+                 [Birth_Location_ID],
+                 [Name_Type_ID],
+                 [Name_Given],
+                 [Name_Middle],
+                 [Name_Family],
+                 [Name_Prefix_Code_ID],
+                 [Name_Suffix_Code_ID],
+                 [Name_Full],
+                 [Sex_Birth_Code_ID],
+                 [Sex_Code_ID],
+                 [Gender_Identity_Code_ID],
+                 [Sexual_Orientation_Code_ID],
+                 [Height],
+                 [Height_Unit_Code],
+                 [Weight],
+                 [Weight_Unit_Code],
+                 [Ethnicity_Code_ID],
+                 [Race_Code_ID],
+                 [Language_Primary_ID],
+                 [Language_Secondary_ID],
+                 [Education_Level_Highest_Code_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Person]
+        ORDER BY [Person_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Person];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Person]', N'Person';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Person1]', N'pk_Person', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Person_Death]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Person_Death] (
+    [Person_Death_ID]        VARCHAR (40)       NOT NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Source_Text]            VARCHAR (256)      NULL,
+    [Death_Date]             DATETIME2 (7)      NULL,
+    [Death_DateTime]         DATETIMEOFFSET (7) NULL,
+    [Death_Date_Text]        VARCHAR (50)       NULL,
+    [Cause_Code_ID]          VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Person_Death1] PRIMARY KEY CLUSTERED ([Person_Death_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Person_Death])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Person_Death] ([Person_Death_ID], [Person_ID], [Source_Text], [Death_Date], [Death_DateTime], [Death_Date_Text], [Cause_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Person_Death_ID],
+                 [Person_ID],
+                 [Source_Text],
+                 [Death_Date],
+                 [Death_DateTime],
+                 [Death_Date_Text],
+                 [Cause_Code_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Person_Death]
+        ORDER BY [Person_Death_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Person_Death];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Person_Death]', N'Person_Death';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Person_Death1]', N'pk_Person_Death', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Person_Flag]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Person_Flag] (
+    [Person_Flag_ID]         VARCHAR (40)       NOT NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Code_ID]                VARCHAR (30)       NULL,
+    [Flag_Value]             VARCHAR (10)       NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Person_Flag1] PRIMARY KEY CLUSTERED ([Person_Flag_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Person_Flag])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Person_Flag] ([Person_Flag_ID], [Person_ID], [Code_ID], [Flag_Value], [Description], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Person_Flag_ID],
+                 [Person_ID],
+                 [Code_ID],
+                 [Flag_Value],
+                 [Description],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Person_Flag]
+        ORDER BY [Person_Flag_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Person_Flag];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Person_Flag]', N'Person_Flag';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Person_Flag1]', N'pk_Person_Flag', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Person_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Person_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Person_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Person_Type])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Person_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Person_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Person_Type];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Person_Type]', N'Person_Type';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Person_Type1]', N'pk_Person_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Race_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Race_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Race_Code1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Race_Code])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Race_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Race_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Race_Code];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Race_Code]', N'Race_Code';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Race_Code1]', N'pk_Race_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Sex_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Sex_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Sex1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Sex_Code])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Sex_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Sex_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Sex_Code];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Sex_Code]', N'Sex_Code';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Sex1]', N'pk_Sex', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Entity].[Sexual_Orientation_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Entity].[tmp_ms_xx_Sexual_Orientation_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Sexual_Orientation_Code1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Entity].[Sexual_Orientation_Code])
+    BEGIN
+        INSERT INTO [Entity].[tmp_ms_xx_Sexual_Orientation_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Entity].[Sexual_Orientation_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Entity].[Sexual_Orientation_Code];
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_Sexual_Orientation_Code]', N'Sexual_Orientation_Code';
+
+EXECUTE sp_rename N'[Entity].[tmp_ms_xx_constraint_pk_Sexual_Orientation_Code1]', N'pk_Sexual_Orientation_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Generic].[Element]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Generic].[tmp_ms_xx_Element] (
+    [Element_ID]             VARCHAR (40)       NOT NULL,
+    [Group_ID]               VARCHAR (40)       NOT NULL,
+    [Label_Text]             VARCHAR (128)      NULL,
+    [Sequence_No]            INT                NULL,
+    [Period_To_Comply]       VARCHAR (30)       DEFAULT ('P0Y0M0DT0H0M0S') NULL,
+    [Required_Code_ID]       VARCHAR (30)       NULL,
+    [Value_Type_ID]          VARCHAR (30)       NULL,
+    [Code_Type_ID]           VARCHAR (30)       NULL,
+    [Checked]                BIT                NULL,
+    [Start_Date]             DATE               NULL,
+    [End_Date]               DATE               NULL,
+    [Start_Value]            DECIMAL (18)       NULL,
+    [End_Value]              DECIMAL (18)       NULL,
+    [Value_Numeric]          DECIMAL (18)       NULL,
+    [Value_Text]             VARCHAR (128)      NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Element1] PRIMARY KEY CLUSTERED ([Element_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Generic].[Element])
+    BEGIN
+        INSERT INTO [Generic].[tmp_ms_xx_Element] ([Element_ID], [Label_Text], [Sequence_No], [Period_To_Comply], [Required_Code_ID], [Value_Type_ID], [Code_Type_ID], [Checked], [Start_Date], [End_Date], [Start_Value], [End_Value], [Value_Numeric], [Value_Text], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Element_ID],
+                 [Label_Text],
+                 [Sequence_No],
+                 [Period_To_Comply],
+                 [Required_Code_ID],
+                 [Value_Type_ID],
+                 [Code_Type_ID],
+                 [Checked],
+                 [Start_Date],
+                 [End_Date],
+                 [Start_Value],
+                 [End_Value],
+                 [Value_Numeric],
+                 [Value_Text],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Generic].[Element]
+        ORDER BY [Element_ID] ASC;
+    END
+
+DROP TABLE [Generic].[Element];
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_Element]', N'Element';
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_constraint_pk_Element1]', N'pk_Element', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Generic].[Element_Value]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Generic].[tmp_ms_xx_Element_Value] (
+    [Element_Value_ID]       VARCHAR (40)       NOT NULL,
+    [Element_ID]             VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Sequence_No]            INT                NULL,
+    [Reference_Date]         DATE               NULL,
+    [Reference_Time]         TIME (7)           NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NOT NULL,
+    [Entity_ID]              VARCHAR (40)       NOT NULL,
+    [Checked]                BIT                NULL,
+    [Start_Date]             DATE               NULL,
+    [End_Date]               DATE               NULL,
+    [Start_Value]            DECIMAL (18)       NULL,
+    [End_Value]              DECIMAL (18)       NULL,
+    [Value_Numeric]          DECIMAL (18)       NULL,
+    [Value_Text]             VARCHAR (128)      NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Element_Value1] PRIMARY KEY CLUSTERED ([Element_Value_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Generic].[Element_Value])
+    BEGIN
+        INSERT INTO [Generic].[tmp_ms_xx_Element_Value] ([Element_Value_ID], [Element_ID], [Type_ID], [Sequence_No], [Reference_Date], [Reference_Time], [Entity_Type_ID], [Entity_ID], [Checked], [Start_Date], [End_Date], [Start_Value], [End_Value], [Value_Numeric], [Value_Text], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Element_Value_ID],
+                 [Element_ID],
+                 [Type_ID],
+                 [Sequence_No],
+                 [Reference_Date],
+                 [Reference_Time],
+                 [Entity_Type_ID],
+                 [Entity_ID],
+                 [Checked],
+                 [Start_Date],
+                 [End_Date],
+                 [Start_Value],
+                 [End_Value],
+                 [Value_Numeric],
+                 [Value_Text],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Generic].[Element_Value]
+        ORDER BY [Element_Value_ID] ASC;
+    END
+
+DROP TABLE [Generic].[Element_Value];
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_Element_Value]', N'Element_Value';
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_constraint_pk_Element_Value1]', N'pk_Element_Value', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Generic].[Element_Value_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Generic].[tmp_ms_xx_Element_Value_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Element_Value_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Generic].[Element_Value_Type])
+    BEGIN
+        INSERT INTO [Generic].[tmp_ms_xx_Element_Value_Type] ([Type_ID], [Description], [Category_ID], [Tags], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [Tags],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Generic].[Element_Value_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Generic].[Element_Value_Type];
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_Element_Value_Type]', N'Element_Value_Type';
+
+EXECUTE sp_rename N'[Generic].[tmp_ms_xx_constraint_pk_Element_Value_Type1]', N'pk_Element_Value_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Body_Position_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Body_Position_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_BodyPositionCode1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Body_Position_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Body_Position_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Body_Position_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Body_Position_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Body_Position_Code]', N'Body_Position_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_BodyPositionCode1]', N'pk_BodyPositionCode', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Body_Site_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Body_Site_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_BodySiteCode1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Body_Site_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Body_Site_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Body_Site_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Body_Site_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Body_Site_Code]', N'Body_Site_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_BodySiteCode1]', N'pk_BodySiteCode', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Clinical_Syndrome_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Clinical_Syndrome_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Clinical_Syndrome1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Clinical_Syndrome_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Clinical_Syndrome_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Clinical_Syndrome_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Clinical_Syndrome_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Clinical_Syndrome_Code]', N'Clinical_Syndrome_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Clinical_Syndrome1]', N'pk_Clinical_Syndrome', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Clinical_Syndrome_Secondary_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Clinical_Syndrome_Secondary_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Clinical_Syndrome_Secondary1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Clinical_Syndrome_Secondary_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Clinical_Syndrome_Secondary_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Clinical_Syndrome_Secondary_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Clinical_Syndrome_Secondary_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Clinical_Syndrome_Secondary_Code]', N'Clinical_Syndrome_Secondary_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Clinical_Syndrome_Secondary1]', N'pk_Clinical_Syndrome_Secondary', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Device_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Device_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_DeviceCode1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Device_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Device_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Device_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Device_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Device_Code]', N'Device_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_DeviceCode1]', N'pk_DeviceCode', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Disease_Acquired_Jurisdiction_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Disease_Acquired_Jurisdiction_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Disease_Acquired_Jurisdiction_Code1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Disease_Acquired_Jurisdiction_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Disease_Acquired_Jurisdiction_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Disease_Acquired_Jurisdiction_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Disease_Acquired_Jurisdiction_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Disease_Acquired_Jurisdiction_Code]', N'Disease_Acquired_Jurisdiction_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Disease_Acquired_Jurisdiction_Code1]', N'pk_Disease_Acquired_Jurisdiction_Code', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Disease_Condition_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Disease_Condition_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Status1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Disease_Condition_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Disease_Condition_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Disease_Condition_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Disease_Condition_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Disease_Condition_Code]', N'Disease_Condition_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Status1]', N'pk_Status', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Dosage_Form_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Dosage_Form_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_DosageForm1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Dosage_Form_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Dosage_Form_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Dosage_Form_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Dosage_Form_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Dosage_Form_Code]', N'Dosage_Form_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_DosageForm1]', N'pk_DosageForm', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Immunization]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Immunization] (
+    [Immunization_ID]        VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Administered_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Dosage_Series_Number]   VARCHAR (20)       NULL,
+    [Dosage_Amount]          VARCHAR (50)       NULL,
+    [Lot_Number]             VARCHAR (20)       NULL,
+    [Expiration_Date]        DATETIME2 (7)      NULL,
+    [Drug_Code_ID]           VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Immunization1] PRIMARY KEY CLUSTERED ([Immunization_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Immunization])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Immunization] ([Immunization_ID], [Activity_ID], [Organization_ID], [Administered_DateTime], [Dosage_Amount], [Lot_Number], [Expiration_Date], [Drug_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Immunization_ID],
+                 [Activity_ID],
+                 [Organization_ID],
+                 [Administered_DateTime],
+                 [Dosage_Amount],
+                 [Lot_Number],
+                 [Expiration_Date],
+                 [Drug_Code_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Immunization]
+        ORDER BY [Immunization_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Immunization];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Immunization]', N'Immunization';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Immunization1]', N'pk_Immunization', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Medical_Condition]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Medical_Condition] (
+    [Medical_Condition_ID]   VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Qualifier_Text]         VARCHAR (30)       NULL,
+    [Qualifier_Code_ID]      VARCHAR (30)       NULL,
+    [Severity_Code_ID]       VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Medical_Condition1] PRIMARY KEY CLUSTERED ([Medical_Condition_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Medical_Condition])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Medical_Condition] ([Medical_Condition_ID], [Qualifier_Text], [Qualifier_Code_ID], [Severity_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Medical_Condition_ID],
+                 [Qualifier_Text],
+                 [Qualifier_Code_ID],
+                 [Severity_Code_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Medical_Condition]
+        ORDER BY [Medical_Condition_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Medical_Condition];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Medical_Condition]', N'Medical_Condition';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Medical_Condition1]', N'pk_Medical_Condition', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Medication]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Medication] (
+    [Medication_ID]                VARCHAR (30)       NOT NULL,
+    [Alternate_ID]                 VARCHAR (40)       NULL,
+    [Medication_Code_ID]           VARCHAR (30)       NULL,
+    [Dose_Form_Code_ID]            VARCHAR (30)       NULL,
+    [Purpose_Code_ID]              VARCHAR (30)       NULL,
+    [Prescribed_DateTime]          DATETIMEOFFSET (7) NULL,
+    [Monitor_Medication_Flag]      CHAR (1)           NULL,
+    [Monitor_DateTime]             DATETIMEOFFSET (7) NULL,
+    [Dosage_Ordered]               DECIMAL (5, 3)     NULL,
+    [Dosage_Ordered_Unit_Code_ID]  VARCHAR (30)       NULL,
+    [Dosage_Strength]              DECIMAL (5, 3)     NULL,
+    [Dosage_Strength_Unit_Code_ID] VARCHAR (30)       NULL,
+    [Measure_Unit]                 DECIMAL (5, 3)     NULL,
+    [Measure_Unit_Code_ID]         VARCHAR (30)       NULL,
+    [Dosage_Calculated]            VARCHAR (30)       NULL,
+    [Frequency_Code_ID]            VARCHAR (30)       NULL,
+    [AdditionalInstruction]        VARCHAR (256)      NULL,
+    [Status_Code_ID]               VARCHAR (30)       NULL,
+    [Status_DateTime]              DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]                    VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]                VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]          VARCHAR (40)       NULL,
+    [Sequence_Number]              INT                DEFAULT 0 NULL,
+    [Effective_DateTime]           DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Version_Number]               VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]             DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]        DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]        CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]           VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Medication1] PRIMARY KEY CLUSTERED ([Medication_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Medication])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Medication] ([Medication_ID], [Alternate_ID], [Medication_Code_ID], [Dose_Form_Code_ID], [Purpose_Code_ID], [Prescribed_DateTime], [Monitor_Medication_Flag], [Monitor_DateTime], [Dosage_Ordered], [Dosage_Ordered_Unit_Code_ID], [Dosage_Strength], [Dosage_Strength_Unit_Code_ID], [Measure_Unit], [Measure_Unit_Code_ID], [Dosage_Calculated], [Frequency_Code_ID], [AdditionalInstruction], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Medication_ID],
+                 [Alternate_ID],
+                 [Medication_Code_ID],
+                 [Dose_Form_Code_ID],
+                 [Purpose_Code_ID],
+                 [Prescribed_DateTime],
+                 [Monitor_Medication_Flag],
+                 [Monitor_DateTime],
+                 [Dosage_Ordered],
+                 [Dosage_Ordered_Unit_Code_ID],
+                 [Dosage_Strength],
+                 [Dosage_Strength_Unit_Code_ID],
+                 [Measure_Unit],
+                 [Measure_Unit_Code_ID],
+                 [Dosage_Calculated],
+                 [Frequency_Code_ID],
+                 [AdditionalInstruction],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Medication]
+        ORDER BY [Medication_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Medication];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Medication]', N'Medication';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Medication1]', N'pk_Medication', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Provider]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Provider] (
+    [Provider_ID]            VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Provider_Type_ID]       VARCHAR (40)       NULL,
+    [Name_ID]                VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Practitioner1] PRIMARY KEY CLUSTERED ([Provider_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Provider])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Provider] ([Provider_ID], [Alternate_ID], [Person_ID], [Organization_ID], [Provider_Type_ID], [Name_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Provider_ID],
+                 [Alternate_ID],
+                 [Person_ID],
+                 [Organization_ID],
+                 [Provider_Type_ID],
+                 [Name_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Provider]
+        ORDER BY [Provider_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Provider];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Provider]', N'Provider';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Practitioner1]', N'pk_Practitioner', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Specimen_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Specimen_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Specimen_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Specimen_Type])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Specimen_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Specimen_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Specimen_Type];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Specimen_Type]', N'Specimen_Type';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Specimen_Type1]', N'pk_Specimen_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Treatment]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Treatment] (
+    [Treatment_Id]           VARCHAR (30)       NOT NULL,
+    [Given_Indicator]        BIT                NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [Start_Date]             DATETIME2 (7)      NULL,
+    [End_Date]               DATETIME2 (7)      NULL,
+    [Quantity]               DECIMAL (18, 5)    NULL,
+    [Form]                   VARCHAR (30)       NULL,
+    [Comment]                VARCHAR (4000)     NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Activity_ID]            VARCHAR (30)       NULL,
+    [Tenant_ID]              VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Treatment1] PRIMARY KEY CLUSTERED ([Treatment_Id] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Treatment])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Treatment] ([Treatment_Id], [Activity_ID], [Start_Date], [End_Date], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Treatment_Id],
+                 [Activity_ID],
+                 [Start_Date],
+                 [End_Date],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Treatment]
+        ORDER BY [Treatment_Id] ASC;
+    END
+
+DROP TABLE [Healthcare].[Treatment];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Treatment]', N'Treatment';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Treatment1]', N'pk_Treatment', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Creating Index [Healthcare].[Treatment].[IXFK_Treatment_Activity]...';
+
+
+GO
+CREATE NONCLUSTERED INDEX [IXFK_Treatment_Activity]
+    ON [Healthcare].[Treatment]([Activity_ID] ASC);
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Unit_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Unit_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_UnitCode1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Unit_Code])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Unit_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Unit_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Unit_Code];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Unit_Code]', N'Unit_Code';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_UnitCode1]', N'pk_UnitCode', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Virus_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Virus_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Virus_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Virus_Type])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Virus_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Virus_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Virus_Type];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Virus_Type]', N'Virus_Type';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Virus_Type1]', N'pk_Virus_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Healthcare].[Vitals]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Healthcare].[tmp_ms_xx_Vitals] (
+    [Vitals_ID]              VARCHAR (40)       NOT NULL,
+    [Profile_Code_ID]        VARCHAR (30)       NULL,
+    [Subject_ID]             VARCHAR (40)       NULL,
+    [Subject_Type_ID]        VARCHAR (30)       NULL,
+    [Body_Site_Code_ID]      VARCHAR (30)       NULL,
+    [Body_Position_Code_ID]  VARCHAR (30)       NULL,
+    [Device_Code_ID]         VARCHAR (30)       NULL,
+    [Method]                 VARCHAR (50)       NULL,
+    [Unit_Code_ID]           VARCHAR (30)       NULL,
+    [Component_Code_ID]      VARCHAR (30)       NULL,
+    [Measured_Value]         VARCHAR (50)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Party_ID]               VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (30)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Vita1] PRIMARY KEY CLUSTERED ([Vitals_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Healthcare].[Vitals])
+    BEGIN
+        INSERT INTO [Healthcare].[tmp_ms_xx_Vitals] ([Vitals_ID], [Profile_Code_ID], [Subject_ID], [Subject_Type_ID], [Device_Code_ID], [Method], [Unit_Code_ID], [Component_Code_ID], [Measured_Value], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Vitals_ID],
+                 [Profile_Code_ID],
+                 [Subject_ID],
+                 [Subject_Type_ID],
+                 [Device_Code_ID],
+                 [Method],
+                 [Unit_Code_ID],
+                 [Component_Code_ID],
+                 [Measured_Value],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Healthcare].[Vitals]
+        ORDER BY [Vitals_ID] ASC;
+    END
+
+DROP TABLE [Healthcare].[Vitals];
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_Vitals]', N'Vitals';
+
+EXECUTE sp_rename N'[Healthcare].[tmp_ms_xx_constraint_pk_Vita1]', N'pk_Vita', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Management].[Age_Unit_Code]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Management].[tmp_ms_xx_Age_Unit_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Age_Unit1] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Management].[Age_Unit_Code])
+    BEGIN
+        INSERT INTO [Management].[tmp_ms_xx_Age_Unit_Code] ([Code_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Code_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Management].[Age_Unit_Code]
+        ORDER BY [Code_ID] ASC;
+    END
+
+DROP TABLE [Management].[Age_Unit_Code];
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_Age_Unit_Code]', N'Age_Unit_Code';
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_constraint_pk_Age_Unit1]', N'pk_Age_Unit', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Management].[Case]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Management].[tmp_ms_xx_Case] (
+    [Case_ID]                 VARCHAR (40)       NOT NULL,
+    [Type_ID]                 VARCHAR (30)       NULL,
+    [Alternate_ID]            VARCHAR (40)       NULL,
+    [Officer_ID]              VARCHAR (40)       NULL,
+    [Person_ID]               VARCHAR (40)       NULL,
+    [Provider_ID]             VARCHAR (40)       NULL,
+    [Organization_ID]         VARCHAR (40)       NULL,
+    [Disposition_ID]          VARCHAR (40)       NULL,
+    [Medication_ID]           VARCHAR (40)       NULL,
+    [Medical_Condition_ID]    VARCHAR (40)       NULL,
+    [Profile_ID]              VARCHAR (40)       NULL,
+    [Priority_Code_ID]        VARCHAR (30)       NULL,
+    [Person_Age]              INT                NULL,
+    [Person_Age_Unit_Code_ID] VARCHAR (30)       NULL,
+    [Class_Status_Code_ID]    VARCHAR (30)       NULL,
+    [Status_Code_ID]          VARCHAR (30)       NULL,
+    [Status_DateTime]         DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]               VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]           VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]     VARCHAR (40)       NULL,
+    [Sequence_Number]         INT                DEFAULT 0 NULL,
+    [Effective_DateTime]      DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Version_Number]          VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]        DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]   DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]   CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]      VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Case1] PRIMARY KEY CLUSTERED ([Case_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Management].[Case])
+    BEGIN
+        INSERT INTO [Management].[tmp_ms_xx_Case] ([Case_ID], [Alternate_ID], [Officer_ID], [Person_ID], [Provider_ID], [Organization_ID], [Disposition_ID], [Medication_ID], [Medical_Condition_ID], [Profile_ID], [Priority_Code_ID], [Person_Age], [Class_Status_Code_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Case_ID],
+                 [Alternate_ID],
+                 [Officer_ID],
+                 [Person_ID],
+                 [Provider_ID],
+                 [Organization_ID],
+                 [Disposition_ID],
+                 [Medication_ID],
+                 [Medical_Condition_ID],
+                 [Profile_ID],
+                 [Priority_Code_ID],
+                 [Person_Age],
+                 [Class_Status_Code_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Management].[Case]
+        ORDER BY [Case_ID] ASC;
+    END
+
+DROP TABLE [Management].[Case];
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_Case]', N'Case';
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_constraint_pk_Case1]', N'pk_Case', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Management].[Case_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Management].[tmp_ms_xx_Case_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Duration]               VARCHAR (40)       NULL,
+    [Near_Complete_Duration] VARCHAR (40)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Case_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Management].[Case_Type])
+    BEGIN
+        INSERT INTO [Management].[tmp_ms_xx_Case_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Management].[Case_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Management].[Case_Type];
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_Case_Type]', N'Case_Type';
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_constraint_pk_Case_Type1]', N'pk_Case_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Management].[Referral]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Management].[tmp_ms_xx_Referral] (
+    [Referral_ID]            VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Referral_DateTime]      DATETIMEOFFSET (7) NULL,
+    [Case_ID]                VARCHAR (40)       NULL,
+    [Profile_ID]             VARCHAR (40)       NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Provider_ID]            VARCHAR (40)       NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Referral1] PRIMARY KEY CLUSTERED ([Referral_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Management].[Referral])
+    BEGIN
+        INSERT INTO [Management].[tmp_ms_xx_Referral] ([Referral_ID], [Referral_DateTime], [Case_ID], [Profile_ID], [Alternate_ID], [Provider_ID], [Activity_ID], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Referral_ID],
+                 [Referral_DateTime],
+                 [Case_ID],
+                 [Profile_ID],
+                 [Alternate_ID],
+                 [Provider_ID],
+                 [Activity_ID],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Management].[Referral]
+        ORDER BY [Referral_ID] ASC;
+    END
+
+DROP TABLE [Management].[Referral];
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_Referral]', N'Referral';
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_constraint_pk_Referral1]', N'pk_Referral', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Management].[Referral_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Management].[tmp_ms_xx_Referral_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Referral_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Management].[Referral_Type])
+    BEGIN
+        INSERT INTO [Management].[tmp_ms_xx_Referral_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Management].[Referral_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Management].[Referral_Type];
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_Referral_Type]', N'Referral_Type';
+
+EXECUTE sp_rename N'[Management].[tmp_ms_xx_constraint_pk_Referral_Type1]', N'pk_Referral_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Message].[Content_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Message].[tmp_ms_xx_Content_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NOT NULL,
+    [Local_Type_ID]          VARCHAR (40)       NOT NULL,
+    [Regional_Type_ID]       VARCHAR (20)       NOT NULL,
+    [Source_ID]              VARCHAR (40)       NOT NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Content_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Message].[Content_Type])
+    BEGIN
+        INSERT INTO [Message].[tmp_ms_xx_Content_Type] ([Type_ID], [Description], [Local_Type_ID], [Regional_Type_ID], [Source_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Local_Type_ID],
+                 [Regional_Type_ID],
+                 [Source_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Message].[Content_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Message].[Content_Type];
+
+EXECUTE sp_rename N'[Message].[tmp_ms_xx_Content_Type]', N'Content_Type';
+
+EXECUTE sp_rename N'[Message].[tmp_ms_xx_constraint_pk_Content_Type1]', N'pk_Content_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Message].[Submission]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Message].[tmp_ms_xx_Submission] (
+    [Submission_ID]          VARCHAR (30)       NOT NULL,
+    [Submission_DateTime]    DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Reference_ID]           VARCHAR (30)       NULL,
+    [Received_DateTime]      DATETIMEOFFSET (7) NULL,
+    [Message_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Data_Item_ID]           VARCHAR (50)       NOT NULL,
+    [Content_Type_ID]        VARCHAR (30)       NOT NULL,
+    [Content_ID]             VARCHAR (40)       NULL,
+    [Source_ID]              VARCHAR (40)       NOT NULL,
+    [Source_Local_ID]        VARCHAR (40)       NULL,
+    [Message_Data]           VARCHAR (MAX)      NOT NULL,
+    [Message_Count]          INT                NULL,
+    [Message_Length_InBytes] INT                NOT NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Submission1] PRIMARY KEY CLUSTERED ([Submission_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Message].[Submission])
+    BEGIN
+        INSERT INTO [Message].[tmp_ms_xx_Submission] ([Submission_ID], [Submission_DateTime], [Reference_ID], [Received_DateTime], [Message_DateTime], [Data_Item_ID], [Content_Type_ID], [Content_ID], [Source_ID], [Source_Local_ID], [Message_Data], [Message_Count], [Message_Length_InBytes], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Submission_ID],
+                 [Submission_DateTime],
+                 [Reference_ID],
+                 [Received_DateTime],
+                 [Message_DateTime],
+                 [Data_Item_ID],
+                 [Content_Type_ID],
+                 [Content_ID],
+                 [Source_ID],
+                 [Source_Local_ID],
+                 [Message_Data],
+                 [Message_Count],
+                 [Message_Length_InBytes],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Message].[Submission]
+        ORDER BY [Submission_ID] ASC;
+    END
+
+DROP TABLE [Message].[Submission];
+
+EXECUTE sp_rename N'[Message].[tmp_ms_xx_Submission]', N'Submission';
+
+EXECUTE sp_rename N'[Message].[tmp_ms_xx_constraint_pk_Submission1]', N'pk_Submission', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Answer_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Answer_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Answer_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Answer_Type])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Answer_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Answer_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Answer_Type];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Answer_Type]', N'Answer_Type';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Answer_Type1]', N'pk_Answer_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Assessment]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Assessment] (
+    [Assessment_ID]            VARCHAR (40)       NOT NULL,
+    [Alternate_ID]             VARCHAR (40)       NULL,
+    [Case_ID]                  VARCHAR (40)       NULL,
+    [Description]              VARCHAR (1024)     NULL,
+    [Assessment_Type_ID]       VARCHAR (30)       NULL,
+    [Questionnaire_URL]        VARCHAR (256)      NULL,
+    [Questionnaire_Answer_URL] VARCHAR (256)      NULL,
+    [Status_Code_ID]           VARCHAR (30)       NULL,
+    [Status_DateTime]          DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]                VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]            VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]      VARCHAR (40)       NULL,
+    [Sequence_Number]          INT                DEFAULT 0 NULL,
+    [Effective_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime]   DATETIMEOFFSET (7) NULL,
+    [Version_Number]           VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]         DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]    DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]    CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]       VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Assessment1] PRIMARY KEY CLUSTERED ([Assessment_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Assessment])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Assessment] ([Assessment_ID], [Alternate_ID], [Case_ID], [Description], [Assessment_Type_ID], [Questionnaire_URL], [Questionnaire_Answer_URL], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Assessment_ID],
+                 [Alternate_ID],
+                 [Case_ID],
+                 [Description],
+                 [Assessment_Type_ID],
+                 [Questionnaire_URL],
+                 [Questionnaire_Answer_URL],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Assessment]
+        ORDER BY [Assessment_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Assessment];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Assessment]', N'Assessment';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Assessment1]', N'pk_Assessment', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Assessment_Answer]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Assessment_Answer] (
+    [Answer_ID]              VARCHAR (40)       NOT NULL,
+    [Assessment_ID]          VARCHAR (40)       NULL,
+    [Question_ID]            VARCHAR (40)       NULL,
+    [AnswerValue]            VARCHAR (256)      NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Assessment_Answer1] PRIMARY KEY CLUSTERED ([Answer_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Assessment_Answer])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Assessment_Answer] ([Answer_ID], [Assessment_ID], [Question_ID], [AnswerValue], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Answer_ID],
+                 [Assessment_ID],
+                 [Question_ID],
+                 [AnswerValue],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Assessment_Answer]
+        ORDER BY [Answer_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Assessment_Answer];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Assessment_Answer]', N'Assessment_Answer';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Assessment_Answer1]', N'pk_Assessment_Answer', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Assessment_Question]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Assessment_Question] (
+    [Question_ID]            VARCHAR (40)       NOT NULL,
+    [Questionnaire_ID]       VARCHAR (40)       NULL,
+    [Assessment_ID]          VARCHAR (40)       NULL,
+    [Question_Sequence]      INT                NULL,
+    [Question_Text]          VARCHAR (512)      NULL,
+    [Answer_Type_ID]         VARCHAR (30)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Assessment_Question1] PRIMARY KEY CLUSTERED ([Question_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Assessment_Question])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Assessment_Question] ([Question_ID], [Questionnaire_ID], [Assessment_ID], [Question_Sequence], [Question_Text], [Answer_Type_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Question_ID],
+                 [Questionnaire_ID],
+                 [Assessment_ID],
+                 [Question_Sequence],
+                 [Question_Text],
+                 [Answer_Type_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Assessment_Question]
+        ORDER BY [Question_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Assessment_Question];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Assessment_Question]', N'Assessment_Question';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Assessment_Question1]', N'pk_Assessment_Question', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Assessment_Questionnaire]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Assessment_Questionnaire] (
+    [Questionnaire_ID]       VARCHAR (40)       NOT NULL,
+    [Questionnaire_No]       INT                NULL,
+    [Title]                  VARCHAR (256)      NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Assessment_ID]          VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Assessment_Questionnaire1] PRIMARY KEY CLUSTERED ([Questionnaire_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Assessment_Questionnaire])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Assessment_Questionnaire] ([Questionnaire_ID], [Questionnaire_No], [Title], [Description], [Assessment_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Questionnaire_ID],
+                 [Questionnaire_No],
+                 [Title],
+                 [Description],
+                 [Assessment_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Assessment_Questionnaire]
+        ORDER BY [Questionnaire_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Assessment_Questionnaire];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Assessment_Questionnaire]', N'Assessment_Questionnaire';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Assessment_Questionnaire1]', N'pk_Assessment_Questionnaire', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Assessment_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Assessment_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_AssessmentType1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Assessment_Type])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Assessment_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Assessment_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Assessment_Type];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Assessment_Type]', N'Assessment_Type';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_AssessmentType1]', N'pk_AssessmentType', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Profile]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Profile] (
+    [Profile_ID]             VARCHAR (40)       NOT NULL,
+    [Profile_Type_ID]        VARCHAR (30)       NULL,
+    [Profile_Name]           VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Profile_Group1] PRIMARY KEY CLUSTERED ([Profile_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Profile])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Profile] ([Profile_ID], [Profile_Type_ID], [Profile_Name], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Profile_ID],
+                 [Profile_Type_ID],
+                 [Profile_Name],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Profile]
+        ORDER BY [Profile_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Profile];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Profile]', N'Profile';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Profile_Group1]', N'pk_Profile_Group', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Profile_Condition]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Profile_Condition] (
+    [Profile_Condition_ID]   VARCHAR (40)       NOT NULL,
+    [Profile_ID]             VARCHAR (40)       NULL,
+    [Condition_Code_ID]      VARCHAR (30)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Profile_Condition1] PRIMARY KEY CLUSTERED ([Profile_Condition_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Profile_Condition])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Profile_Condition] ([Profile_Condition_ID], [Profile_ID], [Condition_Code_ID], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Profile_Condition_ID],
+                 [Profile_ID],
+                 [Condition_Code_ID],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Profile_Condition]
+        ORDER BY [Profile_Condition_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Profile_Condition];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Profile_Condition]', N'Profile_Condition';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Profile_Condition1]', N'pk_Profile_Condition', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Profile_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Profile_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Profile_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Profile_Type])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Profile_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Profile_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Profile_Type];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Profile_Type]', N'Profile_Type';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Profile_Type1]', N'pk_Profile_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Report]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Report] (
+    [Report_ID]              VARCHAR (30)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Description]            VARCHAR (1024)     NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Report1] PRIMARY KEY CLUSTERED ([Report_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Report])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Report] ([Report_ID], [Type_ID], [Description], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Report_ID],
+                 [Type_ID],
+                 [Description],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Report]
+        ORDER BY [Report_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Report];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Report]', N'Report';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Report1]', N'pk_Report', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Report_Type]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Report_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Report_Type1] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Report_Type])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Report_Type] ([Type_ID], [Description], [Category_ID], [CodeSet_Name], [Status_Code_ID], [Status_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Type_ID],
+                 [Description],
+                 [Category_ID],
+                 [CodeSet_Name],
+                 [Status_Code_ID],
+                 [Status_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Report_Type]
+        ORDER BY [Type_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Report_Type];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Report_Type]', N'Report_Type';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Report_Type1]', N'pk_Report_Type', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Starting rebuilding table [Surveillance].[Travel_Detail]...';
+
+
+GO
+BEGIN TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+SET XACT_ABORT ON;
+
+CREATE TABLE [Surveillance].[tmp_ms_xx_Travel_Detail] (
+    [Travel_Detail_ID]       VARCHAR (40)       NOT NULL,
+    [Travel_Type_ID]         VARCHAR (20)       NULL,
+    [Entity_ID]              VARCHAR (40)       NULL,
+    [Entity_Type_ID]         VARCHAR (20)       NULL,
+    [Travel_Number]          VARCHAR (20)       NULL,
+    [Origin_ID]              VARCHAR (20)       NULL,
+    [Destination_ID]         VARCHAR (20)       NULL,
+    [Travel_Parent_ID]       VARCHAR (40)       NULL,
+    [Arrival_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Data_Owner_ID]          VARCHAR (40)       DEFAULT 'COMMON' NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                DEFAULT 0 NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       DEFAULT '0' NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) DEFAULT getutcdate() NULL,
+    [Record_Status_Code_ID]  CHAR (1)           DEFAULT 'A' NULL,
+    [Session_Updated_ID]     VARCHAR (40)       DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' NULL,
+    CONSTRAINT [tmp_ms_xx_constraint_pk_Travel_Detail1] PRIMARY KEY CLUSTERED ([Travel_Detail_ID] ASC)
+);
+
+IF EXISTS (SELECT TOP 1 1 
+           FROM   [Surveillance].[Travel_Detail])
+    BEGIN
+        INSERT INTO [Surveillance].[tmp_ms_xx_Travel_Detail] ([Travel_Detail_ID], [Travel_Type_ID], [Entity_ID], [Entity_Type_ID], [Travel_Number], [Origin_ID], [Destination_ID], [Travel_Parent_ID], [Arrival_DateTime], [Tenant_ID], [Data_Owner_ID], [Agency_Reporting_ID], [Sequence_Number], [Version_Number], [Created_DateTime], [Updated_Last_DateTime], [Record_Status_Code_ID], [Session_Updated_ID])
+        SELECT   [Travel_Detail_ID],
+                 [Travel_Type_ID],
+                 [Entity_ID],
+                 [Entity_Type_ID],
+                 [Travel_Number],
+                 [Origin_ID],
+                 [Destination_ID],
+                 [Travel_Parent_ID],
+                 [Arrival_DateTime],
+                 [Tenant_ID],
+                 [Data_Owner_ID],
+                 [Agency_Reporting_ID],
+                 [Sequence_Number],
+                 [Version_Number],
+                 [Created_DateTime],
+                 [Updated_Last_DateTime],
+                 [Record_Status_Code_ID],
+                 [Session_Updated_ID]
+        FROM     [Surveillance].[Travel_Detail]
+        ORDER BY [Travel_Detail_ID] ASC;
+    END
+
+DROP TABLE [Surveillance].[Travel_Detail];
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_Travel_Detail]', N'Travel_Detail';
+
+EXECUTE sp_rename N'[Surveillance].[tmp_ms_xx_constraint_pk_Travel_Detail1]', N'pk_Travel_Detail', N'OBJECT';
+
+COMMIT TRANSACTION;
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+
+GO
+PRINT N'Creating Table [Action].[Role_Code]...';
+
+
+GO
+CREATE TABLE [Action].[Role_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Role_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [Generic].[Element]...';
+PRINT N'Creating Table [Action].[Party_Type]...';
 
 
 GO
-CREATE TABLE [Generic].[Element] (
-    [Element_ID]            VARCHAR (30)       NOT NULL,
-    [Type_ID]               VARCHAR (30)       NOT NULL,
-    [Label_Text]            VARCHAR (128)      NULL,
-    [Sequence_No]           INT                NULL,
-    [Period_To_Comply]      VARCHAR (30)       NULL,
-    [Required_Code_ID]      VARCHAR (30)       NULL,
-    [Value_Type_ID]         VARCHAR (30)       NULL,
-    [Code_Type_ID]          VARCHAR (30)       NULL,
-    [Checked]               BIT                NULL,
-    [Start_Date]            DATE               NULL,
-    [End_Date]              DATE               NULL,
-    [Start_Value]           DECIMAL (18)       NULL,
-    [End_Value]             DECIMAL (18)       NULL,
-    [Value_Numeric]         DECIMAL (18)       NULL,
-    [Value_Text]            VARCHAR (128)      NULL,
-    [Tenant_ID]             VARCHAR (30)       NULL,
-    [Data_Owner_ID]         VARCHAR (30)       NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) NULL,
-    [Record_Status_Code_ID] CHAR (1)           NULL,
-    [Session_Updated_ID]    VARCHAR (40)       NULL,
-    CONSTRAINT [pk_Element] PRIMARY KEY CLUSTERED ([Element_ID] ASC)
+CREATE TABLE [Action].[Party_Type] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Party_Type] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [Generic].[Element_Value_Type]...';
+PRINT N'Creating Table [Action].[Media_Type]...';
 
 
 GO
-CREATE TABLE [Generic].[Element_Value_Type] (
-    [Type_ID]               VARCHAR (30)       NOT NULL,
-    [Description]           VARCHAR (80)       NULL,
-    [Category_ID]           VARCHAR (30)       NULL,
-    [Tags]                  VARCHAR (128)      NULL,
-    [CodeSet_Name]          VARCHAR (80)       NULL,
-    [Tenant_ID]             VARCHAR (30)       NULL,
-    [Data_Owner_ID]         VARCHAR (30)       NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) NULL,
-    [Record_Status_Code_ID] CHAR (1)           NULL,
-    [Session_Updated_ID]    VARCHAR (40)       NULL,
-    CONSTRAINT [pk_Element_Value_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+CREATE TABLE [Action].[Media_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [Generic].[Element_Value]...';
+PRINT N'Creating Table [Action].[Activity_Type]...';
 
 
 GO
-CREATE TABLE [Generic].[Element_Value] (
-    [Element_Value_ID]      VARCHAR (30)       NOT NULL,
-    [Element_ID]            VARCHAR (30)       NOT NULL,
-    [Type_ID]               VARCHAR (30)       NOT NULL,
-    [Sequence_No]           INT                NULL,
-    [Reference_Date]        DATE               NULL,
-    [Reference_Time]        TIME (7)           NULL,
-    [Entity_Type_ID]        VARCHAR (30)       NOT NULL,
-    [Entity_ID]             VARCHAR (30)       NOT NULL,
-    [Checked]               BIT                NULL,
-    [Start_Date]            DATE               NULL,
-    [End_Date]              DATE               NULL,
-    [Start_Value]           DECIMAL (18)       NULL,
-    [End_Value]             DECIMAL (18)       NULL,
-    [Value_Numeric]         DECIMAL (18)       NULL,
-    [Value_Text]            VARCHAR (128)      NULL,
-    [Tenant_ID]             VARCHAR (30)       NULL,
-    [Data_Owner_ID]         VARCHAR (30)       NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) NULL,
-    [Record_Status_Code_ID] CHAR (1)           NULL,
-    [Session_Updated_ID]    VARCHAR (40)       NULL,
-    CONSTRAINT [pk_Element_Value] PRIMARY KEY CLUSTERED ([Element_Value_ID] ASC)
+CREATE TABLE [Action].[Activity_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Activity_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [Application].[App_Message_Code]...';
+PRINT N'Creating Table [Action].[Disposition]...';
 
 
 GO
-CREATE TABLE [Application].[App_Message_Code] (
-    [Code_Number]           INT                NOT NULL,
-    [Code_ID]               VARCHAR (60)       NULL,
-    [Description]           VARCHAR (128)      NULL,
-    [Category_ID]           VARCHAR (30)       NULL,
-    [CodeSet_Name]          VARCHAR (80)       NULL,
-    [Tenant_ID]             VARCHAR (30)       NULL,
-    [Data_Owner_ID]         VARCHAR (30)       NULL,
-    [Agency_Reporting_ID]   VARCHAR (30)       NULL,
-    [Sequence_Number]       INT                NULL,
-    [Efective_DateTime]     DATETIMEOFFSET (7) NULL,
-    [Efective_End_DateTime] DATETIMEOFFSET (7) NULL,
-    [Version_Number]        VARCHAR (20)       NULL,
-    [Created_DateTime]      DATETIMEOFFSET (7) NULL,
-    [Updated_Last_DateTime] DATETIMEOFFSET (7) NULL,
-    [Record_Status_Code_ID] CHAR (1)           NULL,
-    [Session_Updated_ID]    VARCHAR (40)       NULL,
-    CONSTRAINT [pk_App_Message_Code] PRIMARY KEY CLUSTERED ([Code_Number] ASC)
+CREATE TABLE [Action].[Disposition] (
+    [Disposition_ID]         VARCHAR (40)       NOT NULL,
+    [Code_ID]                VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Disposition] PRIMARY KEY CLUSTERED ([Disposition_ID] ASC)
 );
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Table [Action].[Note_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+CREATE TABLE [Action].[Note_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Priority_Code]...';
+
+
+GO
+CREATE TABLE [Action].[Priority_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Priority_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Reason_Code]...';
+
+
+GO
+CREATE TABLE [Action].[Reason_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Reason_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Schedule_Event]...';
+
+
+GO
+CREATE TABLE [Action].[Schedule_Event] (
+    [Schedule_Event_ID]      VARCHAR (30)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Schedule_Event] PRIMARY KEY CLUSTERED ([Schedule_Event_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Media]...';
+
+
+GO
+CREATE TABLE [Action].[Media] (
+    [Entity_ID]              VARCHAR (40)       NOT NULL,
+    [Media_ID]               VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (60)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Category_Text]          VARCHAR (80)       NULL,
+    [Status_Code]            INT                NOT NULL,
+    [Url_Text]               VARCHAR (1024)     NULL,
+    [Size_In_Bytes]          INT                NOT NULL,
+    [Media_Data]             VARBINARY (MAX)    NULL,
+    [Scope_Code_ID]          VARCHAR (30)       NULL,
+    [Content_Type_Code_ID]   VARCHAR (30)       NULL,
+    [Content_Type_Text]      VARCHAR (128)      NOT NULL,
+    [Default_Indicator]      BIT                NOT NULL,
+    [Serial_No]              BIGINT             NOT NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Reference_Date_Type_ID] VARCHAR (30)       NULL,
+    [Reference_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Activity]...';
+
+
+GO
+CREATE TABLE [Action].[Activity] (
+    [Activity_ID]            VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Disposition_ID]         VARCHAR (40)       NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Priority_Code_ID]       VARCHAR (30)       NULL,
+    [Reason_Code_ID]         VARCHAR (30)       NULL,
+    [Scheduled_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Started_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Ended_DateTime]         DATETIMEOFFSET (7) NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Case_ID]                VARCHAR (40)       NULL,
+    [Location_ID]            VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Activity] PRIMARY KEY CLUSTERED ([Activity_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Event]...';
+
+
+GO
+CREATE TABLE [Action].[Event] (
+    [Event_ID]               VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (50)       NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [EventType_ID]           VARCHAR (20)       NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Party_ID]               VARCHAR (30)       NULL,
+    [Scheduled_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Started_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Ended_DateTime]         DATETIMEOFFSET (7) NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Event] PRIMARY KEY CLUSTERED ([Event_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Note]...';
+
+
+GO
+CREATE TABLE [Action].[Note] (
+    [Note_ID]                VARCHAR (40)       NOT NULL,
+    [Note_Type_ID]           VARCHAR (30)       NULL,
+    [Note_Text]              VARCHAR (4096)     NOT NULL,
+    [Note_DateTime]          DATETIMEOFFSET (7) NOT NULL,
+    [Author_ID]              VARCHAR (40)       NULL,
+    [Author_Role_ID]         VARCHAR (30)       NULL,
+    [Author_Name]            VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [Event_ID]               VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note] PRIMARY KEY CLUSTERED ([Note_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Action].[Party]...';
+
+
+GO
+CREATE TABLE [Action].[Party] (
+    [Party_ID]               VARCHAR (30)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Identification_ID]      VARCHAR (80)       NULL,
+    [Role_Code_ID]           VARCHAR (30)       NULL,
+    [Duration]               VARCHAR (50)       NULL,
+    [Contact_ID]             VARCHAR (30)       NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Party] PRIMARY KEY CLUSTERED ([Party_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Article].[Item_Type]...';
+
+
+GO
+CREATE TABLE [Article].[Item_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Item_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Article].[Item]...';
+
+
+GO
+CREATE TABLE [Article].[Item] (
+    [Item_ID]                VARCHAR (40)       NOT NULL,
+    [Name]                   VARCHAR (50)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Value_Amount]           DECIMAL (12, 2)    NULL,
+    [Quantity]               DECIMAL (12)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Item] PRIMARY KEY CLUSTERED ([Item_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Location_Type]...';
+
+
+GO
+CREATE TABLE [Geography].[Location_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Location_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Media_Type]...';
+
+
+GO
+CREATE TABLE [Geography].[Media_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Media]...';
+
+
+GO
+CREATE TABLE [Geography].[Media] (
+    [Media_ID]               VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (60)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Category_Text]          VARCHAR (80)       NULL,
+    [Status_Code]            INT                NOT NULL,
+    [Url_Text]               VARCHAR (1024)     NULL,
+    [Size_In_Bytes]          INT                NOT NULL,
+    [Media_Data]             VARBINARY (MAX)    NULL,
+    [Scope_Code_ID]          VARCHAR (30)       NULL,
+    [Content_Type_Code_ID]   VARCHAR (30)       NULL,
+    [Content_Type_Text]      VARCHAR (128)      NOT NULL,
+    [Default_Indicator]      BIT                NOT NULL,
+    [Serial_No]              BIGINT             NOT NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Reference_Date_Type_ID] VARCHAR (30)       NULL,
+    [Reference_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media] PRIMARY KEY CLUSTERED ([Media_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Note_Type]...';
+
+
+GO
+CREATE TABLE [Geography].[Note_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Note]...';
+
+
+GO
+CREATE TABLE [Geography].[Note] (
+    [Note_ID]                VARCHAR (40)       NOT NULL,
+    [Note_Type_ID]           VARCHAR (30)       NULL,
+    [Note_Text]              VARCHAR (4096)     NOT NULL,
+    [Note_DateTime]          DATETIMEOFFSET (7) NOT NULL,
+    [Author_ID]              VARCHAR (40)       NULL,
+    [Author_Role_ID]         VARCHAR (30)       NULL,
+    [Author_Name]            VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note] PRIMARY KEY CLUSTERED ([Note_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Address_Line]...';
+
+
+GO
+CREATE TABLE [Geography].[Address_Line] (
+    [Address_Line_ID]        VARCHAR (40)       NOT NULL,
+    [Address_Text1]          VARCHAR (80)       NULL,
+    [Address_Text2]          VARCHAR (80)       NULL,
+    [Address_Text3]          VARCHAR (80)       NULL,
+    [Address_Text4]          VARCHAR (80)       NULL,
+    [Address_Text5]          VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Address_Line] PRIMARY KEY CLUSTERED ([Address_Line_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Address_Structured]...';
+
+
+GO
+CREATE TABLE [Geography].[Address_Structured] (
+    [Address_Structured_ID]  VARCHAR (40)       NOT NULL,
+    [Building_Name]          VARCHAR (80)       NULL,
+    [Unit_Number]            VARCHAR (10)       NULL,
+    [Mailbox]                VARCHAR (40)       NULL,
+    [Street_Number]          VARCHAR (40)       NULL,
+    [Street_Name]            VARCHAR (80)       NULL,
+    [Street_Direction]       VARCHAR (20)       NULL,
+    [Street_Prefix]          VARCHAR (20)       NULL,
+    [Street_Suffix]          VARCHAR (20)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Address_Structured] PRIMARY KEY CLUSTERED ([Address_Structured_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Location]...';
+
+
+GO
+CREATE TABLE [Geography].[Location] (
+    [Location_ID]            VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Alternate_Type]         VARCHAR (20)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [Alias]                  VARCHAR (30)       NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Landmark_Text]          VARCHAR (128)      NULL,
+    [Address_Full_Text]      VARCHAR (128)      NULL,
+    [Address_Line_ID]        VARCHAR (40)       NULL,
+    [Address_Structured_ID]  VARCHAR (40)       NULL,
+    [City_Name]              VARCHAR (30)       NULL,
+    [State_Code]             VARCHAR (2)        NULL,
+    [Postal_Code]            VARCHAR (10)       NULL,
+    [Postal_Code_Extension]  VARCHAR (4)        NULL,
+    [Region_Code]            VARCHAR (10)       NULL,
+    [District_Code]          VARCHAR (30)       NULL,
+    [Country_Code]           VARCHAR (30)       NULL,
+    [Latitude]               DECIMAL (18, 7)    NULL,
+    [Longitude]              DECIMAL (18, 7)    NULL,
+    [Primary_Indicator]      CHAR (1)           NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Location] PRIMARY KEY CLUSTERED ([Location_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Area_Description_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[Area_Description_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (1028)     NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Associated_Entity]      VARCHAR (1028)     NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Area_Description_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[Class_Feature_Place_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (1028)     NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Associated_Entity]      VARCHAR (1028)     NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Class_Feature_Place_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Country_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[Country_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Country_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[State_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[State_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Region_Code_ID]         VARCHAR (30)       NULL,
+    [Division_Code_ID]       VARCHAR (30)       NULL,
+    [State_FIPS]             VARCHAR (2)        NOT NULL,
+    [State_ANSI]             VARCHAR (8)        NULL,
+    [Geography_ID]           VARCHAR (2)        NULL,
+    [USPS_Abbreviation]      VARCHAR (2)        NOT NULL,
+    [Area_Description_LSAD]  VARCHAR (2)        NULL,
+    [Feature_Class_MTF]      VARCHAR (5)        NULL,
+    [Area_Land]              DECIMAL (18, 7)    NULL,
+    [Area_Water]             DECIMAL (18, 7)    NULL,
+    [Latitude]               DECIMAL (18, 7)    NULL,
+    [Longitude]              DECIMAL (18, 7)    NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_State_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[County_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[County_Code] (
+    [Code_ID]                VARCHAR (40)       NOT NULL,
+    [State_FIPS]             VARCHAR (2)        NOT NULL,
+    [County_FIPS]            VARCHAR (3)        NOT NULL,
+    [County_ANSI]            VARCHAR (8)        NOT NULL,
+    [Geography_ID]           VARCHAR (5)        NOT NULL,
+    [Name]                   VARCHAR (100)      NOT NULL,
+    [Name_LSAD]              VARCHAR (100)      NULL,
+    [Area_Description_LSAD]  VARCHAR (2)        NULL,
+    [Class_FIPS]             VARCHAR (2)        NULL,
+    [Feature_Class_MTF]      VARCHAR (5)        NULL,
+    [Area_CSAFP]             VARCHAR (3)        NULL,
+    [Area_CBSAFP]            VARCHAR (5)        NULL,
+    [Metro_Division_Code]    VARCHAR (5)        NULL,
+    [Functional_Status]      VARCHAR (1)        NULL,
+    [Area_Land]              DECIMAL (18, 7)    NULL,
+    [Area_Water]             DECIMAL (18, 7)    NULL,
+    [Latitude]               DECIMAL (18, 7)    NULL,
+    [Longitude]              DECIMAL (18, 7)    NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_County_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[County_Subdivision_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[County_Subdivision_Code] (
+    [Code_ID]                VARCHAR (40)       NOT NULL,
+    [State_FIPS]             VARCHAR (2)        NOT NULL,
+    [County_FIPS]            VARCHAR (3)        NOT NULL,
+    [Subdivision_FIPS]       VARCHAR (5)        NOT NULL,
+    [Subdivision_ANSI]       VARCHAR (8)        NOT NULL,
+    [Geography_ID]           VARCHAR (10)       NOT NULL,
+    [Name]                   VARCHAR (100)      NOT NULL,
+    [Name_LSAD]              VARCHAR (100)      NULL,
+    [Area_Description_LSAD]  VARCHAR (2)        NULL,
+    [Class_FIPS]             VARCHAR (2)        NULL,
+    [Feature_Class_MTF]      VARCHAR (5)        NULL,
+    [Area_CSAFP]             VARCHAR (3)        NULL,
+    [Area_CBSAFP]            VARCHAR (5)        NULL,
+    [Metro_Division_Code]    VARCHAR (5)        NULL,
+    [Functional_Status]      VARCHAR (1)        NULL,
+    [Area_Land]              DECIMAL (18, 7)    NULL,
+    [Area_Water]             DECIMAL (18, 7)    NULL,
+    [Latitude]               DECIMAL (18, 7)    NULL,
+    [Longitude]              DECIMAL (18, 7)    NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_County_Subdivision_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Zip_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[Zip_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Zip_5_Code]             VARCHAR (5)        NOT NULL,
+    [Geography_ID]           VARCHAR (5)        NOT NULL,
+    [Class_FIPS]             VARCHAR (2)        NULL,
+    [Metro_Division_Code]    VARCHAR (5)        NULL,
+    [Functional_Status]      VARCHAR (1)        NULL,
+    [Area_Land]              DECIMAL (18, 7)    NULL,
+    [Area_Water]             DECIMAL (18, 7)    NULL,
+    [Latitude]               DECIMAL (18, 7)    NULL,
+    [Longitude]              DECIMAL (18, 7)    NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Zip_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Geography].[Region_Code]...';
+
+
+GO
+CREATE TABLE [Geography].[Region_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Region_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Lab_Result]...';
+
+
+GO
+CREATE TABLE [Testing].[Lab_Result] (
+    [Lab_Result_ID]          VARCHAR (40)       NOT NULL,
+    [Laboratory_ID]          VARCHAR (40)       NULL,
+    [Lab_Result_DateTime]    DATETIME2 (7)      NULL,
+    [Result_Type_ID]         VARCHAR (30)       NULL,
+    [Result_Value]           DECIMAL (18, 5)    NULL,
+    [Result_Unit]            VARCHAR (50)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Lab_Result] PRIMARY KEY CLUSTERED ([Lab_Result_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Lab_Result_Type]...';
+
+
+GO
+CREATE TABLE [Testing].[Lab_Result_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Lab_Result_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Lab_Test_Type]...';
+
+
+GO
+CREATE TABLE [Testing].[Lab_Test_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Lab_Test_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Lab_Type]...';
+
+
+GO
+CREATE TABLE [Testing].[Lab_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Lab_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Media]...';
+
+
+GO
+CREATE TABLE [Testing].[Media] (
+    [Media_ID]               VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (60)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Category_Text]          VARCHAR (80)       NULL,
+    [Status_Code]            INT                NOT NULL,
+    [Url_Text]               VARCHAR (1024)     NULL,
+    [Size_In_Bytes]          INT                NOT NULL,
+    [Media_Data]             VARBINARY (MAX)    NULL,
+    [Scope_Code_ID]          VARCHAR (30)       NULL,
+    [Content_Type_Code_ID]   VARCHAR (30)       NULL,
+    [Content_Type_Text]      VARCHAR (128)      NOT NULL,
+    [Default_Indicator]      BIT                NOT NULL,
+    [Serial_No]              BIGINT             NOT NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Reference_Date_Type_ID] VARCHAR (30)       NULL,
+    [Reference_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media] PRIMARY KEY CLUSTERED ([Media_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Media_Type]...';
+
+
+GO
+CREATE TABLE [Testing].[Media_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Note]...';
+
+
+GO
+CREATE TABLE [Testing].[Note] (
+    [Note_ID]                VARCHAR (40)       NOT NULL,
+    [Note_Type_ID]           VARCHAR (30)       NULL,
+    [Note_Text]              VARCHAR (4096)     NOT NULL,
+    [Note_DateTime]          DATETIMEOFFSET (7) NOT NULL,
+    [Author_ID]              VARCHAR (40)       NULL,
+    [Author_Role_ID]         VARCHAR (30)       NULL,
+    [Author_Name]            VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note] PRIMARY KEY CLUSTERED ([Note_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Note_Type]...';
+
+
+GO
+CREATE TABLE [Testing].[Note_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Testing].[Laboratory]...';
+
+
+GO
+CREATE TABLE [Testing].[Laboratory] (
+    [Laboratory_ID]          VARCHAR (40)       NOT NULL,
+    [Alternate_ID]           VARCHAR (40)       NULL,
+    [Lab_Code_ID]            VARCHAR (30)       NULL,
+    [Name]                   VARCHAR (80)       NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Vendor_LIMS_Code_ID]    VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Activity_ID]            VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Laboratory] PRIMARY KEY CLUSTERED ([Laboratory_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Flag_Code]...';
+
+
+GO
+CREATE TABLE [Entity].[Flag_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Flag] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Item_Link]...';
+
+
+GO
+CREATE TABLE [Entity].[Item_Link] (
+    [Item_Link_ID]           VARCHAR (40)       NOT NULL,
+    [Item_ID]                VARCHAR (40)       NOT NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Reference_Link] PRIMARY KEY CLUSTERED ([Item_Link_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Media]...';
+
+
+GO
+CREATE TABLE [Entity].[Media] (
+    [Media_ID]                VARCHAR (40)       NOT NULL,
+    [Alternate_ID]            VARCHAR (60)       NULL,
+    [Type_ID]                 VARCHAR (30)       NULL,
+    [Category_Text]           VARCHAR (80)       NULL,
+    [Status_Code]             INT                NOT NULL,
+    [Url_Text]                VARCHAR (1024)     NULL,
+    [Size_In_Bytes]           INT                NOT NULL,
+    [Media_Data]              VARBINARY (MAX)    NULL,
+    [Scope_Code_ID]           VARCHAR (30)       NULL,
+    [Content_Type_Code_ID]    VARCHAR (30)       NULL,
+    [Content_Type_Text]       VARCHAR (128)      NOT NULL,
+    [Media_Default_Indicator] BIT                NOT NULL,
+    [Serial_No]               BIGINT             NOT NULL,
+    [Status_Code_ID]          VARCHAR (30)       NULL,
+    [Status_DateTime]         DATETIMEOFFSET (7) NULL,
+    [Reference_Date_Type_ID]  VARCHAR (30)       NULL,
+    [Reference_DateTime]      DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]               VARCHAR (30)       NULL,
+    [Data_Owner_ID]           VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]     VARCHAR (30)       NULL,
+    [Sequence_Number]         INT                NULL,
+    [Effective_DateTime]      DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Version_Number]          VARCHAR (20)       NULL,
+    [Created_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]   DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]   CHAR (1)           NULL,
+    [Session_Updated_ID]      VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media] PRIMARY KEY CLUSTERED ([Media_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Media_Type]...';
+
+
+GO
+CREATE TABLE [Entity].[Media_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Media_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Note]...';
+
+
+GO
+CREATE TABLE [Entity].[Note] (
+    [Note_ID]                VARCHAR (40)       NOT NULL,
+    [Note_Type_ID]           VARCHAR (30)       NULL,
+    [Note_Text]              VARCHAR (4096)     NOT NULL,
+    [Note_DateTime]          DATETIMEOFFSET (7) NOT NULL,
+    [Author_ID]              VARCHAR (30)       NULL,
+    [Author_Role_ID]         VARCHAR (30)       NULL,
+    [Author_Name]            VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Entity_Type_ID]         VARCHAR (30)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Organization_ID]        VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note] PRIMARY KEY CLUSTERED ([Note_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Note_Type]...';
+
+
+GO
+CREATE TABLE [Entity].[Note_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Note_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Status_Code]...';
+
+
+GO
+CREATE TABLE [Entity].[Status_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Status] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Uri]...';
+
+
+GO
+CREATE TABLE [Entity].[Uri] (
+    [Organization_ID]        VARCHAR (30)       NOT NULL,
+    [Entity_ID]              VARCHAR (30)       NOT NULL,
+    [URI_ID]                 VARCHAR (30)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Absolute_URI]           VARCHAR (1028)     NULL,
+    [Category_Code_ID]       VARCHAR (30)       NULL,
+    [Category_Text]          VARCHAR (80)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Uri] PRIMARY KEY CLUSTERED ([URI_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Entity].[Uri_Type]...';
+
+
+GO
+CREATE TABLE [Entity].[Uri_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [Tags]                   VARCHAR (128)      NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Uri_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Generic].[Entity]...';
+
+
+GO
+CREATE TABLE [Generic].[Entity] (
+    [Entity_ID]              VARCHAR (40)       NOT NULL,
+    [Type_ID]                VARCHAR (30)       NULL,
+    [Description]            VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Entity] PRIMARY KEY CLUSTERED ([Entity_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Generic].[Entity_Type]...';
+
+
+GO
+CREATE TABLE [Generic].[Entity_Type] (
+    [Type_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Sequence_Number]        INT                NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NOT NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NOT NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NOT NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Entity_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Assignment]...';
+
+
+GO
+CREATE TABLE [Management].[Assignment] (
+    [Assignment_ID]          VARCHAR (40)       NOT NULL,
+    [Assigned_DateTime]      DATETIMEOFFSET (7) NULL,
+    [Manager_ID]             VARCHAR (40)       NULL,
+    [Officer_ID]             VARCHAR (40)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Case_ID]                VARCHAR (40)       NULL,
+    [Referral_ID]            VARCHAR (40)       NULL,
+    [Concept_ID]             VARCHAR (40)       NULL,
+    [Contact_ID]             VARCHAR (40)       NULL,
+    [Person_ID]              VARCHAR (40)       NULL,
+    [Priority_Code_ID]       VARCHAR (30)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Assignment_Link]...';
+
+
+GO
+CREATE TABLE [Management].[Assignment_Link] (
+    [Assignment_Link_ID]     VARCHAR (40)       NOT NULL,
+    [Assignment_ID]          VARCHAR (40)       NOT NULL,
+    [Element_ID]             VARCHAR (40)       NOT NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Assignment_Link] PRIMARY KEY CLUSTERED ([Assignment_Link_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Disposition]...';
+
+
+GO
+CREATE TABLE [Management].[Disposition] (
+    [Disposition_ID]         VARCHAR (40)       NOT NULL,
+    [Code_ID]                VARCHAR (30)       NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Disposition] PRIMARY KEY CLUSTERED ([Disposition_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Flag]...';
+
+
+GO
+CREATE TABLE [Management].[Flag] (
+    [Flag_ID]                VARCHAR (40)       NOT NULL,
+    [Case_ID]                VARCHAR (40)       NULL,
+    [Code_ID]                VARCHAR (30)       NULL,
+    [Value]                  VARCHAR (10)       NULL,
+    [Description]            VARCHAR (256)      NULL,
+    [Status_Code_ID]         VARCHAR (30)       NULL,
+    [Status_DateTime]        DATETIMEOFFSET (7) NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Flag] PRIMARY KEY CLUSTERED ([Flag_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Flag_Code]...';
+
+
+GO
+CREATE TABLE [Management].[Flag_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (40)       NULL,
+    [Data_Owner_ID]          VARCHAR (40)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (40)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Flag_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Priority_Code]...';
+
+
+GO
+CREATE TABLE [Management].[Priority_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Priority_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Table [Management].[Status_Code]...';
+
+
+GO
+CREATE TABLE [Management].[Status_Code] (
+    [Code_ID]                VARCHAR (30)       NOT NULL,
+    [Description]            VARCHAR (128)      NULL,
+    [Category_ID]            VARCHAR (30)       NULL,
+    [CodeSet_Name]           VARCHAR (80)       NULL,
+    [Tenant_ID]              VARCHAR (30)       NULL,
+    [Data_Owner_ID]          VARCHAR (30)       NULL,
+    [Agency_Reporting_ID]    VARCHAR (30)       NULL,
+    [Sequence_Number]        INT                NULL,
+    [Effective_DateTime]     DATETIMEOFFSET (7) NULL,
+    [Effective_End_DateTime] DATETIMEOFFSET (7) NULL,
+    [Version_Number]         VARCHAR (20)       NULL,
+    [Created_DateTime]       DATETIMEOFFSET (7) NULL,
+    [Updated_Last_DateTime]  DATETIMEOFFSET (7) NULL,
+    [Record_Status_Code_ID]  CHAR (1)           NULL,
+    [Session_Updated_ID]     VARCHAR (40)       NULL,
+    CONSTRAINT [pk_Status_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
+);
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT 'COMMON' FOR [Tenant_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT 0 FOR [Sequence_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
-    ADD DEFAULT getutcdate() FOR [Efective_DateTime];
+ALTER TABLE [Action].[Role_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT '0' FOR [Version_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT getutcdate() FOR [Created_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Role_Code]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Type]
+ALTER TABLE [Action].[Role_Code]
     ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
-    ADD DEFAULT ('P0Y0M0DT0H0M0S') FOR [Period_To_Comply];
-
-
-GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
-
-
-GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT 'COMMON' FOR [Tenant_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT 0 FOR [Sequence_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
-    ADD DEFAULT getutcdate() FOR [Efective_DateTime];
+ALTER TABLE [Action].[Party_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT '0' FOR [Version_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT getutcdate() FOR [Created_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element]
+ALTER TABLE [Action].[Party_Type]
     ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT 'COMMON' FOR [Tenant_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT 0 FOR [Sequence_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
-    ADD DEFAULT getutcdate() FOR [Efective_DateTime];
+ALTER TABLE [Action].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT '0' FOR [Version_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT getutcdate() FOR [Created_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value_Type]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value_Type]
+ALTER TABLE [Action].[Media_Type]
     ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT 'COMMON' FOR [Tenant_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT 0 FOR [Sequence_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
-    ADD DEFAULT getutcdate() FOR [Efective_DateTime];
+ALTER TABLE [Action].[Activity_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT '0' FOR [Version_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT getutcdate() FOR [Created_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Element_Value]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value]
+ALTER TABLE [Action].[Activity_Type]
     ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT 'COMMON' FOR [Tenant_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT 0 FOR [Sequence_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
-    ADD DEFAULT getutcdate() FOR [Efective_DateTime];
+ALTER TABLE [Action].[Disposition]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT '0' FOR [Version_Number];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT getutcdate() FOR [Created_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
 
 
 GO
-PRINT N'Creating Default Constraint unnamed constraint on [Application].[App_Message_Code]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Disposition]...';
 
 
 GO
-ALTER TABLE [Application].[App_Message_Code]
+ALTER TABLE [Action].[Disposition]
     ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
-PRINT N'Creating Sequence [Message].[Submission_Number]...';
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
 
 
 GO
-CREATE SEQUENCE [Message].[Submission_Number]
-    AS INT
-    START WITH 0
-    INCREMENT BY 1
-    MINVALUE 0
-    MAXVALUE 9999999
-    CYCLE
-    CACHE 15;
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Priority_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Reason_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 0 FOR [Status_Code];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 0 FOR [Size_In_Bytes];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT '' FOR [Content_Type_Text];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 0 FOR [Default_Indicator];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 0 FOR [Serial_No];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Media]...';
+
+
+GO
+ALTER TABLE [Action].[Media]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Activity]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Event]...';
+
+
+GO
+ALTER TABLE [Action].[Event]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT getutcdate() FOR [Note_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Note]...';
+
+
+GO
+ALTER TABLE [Action].[Note]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Action].[Party]...';
+
+
+GO
+ALTER TABLE [Action].[Party]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Article].[Item]...';
+
+
+GO
+ALTER TABLE [Article].[Item]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 0 FOR [Status_Code];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 0 FOR [Size_In_Bytes];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT '' FOR [Content_Type_Text];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 0 FOR [Default_Indicator];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 0 FOR [Serial_No];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Media]...';
+
+
+GO
+ALTER TABLE [Geography].[Media]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT getutcdate() FOR [Note_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Note]...';
+
+
+GO
+ALTER TABLE [Geography].[Note]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Line]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Address_Structured]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Location]...';
+
+
+GO
+ALTER TABLE [Geography].[Location]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'Census-Tigger LSAD' FOR [CodeSet_Name];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Area_Description_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Area_Description_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'Census-Tigger CLASSFP' FOR [CodeSet_Name];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Class_Feature_Place_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Class_Feature_Place_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'ISO-3166' FOR [CodeSet_Name];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'ISO' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'ISO' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Country_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Country_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'Census-Tiger State' FOR [CodeSet_Name];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[State_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[State_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT '2020' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT '2020' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[County_Subdivision_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[County_Subdivision_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT '2020' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Zip_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Zip_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'Census Regions' FOR [CodeSet_Name];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'Census' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'Census' FOR [Agency_Reporting_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Geography].[Region_Code]...';
+
+
+GO
+ALTER TABLE [Geography].[Region_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Test_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Test_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Lab_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 0 FOR [Status_Code];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 0 FOR [Size_In_Bytes];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT '' FOR [Content_Type_Text];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 0 FOR [Default_Indicator];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 0 FOR [Serial_No];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media]...';
+
+
+GO
+ALTER TABLE [Testing].[Media]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT getutcdate() FOR [Note_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note]...';
+
+
+GO
+ALTER TABLE [Testing].[Note]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Testing].[Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Flag_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Item_Link]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 0 FOR [Status_Code];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 0 FOR [Size_In_Bytes];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT '' FOR [Content_Type_Text];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 0 FOR [Media_Default_Indicator];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 0 FOR [Serial_No];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media]...';
+
+
+GO
+ALTER TABLE [Entity].[Media]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT getutcdate() FOR [Note_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note]...';
+
+
+GO
+ALTER TABLE [Entity].[Note]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Status_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Entity].[Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri_Type]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity_Type]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity_Type]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity_Type]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity_Type]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Generic].[Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity_Type]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT getutcdate() FOR [Assigned_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Disposition]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag]...';
+
+
+GO
+ALTER TABLE [Management].[Flag]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Priority_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Priority_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT 'COMMON' FOR [Tenant_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT 'COMMON' FOR [Data_Owner_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT 0 FOR [Sequence_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Effective_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT '0' FOR [Version_Number];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Created_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT getutcdate() FOR [Updated_Last_DateTime];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT 'A' FOR [Record_Status_Code_ID];
+
+
+GO
+PRINT N'Creating Default Constraint unnamed constraint on [Management].[Status_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Status_Code]
+    ADD DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67' FOR [Session_Updated_ID];
 
 
 GO
@@ -892,48 +18055,30 @@ ALTER TABLE [Application].[Session] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [Core].[fk_Activity_Contact]...';
+PRINT N'Creating Foreign Key [Application].[fk_Application_Case]...';
 
 
 GO
-ALTER TABLE [Core].[Activity] WITH NOCHECK
-    ADD CONSTRAINT [fk_Activity_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+ALTER TABLE [Application].[Session] WITH NOCHECK
+    ADD CONSTRAINT [fk_Application_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
 GO
-PRINT N'Creating Foreign Key [Core].[fk_Participant_Contact]...';
+PRINT N'Creating Foreign Key [Application].[fk_Application_Referral]...';
 
 
 GO
-ALTER TABLE [Core].[Participant] WITH NOCHECK
-    ADD CONSTRAINT [fk_Participant_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+ALTER TABLE [Application].[Session] WITH NOCHECK
+    ADD CONSTRAINT [fk_Application_Referral] FOREIGN KEY ([Referral_ID]) REFERENCES [Management].[Referral] ([Referral_ID]);
 
 
 GO
-PRINT N'Creating Foreign Key [Core].[fk_Note_Contact]...';
+PRINT N'Creating Foreign Key [Application].[fk_AccessToken_Session]...';
 
 
 GO
-ALTER TABLE [Core].[Note] WITH NOCHECK
-    ADD CONSTRAINT [fk_Note_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
-
-
-GO
-PRINT N'Creating Foreign Key [Core].[fk_Item_Reference_Link_Contact]...';
-
-
-GO
-ALTER TABLE [Core].[Item_Entity_Link] WITH NOCHECK
-    ADD CONSTRAINT [fk_Item_Reference_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
-
-
-GO
-PRINT N'Creating Foreign Key [Surveillance].[fk_Travel_Detail_Contact]...';
-
-
-GO
-ALTER TABLE [Surveillance].[Travel_Detail] WITH NOCHECK
-    ADD CONSTRAINT [fk_Travel_Detail_Contact] FOREIGN KEY ([Entity_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+ALTER TABLE [Application].[Session] WITH NOCHECK
+    ADD CONSTRAINT [fk_AccessToken_Session] FOREIGN KEY ([Token_ID]) REFERENCES [Application].[AccessToken] ([Token_ID]);
 
 
 GO
@@ -952,33 +18097,6 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Person]...';
 GO
 ALTER TABLE [Entity].[Contact] WITH NOCHECK
     ADD CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
-
-
-GO
-PRINT N'Creating Foreign Key [Entity].[fk_Officer_Contact]...';
-
-
-GO
-ALTER TABLE [Entity].[Officer] WITH NOCHECK
-    ADD CONSTRAINT [fk_Officer_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
-
-
-GO
-PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Contact]...';
-
-
-GO
-ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
-    ADD CONSTRAINT [fk_Entity_Location_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
-
-
-GO
-PRINT N'Creating Foreign Key [Entity].[fk_Identification_Contact]...';
-
-
-GO
-ALTER TABLE [Entity].[Identification] WITH NOCHECK
-    ADD CONSTRAINT [fk_Identification_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
 GO
@@ -1009,12 +18127,354 @@ ALTER TABLE [Entity].[Contact] WITH NOCHECK
 
 
 GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Travel_Detail_Contact]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] WITH NOCHECK
+    ADD CONSTRAINT [fk_Travel_Detail_Contact] FOREIGN KEY ([Entity_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Officer_Contact]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Officer_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Contact]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Location_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Contact]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Contact_Emergency_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] WITH NOCHECK
+    ADD CONSTRAINT [fk_Contact_Emergency_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Contact_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Contact_Emergency_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Contact_Emergency] WITH NOCHECK
+    ADD CONSTRAINT [fk_Contact_Emergency_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Employment_Employer]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] WITH NOCHECK
+    ADD CONSTRAINT [fk_Employment_Employer] FOREIGN KEY ([Employer_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Employment_Employee]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] WITH NOCHECK
+    ADD CONSTRAINT [fk_Employment_Employee] FOREIGN KEY ([Employee_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Employment_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Employment] WITH NOCHECK
+    ADD CONSTRAINT [fk_Employment_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Employment_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Location_Link_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Location_Link_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Location_Link_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Entity_Location_Link_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Entity_Location_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Location_Link_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_Entity]...';
+
+
+GO
+ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
+    ADD CONSTRAINT [fk_Element_Value_Entity] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Ethnicity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Ethnicity_Code] FOREIGN KEY ([Ethnicity_Code_ID]) REFERENCES [Entity].[Ethnicity_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Gender_Identity_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Gender_Identity_Code] FOREIGN KEY ([Gender_Identity_Code_ID]) REFERENCES [Entity].[Gender_Identity_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Identification_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Identification] WITH NOCHECK
+    ADD CONSTRAINT [fk_Identification_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Identification_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Provider_Name]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] WITH NOCHECK
+    ADD CONSTRAINT [fk_Provider_Name] FOREIGN KEY ([Name_ID]) REFERENCES [Entity].[Name] ([Name_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Name] WITH NOCHECK
+    ADD CONSTRAINT [fk_Name_Type] FOREIGN KEY ([Name_Type_ID]) REFERENCES [Entity].[Name_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Name_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Name_Type] FOREIGN KEY ([Name_Type_ID]) REFERENCES [Entity].[Name_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Officer_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Officer_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Officer_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Officer_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Officer_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Officer_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Officer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Officer_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Immunization_Organization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Immunization] WITH NOCHECK
+    ADD CONSTRAINT [fk_Immunization_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Provider_Organization]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] WITH NOCHECK
+    ADD CONSTRAINT [fk_Provider_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Person_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Race_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Race_Code] FOREIGN KEY ([Race_Code_ID]) REFERENCES [Entity].[Race_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Sex_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Sex_Code] FOREIGN KEY ([Sex_Code_ID]) REFERENCES [Entity].[Sex_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Sexual_Orientation_Code]...';
+
+
+GO
+ALTER TABLE [Entity].[Person] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID]) REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Provider_Entity]...';
+
+
+GO
+ALTER TABLE [Healthcare].[Provider] WITH NOCHECK
+    ADD CONSTRAINT [fk_Provider_Entity] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Travel_Detail_Person]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Travel_Detail] WITH NOCHECK
+    ADD CONSTRAINT [fk_Travel_Detail_Person] FOREIGN KEY ([Entity_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Flag_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Flag_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Death]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Death] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Death] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Person_Flag_FlagCode]...';
+
+
+GO
+ALTER TABLE [Entity].[Person_Flag] WITH NOCHECK
+    ADD CONSTRAINT [fk_Person_Flag_FlagCode] FOREIGN KEY ([Code_ID]) REFERENCES [Entity].[Flag_Code] ([Code_ID]);
+
+
+GO
 PRINT N'Creating Foreign Key [Generic].[fk_Element_Type]...';
 
 
 GO
 ALTER TABLE [Generic].[Element] WITH NOCHECK
-    ADD CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Generic].[Element_Type] ([Type_ID]);
+    ADD CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Group_ID]) REFERENCES [Generic].[Entity] ([Entity_ID]);
 
 
 GO
@@ -1045,106 +18505,666 @@ ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_Entity]...';
+PRINT N'Creating Foreign Key [Healthcare].[fk_Vitals_BodyPositionCode]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
-    ADD CONSTRAINT [fk_Element_Value_Entity] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+ALTER TABLE [Healthcare].[Vitals] WITH NOCHECK
+    ADD CONSTRAINT [fk_Vitals_BodyPositionCode] FOREIGN KEY ([Body_Position_Code_ID]) REFERENCES [Healthcare].[Body_Position_Code] ([Code_ID]);
 
 
 GO
-PRINT N'Altering Procedure [Message].[Submission_Upsert]...';
+PRINT N'Creating Foreign Key [Healthcare].[fk_Vitals_BodySiteCode]...';
 
 
 GO
+ALTER TABLE [Healthcare].[Vitals] WITH NOCHECK
+    ADD CONSTRAINT [fk_Vitals_BodySiteCode] FOREIGN KEY ([Body_Site_Code_ID]) REFERENCES [Healthcare].[Body_Site_Code] ([Code_ID]);
 
--- The following is based on KnowTech Submission Registry
 
-ALTER PROCEDURE Message.Submission_Upsert
-   @Session_ID          VARCHAR(40) = '',
-   @Submission_ID       VARCHAR(20) = '',   -- unique submission ID (if new will be null or empty)
-   @Submission_DateTime VARCHAR(20) = NULL,    -- date and time submission was prepared
-   @Received_DateTime   VARCHAR(20) = NULL,    -- received date and time
-   @Content_Type_ID     VARCHAR(30),        -- content type
-   @Reference_ID        VARCHAR(30) = NULL, -- Incident ID
-   @Source_ID           VARCHAR(40),        -- submitter Agency ID
-   @Source_Local_ID     VARCHAR(40) = '',   -- e.g. CFS Local ID
-   @Data_Owner_ID       VARCHAR(20) = '',   -- data owner Agency ID as specified in payload.DataOwner
-   @Data_Item_ID        VARCHAR(20) = '',   -- submission DataOwner.Data_Item_ID as specified in payload
-   @Message_Data        VARCHAR(MAX),       -- CLOB xml message 
-   @Content_ID          VARCHAR(20) = '',   -- e.g. GlobalID for CFS
-   @Submission_ID_Out   VARCHAR(20) OUTPUT
-AS
-BEGIN
-   SET NOCOUNT ON
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Vitals_DeviceCode]...';
 
-   IF NOT EXISTS(SELECT * FROM Message.Content_Type
-                  WHERE [Type_ID] = @Content_Type_ID)
-      RETURN -4003  -- invalid content-type
 
-   IF @Submission_DateTime is null
-      SET @Submission_DateTime = getutcdate()
-   IF @Received_DateTime is null
-      SET @Received_DateTime = getutcdate()
+GO
+ALTER TABLE [Healthcare].[Vitals] WITH NOCHECK
+    ADD CONSTRAINT [fk_Vitals_DeviceCode] FOREIGN KEY ([Device_Code_ID]) REFERENCES [Healthcare].[Device_Code] ([Code_ID]);
 
-   DECLARE @MessageLengthInBytes  INTEGER,
-           @rval                  INTEGER
-   SET @MessageLengthInBytes = len(@Message_Data)
 
-   -- prepare a unique submission id and/or reference id as necessary...
-   IF @Submission_ID = '' OR @Submission_ID IS NULL
-   BEGIN
-      SET @Submission_ID = [Application].[ID_Number_Generate] 
-         ('SUB', next value for [Message].[Submission_Number])
-   END
-   SET @Submission_ID_Out = @Submission_ID
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Medication_DosageForm]...';
 
-   IF @Data_Item_ID IS NULL OR @Data_Item_ID = ''
-      SET @Data_Item_ID = @Submission_ID_Out
-   
-   -- try to insert submisison now
-   BEGIN TRANSACTION SubmissionUpsert
 
-   IF NOT EXISTS (SELECT * FROM [Message].[Submission] with(nolock)
-                   WHERE [Submission_ID] = @Submission_ID)
-   BEGIN
+GO
+ALTER TABLE [Healthcare].[Medication] WITH NOCHECK
+    ADD CONSTRAINT [fk_Medication_DosageForm] FOREIGN KEY ([Dose_Form_Code_ID]) REFERENCES [Healthcare].[Dosage_Form_Code] ([Code_ID]);
 
-      -- StateNo = 1 = Registered
-      INSERT INTO [Message].[Submission]
-         ([Submission_ID],    [Submission_DateTime], [Received_DateTime],
-          [Content_Type_ID],  [Source_ID],           [Source_Local_ID],
-          [Data_Owner_ID],    [Data_Item_ID],        [Content_ID],
-          [Message_Data],     [Message_Count],       [Message_Length_InBytes],
-          [Message_DateTime], [Reference_ID],        [Session_Updated_ID])
-      VALUES
-         (@Submission_ID,     @Submission_DateTime,  @Received_DateTime,
-          @Content_Type_ID,   @Source_ID,            @Source_Local_ID,
-          @Data_Owner_ID,     @Data_Item_ID,         @Content_ID,
-          @Message_Data,      1,                     @MessageLengthInBytes,
-          @Received_DateTime, @Reference_ID,         @Session_ID)
 
-      IF @@ERROR <> 0
-      BEGIN
-         ROLLBACK TRAN SubmissionUpsert
-         RETURN -3001    -- failed inserting submission...
-      END
-   END
-   ELSE
-   BEGIN
-      UPDATE [Message].[Submission]
-         SET Message_Count = Message_Count + 1
-       WHERE Submission_ID = @Submission_ID
+GO
+PRINT N'Creating Foreign Key [Healthcare].[fk_Vitals_UnitCode]...';
 
-      IF @@ERROR <> 0
-      BEGIN
-         ROLLBACK TRAN SubmissionUpsert
-         RETURN -3002    -- failed updating submission count...
-      END
-   END
 
-   COMMIT TRANSACTION SubmissionUpsert
-END
+GO
+ALTER TABLE [Healthcare].[Vitals] WITH NOCHECK
+    ADD CONSTRAINT [fk_Vitals_UnitCode] FOREIGN KEY ([Unit_Code_ID]) REFERENCES [Healthcare].[Unit_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Referral_Case]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] WITH NOCHECK
+    ADD CONSTRAINT [fk_Referral_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Case_Case_Disposition]...';
+
+
+GO
+ALTER TABLE [Management].[Case] WITH NOCHECK
+    ADD CONSTRAINT [fk_Case_Case_Disposition] FOREIGN KEY ([Disposition_ID]) REFERENCES [Management].[Disposition] ([Disposition_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Case_CasePriorityCode]...';
+
+
+GO
+ALTER TABLE [Management].[Case] WITH NOCHECK
+    ADD CONSTRAINT [fk_Case_CasePriorityCode] FOREIGN KEY ([Priority_Code_ID]) REFERENCES [Management].[Priority_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Case_CaseType]...';
+
+
+GO
+ALTER TABLE [Management].[Case] WITH NOCHECK
+    ADD CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Case_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Case_Class_Status]...';
+
+
+GO
+ALTER TABLE [Management].[Case] WITH NOCHECK
+    ADD CONSTRAINT [fk_Case_Class_Status] FOREIGN KEY ([Class_Status_Code_ID]) REFERENCES [Management].[Status_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Case_Profile_Group]...';
+
+
+GO
+ALTER TABLE [Management].[Case] WITH NOCHECK
+    ADD CONSTRAINT [fk_Case_Profile_Group] FOREIGN KEY ([Profile_ID]) REFERENCES [Surveillance].[Profile] ([Profile_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Case]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assessment_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Referral_Profile]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] WITH NOCHECK
+    ADD CONSTRAINT [fk_Referral_Profile] FOREIGN KEY ([Profile_ID]) REFERENCES [Surveillance].[Profile] ([Profile_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Referral_ReferralType]...';
+
+
+GO
+ALTER TABLE [Management].[Referral] WITH NOCHECK
+    ADD CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Referral_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Message].[fk_Submission_Content_Type]...';
+
+
+GO
+ALTER TABLE [Message].[Submission] WITH NOCHECK
+    ADD CONSTRAINT [fk_Submission_Content_Type] FOREIGN KEY ([Content_Type_ID]) REFERENCES [Message].[Content_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Question_AnswerType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Question] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assessment_Question_AnswerType] FOREIGN KEY ([Answer_Type_ID]) REFERENCES [Surveillance].[Answer_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_AssessmentType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assessment_AssessmentType] FOREIGN KEY ([Assessment_Type_ID]) REFERENCES [Surveillance].[Assessment_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assessment_Answer_Assessment] FOREIGN KEY ([Assessment_ID]) REFERENCES [Surveillance].[Assessment] ([Assessment_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment_Question]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Assessment_Answer] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assessment_Answer_Assessment_Question] FOREIGN KEY ([Question_ID]) REFERENCES [Surveillance].[Assessment_Question] ([Question_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Profile_Condition_Profile_Group]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile_Condition] WITH NOCHECK
+    ADD CONSTRAINT [fk_Profile_Condition_Profile_Group] FOREIGN KEY ([Profile_ID]) REFERENCES [Surveillance].[Profile] ([Profile_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Profile_ProfileType]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Profile] WITH NOCHECK
+    ADD CONSTRAINT [fk_Profile_ProfileType] FOREIGN KEY ([Profile_Type_ID]) REFERENCES [Surveillance].[Profile_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Surveillance].[fk_Report_Type]...';
+
+
+GO
+ALTER TABLE [Surveillance].[Report] WITH NOCHECK
+    ADD CONSTRAINT [fk_Report_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Surveillance].[Report_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Schedule_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+    ADD CONSTRAINT [fk_Schedule_Event] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Activity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Media_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Media] WITH NOCHECK
+    ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Media_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Activity_Activity_Disposition]...';
+
+
+GO
+ALTER TABLE [Action].[Activity] WITH NOCHECK
+    ADD CONSTRAINT [fk_Activity_Activity_Disposition] FOREIGN KEY ([Disposition_ID]) REFERENCES [Action].[Disposition] ([Disposition_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Activity_Priority_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Activity] WITH NOCHECK
+    ADD CONSTRAINT [fk_Activity_Priority_Code] FOREIGN KEY ([Priority_Code_ID]) REFERENCES [Action].[Priority_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Activity_Reason_Code]...';
+
+
+GO
+ALTER TABLE [Action].[Activity] WITH NOCHECK
+    ADD CONSTRAINT [fk_Activity_Reason_Code] FOREIGN KEY ([Reason_Code_ID]) REFERENCES [Action].[Reason_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Activity_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Activity] WITH NOCHECK
+    ADD CONSTRAINT [fk_Activity_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Activity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Event_Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Event] WITH NOCHECK
+    ADD CONSTRAINT [fk_Event_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Note_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Note_Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Note_Event]...';
+
+
+GO
+ALTER TABLE [Action].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Event] FOREIGN KEY ([Event_ID]) REFERENCES [Action].[Event] ([Event_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Note_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Action].[Note_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Party_Activity]...';
+
+
+GO
+ALTER TABLE [Action].[Party] WITH NOCHECK
+    ADD CONSTRAINT [fk_Party_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Party_Type]...';
+
+
+GO
+ALTER TABLE [Action].[Party] WITH NOCHECK
+    ADD CONSTRAINT [fk_Party_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Party_Type] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Action].[fk_Party_Role]...';
+
+
+GO
+ALTER TABLE [Action].[Party] WITH NOCHECK
+    ADD CONSTRAINT [fk_Party_Role] FOREIGN KEY ([Role_Code_ID]) REFERENCES [Action].[Role_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Article].[fk_Item_Type]...';
+
+
+GO
+ALTER TABLE [Article].[Item] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Article].[Item_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Media_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Media] WITH NOCHECK
+    ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Geography].[Media_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Person]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Organization]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Officer]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Contact]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Note_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Geography].[Note_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Location_Type]...';
+
+
+GO
+ALTER TABLE [Geography].[Location] WITH NOCHECK
+    ADD CONSTRAINT [fk_Location_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Geography].[Location_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Location_Address_Line]...';
+
+
+GO
+ALTER TABLE [Geography].[Location] WITH NOCHECK
+    ADD CONSTRAINT [fk_Location_Address_Line] FOREIGN KEY ([Address_Line_ID]) REFERENCES [Geography].[Address_Line] ([Address_Line_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Geography].[fk_Location_Address_Structured]...';
+
+
+GO
+ALTER TABLE [Geography].[Location] WITH NOCHECK
+    ADD CONSTRAINT [fk_Location_Address_Structured] FOREIGN KEY ([Address_Structured_ID]) REFERENCES [Geography].[Address_Structured] ([Address_Structured_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Testing].[fk_Lab_Result_Laboratory]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result] WITH NOCHECK
+    ADD CONSTRAINT [fk_Lab_Result_Laboratory] FOREIGN KEY ([Laboratory_ID]) REFERENCES [Testing].[Laboratory] ([Laboratory_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Testing].[fk_Lab_Result_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Lab_Result] WITH NOCHECK
+    ADD CONSTRAINT [fk_Lab_Result_Type] FOREIGN KEY ([Result_Type_ID]) REFERENCES [Testing].[Lab_Result_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Testing].[fk_Media_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Media] WITH NOCHECK
+    ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Testing].[Media_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Testing].[fk_Note_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Testing].[Note_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Testing].[fk_Laboatory_Type]...';
+
+
+GO
+ALTER TABLE [Testing].[Laboratory] WITH NOCHECK
+    ADD CONSTRAINT [fk_Laboatory_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Testing].[Lab_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Reference_Link_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Reference_Link_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Reference_Link_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Reference_Link_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Contact]...';
+
+
+GO
+ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Item_Reference_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Media_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Media] WITH NOCHECK
+    ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Media_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Entity_Type] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Person]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Organization]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Officer]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Contact]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Note_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Note] WITH NOCHECK
+    ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Entity].[Note_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Entity].[fk_Uri_Type]...';
+
+
+GO
+ALTER TABLE [Entity].[Uri] WITH NOCHECK
+    ADD CONSTRAINT [fk_Uri_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Uri_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Generic].[fk_Entity_Type]...';
+
+
+GO
+ALTER TABLE [Generic].[Entity] WITH NOCHECK
+    ADD CONSTRAINT [fk_Entity_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Generic].[Entity_Type] ([Type_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Assignment_Link]...';
+
+
+GO
+ALTER TABLE [Management].[Assignment_Link] WITH NOCHECK
+    ADD CONSTRAINT [fk_Assignment_Link] FOREIGN KEY ([Assignment_ID]) REFERENCES [Management].[Assignment] ([Assignment_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Flag_Case]...';
+
+
+GO
+ALTER TABLE [Management].[Flag] WITH NOCHECK
+    ADD CONSTRAINT [fk_Flag_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
+
+
+GO
+PRINT N'Creating Foreign Key [Management].[fk_Flag_Code]...';
+
+
+GO
+ALTER TABLE [Management].[Flag] WITH NOCHECK
+    ADD CONSTRAINT [fk_Flag_Code] FOREIGN KEY ([Code_ID]) REFERENCES [Management].[Flag_Code] ([Code_ID]);
+
+
+GO
+PRINT N'Creating Extended Property [Application].[Session].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'If not case id then add person information', @level0type = N'SCHEMA', @level0name = N'Application', @level1type = N'TABLE', @level1name = N'Session';
+
+
+GO
+PRINT N'Creating Extended Property [Application].[Session].[Session_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Follow-up', @level0type = N'SCHEMA', @level0name = N'Application', @level1type = N'TABLE', @level1name = N'Session', @level2type = N'COLUMN', @level2name = N'Session_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Communication].[Device_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Phone, Fax', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Communication', @level2type = N'COLUMN', @level2name = N'Device_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Communication].[Device_Usage_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Work, Home, Office', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Communication', @level2type = N'COLUMN', @level2name = N'Device_Usage_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Communication].[Phone_Number].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Communication', @level2type = N'COLUMN', @level2name = N'Phone_Number';
+
+
 GO
 PRINT N'Creating Extended Property [Entity].[Contact].[Jurisdiction_Code_ID].[MS_Description]...';
 
@@ -1152,6 +19172,784 @@ PRINT N'Creating Extended Property [Entity].[Contact].[Jurisdiction_Code_ID].[MS
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'have the information for the jurisdiction -- jurisdiction table will be required.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Contact', @level2type = N'COLUMN', @level2name = N'Jurisdiction_Code_ID';
 
+
+GO
+PRINT N'Creating Extended Property [Entity].[Device_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Device_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Identification_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Identification_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Organization].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'External Agency', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Organization', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Birth_DateTime].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Birth_DateTime';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Birth_Date].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Birth_Date';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Birth_Date_Text].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Birth_Date_Text';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Birth_Location_ID].[X_Reference]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'X_Reference', @value = 'Birth Location ID is a reference to a location detailed elsewhere', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Birth_Location_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Name_Given].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Name_Given';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Name_Middle].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Name_Middle';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Name_Family].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST_PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Name_Family';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Name_Full].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Name_Full';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Sex_Birth_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'PHI, GDPR', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Sex_Birth_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Sex_Birth_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Sex at Birth: Male, Female, Other, Unknown', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Sex_Birth_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Sex_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'PHI, GDPR', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Sex_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Sex_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current Sex Code: Male, Female, Other, Unknown', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Sex_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Gender_Identity_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'PHI, GDPR', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Gender_Identity_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Gender_Identity_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'The person identifies the Identity as', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Gender_Identity_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Sexual_Orientation_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'PHI, GDPR', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Sexual_Orientation_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Ethnicity_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Ethnicity_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Race_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA, PII, GDPR', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Race_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person].[Education_Level_Highest_Code_ID].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'NIST-PII', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person', @level2type = N'COLUMN', @level2name = N'Education_Level_Highest_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person_Death].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided for the notification of the Death of a Peson by a Source and details about such event.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person_Death';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person_Death].[Death_Date].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person_Death', @level2type = N'COLUMN', @level2name = N'Death_Date';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person_Death].[Death_DateTime].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person_Death', @level2type = N'COLUMN', @level2name = N'Death_DateTime';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person_Death].[Death_Date_Text].[PRIVACY]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'PRIVACY', @value = 'HIPAA', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person_Death', @level2type = N'COLUMN', @level2name = N'Death_Date_Text';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Person_Flag].[Flag_Value].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '''Y''', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Person_Flag', @level2type = N'COLUMN', @level2name = N'Flag_Value';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Immunization].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'There are several types of vaccines, including: Inactivated vaccines. Live-attenuated vaccines. Messenger RNA (mRNA) vaccines.', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Immunization', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Immunization].[Organization_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Manufacturer ID and Name from Organization Table as a lookup', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Immunization', @level2type = N'COLUMN', @level2name = N'Organization_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Symptoms, conditions, susceptibility, and other qualifiers ', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Pan-Sensitive - 1st line of drugs will kill the bacteria Resistant = second line of drugs - additional durgs (Resistant  = lacking the ability to resist something (as a pathogen, familial disease, or a drug) : sensitivity) Category Susceptibility Susceptible : likely or liable to be influenced or harmed by a particular thing: "patients with liver disease may be susceptible to infection"', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[Qualifier_Text].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Drugs', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition', @level2type = N'COLUMN', @level2name = N'Qualifier_Text';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[Qualifier_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Name of Drugs', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition', @level2type = N'COLUMN', @level2name = N'Qualifier_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[Severity_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Severe Moderate Mild', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition', @level2type = N'COLUMN', @level2name = N'Severity_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medical_Condition].[Status_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Level Code System Display Definition Canonical Mapping for "Condition Clinical Status Codes" HL7 clinical conditions.', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medical_Condition', @level2type = N'COLUMN', @level2name = N'Status_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medication].[Dose_Form_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'powder | tablets | capsule | liquid tab = tablet cap = capsule', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medication', @level2type = N'COLUMN', @level2name = N'Dose_Form_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medication].[Dosage_Ordered].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'The doctor orders 90 milligrams of liquid cough syrup. The liquid cough syrup has a label that reads 120 milligrams in 5 milliliters. How much cough syrup should the nurse give to the patient? Given: D (Dosage Ordered) = 90 mg H  (Dosage Strength) = 120 mg Q (Unit of Measure) = 5 mL x (Dosage Calculated) = 90 mg 120 mg x 5 mL x =3/4 x 5 mL x = 15/4 mL x = 3.75 mL Therefore, the nurse should give 3.75 mL of the cough syrup to the patient.', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medication', @level2type = N'COLUMN', @level2name = N'Dosage_Ordered';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medication].[Dosage_Strength].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = '2.5 milligram (Details: UCUM code mg = ''mg'') Dosage Unit mg', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medication', @level2type = N'COLUMN', @level2name = N'Dosage_Strength';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medication].[Measure_Unit].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Unit of Measure per 2 mL per capsule per tablet', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medication', @level2type = N'COLUMN', @level2name = N'Measure_Unit';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Medication].[Frequency_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'q every day, bid twice a day, tid three times a day, qid four times a day', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Medication', @level2type = N'COLUMN', @level2name = N'Frequency_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Provider].[Provider_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Referring Provider Attending Provider Primary Care Provider (PCP)', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Provider', @level2type = N'COLUMN', @level2name = N'Provider_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Given_Indicator].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'If treatment was administered', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Given_Indicator';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Name].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Name of treatment', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Name';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Start_Date].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Date treatment began/was given', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Start_Date';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[End_Date].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Date treatment ended', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'End_Date';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Quantity].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Amount of the treatment given', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Quantity';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Form].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Method treatment was administered', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Form';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Comment].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Comments about treatment this will be changed to a note', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Comment';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Treatment].[Status_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Status of treatment', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Treatment', @level2type = N'COLUMN', @level2name = N'Status_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Healthcare].[Vitals].[Subject_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Person Contact', @level0type = N'SCHEMA', @level0name = N'Healthcare', @level1type = N'TABLE', @level1name = N'Vitals', @level2type = N'COLUMN', @level2name = N'Subject_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Management].[Case].[Person_Age_Unit_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Person/Patient age unit at time of case investigation', @level0type = N'SCHEMA', @level0name = N'Management', @level1type = N'TABLE', @level1name = N'Case', @level2type = N'COLUMN', @level2name = N'Person_Age_Unit_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Assessment].[Assessment_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'AST<timestamp>000001', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Assessment', @level2type = N'COLUMN', @level2name = N'Assessment_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Assessment_Question].[Answer_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Base Type Complex Type single-select, multi-select radio button, date-time if calendar, free text, option', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Assessment_Question', @level2type = N'COLUMN', @level2name = N'Answer_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Assessment_Questionnaire].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Questionnaire Template', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Assessment_Questionnaire';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Profile_Condition].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Define the list of Medical Conditions that are related to a particular disease being trackt', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Profile_Condition';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Travel_Detail].[Travel_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'By Air, By Train, By Ship', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Travel_Detail', @level2type = N'COLUMN', @level2name = N'Travel_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Travel_Detail].[Entity_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'PersonID, ContactID', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Travel_Detail', @level2type = N'COLUMN', @level2name = N'Entity_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Surveillance].[Travel_Detail].[Entity_Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Person, Contact', @level0type = N'SCHEMA', @level0name = N'Surveillance', @level1type = N'TABLE', @level1name = N'Travel_Detail', @level2type = N'COLUMN', @level2name = N'Entity_Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Action].[Media_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Action', @level1type = N'TABLE', @level1name = N'Media_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Action].[Disposition].[Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Laboratory Treatment', @level0type = N'SCHEMA', @level0name = N'Action', @level1type = N'TABLE', @level1name = N'Disposition', @level2type = N'COLUMN', @level2name = N'Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Action].[Disposition].[Status_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Positive Negative Unknown', @level0type = N'SCHEMA', @level0name = N'Action', @level1type = N'TABLE', @level1name = N'Disposition', @level2type = N'COLUMN', @level2name = N'Status_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Action].[Activity].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Example : CDCNotifiedDate  CDC Notification is an activity and CDC Notified Date is the activity Date Example: DateFirstReportedToPublicHealth -- Date First Reported to Public Health (Activity or Event) Date is the activity date. Activity -- Individual Events ', @level0type = N'SCHEMA', @level0name = N'Action', @level1type = N'TABLE', @level1name = N'Activity';
+
+
+GO
+PRINT N'Creating Extended Property [Article].[Item].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Item Type = ''Service''', @level0type = N'SCHEMA', @level0name = N'Article', @level1type = N'TABLE', @level1name = N'Item', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[Media_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'Media_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[Location].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Facility - outpatient clinic short-term care and can recover at Hospitals refer discharged patients to a network of outpatient clinics that specialize in services for ongoing conditions. Hospital - inpatient clinic long-term care or emergencies or specific medical treatment or specialist.', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'Location', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[Area_Description_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Census Tiger - LSAD Area logal/statistical area description code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'Area_Description_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[Class_Feature_Place_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Census Tiger - CLASFP - Class Feature Place Codes', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'Class_Feature_Place_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Census Tiger County Codes', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Geography_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'County identifier; a concatenation of Current state FPIPS code and county FIPS code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Geography_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Name_LSAD].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current name and the tralsnated legal/statistical area description for county', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Name_LSAD';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Area_Description_LSAD].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current legal/statistical area description code for county', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Area_Description_LSAD';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Class_FIPS].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current FIPS class code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Class_FIPS';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Feature_Class_MTF].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'MAF/TIGER Feature Class Code (G4020)', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Feature_Class_MTF';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Area_CSAFP].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current FIPS class code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Area_CSAFP';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Area_CBSAFP].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current metropolitan statistical area/micropolitan statistical area code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Area_CBSAFP';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Metro_Division_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current metropolitan division code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Metro_Division_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Code].[Functional_Status].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current functional status', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Code', @level2type = N'COLUMN', @level2name = N'Functional_Status';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Census Tiger County Subdivision Codes', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Geography_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'County identifier; a concatenation of Current state FPIPS code and county FIPS code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Geography_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Name_LSAD].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current name and the tralsnated legal/statistical area description for county', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Name_LSAD';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Area_Description_LSAD].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current legal/statistical area description code for county', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Area_Description_LSAD';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Class_FIPS].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current FIPS class code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Class_FIPS';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Feature_Class_MTF].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'MAF/TIGER Feature Class Code (G4020)', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Feature_Class_MTF';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Area_CSAFP].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current FIPS class code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Area_CSAFP';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Area_CBSAFP].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current metropolitan statistical area/micropolitan statistical area code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Area_CBSAFP';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Metro_Division_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current metropolitan division code', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Metro_Division_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Geography].[County_Subdivision_Code].[Functional_Status].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Current functional status', @level0type = N'SCHEMA', @level0name = N'Geography', @level1type = N'TABLE', @level1name = N'County_Subdivision_Code', @level2type = N'COLUMN', @level2name = N'Functional_Status';
+
+
+GO
+PRINT N'Creating Extended Property [Testing].[Media_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Testing', @level1type = N'TABLE', @level1name = N'Media_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Testing].[Laboratory].[Type_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Laboratory Type ', @level0type = N'SCHEMA', @level0name = N'Testing', @level1type = N'TABLE', @level1name = N'Laboratory', @level2type = N'COLUMN', @level2name = N'Type_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Testing].[Laboratory].[Vendor_LIMS_Code_ID].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'LIMS - Laborary Information Management System', @level0type = N'SCHEMA', @level0name = N'Testing', @level1type = N'TABLE', @level1name = N'Laboratory', @level2type = N'COLUMN', @level2name = N'Vendor_LIMS_Code_ID';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Media_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Media_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Status_Code].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Status Code by Category allowing to be used to support any reference table', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Status_Code';
+
+
+GO
+PRINT N'Creating Extended Property [Entity].[Uri_Type].[Tags].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.', @level0type = N'SCHEMA', @level0name = N'Entity', @level1type = N'TABLE', @level1name = N'Uri_Type', @level2type = N'COLUMN', @level2name = N'Tags';
+
+
+GO
+PRINT N'Creating Extended Property [Generic].[Entity].[MS_Description]...';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = 'Provided to name the kind of list, checklist, group, or collection.', @level0type = N'SCHEMA', @level0name = N'Generic', @level1type = N'TABLE', @level1name = N'Entity';
+
+
+GO
+PRINT N'Refreshing Procedure [Message].[Submission_Upsert]...';
+
+
+GO
+EXECUTE sp_refreshsqlmodule N'[Message].[Submission_Upsert]';
+
+
+GO
+-- Refactoring step to update target server with deployed transaction logs
+
+IF OBJECT_ID(N'dbo.__RefactorLog') IS NULL
+BEGIN
+    CREATE TABLE [dbo].[__RefactorLog] (OperationKey UNIQUEIDENTIFIER NOT NULL PRIMARY KEY)
+    EXEC sp_addextendedproperty N'microsoft_database_tools_support', N'refactoring log', N'schema', N'dbo', N'table', N'__RefactorLog'
+END
+GO
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'ac04e81c-c46e-4cd4-b34d-f37b32db7e65')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('ac04e81c-c46e-4cd4-b34d-f37b32db7e65')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '665b05d1-73c9-4292-9dd9-603591342b0d')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('665b05d1-73c9-4292-9dd9-603591342b0d')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '8c6859cc-5317-42a7-b05f-8a1958f64d8e')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('8c6859cc-5317-42a7-b05f-8a1958f64d8e')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'abc87f84-dfd7-4cfa-9e4a-6c604194df96')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('abc87f84-dfd7-4cfa-9e4a-6c604194df96')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'febee88b-3be5-4e34-92b9-638ae87dff12')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('febee88b-3be5-4e34-92b9-638ae87dff12')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '17294624-e7ed-43c4-a0be-c751becbc995')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('17294624-e7ed-43c4-a0be-c751becbc995')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'ece3d268-c5fd-4067-8d41-09647bd2b527')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('ece3d268-c5fd-4067-8d41-09647bd2b527')
+
+GO
 
 GO
 PRINT N'Checking existing data against newly created constraints';
@@ -1164,19 +19962,23 @@ USE [$(DatabaseName)];
 GO
 ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Contact];
 
-ALTER TABLE [Core].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Contact];
+ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Case];
 
-ALTER TABLE [Core].[Participant] WITH CHECK CHECK CONSTRAINT [fk_Participant_Contact];
+ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Referral];
 
-ALTER TABLE [Core].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Contact];
-
-ALTER TABLE [Core].[Item_Entity_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Contact];
-
-ALTER TABLE [Surveillance].[Travel_Detail] WITH CHECK CHECK CONSTRAINT [fk_Travel_Detail_Contact];
+ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_AccessToken_Session];
 
 ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_ContactType];
 
 ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Person];
+
+ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Entity_Type];
+
+ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Organization];
+
+ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Officer];
+
+ALTER TABLE [Surveillance].[Travel_Detail] WITH CHECK CHECK CONSTRAINT [fk_Travel_Detail_Contact];
 
 ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Contact];
 
@@ -1184,11 +19986,73 @@ ALTER TABLE [Entity].[Entity_Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Enti
 
 ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Contact];
 
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Entity_Type];
+ALTER TABLE [Entity].[Contact_Emergency] WITH CHECK CHECK CONSTRAINT [fk_Contact_Emergency_Type];
 
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Organization];
+ALTER TABLE [Entity].[Contact_Emergency] WITH CHECK CHECK CONSTRAINT [fk_Contact_Emergency_Person];
 
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Officer];
+ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Employer];
+
+ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Employee];
+
+ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Type];
+
+ALTER TABLE [Entity].[Entity_Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Entity_Location_Link_Entity_Type];
+
+ALTER TABLE [Entity].[Entity_Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Entity_Location_Link_Person];
+
+ALTER TABLE [Entity].[Entity_Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Entity_Location_Link_Organization];
+
+ALTER TABLE [Entity].[Entity_Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Entity_Location_Link_Officer];
+
+ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_Entity];
+
+ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Entity_Type];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Ethnicity_Code];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Gender_Identity_Code];
+
+ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Person];
+
+ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Organization];
+
+ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Officer];
+
+ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Type];
+
+ALTER TABLE [Healthcare].[Provider] WITH CHECK CHECK CONSTRAINT [fk_Provider_Name];
+
+ALTER TABLE [Entity].[Name] WITH CHECK CHECK CONSTRAINT [fk_Name_Type];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Name_Type];
+
+ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Type];
+
+ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Organization];
+
+ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Person];
+
+ALTER TABLE [Healthcare].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Organization];
+
+ALTER TABLE [Healthcare].[Provider] WITH CHECK CHECK CONSTRAINT [fk_Provider_Organization];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Type];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Race_Code];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Sex_Code];
+
+ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Sexual_Orientation_Code];
+
+ALTER TABLE [Healthcare].[Provider] WITH CHECK CHECK CONSTRAINT [fk_Provider_Entity];
+
+ALTER TABLE [Surveillance].[Travel_Detail] WITH CHECK CHECK CONSTRAINT [fk_Travel_Detail_Person];
+
+ALTER TABLE [Entity].[Person_Flag] WITH CHECK CHECK CONSTRAINT [fk_Person_Flag_Person];
+
+ALTER TABLE [Entity].[Person_Death] WITH CHECK CHECK CONSTRAINT [fk_Person_Death];
+
+ALTER TABLE [Entity].[Person_Flag] WITH CHECK CHECK CONSTRAINT [fk_Person_Flag_FlagCode];
 
 ALTER TABLE [Generic].[Element] WITH CHECK CHECK CONSTRAINT [fk_Element_Type];
 
@@ -1198,7 +20062,143 @@ ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Va
 
 ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_ID];
 
-ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_Entity];
+ALTER TABLE [Healthcare].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_BodyPositionCode];
+
+ALTER TABLE [Healthcare].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_BodySiteCode];
+
+ALTER TABLE [Healthcare].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_DeviceCode];
+
+ALTER TABLE [Healthcare].[Medication] WITH CHECK CHECK CONSTRAINT [fk_Medication_DosageForm];
+
+ALTER TABLE [Healthcare].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_UnitCode];
+
+ALTER TABLE [Management].[Referral] WITH CHECK CHECK CONSTRAINT [fk_Referral_Case];
+
+ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Case_Disposition];
+
+ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_CasePriorityCode];
+
+ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_CaseType];
+
+ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Class_Status];
+
+ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Profile_Group];
+
+ALTER TABLE [Surveillance].[Assessment] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Case];
+
+ALTER TABLE [Management].[Referral] WITH CHECK CHECK CONSTRAINT [fk_Referral_Profile];
+
+ALTER TABLE [Management].[Referral] WITH CHECK CHECK CONSTRAINT [fk_Referral_ReferralType];
+
+ALTER TABLE [Message].[Submission] WITH CHECK CHECK CONSTRAINT [fk_Submission_Content_Type];
+
+ALTER TABLE [Surveillance].[Assessment_Question] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Question_AnswerType];
+
+ALTER TABLE [Surveillance].[Assessment] WITH CHECK CHECK CONSTRAINT [fk_Assessment_AssessmentType];
+
+ALTER TABLE [Surveillance].[Assessment_Answer] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Answer_Assessment];
+
+ALTER TABLE [Surveillance].[Assessment_Answer] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Answer_Assessment_Question];
+
+ALTER TABLE [Surveillance].[Profile_Condition] WITH CHECK CHECK CONSTRAINT [fk_Profile_Condition_Profile_Group];
+
+ALTER TABLE [Surveillance].[Profile] WITH CHECK CHECK CONSTRAINT [fk_Profile_ProfileType];
+
+ALTER TABLE [Surveillance].[Report] WITH CHECK CHECK CONSTRAINT [fk_Report_Type];
+
+ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Schedule_Event];
+
+ALTER TABLE [Action].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
+
+ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Activity_Disposition];
+
+ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Priority_Code];
+
+ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Reason_Code];
+
+ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Type];
+
+ALTER TABLE [Action].[Event] WITH CHECK CHECK CONSTRAINT [fk_Event_Activity];
+
+ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Entity_Type];
+
+ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Activity];
+
+ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Event];
+
+ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
+
+ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Activity];
+
+ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Type];
+
+ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Role];
+
+ALTER TABLE [Article].[Item] WITH CHECK CHECK CONSTRAINT [fk_Item_Type];
+
+ALTER TABLE [Geography].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Entity_Type];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Person];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Organization];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Officer];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Contact];
+
+ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
+
+ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Type];
+
+ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Address_Line];
+
+ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Address_Structured];
+
+ALTER TABLE [Testing].[Lab_Result] WITH CHECK CHECK CONSTRAINT [fk_Lab_Result_Laboratory];
+
+ALTER TABLE [Testing].[Lab_Result] WITH CHECK CHECK CONSTRAINT [fk_Lab_Result_Type];
+
+ALTER TABLE [Testing].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
+
+ALTER TABLE [Testing].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
+
+ALTER TABLE [Testing].[Laboratory] WITH CHECK CHECK CONSTRAINT [fk_Laboatory_Type];
+
+ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Entity_Type];
+
+ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Person];
+
+ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Organization];
+
+ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Officer];
+
+ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Contact];
+
+ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Entity_Type];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Person];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Organization];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Officer];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Contact];
+
+ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
+
+ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Type];
+
+ALTER TABLE [Generic].[Entity] WITH CHECK CHECK CONSTRAINT [fk_Entity_Type];
+
+ALTER TABLE [Management].[Assignment_Link] WITH CHECK CHECK CONSTRAINT [fk_Assignment_Link];
+
+ALTER TABLE [Management].[Flag] WITH CHECK CHECK CONSTRAINT [fk_Flag_Case];
+
+ALTER TABLE [Management].[Flag] WITH CHECK CHECK CONSTRAINT [fk_Flag_Code];
 
 
 GO
