@@ -1,4 +1,6 @@
-﻿CREATE TABLE [Entity].[Employment]
+﻿-- Employment Type - describe full-time, temporary, contractor, other or so
+-- Occupation Code - define what kind of job or service is provided
+CREATE TABLE [Entity].[Employment]
 (
    [Employment_ID]         VARCHAR(40) NOT NULL,
 
@@ -8,6 +10,11 @@
    [Type_ID]               VARCHAR(30) NULL,
    [Name]                  VARCHAR(80) NULL,
    [Description]           VARCHAR(256) NULL,
+
+   [Industry_Text]         VARCHAR(1024) NULL,
+   [Industry_Code_ID]      VARCHAR(30) NULL,
+   [Occupation_Text]       VARCHAR(1024) NULL,
+   [Occupation_Code_ID]    VARCHAR(30) NULL,
 
    [Start_Date]            DATE NULL,
    [Ended_Date]            DATE NULL,
@@ -34,5 +41,10 @@
    CONSTRAINT [fk_Employment_Employee] FOREIGN KEY ([Employee_ID])
       REFERENCES [Entity].[Person] ([Person_ID]),
    CONSTRAINT [fk_Employment_Type] FOREIGN KEY ([Type_ID])
-      REFERENCES [Entity].[Employment_Type] ([Type_ID])
+      REFERENCES [Entity].[Employment_Type] ([Type_ID]),
+   CONSTRAINT [fk_Employment_Industry_Code] FOREIGN KEY ([Industry_Code_ID])
+      REFERENCES [Entity].[Industry_Code]([Code_ID]),
+   CONSTRAINT [fk_Employment_Occupation_Code] FOREIGN KEY ([Occupation_Code_ID])
+      REFERENCES [Entity].[Occupation_Code]([Code_ID])
 )
+GO

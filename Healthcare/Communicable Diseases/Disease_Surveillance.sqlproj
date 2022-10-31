@@ -102,11 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
-    <Build Include="Healthcare\Tables\Immunization.sql" />
     <Build Include="Healthcare\Tables\Medical_Condition.sql" />
-    <Build Include="Healthcare\Tables\Medication.sql" />
     <Build Include="Healthcare\Tables\Provider.sql" />
-    <Build Include="Healthcare\Tables\Treatment.sql" />
     <Build Include="Healthcare\Tables\Vitals.sql" />
     <None Include="Scripts\Testing\Show Properties.sql" />
     <Build Include="Security\Healthcare.sql" />
@@ -165,12 +162,9 @@
     <Build Include="Entity\Tables\Ethnicity_Code.sql" />
     <Build Include="Management\Tables\Status_Code.sql" />
     <Build Include="Management\Tables\Age_Unit_Code.sql" />
-    <Build Include="Healthcare\Tables\Specimen_Type.sql" />
     <Build Include="Entity\Tables\Sex_Code.sql" />
     <Build Include="Helper\Procedures\Comment_Column_Add.sql" />
-    <Build Include="Healthcare\Tables\Clinical_Syndrome_Code.sql" />
     <Build Include="Healthcare\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
-    <Build Include="Healthcare\Tables\Clinical_Syndrome_Secondary_Code.sql" />
     <Build Include="Healthcare\Tables\Disease_Condition_Code.sql" />
     <Build Include="Healthcare\Tables\Virus_Type.sql" />
     <Build Include="Surveillance\Tables\Report.sql" />
@@ -246,7 +240,15 @@
     <Build Include="Testing\Tables\Note_Type.sql" />
     <Build Include="Security\Other.sql" />
     <Build Include="Other\Tables\Case_Transmission_Mode_Code.sql" />
-    <Build Include="Scripts\Sql-Scripts\00150 - Other Codes.sql" />
+    <Build Include="Entity\Tables\Occupation_Code.sql" />
+    <Build Include="Entity\Tables\Industry_Code.sql" />
+    <Build Include="Surveillance\Tables\Travel_Purpose_Code.sql" />
+    <Build Include="Clinical\Tables\Clinical_Syndrome_Code.sql" />
+    <Build Include="Clinical\Tables\Clinical_Syndrome_Secondary_Code.sql" />
+    <Build Include="Testing\Tables\Specimen_Type.sql" />
+    <Build Include="Clinical\Tables\Treatment.sql" />
+    <Build Include="Clinical\Tables\Medication.sql" />
+    <Build Include="Clinical\Tables\Immunization.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
@@ -271,6 +273,7 @@
     <None Include="Scripts\Sql-Scripts\00130 - Provider Resources.sql" />
     <Build Include="Helper\Procedures\Schema_Property_Record_Get.sql" />
     <Build Include="Helper\Procedures\Schema_Property_Value_Get.sql" />
+    <None Include="Scripts\Sql-Scripts\00150 - Other Resources.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Disease_Surveillance.refactorlog" />
