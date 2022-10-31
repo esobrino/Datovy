@@ -21,7 +21,7 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Flag] PRIMARY KEY CLUSTERED ([Flag_ID] ASC),
+   CONSTRAINT [pk_Management_Flag] PRIMARY KEY CLUSTERED ([Flag_ID] ASC),
    CONSTRAINT [fk_Flag_Case] FOREIGN KEY ([Case_ID])
      REFERENCES [Management].[Case] ([Case_ID]),
    CONSTRAINT [fk_Flag_Code] FOREIGN KEY ([Code_ID]) 
