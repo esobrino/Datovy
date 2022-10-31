@@ -1,4 +1,4 @@
-﻿--
+﻿-- Tuberculosis and Latent Tuberculosis Infection v2
 INSERT INTO [Other].[Case_Transmission_Mode_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('416380006',	 'Airborne transmission',	                'SNOMED-CT'),
    ('409700000',	 'Animal to human transmission',	          'SNOMED-CT'),
@@ -20,5 +20,5 @@ GO
 UPDATE [Other].[Case_Transmission_Mode_Code]
    SET Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',
-       Version_Number = 'v6'
+       Version_Number = 'v2'
 GO
