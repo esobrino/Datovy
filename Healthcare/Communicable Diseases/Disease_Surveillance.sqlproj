@@ -246,7 +246,7 @@
     <Build Include="Testing\Tables\Note_Type.sql" />
     <Build Include="Security\Other.sql" />
     <Build Include="Other\Tables\Case_Transmission_Mode_Code.sql" />
-    <Build Include="Scripts\Sql-Scripts\00150 - Other Codes.sql" />
+    <None Include="Scripts\Sql-Scripts\00150 - Other Codes.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
