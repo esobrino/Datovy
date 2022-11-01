@@ -30,6 +30,9 @@
    [Language_Secondary_ID]           VARCHAR(30)  NULL,
    [Education_Level_Highest_Code_ID] VARCHAR(30)  NULL,
 
+   [Marital_Status_Date]             DATE NULL,
+   [Marital_Status_Code_ID]          VARCHAR(30)  NULL,
+
    [Status_Code_ID]                  VARCHAR(30)  NULL,
    [Status_DateTime]                 DATETIMEOFFSET NULL,
 
@@ -62,7 +65,9 @@
    CONSTRAINT [fk_Person_Gender_Identity_Code] FOREIGN KEY ([Gender_Identity_Code_ID])
       REFERENCES [Entity].[Gender_Identity_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID])
-      REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID])
+      REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID]),
+   CONSTRAINT [fk_Person_Marital_Status_Code] FOREIGN KEY ([Marital_Status_Code_ID])
+      REFERENCES [Entity].[Marital_Status_Code] ([Code_ID])
 );
 GO
 

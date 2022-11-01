@@ -1,4 +1,5 @@
 ﻿
+
 -- Blood Product Code v1
 INSERT INTO [Clinical].[Blood_Product_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('OTH','other','NullFlavor'),
@@ -7,14 +8,6 @@ INSERT INTO [Clinical].[Blood_Product_Code] ([Code_ID], [Description], [CodeSet_
    ('126242007','Red blood cells, blood product (product)','SNOMED-CT'),
    ('UNK','unknown','NullFlavor')
 GO
-
--- update this so we know where the code came from...
-UPDATE [Clinical].[Blood_Product_Code]
-   SET Data_Owner_ID = 'CDC',
-       Agency_Reporting_ID = 'CDC',
-       Version_Number = 'v1'
-GO
-
 -- Indicator Flag Code
 INSERT INTO [Clinical].[Indicator_Flag_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('Y','Yes','INDICATOR-FLAG'),

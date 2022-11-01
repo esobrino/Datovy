@@ -252,6 +252,8 @@
     <Build Include="Clinical\Tables\Indicator_Flag_Code.sql" />
     <Build Include="Clinical\Tables\Blood_Transfusion.sql" />
     <Build Include="Clinical\Tables\Blood_Product_Code.sql" />
+    <Build Include="Entity\Tables\Marital_Status_Code.sql" />
+    <Build Include="Clinical\Tables\Maternal_Report.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

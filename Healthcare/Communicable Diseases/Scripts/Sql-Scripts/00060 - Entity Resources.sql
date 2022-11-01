@@ -914,3 +914,30 @@ UPDATE [Entity].[Occupation_Code]
        Agency_Reporting_ID = 'Census',
        Version_Number = 'v1'
 GO
+
+-- Marital Status Code HL7 v1
+INSERT INTO [Entity].[Marital_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('N','Annulled','Marital status (HL7)'),
+   ('C','Common law','Marital status (HL7)'),
+   ('D','Divorced','Marital status (HL7)'),
+   ('P','Domestic partner','Marital status (HL7)'),
+   ('I','Interlocutory','Marital status (HL7)'),
+   ('E','Legally Separated','Marital status (HL7)'),
+   ('G','Living together','Marital status (HL7)'),
+   ('M','Married','Marital status (HL7)'),
+   ('O','Other','Marital status (HL7)'),
+   ('R','Registered domestic partner','Marital status (HL7)'),
+   ('A','Separated','Marital status (HL7)'),
+   ('S','Single','Marital status (HL7)'),
+   ('U','Unknown','Marital status (HL7)'),
+   ('B','Unmarried','Marital status (HL7)'),
+   ('T','Unreported','Marital status (HL7)'),
+   ('W','Widowed','Marital status (HL7)')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Entity].[Marital_Status_Code]
+   SET Data_Owner_ID = 'HL7',
+       Agency_Reporting_ID = 'HL7',
+       Version_Number = 'v1'
+GO
