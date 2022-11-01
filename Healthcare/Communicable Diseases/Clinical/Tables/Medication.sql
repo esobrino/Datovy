@@ -35,7 +35,7 @@
 
    CONSTRAINT [pk_Medication] PRIMARY KEY CLUSTERED ([Medication_ID] ASC),
    CONSTRAINT [fk_Medication_DosageForm] FOREIGN KEY ([Dose_Form_Code_ID]) 
-      REFERENCES [Healthcare].[Dosage_Form_Code] ([Code_ID])
+      REFERENCES [Clinical].[Dosage_Form_Code] ([Code_ID])
 );
 GO
 

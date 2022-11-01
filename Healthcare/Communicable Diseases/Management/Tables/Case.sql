@@ -45,9 +45,7 @@
    CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Case_Type] ([Type_ID]),
    CONSTRAINT [fk_Case_Class_Status] FOREIGN KEY ([Class_Status_Code_ID]) 
-      REFERENCES [Management].[Status_Code] ([Code_ID]),
-   CONSTRAINT [fk_Case_Profile_Group] FOREIGN KEY ([Profile_ID]) 
-      REFERENCES [Surveillance].[Profile] ([Profile_ID])
+      REFERENCES [Management].[Status_Code] ([Code_ID])
 );
 GO
 

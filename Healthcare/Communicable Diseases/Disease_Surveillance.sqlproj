@@ -102,9 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
-    <Build Include="Healthcare\Tables\Medical_Condition.sql" />
-    <Build Include="Healthcare\Tables\Provider.sql" />
-    <Build Include="Healthcare\Tables\Vitals.sql" />
     <None Include="Scripts\Testing\Show Properties.sql" />
     <Build Include="Security\Healthcare.sql" />
     <Build Include="Security\Helper.sql" />
@@ -139,11 +136,6 @@
     <Build Include="Entity\Tables\Contact_Emergency.sql" />
     <Build Include="Management\Tables\Flag_Code.sql" />
     <Build Include="Entity\Tables\Device_Type.sql" />
-    <Build Include="Healthcare\Tables\Dosage_Form_Code.sql" />
-    <Build Include="Healthcare\Tables\Body_Position_Code.sql" />
-    <Build Include="Healthcare\Tables\Body_Site_Code.sql" />
-    <Build Include="Healthcare\Tables\Unit_Code.sql" />
-    <Build Include="Healthcare\Tables\Device_Code.sql" />
     <Build Include="Surveillance\Tables\Answer_Type.sql" />
     <Build Include="Application\Tables\Session.sql" />
     <Build Include="Management\Tables\Referral.sql" />
@@ -164,9 +156,6 @@
     <Build Include="Management\Tables\Age_Unit_Code.sql" />
     <Build Include="Entity\Tables\Sex_Code.sql" />
     <Build Include="Helper\Procedures\Comment_Column_Add.sql" />
-    <Build Include="Healthcare\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
-    <Build Include="Healthcare\Tables\Disease_Condition_Code.sql" />
-    <Build Include="Healthcare\Tables\Virus_Type.sql" />
     <Build Include="Surveillance\Tables\Report.sql" />
     <Build Include="Security\Message.sql" />
     <Build Include="Message\Tables\Submission.sql" />
@@ -249,6 +238,20 @@
     <Build Include="Clinical\Tables\Treatment.sql" />
     <Build Include="Clinical\Tables\Medication.sql" />
     <Build Include="Clinical\Tables\Immunization.sql" />
+    <Build Include="Clinical\Tables\Body_Position_Code.sql" />
+    <Build Include="Clinical\Tables\Body_Site_Code.sql" />
+    <Build Include="Clinical\Tables\Device_Code.sql" />
+    <Build Include="Clinical\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
+    <Build Include="Clinical\Tables\Disease_Condition_Code.sql" />
+    <Build Include="Clinical\Tables\Dosage_Form_Code.sql" />
+    <Build Include="Clinical\Tables\Condition.sql" />
+    <Build Include="Clinical\Tables\Provider.sql" />
+    <Build Include="Clinical\Tables\Unit_Code.sql" />
+    <Build Include="Clinical\Tables\Virus_Type.sql" />
+    <Build Include="Clinical\Tables\Vitals.sql" />
+    <Build Include="Clinical\Tables\Indicator_Flag_Code.sql" />
+    <Build Include="Clinical\Tables\Blood_Transfusion.sql" />
+    <Build Include="Clinical\Tables\Blood_Product_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
