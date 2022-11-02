@@ -9,10 +9,15 @@
    [Qualifier_Code_ID]      VARCHAR (30) NULL,
    [Severity_Code_ID]       VARCHAR (30) NULL,
 
-   [Acquired_Jurisdiction_Code_ID] VARCHAR(30) NULL,
-   [Acquired_DateTime]      DATE NULL,
-   [Recorded_DateTime]      DATE NULL,
    [Disease_Code_ID]        VARCHAR(30) NULL,
+   [Acquired_Jurisdiction_Code_ID] VARCHAR(30) NULL,
+   [Acquired_Date]          DATE NULL,
+   [Recorded_Date]          DATE NULL,
+   [Reported_Date]          DATE NULL,
+   [Diagnosis_Date]         DATE NULL,
+
+   [Duration_Total]         INT NULL,
+   [Duration_Unit_Code_ID]  VARCHAR(30) NULL,
 
    [Body_Site_Code_ID]      VARCHAR(30) NULL,
    [Body_Position_Code_ID]  VARCHAR(30) NULL,
@@ -48,7 +53,9 @@
    CONSTRAINT [fk_Condition_Stage_Clinical] FOREIGN KEY ([Stage_Clinical_Code_ID])
       REFERENCES [Clinical].[Stage_Code]([Code_ID]),
    CONSTRAINT [fk_Condition_Stage_Surveillance] FOREIGN KEY ([Stage_Surveillance_Code_ID])
-      REFERENCES [Clinical].[Stage_Code]([Code_ID])
+      REFERENCES [Clinical].[Stage_Code]([Code_ID]),
+   CONSTRAINT [fk_Condition_Duration_Unit] FOREIGN KEY ([Duration_Unit_Code_ID])
+      REFERENCES [Clinical].[Unit_Code]([Code_ID])
 );
 GO
 

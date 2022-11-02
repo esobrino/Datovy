@@ -15,6 +15,41 @@ UPDATE [Clinical].[Birth_Status_Code]
        Version_Number = 'v1'
 GO
 
+-- Sexual Preference v1
+INSERT INTO [Clinical].[Sexual_Preference_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('43018001','Babysitter (occupation)','SNOMED-CT'),
+   ('PHC299','Child cared for by this patient','PHIN VS (CDC Local Coding System)'),
+   ('PHC300','Household member non-sexual','PHIN VS (CDC Local Coding System)'),
+   ('PHC1304','Other Contact Type','PHIN VS (CDC Local Coding System)'),
+   ('PHC301','Playmate','PHIN VS (CDC Local Coding System)'),
+   ('225517006','Sexual partners (observable entity)','SNOMED-CT')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Sexual_Preference_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v1'
+GO
+
+-- Contact Type v2
+INSERT INTO [Clinical].[Contact_Type] ([Type_ID], [Description], [CodeSet_Name]) VALUES
+   ('43018001','Babysitter (occupation)','SNOMED-CT'),
+   ('PHC299','Child cared for by this patient','PHIN VS (CDC Local Coding System)'),
+   ('PHC300','Household member non-sexual','PHIN VS (CDC Local Coding System)'),
+   ('PHC1304','Other Contact Type','PHIN VS (CDC Local Coding System)'),
+   ('PHC301','Playmate','PHIN VS (CDC Local Coding System)'),
+   ('225517006','Sexual partners (observable entity)','SNOMED-CT')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Contact_Type]
+   SET Data_Owner_ID = 'CDC',
+       Category_ID = 'Hepatitis',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
+
 -- Symptom Sign v1
 INSERT INTO [Clinical].[Symptom_Sign_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('84387000','asymptomatic','SNOMED-CT'),

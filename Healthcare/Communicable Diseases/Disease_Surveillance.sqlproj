@@ -274,6 +274,9 @@
     <Build Include="Clinical\Tables\Risk_Factor.sql" />
     <Build Include="Clinical\Tables\Finding_Code.sql" />
     <Build Include="Clinical\Tables\Finding.sql" />
+    <Build Include="Clinical\Tables\Contact_Report.sql" />
+    <Build Include="Clinical\Tables\Contact_Type.sql" />
+    <Build Include="Clinical\Tables\Sexual_Preference_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

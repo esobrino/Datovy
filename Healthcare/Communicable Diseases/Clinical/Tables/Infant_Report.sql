@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Clinical].[Infant_Report]
 (
-   [Maternal_Report_ID]     VARCHAR(40) NOT NULL,
+   [Infant_Report_ID]       VARCHAR(40) NOT NULL,
    [Report_Date]            DATE NULL,
 
    [Birth_Weight]           INT NULL,
@@ -23,7 +23,7 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Infant_Report] PRIMARY KEY CLUSTERED ([Maternal_Report_ID] ASC),
+   CONSTRAINT [pk_Infant_Report] PRIMARY KEY CLUSTERED ([Infant_Report_ID] ASC),
    CONSTRAINT [fk_Infant_Report] FOREIGN KEY ([Birth_Status_Code_ID])
       REFERENCES [Clinical].[Birth_Status_Code]([Code_ID])
 )
