@@ -80,6 +80,7 @@ INSERT INTO [Clinical].[Blood_Product_Code] ([Code_ID], [Description], [CodeSet_
    ('126242007','Red blood cells, blood product (product)','SNOMED-CT'),
    ('UNK','unknown','NullFlavor')
 GO
+
 -- Indicator Flag Code
 INSERT INTO [Clinical].[Indicator_Flag_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('Y','Yes','INDICATOR-FLAG'),

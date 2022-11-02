@@ -941,3 +941,17 @@ UPDATE [Entity].[Marital_Status_Code]
        Agency_Reporting_ID = 'HL7',
        Version_Number = 'v1'
 GO
+
+-- Indicator Flag Code
+INSERT INTO [Entity].[Indicator_Flag_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('Y','Yes','INDICATOR-FLAG'),
+   ('N','No','INDICATOR-FLAG'),
+   ('U','Unknown','INDICATOR-FLAG')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Entity].[Indicator_Flag_Code]
+   SET Data_Owner_ID = 'COMMON',
+       Agency_Reporting_ID = 'COMMON',
+       Version_Number = 'v1'
+GO

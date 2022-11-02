@@ -117,6 +117,7 @@ Associated with this project are resources that include Use Cases and documentat
 ## <span style="color:skyblue;font-weight:bold">KNOWN ISSUES</span>
 - Code Set categories values had been added for some but there are entries that may not apply to the underlying concept or apply to all (see next issue).
 - Some Code Sets for a specific concept had been added to a single set and can't be separated by their specific scenario or application (i.e. Clinical Stage / Surveillance Stage).  This may change other versions.
+- Some Code Sets could be centralized, if so since each database schema is isolated no foreign key is possible.  This version 0, will have a copy of needed code sets.
 
 ## <span style="color:skyblue;font-weight:bold">LAKEHOUSE CONNECTIVITY</span>
 We have been working with the Dremio Lakehouse docker container that we hope to later become a target for analytics for this project.

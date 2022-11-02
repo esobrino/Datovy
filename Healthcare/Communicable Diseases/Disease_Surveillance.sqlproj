@@ -156,7 +156,7 @@
     <Build Include="Management\Tables\Age_Unit_Code.sql" />
     <Build Include="Entity\Tables\Sex_Code.sql" />
     <Build Include="Helper\Procedures\Comment_Column_Add.sql" />
-    <Build Include="Surveillance\Tables\Report.sql" />
+    <Build Include="Surveillance\Tables\Case_Report.sql" />
     <Build Include="Security\Message.sql" />
     <Build Include="Message\Tables\Submission.sql" />
     <Build Include="Message\Procedures\Submission_Upsert.sql" />
@@ -260,6 +260,10 @@
     <Build Include="Clinical\Tables\Symptom_Sign.sql" />
     <Build Include="Clinical\Tables\Infant_Report.sql" />
     <Build Include="Clinical\Tables\Birth_Status_Code.sql" />
+    <Build Include="Entity\Tables\Affiliation.sql" />
+    <Build Include="Entity\Tables\Indicator_Flag_Code.sql" />
+    <Build Include="Surveillance\Tables\Viral_Report.sql" />
+    <Build Include="Surveillance\Tables\Exposure_Setting_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
