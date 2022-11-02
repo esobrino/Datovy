@@ -1,4 +1,76 @@
 ﻿
+-- Birth Status v1
+INSERT INTO [Clinical].[Birth_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('438949009','alive','SNOMED-CT'),
+   ('PHC1285','Born alive, then died','PHIN VS (CDC Local Coding System)'),
+   ('237364002','stillbirth','SNOMED-CT'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Birth_Status_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v1'
+GO
+
+-- Symptom Sign v1
+INSERT INTO [Clinical].[Symptom_Sign_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('84387000','asymptomatic','SNOMED-CT'),
+   ('91554004','condylomata lata','SNOMED-CT'),
+   ('397746007','snuffles','SNOMED-CT'),
+   ('266128007','rash of secondary syphilis','SNOMED-CT'),
+   ('36760000','hepatosplenomegaly','SNOMED-CT'),
+   ('PHC639','Hepatitis and or Jaundice','PHIN VS (CDC Local Coding System)'),
+   ('135834002','pseudoparalysis','SNOMED-CT'),
+   ('267038008','edema','SNOMED-CT'),
+   ('OTH','other','NullFlavor'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Symptom_Sign_Code]
+   SET Data_Owner_ID = 'CDC',
+       Category_ID = 'Syphilis_CS',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
+
+-- Stage Code v1
+INSERT INTO [Clinical].[Stage_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('266127002','primary syphilis','SNOMED-CT'),
+   ('240557004','secondary syphilis','SNOMED-CT'),
+   ('186867005','latent early syphilis','SNOMED-CT'),
+   ('PHC1275','late or late latent','PHIN VS (CDC Local Coding System)'),
+   ('PHC1276','previously treated / serofast','PHIN VS (CDC Local Coding System)'),
+   ('PHC1506','Syphilis, early non-primary, non-secondary','PHIN VS (CDC Local Coding System)'),
+   ('PHC1507','Syphilis, unknown duration or late','PHIN VS (CDC Local Coding System)'),
+   ('OTH','other','NullFlavor'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Stage_Code]
+   SET Data_Owner_ID = 'CDC',
+       Category_ID = 'Syphilis_CS',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
+
+-- Pregnancy Trimester Code v2
+INSERT INTO [Clinical].[Pregnancy_Trimester_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('255246003','First trimester (qualifier value)','SNOMED-CT'),
+   ('255247007','Second trimester (qualifier value)','SNOMED-CT'),
+   ('255248002','Third trimester (qualifier value)','SNOMED-CT'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Pregnancy_Trimester_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
 
 -- Blood Product Code v1
 INSERT INTO [Clinical].[Blood_Product_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
@@ -263,8 +335,8 @@ UPDATE [Clinical].[Disease_Condition_Code]
        Version_Number = '35'
 GO
 
--- PHVS Clinical Syndrome Arbovirus - CDC - v7
-INSERT INTO [Clinical].[Clinical_Syndrome_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+-- PHVS Syndrome Arbovirus - CDC - v7
+INSERT INTO [Clinical].[Syndrome_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('84387000','Asymptomatic','SNOMED-CT'),
    ('416113008','Febrile disorder','SNOMED-CT'),
    ('7180009','Meningitis','SNOMED-CT'),
@@ -283,16 +355,15 @@ INSERT INTO [Clinical].[Clinical_Syndrome_Code] ([Code_ID], [Description], [Code
 GO
 
 -- update this so we know where the code came from...
-UPDATE [Clinical].[Clinical_Syndrome_Code]
+UPDATE [Clinical].[Syndrome_Code]
    SET Category_ID = 'Arboviral',
        Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',
        Version_Number = 'v7'
 GO
 
-
 -- PHVS Clinical Syndrome Secondary - Arboviral - CDC - v2
-INSERT INTO [Clinical].[Clinical_Syndrome_Secondary_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+INSERT INTO [Clinical].[Syndrome_Secondary_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('260413007','None','SNOMED-CT'),
    ('7180009','Meningitis','SNOMED-CT'),
    ('PHC638','Encephalitis Including Meningoencephalitis','PHIN VS (CDC Local Coding System)'),
@@ -305,16 +376,15 @@ INSERT INTO [Clinical].[Clinical_Syndrome_Secondary_Code] ([Code_ID], [Descripti
 GO
 
 -- update this so we know where the code came from...
-UPDATE [Clinical].[Clinical_Syndrome_Secondary_Code]
+UPDATE [Clinical].[Syndrome_Secondary_Code]
    SET Caegory_ID = 'Arboviral',
        Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',
        Version_Number = 'v2'
 GO
 
-
 -- PHVS Disease Acquired Jurisdiction - CDC - v3
-INSERT INTO [Clinical].[Disease_Acquired_Jurisdiction_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+INSERT INTO [Clinical].[Jurisdiction_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('PHC244','Indigenous, within jurisdiction','PHIN VS (CDC Local Coding System)'),
    ('C1512888','International','UMLS'),
    ('PHC245','Out of jurisdiction, from another jurisdiction within state','PHIN VS (CDC Local Coding System)'),
@@ -324,7 +394,7 @@ INSERT INTO [Clinical].[Disease_Acquired_Jurisdiction_Code] ([Code_ID], [Descrip
 GO
 
 -- update this so we know where the code came from...
-UPDATE [Clinical].[Disease_Acquired_Jurisdiction_Code]
+UPDATE [Clinical].[Jurisdiction_Code]
    SET [Category_ID] = '',
        Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',
@@ -332,7 +402,7 @@ UPDATE [Clinical].[Disease_Acquired_Jurisdiction_Code]
 GO
 
 -- PHVS Virus Type - Arboviral - CDC - v3
-INSERT INTO [Clinical].[Disease_Acquired_Jurisdiction_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+INSERT INTO [Clinical].[Virus_Type] ([Type_ID], [Description], [CodeSet_Name]) VALUES
    ('764949001','Alkhurma virus (organism)','SNOMED-CT'),
    ('281165003','Arbovirus (organism)','SNOMED-CT'),
    ('56932004','Barmah Forest virus (organism)','SNOMED-CT'),
@@ -376,7 +446,7 @@ INSERT INTO [Clinical].[Disease_Acquired_Jurisdiction_Code] ([Code_ID], [Descrip
 GO
 
 -- update this so we know where the code came from...
-UPDATE [Clinical].[Disease_Acquired_Jurisdiction_Code]
+UPDATE [Clinical].[Virus_Type]
    SET Category_ID = 'Arboviral',
        Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',

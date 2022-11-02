@@ -1,6 +1,10 @@
 ﻿CREATE TABLE [Clinical].[Condition] (
    [Condition_ID]           VARCHAR (40) NOT NULL,
    [Type_ID]                VARCHAR (30) NULL,
+
+   -- external references...
+   [Subject_ID]             VARCHAR(40) NOT NULL,
+
    [Qualifier_Text]         VARCHAR (30) NULL,
    [Qualifier_Code_ID]      VARCHAR (30) NULL,
    [Severity_Code_ID]       VARCHAR (30) NULL,
@@ -12,6 +16,9 @@
 
    [Body_Site_Code_ID]      VARCHAR(30) NULL,
    [Body_Position_Code_ID]  VARCHAR(30) NULL,
+
+   [Stage_Clinical_Code_ID] VARCHAR(30) NULL,
+   [Stage_Surveillance_Code_ID] VARCHAR(30) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
@@ -37,7 +44,11 @@
    CONSTRAINT [fk_Condition_Disease_Code] FOREIGN KEY ([Disease_Code_ID])
       REFERENCES [Clinical].[Disease_Condition_Code] ([Code_ID]),
    CONSTRAINT [fk_Condition_Jurisdiction] FOREIGN KEY ([Acquired_Jurisdiction_Code_ID])
-      REFERENCES [Clinical].[Disease_Acquired_Jurisdiction_Code]([Code_ID])
+      REFERENCES [Clinical].[Jurisdiction_Code]([Code_ID]),
+   CONSTRAINT [fk_Condition_Stage_Clinical] FOREIGN KEY ([Stage_Clinical_Code_ID])
+      REFERENCES [Clinical].[Stage_Code]([Code_ID]),
+   CONSTRAINT [fk_Condition_Stage_Surveillance] FOREIGN KEY ([Stage_Surveillance_Code_ID])
+      REFERENCES [Clinical].[Stage_Code]([Code_ID])
 );
 GO
 

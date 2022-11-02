@@ -101,10 +101,22 @@ Onece those tables grow to a considerable size the table should be partitioned t
 ## <span style="color:skyblue">Record Management</span>
 Enough metadata details about record management are provided as a starting point.  Details about each column could be found in the documentation folder.
 
+## <span style="color:skyblue;font-weight:bold">ROAD MAP</span>
+The following is a tentative plan that will be modified based on the community feedback:
+1) Define the Communicable Disease (CD) Database Schema.
+2) Create an API to expose the CD data entities.
+3) Create sample CD CDC based Message Reports.
+
+## <span style="color:skyblue;font-weight:bold">RESOURCES</span>
+Associated with this project are resources that include Use Cases and documentation that could be found in the "Use Cases" folder.
 ## <span style="color:skyblue;font-weight:bold">REFERENCE & LINKS</span>
 [1] CDC Centers for Disease Control and Prevention -
     National Notifiable Diseases Surveillance System (NNDS) -
     https://www.cdc.gov/nndss/index.html
+
+## <span style="color:skyblue;font-weight:bold">KNOWN ISSUES</span>
+- Code Set categories values had been added for some but there are entries that may not apply to the underlying concept or apply to all (see next issue).
+- Some Code Sets for a specific concept had been added to a single set and can't be separated by their specific scenario or application (i.e. Clinical Stage / Surveillance Stage).  This may change other versions.
 
 ## <span style="color:skyblue;font-weight:bold">LAKEHOUSE CONNECTIVITY</span>
 We have been working with the Dremio Lakehouse docker container that we hope to later become a target for analytics for this project.

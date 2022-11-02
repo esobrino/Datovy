@@ -7,6 +7,7 @@
    [Birth_Date]                      DATE NULL,
    [Birth_Date_Text]                 VARCHAR(50)  NULL,
    [Birth_Location_ID]               VARCHAR(30)  NULL,
+   [Birth_Weight]                    INT NULL,
 
    [Name_Type_ID]                    VARCHAR(30)  NULL,
    [Name_Given]                      VARCHAR(80)  NULL,
@@ -69,6 +70,13 @@
    CONSTRAINT [fk_Person_Marital_Status_Code] FOREIGN KEY ([Marital_Status_Code_ID])
       REFERENCES [Entity].[Marital_Status_Code] ([Code_ID])
 );
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'Birth weight (in grams)', 
+   @level0type = N'SCHEMA',   @level0name = N'Entity',
+   @level1type = N'TABLE',    @level1name = N'Person',
+   @level2type = N'COLUMN',   @level2name = 'Birth_Weight';
 GO
 
 EXECUTE sp_addextendedproperty 

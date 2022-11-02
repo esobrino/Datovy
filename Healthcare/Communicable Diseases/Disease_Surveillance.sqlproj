@@ -232,8 +232,8 @@
     <Build Include="Entity\Tables\Occupation_Code.sql" />
     <Build Include="Entity\Tables\Industry_Code.sql" />
     <Build Include="Surveillance\Tables\Travel_Purpose_Code.sql" />
-    <Build Include="Clinical\Tables\Clinical_Syndrome_Code.sql" />
-    <Build Include="Clinical\Tables\Clinical_Syndrome_Secondary_Code.sql" />
+    <Build Include="Clinical\Tables\Syndrome_Code.sql" />
+    <Build Include="Clinical\Tables\Syndrome_Secondary_Code.sql" />
     <Build Include="Testing\Tables\Specimen_Type.sql" />
     <Build Include="Clinical\Tables\Treatment.sql" />
     <Build Include="Clinical\Tables\Medication.sql" />
@@ -241,7 +241,7 @@
     <Build Include="Clinical\Tables\Body_Position_Code.sql" />
     <Build Include="Clinical\Tables\Body_Site_Code.sql" />
     <Build Include="Clinical\Tables\Device_Code.sql" />
-    <Build Include="Clinical\Tables\Disease_Acquired_Jurisdiction_Code.sql" />
+    <Build Include="Clinical\Tables\Jurisdiction_Code.sql" />
     <Build Include="Clinical\Tables\Disease_Condition_Code.sql" />
     <Build Include="Clinical\Tables\Dosage_Form_Code.sql" />
     <Build Include="Clinical\Tables\Condition.sql" />
@@ -254,6 +254,12 @@
     <Build Include="Clinical\Tables\Blood_Product_Code.sql" />
     <Build Include="Entity\Tables\Marital_Status_Code.sql" />
     <Build Include="Clinical\Tables\Maternal_Report.sql" />
+    <Build Include="Clinical\Tables\Pregnancy_Trimester_Code.sql" />
+    <Build Include="Clinical\Tables\Stage_Code.sql" />
+    <Build Include="Clinical\Tables\Symptom_Sign_Code.sql" />
+    <Build Include="Clinical\Tables\Symptom_Sign.sql" />
+    <Build Include="Clinical\Tables\Infant_Report.sql" />
+    <Build Include="Clinical\Tables\Birth_Status_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
