@@ -1,4 +1,5 @@
 ﻿
+
 -- Exposure Setting v2
 INSERT INTO [Surveillance].[Exposure_Setting_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('257562009','Airport (environment)','SNOMED-CT'),

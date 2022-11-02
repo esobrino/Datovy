@@ -1,5 +1,6 @@
-﻿CREATE TABLE [Clinical].[Unit_Code] (
-   [Code_ID]                VARCHAR(30)  NOT NULL,
+﻿CREATE TABLE [Clinical].[Vaccine_Type]
+(
+   [Type_ID]                VARCHAR(30)  NOT NULL,
    [Description]            VARCHAR(128) NULL,
    [Category_ID]            VARCHAR(30)  NULL,
 
@@ -18,6 +19,5 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_UnitCode] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
-);
-
+   CONSTRAINT [pk_Vaccine_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
+)

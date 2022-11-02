@@ -10,6 +10,9 @@
 
    [Disposition_ID]         VARCHAR (40) NULL,
 
+   [Probable_Reason_Code_ID]  VARCHAR(30) NULL,
+   [Detection_Method_Code_ID] VARCHAR(30) NULL,
+
    -- external references
    [Medication_ID]          VARCHAR (40) NULL,
    [Medical_Condition_ID]   VARCHAR (40) NULL,
@@ -45,7 +48,11 @@
    CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Case_Type] ([Type_ID]),
    CONSTRAINT [fk_Case_Class_Status] FOREIGN KEY ([Class_Status_Code_ID]) 
-      REFERENCES [Management].[Status_Code] ([Code_ID])
+      REFERENCES [Management].[Status_Code] ([Code_ID]),
+   CONSTRAINT [fk_Case_Class_Probable_Reason] FOREIGN KEY ([Probable_Reason_Code_ID]) 
+      REFERENCES [Management].[Probable_Reason_Code] ([Code_ID]),
+   CONSTRAINT [fk_Case_Class_Detection_Method] FOREIGN KEY ([Detection_Method_Code_ID]) 
+      REFERENCES [Management].[Detection_Method_Code] ([Code_ID])
 );
 GO
 

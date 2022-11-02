@@ -1,12 +1,20 @@
 ﻿CREATE TABLE [Clinical].[Immunization] (
    [Immunization_ID]        VARCHAR (40)  NOT NULL,
    [Type_ID]                VARCHAR (30)  NULL,
-   [Administered_DateTime]  DATETIMEOFFSET   NULL,
-   [Dosage_Series_Number]   VARCHAR (20)  NULL,
-   [Dosage_Amount]          VARCHAR (50)  NULL,
-   [Lot_Number]             VARCHAR (20)  NULL,
-   [Expiration_Date]        DATETIME2 (7) NULL,
-   [Drug_Code_ID]           VARCHAR (30)  NULL,
+
+   [Vaccination_Record_ID]        VARCHAR(40) NULL,
+   [Vaccine_Type_ID]              VARCHAR(30) NULL,
+   [Vaccine_Manufacturer_Code_ID] VARCHAR(30) NULL,
+   [Vaccine_Event_Source_Code_ID] VARCHAR(30) NULL,
+   [Vaccinated_Flag_ID]           VARCHAR(30) NULL,
+
+   [Administered_DateTime]   DATETIMEOFFSET   NULL,
+   [Dosage_Series_Number]    VARCHAR (20)  NULL,
+   [Dosage_Amount]           VARCHAR (50)  NULL,
+   [Lot_Number]              VARCHAR (20)  NULL,
+   [Expiration_Date]         DATETIME2 (7) NULL,
+   [Drug_Code_ID]            VARCHAR (30)  NULL,
+   [Reason_Not_Give_Code_ID] VARCHAR(30) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
@@ -29,8 +37,16 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Immunization] PRIMARY KEY CLUSTERED ([Immunization_ID] ASC),
-   CONSTRAINT [fk_Immunization_Organization] FOREIGN KEY ([Organization_ID]) 
-      REFERENCES [Entity].[Organization] ([Organization_ID])
+   CONSTRAINT [fk_Immunization_Vaccine_Type] FOREIGN KEY ([Vaccine_Type_ID])
+      REFERENCES [Clinical].[Vaccine_Type] ([Type_ID]),
+   CONSTRAINT [fk_Immunization_Vaccine_Manufacturer_Code] FOREIGN KEY ([Vaccine_Manufacturer_Code_ID])
+      REFERENCES [Clinical].[Vaccine_Manufacturer_Code] ([Code_ID]),
+   CONSTRAINT [fk_Immunization_Vaccine_Event_Source_Code] FOREIGN KEY ([Vaccine_Event_Source_Code_ID])
+      REFERENCES [Clinical].[Vaccine_Event_Source_Code] ([Code_ID]),
+   CONSTRAINT [fk_Immunization_Vaccine_Reason_Not_Given_Code] FOREIGN KEY ([Reason_Not_Give_Code_ID])
+      REFERENCES [Clinical].[Vaccine_Reason_Not_Given_Code] ([Code_ID]),
+   CONSTRAINT [fk_Immunization_Vaccinated_Flag] FOREIGN KEY ([Vaccinated_Flag_ID])
+      REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID])
 );
 GO
 

@@ -1,4 +1,38 @@
 ﻿
+-- Detection Method v2
+INSERT INTO [Management].[Detection_Method_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('C0004398','Autopsy','UMLS'),
+   ('C4084924','Clinical evaluation','UMLS'),
+   ('PHC2262','Contact tracing','PHIN VS (CDC Local Coding System)'),
+   ('PHC2264','EpiX notification of traveler','PHIN VS (CDC Local Coding System)'),
+   ('PHC2112','Laboratory reported','PHIN VS (CDC Local Coding System)'),
+   ('OTH','other','NullFlavor'),
+   ('PHC241','Provider reported','PHIN VS (CDC Local Coding System)'),
+   ('PHC243','Routine physical examination','PHIN VS (CDC Local Coding System)'),
+   ('PHC2263','Routine surveillance','PHIN VS (CDC Local Coding System)'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Management].[Detection_Method_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
+
+-- Probable Reason Code v1
+INSERT INTO [Management].[Probable_Reason_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('PHC2259','Meets clinical criteria AND epidemiologic evidence with no confirmatory  lab testing performed','PHIN VS (CDC Local Coding System)'),
+   ('PHC2260','Meets presumptive lab evidence AND either clinical criteria OR epidemiologic  evidence','PHIN VS (CDC Local Coding System)'),
+   ('PHC2261','Meets vital records criteria with no confirmatory lab testing','PHIN VS (CDC Local Coding System)')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Management].[Probable_Reason_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v1'
+GO
 
 -- PHVS Case Class Status NND - CDC - v1
 INSERT INTO [Management].[Class_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES

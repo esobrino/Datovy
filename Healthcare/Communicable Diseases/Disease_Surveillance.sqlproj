@@ -264,6 +264,16 @@
     <Build Include="Entity\Tables\Indicator_Flag_Code.sql" />
     <Build Include="Surveillance\Tables\Viral_Report.sql" />
     <Build Include="Surveillance\Tables\Exposure_Setting_Code.sql" />
+    <Build Include="Management\Tables\Probable_Reason_Code.sql" />
+    <Build Include="Management\Tables\Detection_Method_Code.sql" />
+    <Build Include="Clinical\Tables\Vaccine_Type.sql" />
+    <Build Include="Clinical\Tables\Vaccine_Manufacturer_Code.sql" />
+    <Build Include="Clinical\Tables\Vaccine_Event_Source_Code.sql" />
+    <Build Include="Clinical\Tables\Vaccine_Reason_Not_Given_Code.sql" />
+    <Build Include="Clinical\Tables\Risk_Factor_Code.sql" />
+    <Build Include="Clinical\Tables\Risk_Factor.sql" />
+    <Build Include="Clinical\Tables\Finding_Code.sql" />
+    <Build Include="Clinical\Tables\Finding.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

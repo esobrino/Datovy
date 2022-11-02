@@ -7,6 +7,9 @@
    [Description]            VARCHAR(1024) NULL,
 
    [Setting_Code_ID]        VARCHAR(30) NULL,
+
+   -- external Case ID reference...
+   [Case_ID]                VARCHAR(40) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
