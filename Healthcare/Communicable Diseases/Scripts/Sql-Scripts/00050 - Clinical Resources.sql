@@ -1,4 +1,25 @@
 ﻿
+-- Clinical Manifestation v1
+INSERT INTO [Clinical].[Manifestation_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('233917008','Atrioventricular block (disorder)','SNOMED-CT'),
+   ('193093009','Bell''s palsy (disorder)','SNOMED-CT'),
+   ('48780006','Cranial neuritis (disorder)','SNOMED-CT'),
+   ('45170000','Encephalitis (disorder)','SNOMED-CT'),
+   ('62950007','Encephalomyelitis (disorder)','SNOMED-CT'),
+   ('69588003','Erythema chronica migrans (disorder)','SNOMED-CT'),
+   ('33937009','Lyme arthritis (disorder)','SNOMED-CT'),
+   ('276064006','Lymphocytic meningitis (disorder)','SNOMED-CT'),
+   ('72274001','Nerve root disorder (disorder)','SNOMED-CT'),
+   ('OTH','Other','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Manifestation_Code]
+   SET Data_Owner_ID = 'CDC',
+       Category_ID = 'Clinical',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v1'
+GO
 
 -- Birth Status v1
 INSERT INTO [Clinical].[Birth_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
