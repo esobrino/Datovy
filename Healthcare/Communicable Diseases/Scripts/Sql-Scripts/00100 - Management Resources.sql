@@ -50,9 +50,8 @@ UPDATE [Management].[Class_Status_Code]
        Version_Number = 'v1'
 GO
 
-
 -- PHVS Case Class Status NND - CDC - v2
-INSERT INTO [Management].[Age_Unit_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+INSERT INTO [Management].[Unit_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('d', 'day', 'PH_UnitsOfMeasure_UCUM'),
    ('h', 'hour', 'PH_UnitsOfMeasure_UCUM'),
    ('min', 'minute', 'PH_UnitsOfMeasure_UCUM'),
@@ -65,9 +64,9 @@ INSERT INTO [Management].[Age_Unit_Code] ([Code_ID], [Description], [CodeSet_Nam
 GO
 
 -- update this so we know where the code came from...
-UPDATE [Management].[Class_Status_Code]
+UPDATE [Management].[Unit_Code]
    SET Data_Owner_ID = 'CDC',
        Agency_Reporting_ID = 'CDC',
-       Version_Number = 'v1'
+       Version_Number = 'v2'
 GO
 
