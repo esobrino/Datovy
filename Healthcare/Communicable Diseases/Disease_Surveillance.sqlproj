@@ -289,6 +289,8 @@
     <Build Include="Surveillance\Tables\Reporting_Criteria_Code.sql" />
     <Build Include="Clinical\Tables\Manifestation_Code.sql" />
     <Build Include="Clinical\Tables\Manifestation_Report.sql" />
+    <Build Include="Management\Tables\Service_Code.sql" />
+    <Build Include="Management\Tables\Refferal_Request.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
