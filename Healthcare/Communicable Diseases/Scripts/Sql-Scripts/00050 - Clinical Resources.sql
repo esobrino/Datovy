@@ -1,4 +1,25 @@
 ﻿
+-- Complication v6
+INSERT INTO [Clinical].[Complication_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('272033007','Deafness symptom (disorder)','SNOMED-CT'),
+   ('237443002','Mastitis of mumps (disorder)','SNOMED-CT'),
+   ('31646008','Mumps encephalitis (disorder)','SNOMED-CT'),
+   ('44201003','Mumps meningitis (disorder)','SNOMED-CT'),
+   ('75548002','Mumps oophoritis (disorder)','SNOMED-CT'),
+   ('78580004','Mumps orchitis (disorder)','SNOMED-CT'),
+   ('10665004','Mumps pancreatitis (disorder)','SNOMED-CT'),
+   ('OTH','other','NullFlavor'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Clinical].[Complication_Code]
+   SET Data_Owner_ID = 'CDC',
+       Category_ID = 'Mumps',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v6'
+GO
+
 -- Clinical Manifestation v1
 INSERT INTO [Clinical].[Manifestation_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
    ('233917008','Atrioventricular block (disorder)','SNOMED-CT'),

@@ -8,7 +8,8 @@
    [Recorded_DateTime]      DATE NULL,
 
    -- external reference
-   [Subject_ID]             VARCHAR(40) NOT NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -24,7 +25,7 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Symptom_Sign] PRIMARY KEY CLUSTERED ([Synmptom_Sign_ID] ASC),
-   CONSTRAINT [fk_Symptom_Sign] FOREIGN KEY ([Sign_Code_ID])
+   CONSTRAINT [fk_Symptom_Sign_Code] FOREIGN KEY ([Sign_Code_ID])
       REFERENCES [Clinical].[Symptom_Sign_Code]([Code_ID]),
    CONSTRAINT [fk_Symptom_Sign_Flag] FOREIGN KEY ([Sign_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])

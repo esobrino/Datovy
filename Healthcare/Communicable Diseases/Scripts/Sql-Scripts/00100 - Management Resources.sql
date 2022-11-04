@@ -10,7 +10,10 @@ INSERT INTO [Management].[Detection_Method_Code] ([Code_ID], [Description], [Cod
    ('PHC241','Provider reported','PHIN VS (CDC Local Coding System)'),
    ('PHC243','Routine physical examination','PHIN VS (CDC Local Coding System)'),
    ('PHC2263','Routine surveillance','PHIN VS (CDC Local Coding System)'),
-   ('UNK','unknown','NullFlavor')
+   ('UNK','unknown','NullFlavor'),
+   ('PHC311','Prenatal screening','PHIN VS (CDC Local Coding System)'),
+   ('PHC242','Prison entry screening','PHIN VS (CDC Local Coding System)'),
+   ('306098008','Self-referral (procedure)','SNOMED-CT')
 GO
 
 -- update this so we know where the code came from...

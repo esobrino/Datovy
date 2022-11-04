@@ -1,4 +1,93 @@
 ﻿
+-- Transmission Setting v3
+INSERT INTO [Surveillance].[Transmission_Setting_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('C1510656','Athletics','UMLS'),
+   ('224864007','College (environment)','SNOMED-CT'),
+   ('133928008','Community (social concept)','SNOMED-CT'),
+   ('1348009','Day care center (environment)','SNOMED-CT'),
+   ('ER','Emergency room','RoleCode'),
+   ('264362003','Home (environment)','SNOMED-CT'),
+   ('C0029916','Hospital Outpatient Clinic','UMLS'),
+   ('PHC179','International Travel','PHIN VS (CDC Local Coding System)'),
+   ('PHC64','Military (Environment)','PHIN VS (CDC Local Coding System)'),
+   ('OTH','other','NullFlavor'),
+   ('257656006','Penal institution (environment)','SNOMED-CT'),
+   ('257659004','Place of worship (environment)','SNOMED-CT'),
+   ('257698009','School (environment)','SNOMED-CT'),
+   ('83891005','Solo practice private office (environment)','SNOMED-CT'),
+   ('UNK','unknown','NullFlavor'),
+   ('225746001','Ward (environment)','SNOMED-CT'),
+   ('285141008','Work environment (environment)','SNOMED-CT')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Surveillance].[Transmission_Setting_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v3'
+GO
+
+-- Detection Method v2
+INSERT INTO [Surveillance].[Detection_Method_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('C0004398','Autopsy','UMLS'),
+   ('C4084924','Clinical evaluation','UMLS'),
+   ('PHC2262','Contact tracing','PHIN VS (CDC Local Coding System)'),
+   ('PHC2264','EpiX notification of traveler','PHIN VS (CDC Local Coding System)'),
+   ('PHC2112','Laboratory reported','PHIN VS (CDC Local Coding System)'),
+   ('OTH','other','NullFlavor'),
+   ('PHC241','Provider reported','PHIN VS (CDC Local Coding System)'),
+   ('PHC243','Routine physical examination','PHIN VS (CDC Local Coding System)'),
+   ('PHC2263','Routine surveillance','PHIN VS (CDC Local Coding System)'),
+   ('UNK','unknown','NullFlavor'),
+   ('PHC311','Prenatal screening','PHIN VS (CDC Local Coding System)'),
+   ('PHC242','Prison entry screening','PHIN VS (CDC Local Coding System)'),
+   ('306098008','Self-referral (procedure)','SNOMED-CT')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Surveillance].[Detection_Method_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
+
+-- PHVS Investigation Status - v32
+INSERT INTO [Surveillance].[Case_Investigation_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('9571008','Approved (qualifier value)','SNOMED-CT'),
+   ('29179001','Closed (qualifier value)','SNOMED-CT'),
+   ('CA','Deleted','Document availability status (HL7)'),
+   ('385651009','In progress (qualifier value)','SNOMED-CT'),
+   ('C0422202','Notified','UMLS'),
+   ('OTH','other','NullFlavor'),
+   ('PHC226','Ready for Review','PHIN VS (CDC Local Coding System)'),
+   ('C1548437','Rejected','UMLS'),
+   ('C1709940','Reviewed','UMLS'),
+   ('385655000','Suspended (qualifier value)','SNOMED-CT'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Surveillance].[Case_Investigation_Status_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v3'
+GO
+
+-- PHVS Reporting Criteria - v2
+INSERT INTO [Surveillance].[Case_Classification_Exposure_Source_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('PHC464','endemic case','PHIN VS (CDC Local Coding System)'),
+   ('PHC466','imported-virus case','PHIN VS (CDC Local Coding System)'),
+   ('PHC465','import-linked case','PHIN VS (CDC Local Coding System)'),
+   ('OTH','other','NullFlavor'),
+   ('UNK','unknown','NullFlavor')
+GO
+
+-- update this so we know where the code came from...
+UPDATE [Surveillance].[Case_Classification_Exposure_Source_Code]
+   SET Data_Owner_ID = 'CDC',
+       Agency_Reporting_ID = 'CDC',
+       Version_Number = 'v2'
+GO
 
 -- PHVS Reporting Criteria - v2
 INSERT INTO [Surveillance].[Reporting_Criterial_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
