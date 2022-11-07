@@ -14,7 +14,7 @@
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
    [Sequence_Number]        INTEGER NULL,
    [Created_DateTime]       DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),
-   [Updated_Last_DateTime]  DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),
+   [Updated_DateTime]       DATETIMEOFFSET NOT NULL DEFAULT getutcdate(),
    [Record_Status_Code_ID]  CHAR(1) NOT NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40),
 
