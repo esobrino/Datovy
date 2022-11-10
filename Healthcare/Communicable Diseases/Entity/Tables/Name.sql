@@ -28,3 +28,9 @@
       REFERENCES [Entity].[Name_Type] ([Type_ID])
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An entity, subject or person Name details',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Name'
+GO

@@ -21,3 +21,12 @@
 
    CONSTRAINT [pk_Exposure_Setting_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of exposure setting',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Exposure_Setting_Code'
+GO
+
+

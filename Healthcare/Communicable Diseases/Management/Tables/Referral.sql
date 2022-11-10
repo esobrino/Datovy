@@ -30,9 +30,15 @@
    CONSTRAINT [pk_Referral] PRIMARY KEY CLUSTERED ([Referral_ID] ASC),
    CONSTRAINT [fk_Referral_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID]),
-   CONSTRAINT [fk_Referral_Profile] FOREIGN KEY ([Profile_ID]) 
-      REFERENCES [Surveillance].[Profile] ([Profile_ID]),
    CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Referral_Type] ([Type_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A recommendation of a person to an activity, program or product',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Referral'
+GO
+
 

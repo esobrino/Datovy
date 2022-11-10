@@ -35,3 +35,10 @@
    CONSTRAINT [fk_Affiliation_Enrolled_Flag] FOREIGN KEY ([Enrolled_Flag_ID])
       REFERENCES [Entity].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An association of an entity with another organization or person with a common goal or purpose',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Affiliation'
+GO

@@ -22,3 +22,9 @@
    CONSTRAINT [pk_Note_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of note or comment',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Note_Type'
+GO

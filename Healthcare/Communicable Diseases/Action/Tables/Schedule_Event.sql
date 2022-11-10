@@ -2,7 +2,7 @@
 (
    [Schedule_Event_ID]     VARCHAR(30) NOT NULL,
    [Type_ID]               VARCHAR(30) NULL,
-   
+
    [Status_Code_ID]        VARCHAR (30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
@@ -23,3 +23,11 @@
    CONSTRAINT [fk_Schedule_Event] FOREIGN KEY ([Type_ID])
       REFERENCES [Action].[Activity_Type]([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Define details about an action, activity or event that happend or is planned',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Schedule_Event'
+GO
+

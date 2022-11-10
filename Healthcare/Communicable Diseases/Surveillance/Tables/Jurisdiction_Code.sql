@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Jurisdiction_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a geographical area in which an organization, person, or object has a specific range of authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Jurisdiction_Code';
+GO

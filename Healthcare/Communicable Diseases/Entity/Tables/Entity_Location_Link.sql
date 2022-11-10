@@ -37,4 +37,12 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Entity_Location_Link] PRIMARY KEY CLUSTERED ([Location_Link_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An association between an entity (person or organization) and a location',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Entity_Location_Link'
+GO
+

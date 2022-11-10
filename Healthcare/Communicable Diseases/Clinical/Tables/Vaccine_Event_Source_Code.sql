@@ -21,3 +21,12 @@
 
    CONSTRAINT [pk_Vaccine_Event_Source_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies the source of information for this immunization record or, more generically, whether the immunization being reported has just been administered (new) or came from other records (historical)',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vaccine_Event_Source_Code'
+GO
+
+

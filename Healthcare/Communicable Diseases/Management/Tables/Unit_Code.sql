@@ -22,3 +22,9 @@
    CONSTRAINT [pk_Age_Unit] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe codes for a standard measure in terms of which quantities may be express',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Unit_Code'
+GO

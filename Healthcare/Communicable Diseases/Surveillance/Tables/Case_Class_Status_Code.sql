@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Case_Class_Status_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of Case classification state',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Class_Status_Code'
+GO
+

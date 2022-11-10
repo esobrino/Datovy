@@ -41,3 +41,10 @@
    CONSTRAINT [pk_State_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a state or province (based on Census states)',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'State_Code'
+GO
+

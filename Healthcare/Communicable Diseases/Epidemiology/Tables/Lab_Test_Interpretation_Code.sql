@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Lab_Test_Interpretation_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe Epidemiologic interpretation of the results of the tests performed for Vaccine Preventable Disease (VPD)',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Test_Interpretation_Code'
+GO

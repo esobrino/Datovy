@@ -23,15 +23,22 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Laboratory Treatment',
+   @name = N'MS_Description', @value = 'A result or outcome that is the product of handoing, processing, or finalizing something',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Disposition'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Disposition Code',
    @level0type = N'SCHEMA',   @level0name = N'Action', 
    @level1type = N'TABLE',    @level1name = N'Disposition',
    @level2type = N'COLUMN',   @level2name = N'Code_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Positive Negative Unknown', 
+   @name = N'MS_Description', @value = 'Status Code of the disposition that describe the state of the disposition', 
    @level0type = N'SCHEMA',   @level0name = N'Action', 
    @level1type = N'TABLE',    @level1name = N'Disposition',
    @level2type = N'COLUMN',   @level2name = N'Status_Code_ID';
+GO
 

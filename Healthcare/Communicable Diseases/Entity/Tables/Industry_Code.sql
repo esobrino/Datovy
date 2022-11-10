@@ -21,3 +21,10 @@
 
     CONSTRAINT [pk_Industry] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a code or classification for an economic activity, commerce or domain',
+   @level0type = N'SCHEMA',   @level0name = N'Entity',
+   @level1type = N'TABLE',    @level1name = N'Industry_Code';
+GO

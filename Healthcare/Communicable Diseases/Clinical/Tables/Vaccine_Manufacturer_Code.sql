@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Vaccine_Manufacturer_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies Manufactorer of a Vaccine',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vaccine_Manufacturer_Code'
+GO
+

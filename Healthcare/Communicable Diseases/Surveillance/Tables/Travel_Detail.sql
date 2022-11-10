@@ -38,7 +38,13 @@
    CONSTRAINT [pk_Travel_Detail] PRIMARY KEY CLUSTERED ([Travel_Detail_ID] ASC),
    CONSTRAINT [fk_Travel_Purpose_Code] FOREIGN KEY ([Purpose_Code_ID]) 
       REFERENCES [Surveillance].[Travel_Purpose_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A person travel details',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Travel_Detail';
 GO
 
 EXECUTE sp_addextendedproperty 

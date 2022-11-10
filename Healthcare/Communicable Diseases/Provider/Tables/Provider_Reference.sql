@@ -1,7 +1,8 @@
-﻿CREATE TABLE [Clinical].[Provider] (
-   [Provider_ID]           VARCHAR (40) NOT NULL,
+﻿CREATE TABLE [Provider].[Provider_Reference] (
+   [Provider_Reference_ID] VARCHAR (40) NOT NULL,
    [Alternate_ID]          VARCHAR (40) NULL,
 
+   -- external references
    [Person_ID]             VARCHAR (40) NULL,
    [Organization_ID]       VARCHAR (40) NULL,
    [Provider_Type_ID]      VARCHAR (40) NULL,
@@ -24,20 +25,20 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Practitioner] PRIMARY KEY CLUSTERED ([Provider_ID] ASC),
-   CONSTRAINT [fk_Provider_Name] FOREIGN KEY ([Name_ID])
-      REFERENCES [Entity].[Name]([Name_ID]),
+   CONSTRAINT [pk_Provider_Reference] PRIMARY KEY CLUSTERED ([Provider_Reference_ID] ASC)
+)
+GO
 
-   CONSTRAINT [fk_Provider_Organization] FOREIGN KEY ([Organization_ID]) 
-      REFERENCES [Entity].[Organization] ([Organization_ID]),
-   CONSTRAINT [fk_Provider_Entity] FOREIGN KEY ([Person_ID]) 
-      REFERENCES [Entity].[Person] ([Person_ID])
-);
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A reference to a provider or entity',
+   @level0type = N'SCHEMA',   @level0name = N'Provider',
+   @level1type = N'TABLE',    @level1name = N'Provider_Reference'
 GO
 
 EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Referring Provider Attending Provider Primary Care Provider (PCP)',
-   @level0type = N'SCHEMA',   @level0name = N'Clinical',
-   @level1type = N'TABLE',    @level1name = N'Provider',
-   @level2type = N'COLUMN',   @level2name = 'Provider_Type_ID';
+   @level0type = N'SCHEMA',   @level0name = N'Provider',
+   @level1type = N'TABLE',    @level1name = N'Provider_Reference',
+   @level2type = N'COLUMN',   @level2name = 'Provider_Type_ID'
+GO
 

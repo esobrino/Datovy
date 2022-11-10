@@ -62,3 +62,10 @@ CREATE TABLE [Message].[Submission]
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A registry of a message of a given content type',
+   @level0type = N'SCHEMA',   @level0name = N'Message', 
+   @level1type = N'TABLE',    @level1name = N'Submission'
+GO
+
+

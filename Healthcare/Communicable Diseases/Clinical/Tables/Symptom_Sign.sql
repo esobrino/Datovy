@@ -30,3 +30,10 @@
    CONSTRAINT [fk_Symptom_Sign_Flag] FOREIGN KEY ([Sign_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Signs and Symptoms value set for a disease that is being investigated or tracked',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Symptom_Sign'
+GO

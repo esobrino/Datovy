@@ -47,7 +47,13 @@
       REFERENCES [Clinical].[Vaccine_Reason_Not_Given_Code] ([Code_ID]),
    CONSTRAINT [fk_Immunization_Vaccinated_Flag] FOREIGN KEY ([Vaccinated_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details of an immunization process or event tipically associated with a vaccine',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Immunization';
 GO
 
 EXECUTE sp_addextendedproperty

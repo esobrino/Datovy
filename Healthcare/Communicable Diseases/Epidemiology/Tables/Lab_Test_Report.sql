@@ -46,6 +46,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about a laboratory test based on CDC NNDSS messages MMGs',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Test_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Performing laboratory type', 
    @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 

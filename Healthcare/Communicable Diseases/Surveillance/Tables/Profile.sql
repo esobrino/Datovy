@@ -22,4 +22,12 @@
    CONSTRAINT [pk_Profile_Group] PRIMARY KEY CLUSTERED ([Profile_ID] ASC),
    CONSTRAINT [fk_Profile_ProfileType] FOREIGN KEY ([Profile_Type_ID]) 
       REFERENCES [Surveillance].[Profile_Type] ([Type_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify a group of conditions and circumstances that are common to an investigation of a disease, outbreak, or medical situation',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Profile';
+GO
+

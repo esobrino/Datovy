@@ -1,5 +1,5 @@
 ﻿/*
--- The following is based on KnowTech Submission Registry:
+-- The following is based on KnowTech Kif Registry:
    This table purpose is to hold well known issues.  It is expected that positive
    numbers are warnings and messages and negative numbers are errors and exceptions.
 
@@ -37,3 +37,11 @@ CREATE TABLE [Application].[App_Message_Code]
 
    CONSTRAINT [pk_App_Message_Code] PRIMARY KEY CLUSTERED ([Code_Number] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Registry or log of application runtime related messages',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'App_Message_Code'
+GO
+

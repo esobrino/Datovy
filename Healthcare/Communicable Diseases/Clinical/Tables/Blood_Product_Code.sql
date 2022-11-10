@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Blood_Product_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'If a transfused blood product was implicated in an investigation, specify which type(s) of product', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Blood_Product_Code'
+

@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Vaccine_Reason_Not_Given_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies and describe a Reason why a vaccine was not given',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vaccine_Reason_Not_Given_Code'
+GO
+

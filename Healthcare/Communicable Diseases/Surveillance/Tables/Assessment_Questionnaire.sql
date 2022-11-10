@@ -23,7 +23,7 @@
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'MS_Description', @value = 'Questionnaire Template', 
+   @name = N'MS_Description', @value = 'Questionnaire Template for an assessment', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
    @level1type = N'TABLE',    @level1name = N'Assessment_Questionnaire';
 

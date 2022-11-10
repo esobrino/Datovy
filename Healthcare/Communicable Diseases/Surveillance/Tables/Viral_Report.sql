@@ -22,3 +22,11 @@
      
    CONSTRAINT [pk_Surveillance_Report] PRIMARY KEY CLUSTERED ([Viral_Report_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Investigation or case details about a virus collected and reported on a given date to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Viral_Report'
+GO
+

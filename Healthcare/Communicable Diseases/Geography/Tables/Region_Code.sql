@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Region_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of Region (based on Census regions)',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Region_Code'
+GO

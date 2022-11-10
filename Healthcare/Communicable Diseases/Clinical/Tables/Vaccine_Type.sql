@@ -21,3 +21,12 @@
 
    CONSTRAINT [pk_Vaccine_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies and describe the Type of vaccine administered for the condition being reported',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vaccine_Type'
+GO
+
+

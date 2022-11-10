@@ -31,6 +31,12 @@
    CONSTRAINT [fk_Contact_Emergency_Person] FOREIGN KEY ([Person_ID]) 
       REFERENCES [Entity].[Person] ([Person_ID])
 
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A data concept for a person or organization to contact in an emergency situation',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Contact_Emergency'
 GO
 

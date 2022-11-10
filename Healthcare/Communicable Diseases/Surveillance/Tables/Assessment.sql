@@ -29,7 +29,13 @@
       REFERENCES [Surveillance].[Assessment_Type] ([Type_ID]),
    CONSTRAINT [fk_Assessment_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An evaluation, appraisal, or assessment of something or someone',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Assessment'
 GO
 
 EXECUTE sp_addextendedproperty 

@@ -21,3 +21,9 @@
 
    CONSTRAINT pk_Item_Type PRIMARY KEY (Type_ID)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of Item', 
+   @level0type = N'SCHEMA',   @level0name = N'Article', 
+   @level1type = N'TABLE',    @level1name = N'Item_Type'

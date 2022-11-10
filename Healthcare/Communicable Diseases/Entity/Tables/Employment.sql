@@ -48,3 +48,9 @@ CREATE TABLE [Entity].[Employment]
       REFERENCES [Entity].[Occupation_Code]([Code_ID])
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A person job/employment details',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Employment'
+GO

@@ -19,5 +19,13 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Sexual_Orientation_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a peson identity in rlation to the gender or genders to which they are sexually attracted; the fact of beign heterosexual, etc.',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Sexual_Orientation_Code'
+GO
+
 

@@ -19,5 +19,13 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_DosageForm] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Unit doses such as 25 mg capsule shell, or other',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Dosage_Form_Code';
+GO
+
 

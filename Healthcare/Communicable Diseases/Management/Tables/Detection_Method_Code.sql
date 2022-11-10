@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Detection_Method_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a Process by which the case first identified',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Detection_Method_Code'
+GO

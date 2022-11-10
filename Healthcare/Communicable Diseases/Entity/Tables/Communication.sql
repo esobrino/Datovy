@@ -33,7 +33,13 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Communication] PRIMARY KEY CLUSTERED ([Communication_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Gather information of the means of reaching out to another entity including phone number or other',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Communication'
 GO
 
 EXECUTE sp_addextendedproperty 

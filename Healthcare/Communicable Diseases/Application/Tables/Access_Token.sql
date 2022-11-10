@@ -1,6 +1,6 @@
-﻿CREATE TABLE [Application].[AccessToken]
+﻿CREATE TABLE [Application].[Access_Token]
 (
-   [Offier_ID]             VARCHAR(40) NOT NULL,
+   [User_ID]               VARCHAR(40) NOT NULL,
    [Token_ID]              VARCHAR(40) NOT NULL,
 
    -- record management
@@ -18,3 +18,11 @@
 
    CONSTRAINT [pk_AccessToken] PRIMARY KEY ([Token_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Registry of the access token for given officer or system user',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Access_Token'
+GO
+

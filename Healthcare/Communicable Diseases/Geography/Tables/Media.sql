@@ -38,3 +38,9 @@
       REFERENCES [Geography].[Media_Type](Type_ID)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A document, image, or other digital artifacts that describe or define something',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Media'
+GO

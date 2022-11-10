@@ -5,7 +5,6 @@
    [Request_Date]           DATE NULL,
 
    [Case_ID]                VARCHAR(40) NULL,
-   [Profile_ID]             VARCHAR(40) NULL,
    [Alternate_ID]           VARCHAR(40) NULL,
    [Service_Code_ID]        VARCHAR(30) NULL,
 
@@ -16,7 +15,7 @@
    [Provider_ID]            VARCHAR(40) NULL,
    [Activity_ID]            VARCHAR(40) NULL,
    [Item_ID]                VARCHAR(40) NULL,
-   
+
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
@@ -45,5 +44,11 @@
    CONSTRAINT [fk_Request_Referral] FOREIGN KEY ([Request_ID])
       REFERENCES [Management].[Referral]([Referral_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A petition related to a recomendation to an activity, program, or product',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Request'
 GO
 

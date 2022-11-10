@@ -22,3 +22,9 @@
    CONSTRAINT [pk_Lab_Test_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe Lab test type/kind associated with a disease',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Test_Type'
+GO

@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Status_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of state or change of state',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Status_Code'
+GO

@@ -22,6 +22,14 @@
       REFERENCES [Surveillance].[Assessment] ([Assessment_ID]),
    CONSTRAINT [fk_Assessment_Answer_Assessment_Question] FOREIGN KEY ([Question_ID]) 
       REFERENCES [Surveillance].[Assessment_Question] ([Question_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An answer to an assessment question or concern',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Assessment_Answer'
+GO
+
 
 

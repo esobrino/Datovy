@@ -6,14 +6,14 @@
 
    [Name]                   VARCHAR(80)  NULL,
    [Description]            VARCHAR(256) NULL,
-    
+
    [Priority_Code_ID]       VARCHAR(30)  NULL,
    [Reason_Code_ID]         VARCHAR(30)  NULL,
 
    [Scheduled_DateTime]     DATETIMEOFFSET NULL,
    [Started_DateTime]       DATETIMEOFFSET NULL,
    [Ended_DateTime]         DATETIMEOFFSET NULL,
-   
+
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
@@ -48,7 +48,8 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Example : CDCNotifiedDate  CDC Notification is an activity and CDC Notified Date is the activity Date Example: DateFirstReportedToPublicHealth -- Date First Reported to Public Health (Activity or Event) Date is the activity date. Activity -- Individual Events ', 
+   @name = N'MS_Description', @value = 'A single or set of related actions, events, or process steps', 
    @level0type = N'SCHEMA',   @level0name = N'Action', 
    @level1type = N'TABLE',    @level1name = N'Activity';
 GO
+

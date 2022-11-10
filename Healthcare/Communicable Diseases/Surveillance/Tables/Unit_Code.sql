@@ -19,5 +19,13 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_UnitCode] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe codes for a standard measure in terms of which quantities may be express',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Unit_Code'
+GO
+
 

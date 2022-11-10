@@ -28,3 +28,10 @@
    CONSTRAINT [fk_Finding_Flag] FOREIGN KEY ([Finding_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify individual findings of an investigation or report',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Finding';
+GO

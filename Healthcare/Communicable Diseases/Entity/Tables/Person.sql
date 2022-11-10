@@ -69,7 +69,13 @@
       REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Marital_Status_Code] FOREIGN KEY ([Marital_Status_Code_ID])
       REFERENCES [Entity].[Marital_Status_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A description and definition of a person, its main identification, demographics and other details',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Person'
 GO
 
 EXECUTE sp_addextendedproperty 

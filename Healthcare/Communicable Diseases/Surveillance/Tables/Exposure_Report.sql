@@ -71,6 +71,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about an exposure to a disease to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Exposure_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'For cases meeting the binational criteria, select all the criteria which are met.', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 

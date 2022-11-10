@@ -47,7 +47,13 @@
    CONSTRAINT [pk_Contact] PRIMARY KEY CLUSTERED ([Contact_ID] ASC),
    CONSTRAINT [fk_Contact_ContactType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Entity].[Contact_Type] ([Type_ID]),
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A data concept for a person or organization to contact',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Contact'
 GO
 
 EXECUTE sp_addextendedproperty 

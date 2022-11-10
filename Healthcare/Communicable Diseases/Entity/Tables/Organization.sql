@@ -23,10 +23,15 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Organization] PRIMARY KEY CLUSTERED ([Organization_ID] ASC)
-);
-
-
+)
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A unit which conducts some sort of business or operations',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Organization'
+GO
+
 EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'External Agency', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',

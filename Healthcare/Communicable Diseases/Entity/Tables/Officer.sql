@@ -36,8 +36,15 @@
       REFERENCES [Entity].[Person] ([Person_ID]),
    CONSTRAINT [fk_Officer_Contact] FOREIGN KEY ([Contact_ID]) 
       REFERENCES [Entity].[Contact] ([Contact_ID])
-);
+)
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A member or agent of a certain grade in some honorary orders',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Officer'
+GO
+
 
 
 

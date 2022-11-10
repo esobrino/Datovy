@@ -26,3 +26,11 @@
 
    CONSTRAINT [pk_Address_Line] PRIMARY KEY CLUSTERED ([Address_Line_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A line based unstructured address',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Address_Line'
+GO
+

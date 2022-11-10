@@ -30,3 +30,11 @@
    CONSTRAINT [fk_Complication_Flag] FOREIGN KEY ([Complication_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify found complications while investigating or reporting a case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Complication'
+GO
+

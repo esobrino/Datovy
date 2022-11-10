@@ -1,5 +1,5 @@
 ﻿/*
-   The following is based on KnowTech Submission Registry:
+   The following is based on KnowTech Kif Registry:
 
    This may be:
       - a List of Tasks to complete...
@@ -56,3 +56,10 @@ CREATE TABLE [Generic].[Element]
    CONSTRAINT [fk_Element_Value_Type] FOREIGN KEY ([Value_Type_ID])
       REFERENCES [Generic].[Element_Value_Type] ([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A description of an element and its value that will be a child of an Entity',
+   @level0type = N'SCHEMA',   @level0name = N'Generic', 
+   @level1type = N'TABLE',    @level1name = N'Element'
+GO

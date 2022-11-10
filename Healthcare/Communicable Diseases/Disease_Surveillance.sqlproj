@@ -127,7 +127,7 @@
     <Build Include="Entity\Tables\Identification_Type.sql" />
     <Build Include="Entity\Tables\Contact_Type.sql" />
     <Build Include="Security\Application.sql" />
-    <Build Include="Application\Tables\AccessToken.sql" />
+    <Build Include="Application\Tables\Access_Token.sql" />
     <Build Include="Management\Tables\Flag.sql" />
     <Build Include="Management\Tables\Case.sql" />
     <Build Include="Management\Tables\Disposition.sql" />
@@ -244,7 +244,6 @@
     <Build Include="Clinical\Tables\Disease_Condition_Code.sql" />
     <Build Include="Clinical\Tables\Dosage_Form_Code.sql" />
     <Build Include="Clinical\Tables\Condition.sql" />
-    <Build Include="Clinical\Tables\Provider.sql" />
     <Build Include="Clinical\Tables\Unit_Code.sql" />
     <Build Include="Clinical\Tables\Virus_Type.sql" />
     <Build Include="Clinical\Tables\Vitals.sql" />
@@ -303,6 +302,8 @@
     <Build Include="Epidemiology\Tables\Lab_Test_Report.sql" />
     <Build Include="Epidemiology\Tables\Unit_Code.sql" />
     <Build Include="Epidemiology\Tables\Lab_Test_Interpretation_Code.sql" />
+    <Build Include="Action\Tables\Disposition_Code.sql" />
+    <Build Include="Provider\Tables\Provider_Reference.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

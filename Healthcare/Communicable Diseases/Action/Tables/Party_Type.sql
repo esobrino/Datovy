@@ -19,5 +19,13 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Party_Type] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify an Organization, Person, or Thing associated with an Action, Activity, or Event',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Party_Type'
+GO
+
 

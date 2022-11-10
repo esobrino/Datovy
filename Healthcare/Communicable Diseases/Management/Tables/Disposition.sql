@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [Management].[Disposition] (
    [Disposition_ID]         VARCHAR (40)  NOT NULL,
    [Code_ID]                VARCHAR (30)  NULL,
+
+   [Disposition_DateTime]   DATETIMEOFFSET NULL,
    
    [Status_Code_ID]         VARCHAR (30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
@@ -19,5 +21,12 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Disposition] PRIMARY KEY CLUSTERED ([Disposition_ID] ASC)
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An instance of a disposition of a Case or other',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Disposition'
+GO
 

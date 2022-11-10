@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Country_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a Country code based on ISO-3166',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Country_Code'
+GO
+

@@ -41,3 +41,10 @@
    CONSTRAINT fk_Note_Type FOREIGN KEY ([Note_Type_ID])
       REFERENCES [Action].[Note_Type](Type_ID)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A statement, comment, or remark defining a thing or providing additional information',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Note'
+GO

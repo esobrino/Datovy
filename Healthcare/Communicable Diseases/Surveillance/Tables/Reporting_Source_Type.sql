@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Reporting_Source_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a Code specifying the type of facility or provider associated with the source of information sent to Public Health',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Reporting_Source_Type';
+GO

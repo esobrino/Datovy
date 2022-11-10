@@ -41,7 +41,13 @@
       REFERENCES [Clinical].[Device_Code] ([Code_ID]),
    CONSTRAINT [fk_Vitals_UnitCode] FOREIGN KEY ([Unit_Code_ID])
       REFERENCES [Clinical].[Unit_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies and describe medical visit or investigation of vital signs such as temperature, pulse, blood preassure, or other',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vitals'
 GO
 
 EXECUTE sp_addextendedproperty

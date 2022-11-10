@@ -74,6 +74,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Investigation or case details collected as of a particular date to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'If the disease or condition was imported, indicates the country in which the disease was likely acquired.', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 

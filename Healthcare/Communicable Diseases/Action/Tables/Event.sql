@@ -33,3 +33,9 @@
       REFERENCES [Action].[Activity] ([Activity_ID])
 );
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A instance of an action withing an activity, incident, or a process',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Event'
+GO

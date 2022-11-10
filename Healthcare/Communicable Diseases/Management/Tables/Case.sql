@@ -53,7 +53,13 @@
       REFERENCES [Management].[Probable_Reason_Code] ([Code_ID]),
    CONSTRAINT [fk_Case_Class_Detection_Method] FOREIGN KEY ([Detection_Method_Code_ID]) 
       REFERENCES [Management].[Detection_Method_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An aggregation of information about a set of related activities and events',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case'
 GO
 
 EXECUTE sp_addextendedproperty 

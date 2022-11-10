@@ -30,7 +30,13 @@
    CONSTRAINT [pk_Laboratory] PRIMARY KEY CLUSTERED ([Laboratory_ID] ASC),
    CONSTRAINT [fk_Laboatory_Type] FOREIGN KEY ([Type_ID])
       REFERENCES [Epidemiology].[Lab_Type] ([Type_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Provide details about a laboratory unit and reference to its unit/organization',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Laboratory'
 GO
 
 EXECUTE sp_addextendedproperty 

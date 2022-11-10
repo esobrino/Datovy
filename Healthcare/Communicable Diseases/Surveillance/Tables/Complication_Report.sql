@@ -55,6 +55,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about a found complication to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Complication_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Is this case Epi-Linked to another confirmed or probable case?', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 

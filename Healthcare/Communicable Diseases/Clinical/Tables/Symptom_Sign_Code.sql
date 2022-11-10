@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Sympton_Sign] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe signs and Symptoms code set for a disease',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Symptom_Sign_Code'
+GO

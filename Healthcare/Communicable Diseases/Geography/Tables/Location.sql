@@ -50,11 +50,17 @@
       REFERENCES [Geography].[Address_Line]([Address_Line_ID]),
    CONSTRAINT [fk_Location_Address_Structured] FOREIGN KEY ([Address_Structured_ID])
       REFERENCES [Geography].[Address_Structured]([Address_Structured_ID])
-);
+)
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Facility - outpatient clinic short-term care and can recover at Hospitals refer discharged patients to a network of outpatient clinics that specialize in services for ongoing conditions. Hospital - inpatient clinic long-term care or emergencies or specific medical treatment or specialist.',
+   @name = N'MS_Description', @value = 'Details about a geographical area or specific point in a geography',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Location'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of location',
    @level0type = N'SCHEMA',   @level0name = N'Geography', 
    @level1type = N'TABLE',    @level1name = N'Location', 
    @level2type = N'COLUMN',   @level2name = N'Type_ID';

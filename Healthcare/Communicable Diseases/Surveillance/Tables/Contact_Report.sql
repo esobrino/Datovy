@@ -85,6 +85,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about an encounter of a person with another or a situation',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Contact_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'During the 2 weeks prior to the onset of symptoms or while ill, was the subject employed as a food handler?', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 

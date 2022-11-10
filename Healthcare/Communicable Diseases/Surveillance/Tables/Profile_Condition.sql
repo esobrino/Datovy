@@ -23,7 +23,7 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Define the list of Medical Conditions that are related to a particular disease being trackt', 
+   @name = N'MS_Description', @value = 'Define the list of Medical Condition that are related to a particular disease being trackt', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
    @level1type = N'TABLE',    @level1name = N'Profile_Condition'
 

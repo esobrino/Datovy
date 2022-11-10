@@ -23,3 +23,11 @@
    CONSTRAINT [fk_Assignment_Link] FOREIGN KEY ([Assignment_ID])
       REFERENCES [Management].[Assignment](Assignment_ID)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An association related to a transfer of a responsability to an agent, officer or other',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Assignment_Link'
+GO
+

@@ -22,3 +22,10 @@
    CONSTRAINT [pk_Employment_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe an employment or job kind or type',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Employment_Type'
+GO
+

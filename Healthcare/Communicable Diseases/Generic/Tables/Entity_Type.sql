@@ -20,3 +20,10 @@
 
    CONSTRAINT [pk_Entity_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of entity or grouping purpose',
+   @level0type = N'SCHEMA',   @level0name = N'Generic', 
+   @level1type = N'TABLE',    @level1name = N'Entity_Type'
+GO

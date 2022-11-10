@@ -17,7 +17,7 @@
    [Token_ID]               VARCHAR(40) NULL,
   
    CONSTRAINT fk_AccessToken_Session FOREIGN KEY ([Token_ID])
-      REFERENCES [Application].[AccessToken]([Token_ID]),
+      REFERENCES [Application].[Access_Token]([Token_ID]),
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -43,13 +43,13 @@
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'MS_Description', @value = 'If not case id then add person information', 
+   @name = N'MS_Description', @value = 'Identify end-user or service access during a period of time', 
    @level0type = N'SCHEMA',   @level0name = N'Application',
    @level1type = N'TABLE',    @level1name = N'Session';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Follow-up',
+   @name = N'MS_Description', @value = 'Identify and describe the session type',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Session', 
    @level2type = N'COLUMN',   @level2name = 'Session_Type_ID';

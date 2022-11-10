@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Transmission_Setting_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a Location where the patient was exposed to the illness',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Transmission_Setting_Code';
+GO

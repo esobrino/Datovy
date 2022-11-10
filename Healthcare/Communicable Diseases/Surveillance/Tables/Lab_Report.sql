@@ -34,6 +34,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Lab report details captured at a given date-time to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Lab_Report';
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Was the case laboratory confirmed?', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 

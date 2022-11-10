@@ -24,7 +24,8 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Provided to name the kind of list, checklist, group, or collection.', 
+   @name = N'MS_Description', @value = 'A group definition to manage an artifact, list, check-list, item-values group or other',
    @level0type = N'SCHEMA',   @level0name = N'Generic', 
-   @level1type = N'TABLE',    @level1name = N'Entity';
+   @level1type = N'TABLE',    @level1name = N'Entity'
 GO
+

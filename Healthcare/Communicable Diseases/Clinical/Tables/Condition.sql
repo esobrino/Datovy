@@ -56,17 +56,17 @@
       REFERENCES [Clinical].[Stage_Code]([Code_ID]),
    CONSTRAINT [fk_Condition_Duration_Unit] FOREIGN KEY ([Duration_Unit_Code_ID])
       REFERENCES [Clinical].[Unit_Code]([Code_ID])
-);
+)
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Symptoms, conditions, susceptibility, and other qualifiers ',
+   @name = N'MS_Description', @value = 'Symptoms, conditions, susceptibility, and other qualifiers',
    @level0type = N'SCHEMA',   @level0name = N'Clinical',
    @level1type = N'TABLE',    @level1name = N'Condition';
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'MS_Description', @value = 'Pan-Sensitive - 1st line of drugs will kill the bacteria Resistant = second line of drugs - additional durgs (Resistant  = lacking the ability to resist something (as a pathogen, familial disease, or a drug) : sensitivity) Category Susceptibility Susceptible : likely or liable to be influenced or harmed by a particular thing: "patients with liver disease may be susceptible to infection"', 
+   @name = N'MS_Description', @value = 'Identify the code for a given condition', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Condition', 
    @level2type = N'COLUMN',   @level2name = 'Type_ID';
@@ -93,10 +93,9 @@ EXECUTE sp_addextendedproperty
    @level1type = N'TABLE',    @level1name = N'Condition',
    @level2type = N'COLUMN',   @level2name = 'Severity_Code_ID';
 
-
 GO
 EXECUTE sp_addextendedproperty
-   @name = N'MS_Description', @value = 'Level Code System Display Definition Canonical Mapping for "Condition Clinical Status Codes" HL7 clinical conditions.', 
+   @name = N'MS_Description', @value = 'Identify the code related to the state of the condition', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Condition', 
    @level2type = N'COLUMN',   @level2name = 'Status_Code_ID';

@@ -31,3 +31,10 @@ CREATE TABLE [Geography].[Zip_Code]
 
    CONSTRAINT [pk_Zip_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of Zone Improvement Plan',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Zip_Code'
+GO

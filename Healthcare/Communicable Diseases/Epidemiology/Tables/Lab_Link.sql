@@ -24,6 +24,12 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Association of a Lab with an external reference such as a Patient, Specimen, or other',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Link'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = ' lab message patient Identifier that will be used along with the reference laboratory and specimen identifier to uniquely identify a VPD lab message',
    @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
    @level1type = N'TABLE',    @level1name = N'Lab_Link',

@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Clinical_Manifestation_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe valid codes for signs of something happening',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Manifestation_Code';
+GO

@@ -26,3 +26,11 @@ CREATE TABLE [Generic].[Element_Value_Type]
 
    CONSTRAINT [pk_Element_Value_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of element value',
+   @level0type = N'SCHEMA',   @level0name = N'Generic', 
+   @level1type = N'TABLE',    @level1name = N'Element_Value_Type'
+GO
+

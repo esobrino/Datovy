@@ -36,40 +36,45 @@
    CONSTRAINT [pk_Medication] PRIMARY KEY CLUSTERED ([Medication_ID] ASC),
    CONSTRAINT [fk_Medication_DosageForm] FOREIGN KEY ([Dose_Form_Code_ID]) 
       REFERENCES [Clinical].[Dosage_Form_Code] ([Code_ID])
-);
+)
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'powder | tablets | capsule | liquid tab = tablet cap = capsule',
+   @name = N'MS_Description', @value = 'Details about a substance for medical treatment, medicine or drug',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Medication'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'The form of a dosage such as 25mg of powder, tablets, capsule, or other',
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Medication', 
    @level2type = N'COLUMN',   @level2name = 'Dose_Form_Code_ID';
-
-
 GO
+
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'The doctor orders 90 milligrams of liquid cough syrup. The liquid cough syrup has a label that reads 120 milligrams in 5 milliliters. How much cough syrup should the nurse give to the patient? Given: D (Dosage Ordered) = 90 mg H  (Dosage Strength) = 120 mg Q (Unit of Measure) = 5 mL x (Dosage Calculated) = 90 mg 120 mg x 5 mL x =3/4 x 5 mL x = 15/4 mL x = 3.75 mL Therefore, the nurse should give 3.75 mL of the cough syrup to the patient.', 
+   @name = N'MS_Description', @value = 'Specification and details of an order dosage as stated by a practictioner', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Medication', 
    @level2type = N'COLUMN',   @level2name = 'Dosage_Ordered';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = '2.5 milligram (Details: UCUM code mg = ''mg'') Dosage Unit mg', 
+   @name = N'MS_Description', @value = 'Amount of a dosage such as 2.5 milligram Dosage', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical',
    @level1type = N'TABLE',    @level1name = N'Medication',
    @level2type = N'COLUMN',   @level2name = 'Dosage_Strength';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Unit of Measure per 2 mL per capsule per tablet', 
+   @name = N'MS_Description', @value = 'Unit of Measure such as 2 mL per capsule per tablet', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical',
    @level1type = N'TABLE',    @level1name = N'Medication',
    @level2type = N'COLUMN',   @level2name = N'Measure_Unit';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'q every day, bid twice a day, tid three times a day, qid four times a day', 
+   @name = N'MS_Description', @value = 'Frequency of ingestion of a medication', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Medication', 
    @level2type = N'COLUMN',   @level2name = 'Frequency_Code_ID';

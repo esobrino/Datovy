@@ -22,3 +22,9 @@
    CONSTRAINT [pk_Finding_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe possible finding as identified by a code value',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Finding_Code';
+GO

@@ -30,3 +30,11 @@
    CONSTRAINT [fk_Manifestation_Report_Flag] FOREIGN KEY ([Manifestation_Code_ID])
       REFERENCES [Clinical].[Manifestation_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details of observed signs and their existance',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Manifestation_Report';
+GO
+

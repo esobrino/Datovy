@@ -27,3 +27,11 @@
    CONSTRAINT [fk_Exposure_Location_Report] FOREIGN KEY ([Case_Report_ID])
       REFERENCES [Surveillance].[Case_Report]([Case_Report_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about the location of an exposure to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Exposure_Location_Report'
+GO
+

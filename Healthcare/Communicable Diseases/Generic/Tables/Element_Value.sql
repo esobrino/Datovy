@@ -1,5 +1,5 @@
 ﻿/*
-   The following is based on KnowTech Submission Registry:
+   The following is based on KnowTech Kif Registry:
 
    Element Items are the information provided by the user for a particular 
    element in the group or list.  It could be a range of dates (start - end), a
@@ -62,3 +62,10 @@ CREATE TABLE [Generic].[Element_Value]
       REFERENCES [Entity].[Entity_Type] ([Type_ID])
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A instance of an Element and provided value',
+   @level0type = N'SCHEMA',   @level0name = N'Generic', 
+   @level1type = N'TABLE',    @level1name = N'Element_Value'
+GO
+

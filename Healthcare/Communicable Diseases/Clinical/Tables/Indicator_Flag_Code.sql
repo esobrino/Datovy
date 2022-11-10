@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Indicator_Flag_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe an indicator, Yes (true), No (false), or unknown',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Indicator_Flag_Code';
+GO

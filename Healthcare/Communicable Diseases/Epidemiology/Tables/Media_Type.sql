@@ -25,6 +25,12 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of media',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Media_Type'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Provided to set a comma delimited list of Privacy, Security or other data Tags such as GDPR, HIPAA, PII or other.',
    @level0type = N'SCHEMA',   @level0name = N'Epidemiology',
    @level1type = N'TABLE',    @level1name = N'Media_Type', 

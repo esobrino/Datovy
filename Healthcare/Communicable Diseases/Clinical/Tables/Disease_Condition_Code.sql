@@ -21,3 +21,12 @@
 
     CONSTRAINT [pk_Disease_Condition_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the a disease condition',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Disease_Condition_Code';
+GO
+
+

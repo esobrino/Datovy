@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Case_Investigation_Stattus_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the state of an investigation (open or close)',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Investigation_Stattus_Code'
+GO

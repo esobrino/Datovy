@@ -32,3 +32,10 @@ CREATE TABLE [Message].[Content_Type]
 
    CONSTRAINT [pk_Content_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of content',
+   @level0type = N'SCHEMA',   @level0name = N'Message', 
+   @level1type = N'TABLE',    @level1name = N'Content_Type'
+GO

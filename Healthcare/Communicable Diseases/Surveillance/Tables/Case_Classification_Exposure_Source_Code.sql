@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Case_Classification_Exposure_Source_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe an Answer list for how the case should be classified by source',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Classification_Exposure_Source_Code'
+GO
+

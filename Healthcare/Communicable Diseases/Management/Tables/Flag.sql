@@ -26,6 +26,12 @@
      REFERENCES [Management].[Case] ([Case_ID]),
    CONSTRAINT [fk_Flag_Code] FOREIGN KEY ([Code_ID]) 
       REFERENCES [Management].[Flag_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'An instance of a code or variable used to indicate a property or state of something important',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Flag'
 GO
 

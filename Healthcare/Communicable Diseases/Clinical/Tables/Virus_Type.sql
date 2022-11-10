@@ -21,3 +21,12 @@
 
    CONSTRAINT [pk_Virus_Type] PRIMARY KEY CLUSTERED ([Type_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identifies and describe the Virus types answer list specific to a disease beign reported',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Virus_Type'
+GO
+
+

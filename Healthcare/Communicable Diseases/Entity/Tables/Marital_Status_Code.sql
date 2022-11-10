@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Marital_Status_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a person state of being single, married, separated, divorced, or widowed',
+   @level0type = N'SCHEMA',   @level0name = N'Entity',
+   @level1type = N'TABLE',    @level1name = N'Marital_Status_Code';
+GO
+

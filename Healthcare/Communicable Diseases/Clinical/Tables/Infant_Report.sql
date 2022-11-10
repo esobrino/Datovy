@@ -27,3 +27,10 @@
    CONSTRAINT [fk_Infant_Report] FOREIGN KEY ([Birth_Status_Code_ID])
       REFERENCES [Clinical].[Birth_Status_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Reported details about an infant identified using the Subject ID',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Infant_Report';
+GO

@@ -21,3 +21,9 @@
     CONSTRAINT [pk_Case_Transmission_Mode_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe a kind of transmission mode of a disease',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Transmission_Mode_Code'
+GO

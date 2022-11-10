@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Stage_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identification and description of point or state within a or related to a disease or process',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Stage_Code'
+GO

@@ -38,3 +38,10 @@
 
    CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A transfer of a responsability to an agent, officer or other',
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Assignment'
+GO

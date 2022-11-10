@@ -21,3 +21,12 @@
 
    CONSTRAINT [pk_Syndrome_Secondary] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe codes for group of symptomes which consistenly occur together, or condition characterized by a set of associated symptoms beigned tracked within a Case',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Syndrome_Secondary_Code'
+GO
+
+

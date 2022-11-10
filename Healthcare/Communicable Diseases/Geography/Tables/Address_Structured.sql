@@ -30,3 +30,10 @@
 
    CONSTRAINT [pk_Address_Structured] PRIMARY KEY CLUSTERED ([Address_Structured_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A (street based) structured address details',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Address_Structured'
+GO

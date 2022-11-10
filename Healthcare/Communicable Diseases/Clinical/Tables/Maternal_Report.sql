@@ -39,6 +39,12 @@
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Details about a conception, pregnancy and its state',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical',
+   @level1type = N'TABLE',    @level1name = N'Maternal_Report';
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Indicate trimester of first prenatal visit.', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 

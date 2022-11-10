@@ -21,3 +21,11 @@
 
    CONSTRAINT [pk_Risk_Factor_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identification and description of an underlying medical conditions and/or risk behaviors',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Risk_Factor_Code'
+GO
+

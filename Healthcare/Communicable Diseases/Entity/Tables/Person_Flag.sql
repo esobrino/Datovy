@@ -26,7 +26,13 @@
       REFERENCES [Entity].[Flag_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Flag_Person] FOREIGN KEY ([Person_ID])
       REFERENCES [Entity].[Person] ([Person_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A person code stating some important or noticeable thing about him or her',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Person_Flag'
 GO
 
 EXECUTE sp_addextendedproperty 

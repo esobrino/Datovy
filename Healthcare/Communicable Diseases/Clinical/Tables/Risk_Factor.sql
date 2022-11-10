@@ -7,7 +7,8 @@
    [Factor_Flag_ID]         VARCHAR(30) NULL,
 
    -- external references...
-   [Subject_ID]             VARCHAR(40) NOT NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -28,3 +29,10 @@
    CONSTRAINT [fk_Risk_Factor_Flag] FOREIGN KEY ([Factor_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Underlying medical conditions and/or risk behaviors related to a Subject or a Case',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Risk_Factor'
+GO

@@ -22,7 +22,13 @@
    CONSTRAINT [pk_Assessment_Question] PRIMARY KEY CLUSTERED ([Question_ID] ASC),
    CONSTRAINT [fk_Assessment_Question_AnswerType] FOREIGN KEY ([Answer_Type_ID]) 
       REFERENCES [Surveillance].[Answer_Type] ([Type_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A question or statement about an area of concern to be discussed, assessed or detailed',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Assessment_Question'
 GO
 
 EXECUTE sp_addextendedproperty

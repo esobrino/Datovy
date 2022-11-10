@@ -33,6 +33,12 @@
       REFERENCES [Action].[Party_Type] ([Code_ID]),
    CONSTRAINT [fk_Party_Role] FOREIGN KEY ([Role_Code_ID]) 
       REFERENCES [Action].[Role_Code] ([Code_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify an Organization, Person, or Thing associated with an Action, Activity, or Event',
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Party'
 GO
 

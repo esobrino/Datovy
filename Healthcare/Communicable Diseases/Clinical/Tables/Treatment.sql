@@ -28,7 +28,13 @@
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Treatment] PRIMARY KEY CLUSTERED ([Treatment_Id] ASC),
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe codes for a session of medical care or the administration of medication',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Treatment'
 GO
 
 EXECUTE sp_addextendedproperty 

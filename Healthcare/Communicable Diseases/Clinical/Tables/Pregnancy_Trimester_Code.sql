@@ -21,3 +21,10 @@
 
    CONSTRAINT [pk_Pregnancy_Trimester_Code] PRIMARY KEY CLUSTERED ([Code_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identification and description of a code used to state the trimester of a pregnancy',
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Pregnancy_Trimester_Code'
+GO

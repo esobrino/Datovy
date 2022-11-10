@@ -25,11 +25,17 @@
    CONSTRAINT [pk_Item] PRIMARY KEY CLUSTERED ([Item_ID] ASC),
    CONSTRAINT [fk_Item_Type] FOREIGN KEY ([Type_ID])
       REFERENCES [Article].[Item_Type]([Type_ID])
-);
+)
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Item Type = ''Service''', 
+   @name = N'MS_Description', @value = 'Describe, provide details about an article or thing',
+   @level0type = N'SCHEMA',   @level0name = N'Article', 
+   @level1type = N'TABLE',    @level1name = N'Item'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of Item', 
    @level0type = N'SCHEMA',   @level0name = N'Article', 
    @level1type = N'TABLE',    @level1name = N'Item', 
    @level2type = N'COLUMN',   @level2name = 'Type_ID';

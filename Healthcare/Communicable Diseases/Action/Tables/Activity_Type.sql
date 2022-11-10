@@ -20,4 +20,12 @@
 
    CONSTRAINT pk_Activity_Type PRIMARY KEY (Type_ID)
 );
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Identify and describe the kind of activity', 
+   @level0type = N'SCHEMA',   @level0name = N'Action', 
+   @level1type = N'TABLE',    @level1name = N'Activity_Type';
+GO
+
 

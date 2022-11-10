@@ -29,3 +29,10 @@
       REFERENCES [Entity].[Uri_Type]([Type_ID])
 )
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Register an entity unique resource id such as an email, web-site or other',
+   @level0type = N'SCHEMA',   @level0name = N'Entity', 
+   @level1type = N'TABLE',    @level1name = N'Uri'
+GO
+

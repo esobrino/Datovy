@@ -20,17 +20,6 @@
    [Officer_ID]            VARCHAR(40) NULL,
    [Contact_ID]            VARCHAR(40) NULL,
 
-   CONSTRAINT fk_Note_Entity_Type FOREIGN KEY ([Entity_Type_ID])
-      REFERENCES [Entity].[Entity_Type]([Type_ID]),
-   CONSTRAINT fk_Note_Person FOREIGN KEY ([Person_ID])
-      REFERENCES [Entity].[Person]([Person_ID]),
-   CONSTRAINT fk_Note_Organization FOREIGN KEY ([Organization_ID])
-      REFERENCES [Entity].[Organization]([Organization_ID]),
-   CONSTRAINT fk_Note_Officer FOREIGN KEY ([Officer_ID])
-      REFERENCES [Entity].[Officer]([Officer_ID]),
-   CONSTRAINT fk_Note_Contact FOREIGN KEY ([Contact_ID])
-      REFERENCES [Entity].[Contact]([Contact_ID]),
-
    -- record management
    [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
    [Data_Owner_ID]         VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -48,3 +37,10 @@
    CONSTRAINT fk_Note_Type FOREIGN KEY ([Note_Type_ID])
       REFERENCES [Geography].[Note_Type]([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'A statement, comment, or remark defining a thing or providing additional information',
+   @level0type = N'SCHEMA',   @level0name = N'Geography', 
+   @level1type = N'TABLE',    @level1name = N'Note'
+GO

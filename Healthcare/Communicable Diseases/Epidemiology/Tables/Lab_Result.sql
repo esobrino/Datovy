@@ -2,6 +2,7 @@
    [Lab_Result_ID]         VARCHAR(40) NOT NULL,
    [Laboratory_ID]         VARCHAR(40) NULL,
    [Lab_Result_DateTime]   DATETIME2(7) NULL,
+
    [Result_Type_ID]        VARCHAR(30) NULL,
    [Result_Value]          DECIMAL(18, 5) NULL,
    [Result_Unit]           VARCHAR(50) NULL,
@@ -27,7 +28,13 @@
       REFERENCES [Epidemiology].[Laboratory] ([Laboratory_ID]),
    CONSTRAINT [fk_Lab_Result_Type] FOREIGN KEY ([Result_Type_ID])
       REFERENCES [Epidemiology].[Lab_Result_Type]([Type_ID])
-);
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Provide details about a Lab test results',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Result'
 GO
 
 

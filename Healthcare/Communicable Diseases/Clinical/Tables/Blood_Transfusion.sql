@@ -1,5 +1,5 @@
 ﻿-- used in Babesiosis Message v1 - such as infected Tick bite
-CREATE TABLE [Clinical].[Blood_Transfusion]
+CREATE TABLE [Clinical].[Blood_Transfusion_Report]
 (
    [Blood_Transfusion_ID]   VARCHAR(40) NOT NULL,
 
@@ -46,31 +46,37 @@ CREATE TABLE [Clinical].[Blood_Transfusion]
 )
 GO
 
+EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Report detaisl about a blood transfussions and donations', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report'
+GO
+
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Was the subject a blood donor identified during a transfusion investigation i.e., had positive Babesia test results and was linked to an infected recipient)? YNU', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
-   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion',
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
    @level2type = N'COLUMN',   @level2name = 'Donor_Implicated_Flag_ID';
 GO
 
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'In the year before symptom onset or diagnosis (use earlier date), did the subject donate blood? YNU', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
-   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion',
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
    @level2type = N'COLUMN',   @level2name = 'Donor_Flag_ID';
 GO
 
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'In the month before symptom onset or diagnosis (use earlier date), did the subject receive an organ transplant? YNU', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
-   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion',
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
    @level2type = N'COLUMN',   @level2name = 'Organ_Transplant_Flag_ID';
 GO
 
 EXECUTE sp_addextendedproperty
    @name = N'MS_Description', @value = 'Was the subject’s infection transfusion associated? YNU', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
-   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion',
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
    @level2type = N'COLUMN',   @level2name = 'Transfusion_Associated_Flag_ID';
 GO
 
