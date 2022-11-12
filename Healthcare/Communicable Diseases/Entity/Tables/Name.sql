@@ -36,49 +36,49 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A name type', 
+   @name = N'MS_Description', @value = 'A name type', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Type_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A given name', 
+   @name = N'MS_Description', @value = 'A given name', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Given';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A middle name', 
+   @name = N'MS_Description', @value = 'A middle name', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Middle';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A family name', 
+   @name = N'MS_Description', @value = 'A family name', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Family';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A name prefix', 
+   @name = N'MS_Description', @value = 'A name prefix', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Prefix_Code_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A name suffix', 
+   @name = N'MS_Description', @value = 'A name suffix', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Suffix_Code_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X_Reference', @value = 'A person or entity full name', 
+   @name = N'MS_Description', @value = 'A person or entity full name', 
    @level0type = N'SCHEMA',   @level0name = N'Entity',
    @level1type = N'TABLE',    @level1name = N'Name',
    @level2type = N'COLUMN',   @level2name = 'Name_Full';

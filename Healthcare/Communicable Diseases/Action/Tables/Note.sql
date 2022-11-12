@@ -13,16 +13,8 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- entity relationship (only one should be instantiated)
-   [Entity_Type_ID]         VARCHAR(30) NULL,
    [Activity_ID]            VARCHAR(40) NULL,
    [Event_ID]               VARCHAR(40) NULL,
-
-   CONSTRAINT fk_Note_Entity_Type FOREIGN KEY ([Entity_Type_ID])
-      REFERENCES [Entity].[Entity_Type]([Type_ID]),
-   CONSTRAINT fk_Note_Activity FOREIGN KEY ([Activity_ID])
-      REFERENCES [Action].[Activity]([Activity_ID]),
-   CONSTRAINT fk_Note_Event FOREIGN KEY ([Event_ID])
-      REFERENCES [Action].[Event]([Event_ID]),
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -39,7 +31,11 @@
 
    CONSTRAINT pk_Note PRIMARY KEY ([Note_ID]),
    CONSTRAINT fk_Note_Type FOREIGN KEY ([Note_Type_ID])
-      REFERENCES [Action].[Note_Type](Type_ID)
+      REFERENCES [Action].[Note_Type](Type_ID),
+   CONSTRAINT fk_Note_Activity FOREIGN KEY ([Activity_ID])
+      REFERENCES [Action].[Activity]([Activity_ID]),
+   CONSTRAINT fk_Note_Event FOREIGN KEY ([Event_ID])
+      REFERENCES [Action].[Event]([Event_ID]),
 )
 GO
 

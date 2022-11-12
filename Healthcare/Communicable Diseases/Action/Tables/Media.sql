@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [Action].[Media]
 (
-	[Entity_ID]               VARCHAR(40) NOT NULL,
+	[Activity_ID]             VARCHAR(40) NOT NULL,
+	[Event_ID]                VARCHAR(40) NOT NULL,
+
    [Media_ID]                VARCHAR(40) NOT NULL,
    [Alternate_ID]            VARCHAR(60) NULL,
    [Type_ID]                 VARCHAR(30) NULL,
@@ -34,8 +36,13 @@
    [Record_Status_Code_ID]   CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]      VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT fk_Media_Type FOREIGN KEY ([Type_ID])
-      REFERENCES Action.Media_Type(Type_ID)
+   CONSTRAINT [pk_Media] PRIMARY KEY ([Media_ID]),
+   CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID])
+      REFERENCES [Action].[Media_Type](Type_ID),
+   CONSTRAINT [fk_Media_Activity] FOREIGN KEY ([Activity_ID])
+      REFERENCES [Action].[Activity](Activity_ID),
+   CONSTRAINT [fk_Media_Event] FOREIGN KEY ([Event_ID])
+      REFERENCES [Action].[Event](Event_ID)
 )
 GO
 

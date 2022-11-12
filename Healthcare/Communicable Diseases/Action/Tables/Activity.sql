@@ -31,12 +31,12 @@
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
    [Version_Number]         VARCHAR(20) NULL DEFAULT '0',
    [Created_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Updated_DateTime]        DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Updated_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Activity] PRIMARY KEY CLUSTERED ([Activity_ID] ASC),
-   CONSTRAINT [fk_Activity_Activity_Disposition] FOREIGN KEY ([Disposition_ID]) 
+   CONSTRAINT [fk_Activity_Disposition] FOREIGN KEY ([Disposition_ID]) 
       REFERENCES [Action].[Disposition] ([Disposition_ID]),
    CONSTRAINT [fk_Activity_Priority_Code] FOREIGN KEY ([Priority_Code_ID])
       REFERENCES [Action].[Priority_Code] ([Code_ID]),
@@ -44,7 +44,7 @@
       REFERENCES [Action].[Reason_Code] ([Code_ID]),
    CONSTRAINT [fk_Activity_Type] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Action].[Activity_Type] ([Type_ID])
-);
+)
 GO
 
 EXECUTE sp_addextendedproperty 
@@ -52,4 +52,27 @@ EXECUTE sp_addextendedproperty
    @level0type = N'SCHEMA',   @level0name = N'Action', 
    @level1type = N'TABLE',    @level1name = N'Activity';
 GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to a (Entity) Contact', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Activity',
+   @level2type = N'COLUMN',   @level2name = 'Contact_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to a (Geography) Location', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Activity',
+   @level2type = N'COLUMN',   @level2name = 'Location_ID';
+GO
+
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to a (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Activity',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID';
+GO
+
 

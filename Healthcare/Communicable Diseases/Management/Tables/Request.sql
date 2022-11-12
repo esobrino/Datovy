@@ -35,8 +35,6 @@
    CONSTRAINT [pk_Request] PRIMARY KEY CLUSTERED ([Request_ID] ASC),
    CONSTRAINT [fk_Request_Case] FOREIGN KEY ([Case_ID]) 
       REFERENCES [Management].[Case] ([Case_ID]),
-   CONSTRAINT [fk_Request_Profile] FOREIGN KEY ([Profile_ID]) 
-      REFERENCES [Surveillance].[Profile] ([Profile_ID]),
    CONSTRAINT [fk_Request_Referral_Type] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Referral_Type] ([Type_ID]),
    CONSTRAINT [fk_Request_Service_Code] FOREIGN KEY ([Service_Code_ID]) 

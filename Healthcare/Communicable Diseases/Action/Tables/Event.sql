@@ -6,7 +6,8 @@
    [Description]            VARCHAR(256) NULL,
 
    -- external references
-   [Party_ID]               VARCHAR(30) NULL,
+   [Organization_ID]        VARCHAR(30) NULL,
+   [Person_ID]              VARCHAR(30) NULL,
 
    [Scheduled_DateTime]     DATETIMEOFFSET NULL,
    [Started_DateTime]       DATETIMEOFFSET NULL,
@@ -32,6 +33,20 @@
    CONSTRAINT [fk_Event_Activity] FOREIGN KEY ([Activity_ID])
       REFERENCES [Action].[Activity] ([Activity_ID])
 );
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to an (Entity) Organization', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Event',
+   @level2type = N'COLUMN',   @level2name = 'Organization_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to an (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Event',
+   @level2type = N'COLUMN',   @level2name = 'Person_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

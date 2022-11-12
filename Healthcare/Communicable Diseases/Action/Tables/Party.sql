@@ -5,10 +5,12 @@
    [Role_Code_ID]           VARCHAR (30) NULL,
    [Duration]               VARCHAR (50) NULL,
 
-   -- external references
-   [Contact_ID]             VARCHAR (30) NULL,
    [Activity_ID]            VARCHAR (40) NULL,
-   [Person_ID]              VARCHAR (40) NULL,
+
+   -- external references
+   [Organization_ID]        VARCHAR(40) NULL,
+   [Contact_ID]             VARCHAR(40) NULL,
+   [Person_ID]              VARCHAR(40) NULL,
    
    [Status_Code_ID]         VARCHAR (30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
@@ -34,6 +36,27 @@
    CONSTRAINT [fk_Party_Role] FOREIGN KEY ([Role_Code_ID]) 
       REFERENCES [Action].[Role_Code] ([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to an (Entity) Organization', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Party',
+   @level2type = N'COLUMN',   @level2name = 'Organization_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to an (Entity) Contact', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Party',
+   @level2type = N'COLUMN',   @level2name = 'Contact_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'An external reference to a (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Action',
+   @level1type = N'TABLE',    @level1name = N'Party',
+   @level2type = N'COLUMN',   @level2name = 'Person_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
