@@ -8,8 +8,8 @@
    [Recorded_DateTime]      DATE NULL,
 
    -- external reference
-   [Subject_ID]             VARCHAR(40) NULL,
    [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -30,6 +30,20 @@
    CONSTRAINT [fk_Complication_Flag] FOREIGN KEY ([Complication_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Complication',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Complication',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

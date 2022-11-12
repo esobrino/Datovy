@@ -1,7 +1,5 @@
 ﻿CREATE TABLE [Entity].[Uri]
 (
-   [Organization_ID]        VARCHAR(30) NOT NULL,
-	[Entity_ID]              VARCHAR(30) NOT NULL,
    [URI_ID]                 VARCHAR(30) NOT NULL,
    [Type_ID]                VARCHAR(30) NULL,
    [Absolute_URI]           VARCHAR(1028) NULL,
@@ -10,6 +8,12 @@
 
    [Status_Code_ID]         VARCHAR (30)  NULL,
    [Status_DateTime]        DATETIMEOFFSET   NULL,
+
+   -- entity relationship (only one should be instantiated)
+   [Person_ID]             VARCHAR(40) NULL,
+   [Organization_ID]       VARCHAR(40) NULL,
+   [Officer_ID]            VARCHAR(40) NULL,
+   [Contact_ID]            VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -26,7 +30,15 @@
 
    CONSTRAINT [pk_Uri] PRIMARY KEY ([URI_ID]),
    CONSTRAINT [fk_Uri_Type] FOREIGN KEY ([Type_ID])
-      REFERENCES [Entity].[Uri_Type]([Type_ID])
+      REFERENCES [Entity].[Uri_Type]([Type_ID]),
+   CONSTRAINT [fk_Uri_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Uri_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Uri_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
+   CONSTRAINT [fk_Uri_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_ID])
 )
 GO
 

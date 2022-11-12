@@ -117,7 +117,7 @@
     <Build Include="Security\Management.sql" />
     <Build Include="Entity\Tables\Communication.sql" />
     <Build Include="Entity\Tables\Identification.sql" />
-    <Build Include="Entity\Tables\Entity_Location_Link.sql" />
+    <Build Include="Entity\Tables\Location_Link.sql" />
     <Build Include="Entity\Tables\Person_Flag.sql" />
     <Build Include="Entity\Tables\Person.sql" />
     <Build Include="Entity\Tables\Person_Death.sql" />
@@ -200,7 +200,7 @@
     <Build Include="Entity\Tables\Uri.sql" />
     <Build Include="Entity\Tables\Flag_Code.sql" />
     <Build Include="Security\Article.sql" />
-    <Build Include="Entity\Tables\Item_Entity_Link.sql" />
+    <Build Include="Entity\Tables\Item_Link.sql" />
     <Build Include="Action\Tables\Schedule_Event.sql" />
     <Build Include="Generic\Tables\Entity.sql" />
     <Build Include="Generic\Tables\Entity_Type.sql" />

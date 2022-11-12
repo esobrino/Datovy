@@ -17,19 +17,9 @@
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
    -- entity relationship (only one should be instantiated)
-   [Entity_Type_ID]        VARCHAR(30) NULL,
    [Person_ID]             VARCHAR(40) NULL,
    [Organization_ID]       VARCHAR(40) NULL,
    [Officer_ID]            VARCHAR(40) NULL,
-
-   CONSTRAINT [fk_Contact_Entity_Type] FOREIGN KEY ([Entity_Type_ID])
-      REFERENCES [Entity].[Entity_Type]([Type_ID]),
-   CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID])
-      REFERENCES [Entity].[Person]([Person_ID]),
-   CONSTRAINT [fk_Contact_Organization] FOREIGN KEY ([Organization_ID])
-      REFERENCES [Entity].[Organization]([Organization_ID]),
-   CONSTRAINT [fk_Contact_Officer] FOREIGN KEY ([Officer_ID])
-      REFERENCES [Entity].[Officer]([Officer_ID]),
 
    -- record management
    [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -45,8 +35,14 @@
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
    CONSTRAINT [pk_Contact] PRIMARY KEY CLUSTERED ([Contact_ID] ASC),
+   CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Contact_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Contact_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
    CONSTRAINT [fk_Contact_ContactType] FOREIGN KEY ([Type_ID]) 
-      REFERENCES [Entity].[Contact_Type] ([Type_ID]),
+      REFERENCES [Entity].[Contact_Type] ([Type_ID])
 )
 GO
 

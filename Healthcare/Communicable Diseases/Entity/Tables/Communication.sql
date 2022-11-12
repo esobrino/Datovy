@@ -12,8 +12,6 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- entity relationship (only one should be instantiated)
-   [Entity_Type_ID]         VARCHAR(30) NULL,
-
    [Person_ID]              VARCHAR(40) NULL,
    [Organization_ID]        VARCHAR(40) NULL,
    [Officer_ID]             VARCHAR(40) NULL,
@@ -32,7 +30,15 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Communication] PRIMARY KEY CLUSTERED ([Communication_ID] ASC)
+   CONSTRAINT [pk_Communication] PRIMARY KEY CLUSTERED ([Communication_ID] ASC),
+   CONSTRAINT [fk_Communication_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Communication_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Communication_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
+   CONSTRAINT [fk_Communication_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Officer]([Contact_ID])
 )
 GO
 

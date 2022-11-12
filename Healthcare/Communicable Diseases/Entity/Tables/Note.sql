@@ -13,8 +13,6 @@
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
    -- entity relationship (only one should be instantiated)
-   [Entity_Type_ID]        VARCHAR(30) NULL,
-
    [Person_ID]             VARCHAR(40) NULL,
    [Organization_ID]       VARCHAR(40) NULL,
    [Officer_ID]            VARCHAR(40) NULL,
@@ -35,7 +33,15 @@
 
    CONSTRAINT pk_Note PRIMARY KEY ([Note_ID]),
    CONSTRAINT fk_Note_Type FOREIGN KEY ([Note_Type_ID])
-      REFERENCES [Entity].[Note_Type](Type_ID)
+      REFERENCES [Entity].[Note_Type](Type_ID),
+   CONSTRAINT [fk_Note_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Note_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Note_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
+   CONSTRAINT [fk_Note_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_ID])
 )
 GO
 

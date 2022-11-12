@@ -8,7 +8,8 @@
    [Birth_Status_Code_ID]   VARCHAR(30) NULL,
 
    -- external references...
-   [Subject_ID]             VARCHAR(40) NOT NULL,
+   [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -27,6 +28,20 @@
    CONSTRAINT [fk_Infant_Report] FOREIGN KEY ([Birth_Status_Code_ID])
       REFERENCES [Clinical].[Birth_Status_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Infant_Report',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Infant_Report',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

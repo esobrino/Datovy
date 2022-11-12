@@ -14,6 +14,10 @@ CREATE TABLE [Clinical].[Blood_Transfusion_Report]
 
    [Organ_Transplant_Flag_ID] VARCHAR(30) NULL,
 
+   -- external references
+   [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
+
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
@@ -44,6 +48,20 @@ CREATE TABLE [Clinical].[Blood_Transfusion_Report]
    CONSTRAINT [fk_Blood_Transfusion_Transfused_Product] FOREIGN KEY ([Transfused_Product_Code_ID])
       REFERENCES [Clinical].[Blood_Product_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Blood_Transfusion_Report',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

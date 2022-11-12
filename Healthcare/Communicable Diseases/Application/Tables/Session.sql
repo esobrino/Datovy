@@ -3,21 +3,14 @@
    [Session_Type_ID]        VARCHAR(30) NULL,
    [Session_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
 
+   -- external references...
    [Referral_ID]            VARCHAR(40) NULL,
    [Case_ID]                VARCHAR(40) NULL,
-
-   
-    -- external reference - Officer relationship 
    [Officer_ID]             VARCHAR(40) NULL,
-
-    -- external reference - Contact relationship
    [Contact_ID]             VARCHAR(40) NULL,
 
     -- Session relationship 
    [Token_ID]               VARCHAR(40) NULL,
-  
-   CONSTRAINT fk_AccessToken_Session FOREIGN KEY ([Token_ID])
-      REFERENCES [Application].[Access_Token]([Token_ID]),
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -38,8 +31,38 @@
    CONSTRAINT [fk_Application_Referral] FOREIGN KEY ([Referral_ID]) 
       REFERENCES [Management].[Referral] ([Referral_ID]),
    CONSTRAINT [fk_Application_Contact] FOREIGN KEY (Contact_ID)
-      REFERENCES [Entity].[Contact] ([Contact_ID])
-);
+      REFERENCES [Entity].[Contact] ([Contact_ID]),  
+   CONSTRAINT [fk_AccessToken_Session] FOREIGN KEY ([Token_ID])
+      REFERENCES [Application].[Access_Token]([Token_ID])
+)
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference to a (Surveillance) Referral',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Session', 
+   @level2type = N'COLUMN',   @level2name = 'Referral_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference to a (Management) Case',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Session', 
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference to a (Entity) Officer',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Session', 
+   @level2type = N'COLUMN',   @level2name = 'Officer_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference to a (Entity) Contact',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Session', 
+   @level2type = N'COLUMN',   @level2name = 'Contact_ID'
 GO
 
 EXECUTE sp_addextendedproperty

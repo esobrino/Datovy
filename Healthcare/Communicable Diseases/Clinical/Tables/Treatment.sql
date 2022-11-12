@@ -1,18 +1,20 @@
 ﻿CREATE TABLE [Clinical].[Treatment] (
-   [Treatment_Id]           VARCHAR (30)    NOT NULL,
+   [Treatment_Id]           VARCHAR(40) NOT NULL,
    [Given_Indicator]        BIT NULL,
-   [Name]                   VARCHAR (80) NULL,
-   [Start_Date]             DATETIME2 (7) NULL,
-   [End_Date]               DATETIME2 (7) NULL,
-   [Quantity]               DECIMAL (18, 5) NULL,
-   [Form]                   VARCHAR (30) NULL,
-   [Comment]                VARCHAR (4000)  NULL,
+   [Name]                   VARCHAR(80) NULL,
+   [Start_Date]             DATETIME2(7) NULL,
+   [End_Date]               DATETIME2(7) NULL,
+   [Quantity]               DECIMAL(18, 5) NULL,
+   [Form]                   VARCHAR(30) NULL,
+   [Comment]                VARCHAR(4000) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external reference
-   [Activity_ID]            VARCHAR (30)    NULL,
+   [Activity_ID]            VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -29,6 +31,27 @@
 
    CONSTRAINT [pk_Treatment] PRIMARY KEY CLUSTERED ([Treatment_Id] ASC),
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Action) Activity', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Treatment',
+   @level2type = N'COLUMN',   @level2name = 'Activity_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Treatment',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Treatment',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

@@ -21,6 +21,13 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference to a (Entity) Officer',
+   @level0type = N'SCHEMA',   @level0name = N'Application', 
+   @level1type = N'TABLE',    @level1name = N'Access_Token', 
+   @level2type = N'COLUMN',   @level2name = 'User_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Registry of the access token for given officer or system user',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Access_Token'

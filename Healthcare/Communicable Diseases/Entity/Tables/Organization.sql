@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [Entity].[Organization] (
    [Organization_ID]       VARCHAR(40) NOT NULL,
+   [Number_ID]             VARCHAR(20) NULL,
    [Alternate_ID]          VARCHAR(40) NULL,
    [Type_ID]               VARCHAR(30) NULL,
    [Name]                  VARCHAR(80) NULL,

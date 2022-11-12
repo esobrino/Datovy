@@ -1,8 +1,6 @@
 ﻿CREATE TABLE [Clinical].[Vitals] (
    [Vitals_ID]              VARCHAR(40) NOT NULL,
    [Profile_Code_ID]        VARCHAR(30) NULL,
-   [Subject_ID]             VARCHAR(40) NULL,
-   [Subject_Type_ID]        VARCHAR(30) NULL,
 
    [Body_Site_Code_ID]      VARCHAR(30) NULL,
    [Body_Position_Code_ID]  VARCHAR(30) NULL,
@@ -17,7 +15,8 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external reference
-   [Party_ID]               VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -45,15 +44,23 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vitals',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Vitals',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Identifies and describe medical visit or investigation of vital signs such as temperature, pulse, blood preassure, or other',
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Vitals'
 GO
 
-EXECUTE sp_addextendedproperty
-   @name = N'MS_Description', @value = 'Person Contact', 
-   @level0type = N'SCHEMA',   @level0name = N'Clinical',
-   @level1type = N'TABLE',    @level1name = N'Vitals',
-   @level2type = N'COLUMN',   @level2name = 'Subject_Type_ID';
-GO
 

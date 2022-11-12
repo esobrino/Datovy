@@ -8,20 +8,22 @@
    [Vaccine_Event_Source_Code_ID] VARCHAR(30) NULL,
    [Vaccinated_Flag_ID]           VARCHAR(30) NULL,
 
-   [Administered_DateTime]   DATETIMEOFFSET   NULL,
-   [Dosage_Series_Number]    VARCHAR (20)  NULL,
-   [Dosage_Amount]           VARCHAR (50)  NULL,
-   [Lot_Number]              VARCHAR (20)  NULL,
+   [Administered_DateTime]   DATETIMEOFFSET NULL,
+   [Dosage_Series_Number]    VARCHAR (20) NULL,
+   [Dosage_Amount]           VARCHAR (50) NULL,
+   [Lot_Number]              VARCHAR (20) NULL,
    [Expiration_Date]         DATETIME2 (7) NULL,
-   [Drug_Code_ID]            VARCHAR (30)  NULL,
+   [Drug_Code_ID]            VARCHAR (30) NULL,
    [Reason_Not_Give_Code_ID] VARCHAR(30) NULL,
-   
+
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- external references
-   [Activity_ID]            VARCHAR (40)  NULL,
-   [Organization_ID]        VARCHAR (40)  NULL,
+   [Activity_ID]            VARCHAR(40) NULL,
+   [Organization_ID]        VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -48,6 +50,34 @@
    CONSTRAINT [fk_Immunization_Vaccinated_Flag] FOREIGN KEY ([Vaccinated_Flag_ID])
       REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Action) Activity', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Immunization',
+   @level2type = N'COLUMN',   @level2name = 'Activity_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Organization', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Immunization',
+   @level2type = N'COLUMN',   @level2name = 'Organization_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Immunization',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Immunization',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

@@ -21,6 +21,12 @@
    [Reference_Date_Type_ID]  VARCHAR(30) NULL,
    [Reference_DateTime]      DATETIMEOFFSET NULL,
 
+   -- entity relationship (only one should be instantiated)
+   [Person_ID]               VARCHAR(40) NULL,
+   [Organization_ID]         VARCHAR(40) NULL,
+   [Officer_ID]              VARCHAR(40) NULL,
+   [Contact_ID]              VARCHAR(40) NULL,
+
    -- record management
    [Tenant_ID]               VARCHAR(30) NULL DEFAULT 'COMMON',
    [Data_Owner_ID]           VARCHAR(30) NULL DEFAULT 'COMMON',
@@ -36,7 +42,15 @@
 
    CONSTRAINT pk_Media PRIMARY KEY (Media_ID),
    CONSTRAINT fk_Media_Type FOREIGN KEY ([Type_ID])
-      REFERENCES Entity.Media_Type(Type_ID)
+      REFERENCES Entity.Media_Type(Type_ID),
+   CONSTRAINT [fk_Media_Person] FOREIGN KEY ([Person_ID])
+      REFERENCES [Entity].[Person]([Person_ID]),
+   CONSTRAINT [fk_Media_Organization] FOREIGN KEY ([Organization_ID])
+      REFERENCES [Entity].[Organization]([Organization_ID]),
+   CONSTRAINT [fk_Media_Officer] FOREIGN KEY ([Officer_ID])
+      REFERENCES [Entity].[Officer]([Officer_ID]),
+   CONSTRAINT [fk_Media_Contact] FOREIGN KEY ([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_ID])
 )
 GO
 

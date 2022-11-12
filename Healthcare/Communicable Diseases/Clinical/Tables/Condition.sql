@@ -3,6 +3,7 @@
    [Type_ID]                VARCHAR (30) NULL,
 
    -- external references...
+   [Case_ID]                VARCHAR(40) NULL,
    [Subject_ID]             VARCHAR(40) NOT NULL,
 
    [Qualifier_Text]         VARCHAR (30) NULL,
@@ -57,6 +58,20 @@
    CONSTRAINT [fk_Condition_Duration_Unit] FOREIGN KEY ([Duration_Unit_Code_ID])
       REFERENCES [Clinical].[Unit_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Condition',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Clinical', 
+   @level1type = N'TABLE',    @level1name = N'Condition',
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
