@@ -35,9 +35,9 @@
    [Age_Unit_Code_ID]         VARCHAR(30),
 
    -- external Case ID reference...
-   [Case_ID]                VARCHAR(40) NULL,
    [Case_State_ID]          VARCHAR(40) NULL,
    [Case_Legacy_ID]         VARCHAR(40) NULL,
+   [Case_ID]                VARCHAR(40) NULL,
    [Subject_ID]             VARCHAR(40) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
