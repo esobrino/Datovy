@@ -2,7 +2,7 @@
 # Communicable Diseases Data Repository
 
 ## <span style="color:skyblue;font-weight:bold">INTRODUCTION</span>
-The purpose of this effort is to provide free and accessible base database schema for healthcare communicable diseases (disease tracking, monitoring, control, contract tracing, and infectious disease detection and response) in a simple design while being adaptable and flexible enough for daily on-line transaction processing.  The designed repository is not tailored to any specific disease but generic in nature and could support any related tracking effort based on a set of conditions.  Additionally the model supports Healthcare services (programs) such as those supported by Psychosocial initiatives, mental health, substance abuse, and other community benefits.
+The purpose of this effort is to provide free and accessible base database schema for healthcare communicable diseases (disease tracking, monitoring, control, contract tracing, and infectious disease detection and response) in a simple design while being adaptable and flexible enough for daily on-line transaction processing.  The designed repository is not tailored to any specific disease but generic in nature and could support any related tracking effort based on a set of conditions.  Additionally the model supports Healthcare services (programs) such as those supported by Psychosocial initiatives, mental health, substance abuse, and other community benefits to.
 
 Concerns about Privacy and Security are targeted by "tagging" to help start related compliance efforts (see the "Privacy and Security Concerns" section ahead).
 
