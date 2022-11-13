@@ -13,8 +13,8 @@ CREATE TABLE [Message].[Content_Type]
 (
 	[Type_ID]               VARCHAR(30) NOT NULL,
 	[Description]           VARCHAR(80) NOT NULL,
-	[Local_Type_ID]         VARCHAR(40) NOT NULL,
-	[Regional_Type_ID]      VARCHAR(20) NOT NULL,
+	[Local_Type_ID]         VARCHAR(30) NOT NULL,
+	[Regional_Type_ID]      VARCHAR(30) NOT NULL,
 	[Source_ID]             VARCHAR(40) NOT NULL,
 
    -- record management

@@ -4,7 +4,7 @@
 	[Event_ID]                VARCHAR(40) NOT NULL,
 
    [Media_ID]                VARCHAR(40) NOT NULL,
-   [Alternate_ID]            VARCHAR(60) NULL,
+   [Alternate_ID]            VARCHAR(80) NULL,
    [Type_ID]                 VARCHAR(30) NULL,
    [Category_Text]           VARCHAR(80),
    [Status_Code]             INT NOT NULL DEFAULT 0,
@@ -24,9 +24,9 @@
    [Reference_DateTime]      DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]               VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]           VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]     VARCHAR(30) NULL,
+   [Tenant_ID]               VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]           VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]     VARCHAR(40) NULL,
    [Sequence_Number]         INTEGER NULL DEFAULT 0,
    [Effective_DateTime]      DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime]  DATETIMEOFFSET NULL,

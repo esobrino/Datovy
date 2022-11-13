@@ -27,9 +27,9 @@ CREATE TABLE [Geography].[County_Code]
    [Longitude]              DECIMAL(18, 7) NULL,  -- lon of internal point
 
    -- record management
-   [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]          VARCHAR(30) NULL DEFAULT 'Census',
-   [Agency_Reporting_ID]    VARCHAR(30) NULL DEFAULT 'Census',
+   [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'Census',
+   [Agency_Reporting_ID]    VARCHAR(40) NULL DEFAULT 'Census',
    [Sequence_Number]        INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,

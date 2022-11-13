@@ -6,9 +6,9 @@
 
    [CodeSet_Name]           VARCHAR(80) NULL,
 
-   [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]          VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]    VARCHAR(30) NULL,
+   [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]    VARCHAR(40) NULL,
    [Version_Number]         VARCHAR(20),
    [Effective_DateTime]     DATETIMEOFFSET NULL,
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
