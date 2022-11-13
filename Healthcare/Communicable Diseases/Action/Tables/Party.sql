@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [Action].[Party] (
-   [Party_ID]               VARCHAR (30) NOT NULL,
+   [Party_ID]               VARCHAR (40) NOT NULL,
    [Type_ID]                VARCHAR (30) NULL,
    [Identification_ID]      VARCHAR (80) NULL,
    [Role_Code_ID]           VARCHAR (30) NULL,
