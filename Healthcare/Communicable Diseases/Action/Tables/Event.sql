@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [Action].[Event] (
    [Event_ID]               VARCHAR(40) NOT NULL,
-   [Alternate_ID]           VARCHAR(50) NULL,
+   [Alternate_ID]           VARCHAR(40) NULL,
    [Activity_ID]            VARCHAR(40) NULL,
    [EventType_ID]           VARCHAR(20) NULL,
    [Description]            VARCHAR(256) NULL,
 
    -- external references
-   [Organization_ID]        VARCHAR(30) NULL,
-   [Person_ID]              VARCHAR(30) NULL,
+   [Organization_ID]        VARCHAR(40) NULL,
+   [Person_ID]              VARCHAR(40) NULL,
 
    [Scheduled_DateTime]     DATETIMEOFFSET NULL,
    [Started_DateTime]       DATETIMEOFFSET NULL,
@@ -17,9 +17,9 @@
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
    -- record management
-   [Tenant_ID]              VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Data_Owner_ID]          VARCHAR(30) NULL DEFAULT 'COMMON',
-   [Agency_Reporting_ID]    VARCHAR(30) NULL,
+   [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
+   [Agency_Reporting_ID]    VARCHAR(40) NULL,
    [Sequence_Number]        INTEGER NULL DEFAULT 0,
    [Effective_DateTime]     DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
