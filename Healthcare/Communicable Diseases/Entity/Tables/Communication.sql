@@ -38,7 +38,7 @@
    CONSTRAINT [fk_Communication_Officer] FOREIGN KEY ([Officer_ID])
       REFERENCES [Entity].[Officer]([Officer_ID]),
    CONSTRAINT [fk_Communication_Contact] FOREIGN KEY ([Contact_ID])
-      REFERENCES [Entity].[Officer]([Contact_ID])
+      REFERENCES [Entity].[Contact]([Contact_ID])
 )
 GO
 
