@@ -29,14 +29,15 @@ BEGIN
       SET @Received_DateTime = getutcdate()
 
    DECLARE @MessageLengthInBytes  INTEGER,
-           @rval                  INTEGER
+           @rval                  INTEGER,
+           @orgNumber             VARCHAR(20)
    SET @MessageLengthInBytes = len(@Message_Data)
 
    -- prepare a unique submission id and/or reference id as necessary...
    IF @Submission_ID = '' OR @Submission_ID IS NULL
    BEGIN
       SET @Submission_ID = [Application].[ID_Number_Generate] 
-         ('SUB', next value for [Message].[Submission_Number])
+         (@orgNumber, 'SUB', next value for [Message].[Submission_Number])
    END
    SET @Submission_ID_Out = @Submission_ID
 
