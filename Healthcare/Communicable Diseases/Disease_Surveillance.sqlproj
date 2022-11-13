@@ -297,13 +297,18 @@
     <Build Include="Surveillance\Tables\Case_Investigation_Stattus_Code.sql" />
     <Build Include="Surveillance\Tables\Detection_Method_Code.sql" />
     <Build Include="Surveillance\Tables\Transmission_Setting_Code.sql" />
-    <Build Include="Surveillance\Tables\Lab_Report.sql" />
     <Build Include="Epidemiology\Tables\Lab_Link.sql" />
     <Build Include="Epidemiology\Tables\Lab_Test_Report.sql" />
     <Build Include="Epidemiology\Tables\Unit_Code.sql" />
     <Build Include="Epidemiology\Tables\Lab_Test_Interpretation_Code.sql" />
     <Build Include="Action\Tables\Disposition_Code.sql" />
     <Build Include="Provider\Tables\Provider_Reference.sql" />
+    <Build Include="Epidemiology\Tables\Specimen.sql" />
+    <Build Include="Management\Tables\Media.sql" />
+    <Build Include="Management\Tables\Media_Type.sql" />
+    <Build Include="Management\Tables\Note.sql" />
+    <Build Include="Management\Tables\Note_Type.sql" />
+    <Build Include="Epidemiology\Tables\Lab_Report.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

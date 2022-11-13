@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [Management].[Referral] (
    [Referral_ID]            VARCHAR(40) NOT NULL,
    [Type_ID]                VARCHAR(30) NULL,
+   [Alternate_ID]           VARCHAR(40) NULL,
    [Referral_DateTime]      DATETIMEOFFSET NULL,
 
    [Case_ID]                VARCHAR(40) NULL,
    [Profile_ID]             VARCHAR(40) NULL,
-   [Alternate_ID]           VARCHAR(40) NULL,
 
    -- external reference ID
    [Provider_ID]            VARCHAR(40) NULL,
@@ -33,6 +33,27 @@
    CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Type_ID]) 
       REFERENCES [Management].[Referral_Type] ([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Surveillance) Profile', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Referral', 
+   @level2type = N'COLUMN',   @level2name = N'Profile_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Provider) Provider', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Referral', 
+   @level2type = N'COLUMN',   @level2name = N'Provider_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Action) Activity', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Referral', 
+   @level2type = N'COLUMN',   @level2name = N'Activity_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

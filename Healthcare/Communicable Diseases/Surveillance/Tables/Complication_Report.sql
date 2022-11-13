@@ -19,8 +19,8 @@
    [Epidemiology_Linked_Flag_ID]  VARCHAR(30) NULL,
 
    -- external Case ID reference...
-   [Subject_ID]             VARCHAR(40) NULL,
    [Case_ID]                VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -53,6 +53,20 @@
    CONSTRAINT [fk_Complication_Report_Epidemiology_Linked_Flag] FOREIGN KEY ([Epidemiology_Linked_Flag_ID])
       REFERENCES [Surveillance].[Indicator_Flag_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Complication_Report', 
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Complication_Report', 
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

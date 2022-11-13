@@ -4,8 +4,9 @@
    [Type_ID]                VARCHAR(20)  NULL,
    [Purpose_Code_ID]        VARCHAR(30)  NULL,
 
-   [Entity_Type_ID]         VARCHAR(20)  NULL,
-   [Entity_ID]              VARCHAR(40)  NULL,
+   -- external references
+   [Case_ID]                VARCHAR(40)  NULL,
+   [Subject_ID]             VARCHAR(40)  NULL,
 
    [Travel_Number]          VARCHAR(20)  NULL,
 
@@ -42,6 +43,20 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Travel_Detail', 
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Travel_Detail', 
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'A person travel details',
    @level0type = N'SCHEMA',   @level0name = N'Surveillance',
    @level1type = N'TABLE',    @level1name = N'Travel_Detail';
@@ -53,17 +68,4 @@ EXECUTE sp_addextendedproperty
    @level1type = N'TABLE',    @level1name = N'Travel_Detail',
    @level2type = N'COLUMN',   @level2name = 'Type_ID';
 GO
-
-EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'PersonID, ContactID',
-   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
-   @level1type = N'TABLE',    @level1name = N'Travel_Detail', 
-   @level2type = N'COLUMN',   @level2name = 'Entity_ID';
-GO
-
-EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Person, Contact', 
-   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
-   @level1type = N'TABLE',    @level1name = N'Travel_Detail',
-   @level2type = N'COLUMN',   @level2name = 'Entity_Type_ID';
 

@@ -12,13 +12,8 @@
    [Status_Code_ID]        VARCHAR (30) NULL,
    [Status_DateTime]       DATETIMEOFFSET NULL,
 
-   -- entity relationship (only one should be instantiated)
-   [Entity_Type_ID]        VARCHAR(30) NULL,
-
-   [Person_ID]             VARCHAR(40) NULL,
-   [Organization_ID]       VARCHAR(40) NULL,
-   [Officer_ID]            VARCHAR(40) NULL,
-   [Contact_ID]            VARCHAR(40) NULL,
+   [Lab_Result_ID]          VARCHAR(40) NULL,
+   [Specimen_ID]            VARCHAR(40) NULL,
 
    -- record management
    [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -35,7 +30,11 @@
 
    CONSTRAINT pk_Note PRIMARY KEY ([Note_ID]),
    CONSTRAINT fk_Note_Type FOREIGN KEY ([Note_Type_ID])
-      REFERENCES [Epidemiology].[Note_Type]([Type_ID])
+      REFERENCES [Epidemiology].[Note_Type]([Type_ID]),
+   CONSTRAINT [fk_Note_Lab_Result] FOREIGN KEY ([Lab_Result_ID])
+      REFERENCES [Epidemiology].[Lab_Result]([Lab_Result_ID]),
+   CONSTRAINT [fk_Note_Specimen] FOREIGN KEY ([Specimen_ID])
+      REFERENCES [Epidemiology].[Specimen]([Specimen_ID])
 )
 GO
 

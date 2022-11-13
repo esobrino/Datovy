@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [Surveillance].[Assessment_Question] (
    [Question_ID]           VARCHAR(40)  NOT NULL,
-   [Questionnaire_ID]      VARCHAR(40)  NULL,
-   [Assessment_ID]         VARCHAR(40)  NULL,
    [Question_Sequence]     INT          NULL,
    [Question_Text]         VARCHAR(512) NULL,
+   [Questionnaire_ID]      VARCHAR(40)  NULL,
+
    [Answer_Type_ID]        VARCHAR(30)  NULL,
 
    -- record management
@@ -21,7 +21,9 @@
 
    CONSTRAINT [pk_Assessment_Question] PRIMARY KEY CLUSTERED ([Question_ID] ASC),
    CONSTRAINT [fk_Assessment_Question_AnswerType] FOREIGN KEY ([Answer_Type_ID]) 
-      REFERENCES [Surveillance].[Answer_Type] ([Type_ID])
+      REFERENCES [Surveillance].[Answer_Type] ([Type_ID]),
+   CONSTRAINT [fk_Assessment_Question_Questionnaire] FOREIGN KEY ([Questionnaire_ID])
+      REFERENCES [Surveillance].[Assessment_Questionnaire]([Questionnaire_ID])
 )
 GO
 

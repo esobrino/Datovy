@@ -35,10 +35,10 @@
    [Age_Unit_Code_ID]         VARCHAR(30),
 
    -- external Case ID reference...
-   [Subject_ID]             VARCHAR(40) NULL,
    [Case_ID]                VARCHAR(40) NULL,
    [Case_State_ID]          VARCHAR(40) NULL,
    [Case_Legacy_ID]         VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
    
    [Status_Code_ID]         VARCHAR(30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
@@ -72,6 +72,20 @@
    CONSTRAINT [fk_Case_Report_Deceased_Source_Code] FOREIGN KEY ([Deceased_Source_Code_ID])
       REFERENCES [Surveillance].[Jurisdiction_Code]([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Management) Case', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Case_Report', 
+   @level2type = N'COLUMN',   @level2name = 'Case_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Case_Report', 
+   @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

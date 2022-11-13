@@ -2,7 +2,6 @@
 (
    [Viral_Report_ID]        VARCHAR(40) NOT NULL,
    [Report_Date]            DATE NULL,
-
    
    [Status_Code_ID]         VARCHAR (30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,

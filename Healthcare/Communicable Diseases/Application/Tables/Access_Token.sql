@@ -21,7 +21,7 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference to a (Entity) Officer',
+   @name = N'X_Reference', @value = 'External reference to a (Entity) Officer',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Access_Token', 
    @level2type = N'COLUMN',   @level2name = 'User_ID'

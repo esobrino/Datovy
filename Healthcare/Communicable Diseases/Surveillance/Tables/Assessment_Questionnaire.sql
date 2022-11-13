@@ -1,9 +1,12 @@
 ﻿CREATE TABLE [Surveillance].[Assessment_Questionnaire] (
    [Questionnaire_ID]      VARCHAR(40)  NOT NULL,
    [Questionnaire_No]      INT NULL,
+
    [Title]                 VARCHAR(256) NULL,
    [Description]           VARCHAR(256) NULL,
-   [Assessment_ID]         VARCHAR(40)  NULL,
+
+   [Questionnaire_URL]        VARCHAR(256)  NULL,
+   [Questionnaire_Answer_URL] VARCHAR(256)  NULL,
 
    -- record management
    [Tenant_ID]             VARCHAR(40) NULL DEFAULT 'COMMON',

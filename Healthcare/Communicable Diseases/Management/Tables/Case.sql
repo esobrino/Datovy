@@ -3,8 +3,9 @@
    [Type_ID]                VARCHAR (30) NULL,
    [Alternate_ID]           VARCHAR (40) NULL,
    
+   -- external references
    [Officer_ID]             VARCHAR (40) NULL,
-   [Person_ID]              VARCHAR (40) NULL,
+   [Subject_ID]             VARCHAR (40) NULL,
    [Provider_ID]            VARCHAR (40) NULL,
    [Organization_ID]        VARCHAR (40) NULL,
 
@@ -14,16 +15,15 @@
    [Detection_Method_Code_ID] VARCHAR(30) NULL,
 
    -- external references
-   [Medication_ID]          VARCHAR (40) NULL,
-   [Medical_Condition_ID]   VARCHAR (40) NULL,
    [Profile_ID]             VARCHAR (40) NULL,
 
    [Priority_Code_ID]       VARCHAR (30) NULL,
 
-   [Person_Age]             INT NULL,
+   [Person_Age]              INT NULL,
    [Person_Age_Unit_Code_ID] VARCHAR (30) NULL,
    
    [Class_Status_Code_ID]   VARCHAR (30) NULL,
+
    [Status_Code_ID]         VARCHAR (30) NULL,
    [Status_DateTime]        DATETIMEOFFSET NULL,
 
@@ -36,7 +36,7 @@
    [Effective_End_DateTime] DATETIMEOFFSET NULL,
    [Version_Number]         VARCHAR(20) NULL DEFAULT '0',
    [Created_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
-   [Updated_DateTime]         DATETIMEOFFSET NULL DEFAULT getutcdate(),
+   [Updated_DateTime]       DATETIMEOFFSET NULL DEFAULT getutcdate(),
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
@@ -54,6 +54,41 @@
    CONSTRAINT [fk_Case_Class_Detection_Method] FOREIGN KEY ([Detection_Method_Code_ID]) 
       REFERENCES [Management].[Detection_Method_Code] ([Code_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Officer', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case', 
+   @level2type = N'COLUMN',   @level2name = N'Officer_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case', 
+   @level2type = N'COLUMN',   @level2name = N'Subject_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Provider) Provider', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case', 
+   @level2type = N'COLUMN',   @level2name = N'Provider_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Organization', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case', 
+   @level2type = N'COLUMN',   @level2name = N'Organization_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Surveillance) Profile', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Case', 
+   @level2type = N'COLUMN',   @level2name = N'Profile_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

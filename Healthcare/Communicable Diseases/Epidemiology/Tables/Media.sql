@@ -20,6 +20,9 @@
    [Reference_Date_Type_ID] VARCHAR(30) NULL,
    [Reference_DateTime]     DATETIMEOFFSET NULL,
 
+   [Lab_Result_ID]          VARCHAR(40) NULL,
+   [Specimen_ID]            VARCHAR(40) NULL,
+
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
    [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -33,9 +36,13 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT pk_Media PRIMARY KEY (Media_ID),
-   CONSTRAINT fk_Media_Type FOREIGN KEY ([Type_ID])
-      REFERENCES [Epidemiology].[Media_Type](Type_ID)
+   CONSTRAINT [pk_Media] PRIMARY KEY (Media_ID),
+   CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID])
+      REFERENCES [Epidemiology].[Media_Type](Type_ID),
+   CONSTRAINT [fk_Media_Lab_Result] FOREIGN KEY ([Lab_Result_ID])
+      REFERENCES [Epidemiology].[Lab_Result]([Lab_Result_ID]),
+   CONSTRAINT [fk_Media_Specimen] FOREIGN KEY ([Specimen_ID])
+      REFERENCES [Epidemiology].[Specimen]([Specimen_ID])
 )
 GO
 

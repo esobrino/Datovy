@@ -53,28 +53,28 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Action) Activity', 
+   @name = N'X_Reference', @value = 'External reference for (Action) Activity', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Immunization',
    @level2type = N'COLUMN',   @level2name = 'Activity_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Entity) Organization', 
+   @name = N'X_Reference', @value = 'External reference for (Entity) Organization', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Immunization',
    @level2type = N'COLUMN',   @level2name = 'Organization_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @name = N'X_Reference', @value = 'External reference for (Management) Case', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Immunization',
    @level2type = N'COLUMN',   @level2name = 'Case_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @name = N'X_Reference', @value = 'External reference for (Entity) Person', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Immunization',
    @level2type = N'COLUMN',   @level2name = 'Subject_ID'

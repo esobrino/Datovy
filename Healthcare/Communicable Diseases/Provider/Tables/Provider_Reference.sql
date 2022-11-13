@@ -2,11 +2,11 @@
    [Provider_Reference_ID] VARCHAR (40) NOT NULL,
    [Alternate_ID]          VARCHAR (40) NULL,
 
+   [Provider_Type_ID]      VARCHAR (40) NULL,
+
    -- external references
    [Person_ID]             VARCHAR (40) NULL,
    [Organization_ID]       VARCHAR (40) NULL,
-   [Provider_Type_ID]      VARCHAR (40) NULL,
-
    [Name_ID]               VARCHAR (30) NULL,
 
    [Status_Code_ID]        VARCHAR(30) NULL,
@@ -27,6 +27,27 @@
 
    CONSTRAINT [pk_Provider_Reference] PRIMARY KEY CLUSTERED ([Provider_Reference_ID] ASC)
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Name',
+   @level0type = N'SCHEMA',   @level0name = N'Provider',
+   @level1type = N'TABLE',    @level1name = N'Provider_Reference',
+   @level2type = N'COLUMN',   @level2name = 'Name_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Organization',
+   @level0type = N'SCHEMA',   @level0name = N'Provider',
+   @level1type = N'TABLE',    @level1name = N'Provider_Reference',
+   @level2type = N'COLUMN',   @level2name = 'Organization_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person',
+   @level0type = N'SCHEMA',   @level0name = N'Provider',
+   @level1type = N'TABLE',    @level1name = N'Provider_Reference',
+   @level2type = N'COLUMN',   @level2name = 'Person_ID'
 GO
 
 EXECUTE sp_addextendedproperty 

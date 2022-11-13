@@ -18,7 +18,7 @@
 
    -- external references
    [Contact_ID]             VARCHAR(40) NULL,
-   [Person_ID]              VARCHAR(40) NULL,
+   [Subject_ID]             VARCHAR(40) NULL,
 
    -- assignment context
    [Priority_Code_ID]       VARCHAR(30) NULL,
@@ -36,8 +36,33 @@
    [Record_Status_Code_ID]  CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]     VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC)
+   CONSTRAINT [pk_Assignment] PRIMARY KEY CLUSTERED ([Assignment_ID] ASC),
+   CONSTRAINT [fk_Assignment_Case] FOREIGN KEY ([Case_ID])
+      REFERENCES [Management].[Case]([Case_ID]),
+   CONSTRAINT [fk_Assignment_Referral] FOREIGN KEY ([Referral_ID])
+      REFERENCES [Management].[Referral]([Referral_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Contact', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Assignment', 
+   @level2type = N'COLUMN',   @level2name = N'Contact_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Person', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Assignment', 
+   @level2type = N'COLUMN',   @level2name = N'Subject_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Generic) Element', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Assignment', 
+   @level2type = N'COLUMN',   @level2name = N'Concept_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

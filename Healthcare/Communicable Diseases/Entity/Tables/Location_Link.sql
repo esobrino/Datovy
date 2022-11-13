@@ -36,7 +36,7 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Geography) Location', 
+   @name = N'X_Reference', @value = 'External reference for (Geography) Location', 
    @level0type = N'SCHEMA',   @level0name = N'Entity', 
    @level1type = N'TABLE',    @level1name = N'Location_Link',
    @level2type = N'COLUMN',   @level2name = 'Location_ID'

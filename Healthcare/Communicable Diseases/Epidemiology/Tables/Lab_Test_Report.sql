@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [Epidemiology].[Lab_Test_Report]
 (
-   [Lab_Test_Report_ID]     VARCHAR(40) NOT NULL,
+   [Lab_Test_Report_ID]          VARCHAR(40) NOT NULL,
 
    [Laboratory_ID]               VARCHAR(40) NULL,
    [Lab_Type_ID]                 VARCHAR(30) NULL,
@@ -14,7 +14,7 @@
    [Specimen_Collection_Date]    DATE NULL,
    [Specimen_Sent_Date]          DATE NULL,
 
-   -- related Case
+   -- external reference
    [Case_ID]                VARCHAR(40) NULL,
 
    -- record management
@@ -44,6 +44,13 @@
    CONSTRAINT [fk_Lab_Test_Report_Lab_Type] FOREIGN KEY ([Lab_Type_ID])
       REFERENCES [Epidemiology].[Lab_Type]([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Management) Case',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Lab_Test_Report',
+   @level2type = N'COLUMN',   @level2name = 'Case_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

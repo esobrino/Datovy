@@ -2,13 +2,11 @@
 (
    [Request_ID]             VARCHAR(40) NOT NULL,
    [Type_ID]                VARCHAR(30) NULL,
-   [Request_Date]           DATE NULL,
-
-   [Case_ID]                VARCHAR(40) NULL,
    [Alternate_ID]           VARCHAR(40) NULL,
+   [Request_Date]           DATE NULL,
    [Service_Code_ID]        VARCHAR(30) NULL,
 
-   -- request may be related to a referral
+   [Case_ID]                VARCHAR(40) NULL,
    [Referral_ID]            VARCHAR(40) NULL,
 
    -- external reference ID
@@ -42,6 +40,27 @@
    CONSTRAINT [fk_Request_Referral] FOREIGN KEY ([Request_ID])
       REFERENCES [Management].[Referral]([Referral_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Article) Item', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Request', 
+   @level2type = N'COLUMN',   @level2name = N'Item_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Action) Activity', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Request', 
+   @level2type = N'COLUMN',   @level2name = N'Activity_ID';
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Provider) Provider', 
+   @level0type = N'SCHEMA',   @level0name = N'Management', 
+   @level1type = N'TABLE',    @level1name = N'Request', 
+   @level2type = N'COLUMN',   @level2name = N'Provider_ID';
 GO
 
 EXECUTE sp_addextendedproperty 

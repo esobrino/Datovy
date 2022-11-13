@@ -20,6 +20,8 @@
    [Reference_Date_Type_ID] VARCHAR(30) NULL,
    [Reference_DateTime]     DATETIMEOFFSET NULL,
 
+   [Location_ID]            VARCHAR(40) NULL,
+
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
    [Data_Owner_ID]          VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -35,7 +37,9 @@
 
    CONSTRAINT pk_Media PRIMARY KEY (Media_ID),
    CONSTRAINT fk_Media_Type FOREIGN KEY ([Type_ID])
-      REFERENCES [Geography].[Media_Type](Type_ID)
+      REFERENCES [Geography].[Media_Type](Type_ID),
+   CONSTRAINT [fk_Media_Location] FOREIGN KEY ([Location_ID])
+      REFERENCES [Geography].[Location]([Location_ID])
 )
 GO
 

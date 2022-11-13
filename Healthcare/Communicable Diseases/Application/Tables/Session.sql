@@ -38,28 +38,28 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference to a (Surveillance) Referral',
+   @name = N'X_Reference', @value = 'External reference to a (Surveillance) Referral',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Session', 
    @level2type = N'COLUMN',   @level2name = 'Referral_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference to a (Management) Case',
+   @name = N'X_Reference', @value = 'External reference to a (Management) Case',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Session', 
    @level2type = N'COLUMN',   @level2name = 'Case_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference to a (Entity) Officer',
+   @name = N'X_Reference', @value = 'External reference to a (Entity) Officer',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Session', 
    @level2type = N'COLUMN',   @level2name = 'Officer_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference to a (Entity) Contact',
+   @name = N'X_Reference', @value = 'External reference to a (Entity) Contact',
    @level0type = N'SCHEMA',   @level0name = N'Application', 
    @level1type = N'TABLE',    @level1name = N'Session', 
    @level2type = N'COLUMN',   @level2name = 'Contact_ID'

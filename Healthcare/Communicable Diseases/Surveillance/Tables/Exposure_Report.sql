@@ -72,6 +72,13 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Geography) Location', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Exposure_Report', 
+   @level2type = N'COLUMN',   @level2name = 'Location_ID'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'MS_Description', @value = 'Details about an exposure to a disease to be reported to an Authority',
    @level0type = N'SCHEMA',   @level0name = N'Surveillance',
    @level1type = N'TABLE',    @level1name = N'Exposure_Report'

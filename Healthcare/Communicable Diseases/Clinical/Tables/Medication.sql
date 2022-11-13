@@ -44,14 +44,14 @@
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Management) Case', 
+   @name = N'X_Reference', @value = 'External reference for (Management) Case', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Medication',
    @level2type = N'COLUMN',   @level2name = 'Case_ID'
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'X-Reference', @value = 'External reference for (Entity) Person', 
+   @name = N'X_Reference', @value = 'External reference for (Entity) Person', 
    @level0type = N'SCHEMA',   @level0name = N'Clinical', 
    @level1type = N'TABLE',    @level1name = N'Medication',
    @level2type = N'COLUMN',   @level2name = 'Subject_ID'

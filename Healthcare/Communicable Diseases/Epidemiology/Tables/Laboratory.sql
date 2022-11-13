@@ -12,7 +12,6 @@
 
    -- external reference
    [Organization_ID]        VARCHAR(40) NULL,
-   [Activity_ID]            VARCHAR (40) NULL,
 
    -- record management
    [Tenant_ID]              VARCHAR(40) NULL DEFAULT 'COMMON',
@@ -31,6 +30,13 @@
    CONSTRAINT [fk_Laboatory_Type] FOREIGN KEY ([Type_ID])
       REFERENCES [Epidemiology].[Lab_Type] ([Type_ID])
 )
+GO
+
+EXECUTE sp_addextendedproperty 
+   @name = N'X_Reference', @value = 'External reference to (Entity) Organization',
+   @level0type = N'SCHEMA',   @level0name = N'Epidemiology', 
+   @level1type = N'TABLE',    @level1name = N'Laboratory',
+   @level2type = N'COLUMN',   @level2name = 'Organization_ID';
 GO
 
 EXECUTE sp_addextendedproperty 
