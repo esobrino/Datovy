@@ -1,4 +1,5 @@
 ﻿CREATE FUNCTION [Application].[ID_Number_Generate] (
+   @Tenant_Number  VARCHAR(10),
    @PrefixId       VARCHAR(6),   -- prefix (e.g. SB for submission)
    @SequenceNo     INTEGER)
 RETURNS VARCHAR(30)
