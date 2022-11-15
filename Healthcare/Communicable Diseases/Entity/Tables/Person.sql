@@ -1,35 +1,36 @@
 ﻿CREATE TABLE [Entity].[Person] (
-   [Person_ID]                       VARCHAR(40)  NOT NULL,
-   [Alternate_ID]                    VARCHAR(40)  NULL,
-   [Type_ID]                         VARCHAR(30)  NULL,
+   [Person_ID]                       VARCHAR(40) NOT NULL,
+   [Alternate_ID]                    VARCHAR(40) NULL,
+   [Type_ID]                         VARCHAR(30) NULL,
 
    [Birth_DateTime]                  DATETIMEOFFSET NULL,
    [Birth_Date]                      DATE NULL,
-   [Birth_Date_Text]                 VARCHAR(50)  NULL,
-   [Birth_Location_ID]               VARCHAR(30)  NULL,
+   [Birth_Date_Text]                 VARCHAR(50) NULL,
+   [Birth_Location_ID]               VARCHAR(30) NULL,
    [Birth_Weight]                    INT NULL,
 
-   [Name_Type_ID]                    VARCHAR(30)  NULL,
-   [Name_Given]                      VARCHAR(80)  NULL,
-   [Name_Middle]                     VARCHAR(80)  NULL,
-   [Name_Family]                     VARCHAR(80)  NULL,
-   [Name_Prefix_Code_ID]             VARCHAR(30)  NULL,
-   [Name_Suffix_Code_ID]             VARCHAR(30)  NULL,
+   [Name_Type_ID]                    VARCHAR(30) NULL,
+   [Name_Given]                      VARCHAR(80) NULL,
+   [Name_Middle]                     VARCHAR(80) NULL,
+   [Name_Family]                     VARCHAR(80) NULL,
+   [Name_Prefix_Code_ID]             VARCHAR(30) NULL,
+   [Name_Suffix_Code_ID]             VARCHAR(30) NULL,
    [Name_Full]                       VARCHAR(128) NULL,
 
-   [Sex_Birth_Code_ID]               VARCHAR(30)  NULL,
-   [Sex_Code_ID]                     VARCHAR(30)  NULL,
-   [Gender_Identity_Code_ID]         VARCHAR(30)  NULL,
-   [Sexual_Orientation_Code_ID]      VARCHAR(30)  NULL,
-   [Height]                          INT          NULL,
-   [Height_Unit_Code]                VARCHAR(30)  NULL,
-   [Weight]                          INT          NULL,
-   [Weight_Unit_Code]                VARCHAR(30)  NULL,
-   [Ethnicity_Code_ID]               VARCHAR(30)  NULL,
-   [Race_Code_ID]                    VARCHAR(30)  NULL,
-   [Language_Primary_ID]             VARCHAR(30)  NULL,
-   [Language_Secondary_ID]           VARCHAR(30)  NULL,
-   [Education_Level_Highest_Code_ID] VARCHAR(30)  NULL,
+   [Sex_Birth_Code_ID]               VARCHAR(30) NULL,
+   [Sex_Code_ID]                     VARCHAR(30) NULL,
+   [Gender_Identity_Code_ID]         VARCHAR(30) NULL,
+   [Sexual_Orientation_Code_ID]      VARCHAR(30) NULL,
+   [Height]                          INT         NULL,
+   [Height_Unit_Code_ID]             VARCHAR(30) NULL,
+   [Weight]                          INT         NULL,
+   [Weight_Unit_Code_ID]             VARCHAR(30) NULL,
+   [Ethnicity_Code_ID]               VARCHAR(30) NULL,
+   [Race_Code_ID]                    VARCHAR(30) NULL,
+   [Language_Primary_ID]             VARCHAR(30) NULL,
+   [Language_Secondary_ID]           VARCHAR(30) NULL,
+   [Education_Level_Highest_Code_ID] VARCHAR(30) NULL,
+   [Religion_Code_ID]                VARCHAR(30) NULL,
 
    [Marital_Status_Date]             DATE NULL,
    [Marital_Status_Code_ID]          VARCHAR(30)  NULL,
@@ -68,7 +69,9 @@
    CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID])
       REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID]),
    CONSTRAINT [fk_Person_Marital_Status_Code] FOREIGN KEY ([Marital_Status_Code_ID])
-      REFERENCES [Entity].[Marital_Status_Code] ([Code_ID])
+      REFERENCES [Entity].[Marital_Status_Code] ([Code_ID]),
+   CONSTRAINT [fk_Person_Religion_Code] FOREIGN KEY ([Religion_Code_ID])
+      REFERENCES [Entity].[Religion_Code] ([Code_ID])
 )
 GO
 

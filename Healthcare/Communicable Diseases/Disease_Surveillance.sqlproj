@@ -309,6 +309,7 @@
     <Build Include="Management\Tables\Note.sql" />
     <Build Include="Management\Tables\Note_Type.sql" />
     <Build Include="Epidemiology\Tables\Lab_Report.sql" />
+    <Build Include="Entity\Tables\Religion_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />
