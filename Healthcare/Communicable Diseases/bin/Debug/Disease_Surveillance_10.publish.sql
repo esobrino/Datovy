@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "Disease_Surveillance"
 :setvar DefaultFilePrefix "Disease_Surveillance"
-:setvar DefaultDataPath "C:\Users\esobr\AppData\Local\Microsoft\VisualStudio\SSDT\Datovy"
-:setvar DefaultLogPath "C:\Users\esobr\AppData\Local\Microsoft\VisualStudio\SSDT\Datovy"
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\"
 
 GO
 :on error exit
@@ -36,6 +36,37 @@ IF N'$(__IsSqlCmdEnabled)' NOT LIKE N'True'
 
 
 GO
+USE [master];
+
+
+GO
+
+IF (DB_ID(N'$(DatabaseName)') IS NOT NULL) 
+BEGIN
+    ALTER DATABASE [$(DatabaseName)]
+    SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE [$(DatabaseName)];
+END
+
+GO
+PRINT N'Creating database $(DatabaseName)...'
+GO
+CREATE DATABASE [$(DatabaseName)]
+    ON 
+    PRIMARY(NAME = [$(DatabaseName)], FILENAME = N'$(DefaultDataPath)$(DefaultFilePrefix)_Primary.mdf')
+    LOG ON (NAME = [$(DatabaseName)_log], FILENAME = N'$(DefaultLogPath)$(DefaultFilePrefix)_Primary.ldf') COLLATE SQL_Latin1_General_CP1_CI_AS
+GO
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET AUTO_CLOSE OFF 
+            WITH ROLLBACK IMMEDIATE;
+    END
+
+
+GO
 USE [$(DatabaseName)];
 
 
@@ -45,9 +76,21 @@ IF EXISTS (SELECT 1
            WHERE  [name] = N'$(DatabaseName)')
     BEGIN
         ALTER DATABASE [$(DatabaseName)]
-            SET ARITHABORT ON,
+            SET ANSI_NULLS ON,
+                ANSI_PADDING ON,
+                ANSI_WARNINGS ON,
+                ARITHABORT ON,
                 CONCAT_NULL_YIELDS_NULL ON,
-                CURSOR_DEFAULT LOCAL 
+                NUMERIC_ROUNDABORT OFF,
+                QUOTED_IDENTIFIER ON,
+                ANSI_NULL_DEFAULT ON,
+                CURSOR_DEFAULT LOCAL,
+                RECOVERY FULL,
+                CURSOR_CLOSE_ON_COMMIT OFF,
+                AUTO_CREATE_STATISTICS ON,
+                AUTO_SHRINK OFF,
+                AUTO_UPDATE_STATISTICS ON,
+                RECURSIVE_TRIGGERS OFF 
             WITH ROLLBACK IMMEDIATE;
     END
 
@@ -58,9 +101,71 @@ IF EXISTS (SELECT 1
            WHERE  [name] = N'$(DatabaseName)')
     BEGIN
         ALTER DATABASE [$(DatabaseName)]
-            SET PAGE_VERIFY NONE,
-                DISABLE_BROKER 
+            SET ALLOW_SNAPSHOT_ISOLATION OFF;
+    END
+
+
+GO
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET READ_COMMITTED_SNAPSHOT OFF 
             WITH ROLLBACK IMMEDIATE;
+    END
+
+
+GO
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET AUTO_UPDATE_STATISTICS_ASYNC OFF,
+                PAGE_VERIFY NONE,
+                DATE_CORRELATION_OPTIMIZATION OFF,
+                DISABLE_BROKER,
+                PARAMETERIZATION SIMPLE,
+                SUPPLEMENTAL_LOGGING OFF 
+            WITH ROLLBACK IMMEDIATE;
+    END
+
+
+GO
+IF IS_SRVROLEMEMBER(N'sysadmin') = 1
+    BEGIN
+        IF EXISTS (SELECT 1
+                   FROM   [master].[dbo].[sysdatabases]
+                   WHERE  [name] = N'$(DatabaseName)')
+            BEGIN
+                EXECUTE sp_executesql N'ALTER DATABASE [$(DatabaseName)]
+    SET TRUSTWORTHY OFF,
+        DB_CHAINING OFF 
+    WITH ROLLBACK IMMEDIATE';
+            END
+    END
+ELSE
+    BEGIN
+        PRINT N'The database settings cannot be modified. You must be a SysAdmin to apply these settings.';
+    END
+
+
+GO
+IF IS_SRVROLEMEMBER(N'sysadmin') = 1
+    BEGIN
+        IF EXISTS (SELECT 1
+                   FROM   [master].[dbo].[sysdatabases]
+                   WHERE  [name] = N'$(DatabaseName)')
+            BEGIN
+                EXECUTE sp_executesql N'ALTER DATABASE [$(DatabaseName)]
+    SET HONOR_BROKER_PRIORITY OFF 
+    WITH ROLLBACK IMMEDIATE';
+            END
+    END
+ELSE
+    BEGIN
+        PRINT N'The database settings cannot be modified. You must be a SysAdmin to apply these settings.';
     END
 
 
@@ -76,37 +181,77 @@ IF EXISTS (SELECT 1
            WHERE  [name] = N'$(DatabaseName)')
     BEGIN
         ALTER DATABASE [$(DatabaseName)]
-            SET QUERY_STORE (QUERY_CAPTURE_MODE = ALL, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 367), MAX_STORAGE_SIZE_MB = 100) 
+            SET FILESTREAM(NON_TRANSACTED_ACCESS = OFF),
+                CONTAINMENT = NONE 
             WITH ROLLBACK IMMEDIATE;
     END
 
 
 GO
-PRINT N'Rename refactoring operation with key ac04e81c-c46e-4cd4-b34d-f37b32db7e65 is skipped, element [Surveillance].[Assessment_Answer].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET AUTO_CREATE_STATISTICS ON(INCREMENTAL = OFF),
+                MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT = OFF,
+                DELAYED_DURABILITY = DISABLED 
+            WITH ROLLBACK IMMEDIATE;
+    END
 
 
 GO
-PRINT N'Rename refactoring operation with key 665b05d1-73c9-4292-9dd9-603591342b0d is skipped, element [Surveillance].[Assessment_Answer].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET QUERY_STORE (QUERY_CAPTURE_MODE = ALL, DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_PLANS_PER_QUERY = 200, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 367), MAX_STORAGE_SIZE_MB = 100) 
+            WITH ROLLBACK IMMEDIATE;
+    END
 
 
 GO
-PRINT N'Rename refactoring operation with key 8c6859cc-5317-42a7-b05f-8a1958f64d8e is skipped, element [Surveillance].[Assessment_Question].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET QUERY_STORE = OFF 
+            WITH ROLLBACK IMMEDIATE;
+    END
 
 
 GO
-PRINT N'Rename refactoring operation with key abc87f84-dfd7-4cfa-9e4a-6c604194df96 is skipped, element [Surveillance].[Assessment_Question].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
+        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET MAXDOP = PRIMARY;
+        ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
+        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET LEGACY_CARDINALITY_ESTIMATION = PRIMARY;
+        ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
+        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET PARAMETER_SNIFFING = PRIMARY;
+        ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
+        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES = PRIMARY;
+    END
 
 
 GO
-PRINT N'Rename refactoring operation with key febee88b-3be5-4e34-92b9-638ae87dff12 is skipped, element [Surveillance].[Assessment_Questionnaire].[Effective_End_DateTime] (SqlSimpleColumn) will not be renamed to Effective_End_DateTime';
+IF EXISTS (SELECT 1
+           FROM   [master].[dbo].[sysdatabases]
+           WHERE  [name] = N'$(DatabaseName)')
+    BEGIN
+        ALTER DATABASE [$(DatabaseName)]
+            SET TEMPORAL_HISTORY_RETENTION ON 
+            WITH ROLLBACK IMMEDIATE;
+    END
 
 
 GO
-PRINT N'Rename refactoring operation with key 17294624-e7ed-43c4-a0be-c751becbc995 is skipped, element [Surveillance].[Assessment_Questionnaire].[Effective_DateTime] (SqlSimpleColumn) will not be renamed to Effective_DateTime';
-
-
-GO
-PRINT N'Rename refactoring operation with key ece3d268-c5fd-4067-8d41-09647bd2b527 is skipped, element [Generic].[Element_Group].[Type_ID] (SqlSimpleColumn) will not be renamed to Group_ID';
+IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
+    EXECUTE sp_fulltext_database 'enable';
 
 
 GO
@@ -21760,7 +21905,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Media_Type]...';
 
 
 GO
-ALTER TABLE [Action].[Media] WITH NOCHECK
+ALTER TABLE [Action].[Media]
     ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Media_Type] ([Type_ID]);
 
 
@@ -21769,7 +21914,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Media_Activity]...';
 
 
 GO
-ALTER TABLE [Action].[Media] WITH NOCHECK
+ALTER TABLE [Action].[Media]
     ADD CONSTRAINT [fk_Media_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
 
 
@@ -21778,7 +21923,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Media_Event]...';
 
 
 GO
-ALTER TABLE [Action].[Media] WITH NOCHECK
+ALTER TABLE [Action].[Media]
     ADD CONSTRAINT [fk_Media_Event] FOREIGN KEY ([Event_ID]) REFERENCES [Action].[Event] ([Event_ID]);
 
 
@@ -21787,7 +21932,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Party_Activity]...';
 
 
 GO
-ALTER TABLE [Action].[Party] WITH NOCHECK
+ALTER TABLE [Action].[Party]
     ADD CONSTRAINT [fk_Party_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
 
 
@@ -21796,7 +21941,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Party_Type]...';
 
 
 GO
-ALTER TABLE [Action].[Party] WITH NOCHECK
+ALTER TABLE [Action].[Party]
     ADD CONSTRAINT [fk_Party_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Party_Type] ([Code_ID]);
 
 
@@ -21805,7 +21950,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Party_Role]...';
 
 
 GO
-ALTER TABLE [Action].[Party] WITH NOCHECK
+ALTER TABLE [Action].[Party]
     ADD CONSTRAINT [fk_Party_Role] FOREIGN KEY ([Role_Code_ID]) REFERENCES [Action].[Role_Code] ([Code_ID]);
 
 
@@ -21814,7 +21959,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Activity_Disposition]...';
 
 
 GO
-ALTER TABLE [Action].[Activity] WITH NOCHECK
+ALTER TABLE [Action].[Activity]
     ADD CONSTRAINT [fk_Activity_Disposition] FOREIGN KEY ([Disposition_ID]) REFERENCES [Action].[Disposition] ([Disposition_ID]);
 
 
@@ -21823,7 +21968,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Activity_Priority_Code]...';
 
 
 GO
-ALTER TABLE [Action].[Activity] WITH NOCHECK
+ALTER TABLE [Action].[Activity]
     ADD CONSTRAINT [fk_Activity_Priority_Code] FOREIGN KEY ([Priority_Code_ID]) REFERENCES [Action].[Priority_Code] ([Code_ID]);
 
 
@@ -21832,7 +21977,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Activity_Reason_Code]...';
 
 
 GO
-ALTER TABLE [Action].[Activity] WITH NOCHECK
+ALTER TABLE [Action].[Activity]
     ADD CONSTRAINT [fk_Activity_Reason_Code] FOREIGN KEY ([Reason_Code_ID]) REFERENCES [Action].[Reason_Code] ([Code_ID]);
 
 
@@ -21841,7 +21986,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Activity_Type]...';
 
 
 GO
-ALTER TABLE [Action].[Activity] WITH NOCHECK
+ALTER TABLE [Action].[Activity]
     ADD CONSTRAINT [fk_Activity_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Activity_Type] ([Type_ID]);
 
 
@@ -21850,7 +21995,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Schedule_Event]...';
 
 
 GO
-ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+ALTER TABLE [Action].[Schedule_Event]
     ADD CONSTRAINT [fk_Schedule_Event] FOREIGN KEY ([Type_ID]) REFERENCES [Action].[Activity_Type] ([Type_ID]);
 
 
@@ -21859,7 +22004,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Event_Disposition]...';
 
 
 GO
-ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+ALTER TABLE [Action].[Schedule_Event]
     ADD CONSTRAINT [fk_Event_Disposition] FOREIGN KEY ([Disposition_ID]) REFERENCES [Action].[Disposition] ([Disposition_ID]);
 
 
@@ -21868,7 +22013,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Event_Priority_Code]...';
 
 
 GO
-ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+ALTER TABLE [Action].[Schedule_Event]
     ADD CONSTRAINT [fk_Event_Priority_Code] FOREIGN KEY ([Priority_Code_ID]) REFERENCES [Action].[Priority_Code] ([Code_ID]);
 
 
@@ -21877,7 +22022,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Event_Reason_Code]...';
 
 
 GO
-ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+ALTER TABLE [Action].[Schedule_Event]
     ADD CONSTRAINT [fk_Event_Reason_Code] FOREIGN KEY ([Reason_Code_ID]) REFERENCES [Action].[Reason_Code] ([Code_ID]);
 
 
@@ -21886,7 +22031,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Schedule_Activity]...';
 
 
 GO
-ALTER TABLE [Action].[Schedule_Event] WITH NOCHECK
+ALTER TABLE [Action].[Schedule_Event]
     ADD CONSTRAINT [fk_Schedule_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
 
 
@@ -21895,7 +22040,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Note_Type]...';
 
 
 GO
-ALTER TABLE [Action].[Note] WITH NOCHECK
+ALTER TABLE [Action].[Note]
     ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Action].[Note_Type] ([Type_ID]);
 
 
@@ -21904,7 +22049,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Note_Activity]...';
 
 
 GO
-ALTER TABLE [Action].[Note] WITH NOCHECK
+ALTER TABLE [Action].[Note]
     ADD CONSTRAINT [fk_Note_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
 
 
@@ -21913,7 +22058,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Note_Event]...';
 
 
 GO
-ALTER TABLE [Action].[Note] WITH NOCHECK
+ALTER TABLE [Action].[Note]
     ADD CONSTRAINT [fk_Note_Event] FOREIGN KEY ([Event_ID]) REFERENCES [Action].[Event] ([Event_ID]);
 
 
@@ -21922,7 +22067,7 @@ PRINT N'Creating Foreign Key [Action].[fk_Event_Activity]...';
 
 
 GO
-ALTER TABLE [Action].[Event] WITH NOCHECK
+ALTER TABLE [Action].[Event]
     ADD CONSTRAINT [fk_Event_Activity] FOREIGN KEY ([Activity_ID]) REFERENCES [Action].[Activity] ([Activity_ID]);
 
 
@@ -21931,7 +22076,7 @@ PRINT N'Creating Foreign Key [Application].[fk_Application_Case]...';
 
 
 GO
-ALTER TABLE [Application].[Session] WITH NOCHECK
+ALTER TABLE [Application].[Session]
     ADD CONSTRAINT [fk_Application_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -21940,7 +22085,7 @@ PRINT N'Creating Foreign Key [Application].[fk_Application_Referral]...';
 
 
 GO
-ALTER TABLE [Application].[Session] WITH NOCHECK
+ALTER TABLE [Application].[Session]
     ADD CONSTRAINT [fk_Application_Referral] FOREIGN KEY ([Referral_ID]) REFERENCES [Management].[Referral] ([Referral_ID]);
 
 
@@ -21949,7 +22094,7 @@ PRINT N'Creating Foreign Key [Application].[fk_Application_Contact]...';
 
 
 GO
-ALTER TABLE [Application].[Session] WITH NOCHECK
+ALTER TABLE [Application].[Session]
     ADD CONSTRAINT [fk_Application_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -21958,7 +22103,7 @@ PRINT N'Creating Foreign Key [Application].[fk_AccessToken_Session]...';
 
 
 GO
-ALTER TABLE [Application].[Session] WITH NOCHECK
+ALTER TABLE [Application].[Session]
     ADD CONSTRAINT [fk_AccessToken_Session] FOREIGN KEY ([Token_ID]) REFERENCES [Application].[Access_Token] ([Token_ID]);
 
 
@@ -21967,7 +22112,7 @@ PRINT N'Creating Foreign Key [Article].[fk_Item_Type]...';
 
 
 GO
-ALTER TABLE [Article].[Item] WITH NOCHECK
+ALTER TABLE [Article].[Item]
     ADD CONSTRAINT [fk_Item_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Article].[Item_Type] ([Type_ID]);
 
 
@@ -21976,7 +22121,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Medication_DosageForm]...';
 
 
 GO
-ALTER TABLE [Clinical].[Medication] WITH NOCHECK
+ALTER TABLE [Clinical].[Medication]
     ADD CONSTRAINT [fk_Medication_DosageForm] FOREIGN KEY ([Dose_Form_Code_ID]) REFERENCES [Clinical].[Dosage_Form_Code] ([Code_ID]);
 
 
@@ -21985,7 +22130,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Infant_Report]...';
 
 
 GO
-ALTER TABLE [Clinical].[Infant_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Infant_Report]
     ADD CONSTRAINT [fk_Infant_Report] FOREIGN KEY ([Birth_Status_Code_ID]) REFERENCES [Clinical].[Birth_Status_Code] ([Code_ID]);
 
 
@@ -21994,7 +22139,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Symptom_Sign_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Symptom_Sign] WITH NOCHECK
+ALTER TABLE [Clinical].[Symptom_Sign]
     ADD CONSTRAINT [fk_Symptom_Sign_Code] FOREIGN KEY ([Sign_Code_ID]) REFERENCES [Clinical].[Symptom_Sign_Code] ([Code_ID]);
 
 
@@ -22003,7 +22148,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Symptom_Sign_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Symptom_Sign] WITH NOCHECK
+ALTER TABLE [Clinical].[Symptom_Sign]
     ADD CONSTRAINT [fk_Symptom_Sign_Flag] FOREIGN KEY ([Sign_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22012,7 +22157,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Maternal_Report_Prenatal_Visit_Flag]
 
 
 GO
-ALTER TABLE [Clinical].[Maternal_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Maternal_Report]
     ADD CONSTRAINT [fk_Maternal_Report_Prenatal_Visit_Flag] FOREIGN KEY ([Prenatal_Visit_Flag]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22021,7 +22166,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Maternal_Report_Prenatal_Trimester].
 
 
 GO
-ALTER TABLE [Clinical].[Maternal_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Maternal_Report]
     ADD CONSTRAINT [fk_Maternal_Report_Prenatal_Trimester] FOREIGN KEY ([Prenatal_Trimester_Code_ID]) REFERENCES [Clinical].[Pregnancy_Trimester_Code] ([Code_ID]);
 
 
@@ -22030,7 +22175,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Donor_Implicated_F
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Donor_Implicated_Flag] FOREIGN KEY ([Donor_Implicated_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22039,7 +22184,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Donor_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Donor_Flag] FOREIGN KEY ([Donor_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22048,7 +22193,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Organ_Transplant_F
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Organ_Transplant_Flag] FOREIGN KEY ([Organ_Transplant_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22057,7 +22202,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Transfusion_Associ
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Transfusion_Associated_Flag] FOREIGN KEY ([Transfusion_Associated_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22066,7 +22211,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Donated_Product]..
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Donated_Product] FOREIGN KEY ([Donated_Product_Code_ID]) REFERENCES [Clinical].[Blood_Product_Code] ([Code_ID]);
 
 
@@ -22075,7 +22220,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Blood_Transfusion_Transfused_Product
 
 
 GO
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Blood_Transfusion_Report]
     ADD CONSTRAINT [fk_Blood_Transfusion_Transfused_Product] FOREIGN KEY ([Transfused_Product_Code_ID]) REFERENCES [Clinical].[Blood_Product_Code] ([Code_ID]);
 
 
@@ -22084,7 +22229,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Vitals_BodyPositionCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Vitals] WITH NOCHECK
+ALTER TABLE [Clinical].[Vitals]
     ADD CONSTRAINT [fk_Vitals_BodyPositionCode] FOREIGN KEY ([Body_Position_Code_ID]) REFERENCES [Clinical].[Body_Position_Code] ([Code_ID]);
 
 
@@ -22093,7 +22238,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Vitals_BodySiteCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Vitals] WITH NOCHECK
+ALTER TABLE [Clinical].[Vitals]
     ADD CONSTRAINT [fk_Vitals_BodySiteCode] FOREIGN KEY ([Body_Site_Code_ID]) REFERENCES [Clinical].[Body_Site_Code] ([Code_ID]);
 
 
@@ -22102,7 +22247,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Vitals_DeviceCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Vitals] WITH NOCHECK
+ALTER TABLE [Clinical].[Vitals]
     ADD CONSTRAINT [fk_Vitals_DeviceCode] FOREIGN KEY ([Device_Code_ID]) REFERENCES [Clinical].[Device_Code] ([Code_ID]);
 
 
@@ -22111,7 +22256,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Vitals_UnitCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Vitals] WITH NOCHECK
+ALTER TABLE [Clinical].[Vitals]
     ADD CONSTRAINT [fk_Vitals_UnitCode] FOREIGN KEY ([Unit_Code_ID]) REFERENCES [Clinical].[Unit_Code] ([Code_ID]);
 
 
@@ -22120,7 +22265,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_BodyPositionCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_BodyPositionCode] FOREIGN KEY ([Body_Position_Code_ID]) REFERENCES [Clinical].[Body_Position_Code] ([Code_ID]);
 
 
@@ -22129,7 +22274,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_BodySiteCode]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_BodySiteCode] FOREIGN KEY ([Body_Site_Code_ID]) REFERENCES [Clinical].[Body_Site_Code] ([Code_ID]);
 
 
@@ -22138,7 +22283,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_Disease_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_Disease_Code] FOREIGN KEY ([Disease_Code_ID]) REFERENCES [Clinical].[Disease_Condition_Code] ([Code_ID]);
 
 
@@ -22147,7 +22292,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_Jurisdiction]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_Jurisdiction] FOREIGN KEY ([Acquired_Jurisdiction_Code_ID]) REFERENCES [Clinical].[Jurisdiction_Code] ([Code_ID]);
 
 
@@ -22156,7 +22301,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_Stage_Clinical]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_Stage_Clinical] FOREIGN KEY ([Stage_Clinical_Code_ID]) REFERENCES [Clinical].[Stage_Code] ([Code_ID]);
 
 
@@ -22165,7 +22310,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_Stage_Surveillance]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_Stage_Surveillance] FOREIGN KEY ([Stage_Surveillance_Code_ID]) REFERENCES [Clinical].[Stage_Code] ([Code_ID]);
 
 
@@ -22174,7 +22319,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Condition_Duration_Unit]...';
 
 
 GO
-ALTER TABLE [Clinical].[Condition] WITH NOCHECK
+ALTER TABLE [Clinical].[Condition]
     ADD CONSTRAINT [fk_Condition_Duration_Unit] FOREIGN KEY ([Duration_Unit_Code_ID]) REFERENCES [Clinical].[Unit_Code] ([Code_ID]);
 
 
@@ -22183,7 +22328,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Immunization_Vaccine_Type]...';
 
 
 GO
-ALTER TABLE [Clinical].[Immunization] WITH NOCHECK
+ALTER TABLE [Clinical].[Immunization]
     ADD CONSTRAINT [fk_Immunization_Vaccine_Type] FOREIGN KEY ([Vaccine_Type_ID]) REFERENCES [Clinical].[Vaccine_Type] ([Type_ID]);
 
 
@@ -22192,7 +22337,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Immunization_Vaccine_Manufacturer_Co
 
 
 GO
-ALTER TABLE [Clinical].[Immunization] WITH NOCHECK
+ALTER TABLE [Clinical].[Immunization]
     ADD CONSTRAINT [fk_Immunization_Vaccine_Manufacturer_Code] FOREIGN KEY ([Vaccine_Manufacturer_Code_ID]) REFERENCES [Clinical].[Vaccine_Manufacturer_Code] ([Code_ID]);
 
 
@@ -22201,7 +22346,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Immunization_Vaccine_Event_Source_Co
 
 
 GO
-ALTER TABLE [Clinical].[Immunization] WITH NOCHECK
+ALTER TABLE [Clinical].[Immunization]
     ADD CONSTRAINT [fk_Immunization_Vaccine_Event_Source_Code] FOREIGN KEY ([Vaccine_Event_Source_Code_ID]) REFERENCES [Clinical].[Vaccine_Event_Source_Code] ([Code_ID]);
 
 
@@ -22210,7 +22355,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Immunization_Vaccine_Reason_Not_Give
 
 
 GO
-ALTER TABLE [Clinical].[Immunization] WITH NOCHECK
+ALTER TABLE [Clinical].[Immunization]
     ADD CONSTRAINT [fk_Immunization_Vaccine_Reason_Not_Given_Code] FOREIGN KEY ([Reason_Not_Give_Code_ID]) REFERENCES [Clinical].[Vaccine_Reason_Not_Given_Code] ([Code_ID]);
 
 
@@ -22219,7 +22364,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Immunization_Vaccinated_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Immunization] WITH NOCHECK
+ALTER TABLE [Clinical].[Immunization]
     ADD CONSTRAINT [fk_Immunization_Vaccinated_Flag] FOREIGN KEY ([Vaccinated_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22228,7 +22373,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Finding_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Finding] WITH NOCHECK
+ALTER TABLE [Clinical].[Finding]
     ADD CONSTRAINT [fk_Finding_Code] FOREIGN KEY ([Finding_Code_ID]) REFERENCES [Clinical].[Finding_Code] ([Code_ID]);
 
 
@@ -22237,7 +22382,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Finding_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Finding] WITH NOCHECK
+ALTER TABLE [Clinical].[Finding]
     ADD CONSTRAINT [fk_Finding_Flag] FOREIGN KEY ([Finding_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22246,7 +22391,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Risk_Factor_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Risk_Factor] WITH NOCHECK
+ALTER TABLE [Clinical].[Risk_Factor]
     ADD CONSTRAINT [fk_Risk_Factor_Code] FOREIGN KEY ([Factor_Code_ID]) REFERENCES [Clinical].[Risk_Factor_Code] ([Code_ID]);
 
 
@@ -22255,7 +22400,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Risk_Factor_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Risk_Factor] WITH NOCHECK
+ALTER TABLE [Clinical].[Risk_Factor]
     ADD CONSTRAINT [fk_Risk_Factor_Flag] FOREIGN KEY ([Factor_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22264,7 +22409,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Complication_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Complication] WITH NOCHECK
+ALTER TABLE [Clinical].[Complication]
     ADD CONSTRAINT [fk_Complication_Code] FOREIGN KEY ([Complication_Code_ID]) REFERENCES [Clinical].[Complication_Code] ([Code_ID]);
 
 
@@ -22273,7 +22418,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Complication_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Complication] WITH NOCHECK
+ALTER TABLE [Clinical].[Complication]
     ADD CONSTRAINT [fk_Complication_Flag] FOREIGN KEY ([Complication_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22282,7 +22427,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Manifestation_Report_Code]...';
 
 
 GO
-ALTER TABLE [Clinical].[Manifestation_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Manifestation_Report]
     ADD CONSTRAINT [fk_Manifestation_Report_Code] FOREIGN KEY ([Manifestation_Flag_ID]) REFERENCES [Clinical].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22291,7 +22436,7 @@ PRINT N'Creating Foreign Key [Clinical].[fk_Manifestation_Report_Flag]...';
 
 
 GO
-ALTER TABLE [Clinical].[Manifestation_Report] WITH NOCHECK
+ALTER TABLE [Clinical].[Manifestation_Report]
     ADD CONSTRAINT [fk_Manifestation_Report_Flag] FOREIGN KEY ([Manifestation_Code_ID]) REFERENCES [Clinical].[Manifestation_Code] ([Code_ID]);
 
 
@@ -22300,7 +22445,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact] WITH NOCHECK
+ALTER TABLE [Entity].[Contact]
     ADD CONSTRAINT [fk_Contact_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22309,7 +22454,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact] WITH NOCHECK
+ALTER TABLE [Entity].[Contact]
     ADD CONSTRAINT [fk_Contact_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22318,7 +22463,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact] WITH NOCHECK
+ALTER TABLE [Entity].[Contact]
     ADD CONSTRAINT [fk_Contact_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22327,7 +22472,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_ContactType]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact] WITH NOCHECK
+ALTER TABLE [Entity].[Contact]
     ADD CONSTRAINT [fk_Contact_ContactType] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Contact_Type] ([Type_ID]);
 
 
@@ -22336,7 +22481,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Death]...';
 
 
 GO
-ALTER TABLE [Entity].[Person_Death] WITH NOCHECK
+ALTER TABLE [Entity].[Person_Death]
     ADD CONSTRAINT [fk_Person_Death] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22345,7 +22490,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Flag_FlagCode]...';
 
 
 GO
-ALTER TABLE [Entity].[Person_Flag] WITH NOCHECK
+ALTER TABLE [Entity].[Person_Flag]
     ADD CONSTRAINT [fk_Person_Flag_FlagCode] FOREIGN KEY ([Code_ID]) REFERENCES [Entity].[Flag_Code] ([Code_ID]);
 
 
@@ -22354,7 +22499,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Flag_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Person_Flag] WITH NOCHECK
+ALTER TABLE [Entity].[Person_Flag]
     ADD CONSTRAINT [fk_Person_Flag_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22363,7 +22508,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Location_Link_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Location_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Location_Link]
     ADD CONSTRAINT [fk_Location_Link_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22372,7 +22517,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Location_Link_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Location_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Location_Link]
     ADD CONSTRAINT [fk_Location_Link_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22381,7 +22526,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Location_Link_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Location_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Location_Link]
     ADD CONSTRAINT [fk_Location_Link_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22390,7 +22535,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Location_Link_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Location_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Location_Link]
     ADD CONSTRAINT [fk_Location_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22399,7 +22544,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Identification_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Identification] WITH NOCHECK
+ALTER TABLE [Entity].[Identification]
     ADD CONSTRAINT [fk_Identification_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22408,7 +22553,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Identification_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Identification] WITH NOCHECK
+ALTER TABLE [Entity].[Identification]
     ADD CONSTRAINT [fk_Identification_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22417,7 +22562,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Identification_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Identification] WITH NOCHECK
+ALTER TABLE [Entity].[Identification]
     ADD CONSTRAINT [fk_Identification_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22426,7 +22571,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Identification_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Identification] WITH NOCHECK
+ALTER TABLE [Entity].[Identification]
     ADD CONSTRAINT [fk_Identification_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22435,7 +22580,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Communication_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Communication] WITH NOCHECK
+ALTER TABLE [Entity].[Communication]
     ADD CONSTRAINT [fk_Communication_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22444,7 +22589,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Communication_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Communication] WITH NOCHECK
+ALTER TABLE [Entity].[Communication]
     ADD CONSTRAINT [fk_Communication_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22453,7 +22598,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Communication_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Communication] WITH NOCHECK
+ALTER TABLE [Entity].[Communication]
     ADD CONSTRAINT [fk_Communication_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22462,7 +22607,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Communication_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Communication] WITH NOCHECK
+ALTER TABLE [Entity].[Communication]
     ADD CONSTRAINT [fk_Communication_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22471,7 +22616,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Officer_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Officer] WITH NOCHECK
+ALTER TABLE [Entity].[Officer]
     ADD CONSTRAINT [fk_Officer_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Officer_Type] ([Type_ID]);
 
 
@@ -22480,7 +22625,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Officer_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Officer] WITH NOCHECK
+ALTER TABLE [Entity].[Officer]
     ADD CONSTRAINT [fk_Officer_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22489,7 +22634,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Officer_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Officer] WITH NOCHECK
+ALTER TABLE [Entity].[Officer]
     ADD CONSTRAINT [fk_Officer_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22498,7 +22643,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Officer_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Officer] WITH NOCHECK
+ALTER TABLE [Entity].[Officer]
     ADD CONSTRAINT [fk_Officer_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22507,7 +22652,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Emergency_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact_Emergency] WITH NOCHECK
+ALTER TABLE [Entity].[Contact_Emergency]
     ADD CONSTRAINT [fk_Contact_Emergency_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Contact_Type] ([Type_ID]);
 
 
@@ -22516,7 +22661,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Contact_Emergency_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Contact_Emergency] WITH NOCHECK
+ALTER TABLE [Entity].[Contact_Emergency]
     ADD CONSTRAINT [fk_Contact_Emergency_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22525,7 +22670,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Employment_Employer]...';
 
 
 GO
-ALTER TABLE [Entity].[Employment] WITH NOCHECK
+ALTER TABLE [Entity].[Employment]
     ADD CONSTRAINT [fk_Employment_Employer] FOREIGN KEY ([Employer_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22534,7 +22679,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Employment_Employee]...';
 
 
 GO
-ALTER TABLE [Entity].[Employment] WITH NOCHECK
+ALTER TABLE [Entity].[Employment]
     ADD CONSTRAINT [fk_Employment_Employee] FOREIGN KEY ([Employee_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22543,7 +22688,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Employment_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Employment] WITH NOCHECK
+ALTER TABLE [Entity].[Employment]
     ADD CONSTRAINT [fk_Employment_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Employment_Type] ([Type_ID]);
 
 
@@ -22552,7 +22697,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Employment_Industry_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Employment] WITH NOCHECK
+ALTER TABLE [Entity].[Employment]
     ADD CONSTRAINT [fk_Employment_Industry_Code] FOREIGN KEY ([Industry_Code_ID]) REFERENCES [Entity].[Industry_Code] ([Code_ID]);
 
 
@@ -22561,7 +22706,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Employment_Occupation_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Employment] WITH NOCHECK
+ALTER TABLE [Entity].[Employment]
     ADD CONSTRAINT [fk_Employment_Occupation_Code] FOREIGN KEY ([Occupation_Code_ID]) REFERENCES [Entity].[Occupation_Code] ([Code_ID]);
 
 
@@ -22570,7 +22715,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Name_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Name] WITH NOCHECK
+ALTER TABLE [Entity].[Name]
     ADD CONSTRAINT [fk_Name_Type] FOREIGN KEY ([Name_Type_ID]) REFERENCES [Entity].[Name_Type] ([Type_ID]);
 
 
@@ -22579,7 +22724,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Note_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Note] WITH NOCHECK
+ALTER TABLE [Entity].[Note]
     ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Entity].[Note_Type] ([Type_ID]);
 
 
@@ -22588,7 +22733,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Note_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Note] WITH NOCHECK
+ALTER TABLE [Entity].[Note]
     ADD CONSTRAINT [fk_Note_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22597,7 +22742,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Note_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Note] WITH NOCHECK
+ALTER TABLE [Entity].[Note]
     ADD CONSTRAINT [fk_Note_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22606,7 +22751,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Note_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Note] WITH NOCHECK
+ALTER TABLE [Entity].[Note]
     ADD CONSTRAINT [fk_Note_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22615,7 +22760,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Note_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Note] WITH NOCHECK
+ALTER TABLE [Entity].[Note]
     ADD CONSTRAINT [fk_Note_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22624,7 +22769,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Media_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Media] WITH NOCHECK
+ALTER TABLE [Entity].[Media]
     ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Media_Type] ([Type_ID]);
 
 
@@ -22633,7 +22778,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Media_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Media] WITH NOCHECK
+ALTER TABLE [Entity].[Media]
     ADD CONSTRAINT [fk_Media_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22642,7 +22787,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Media_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Media] WITH NOCHECK
+ALTER TABLE [Entity].[Media]
     ADD CONSTRAINT [fk_Media_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22651,7 +22796,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Media_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Media] WITH NOCHECK
+ALTER TABLE [Entity].[Media]
     ADD CONSTRAINT [fk_Media_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22660,7 +22805,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Media_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Media] WITH NOCHECK
+ALTER TABLE [Entity].[Media]
     ADD CONSTRAINT [fk_Media_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22669,7 +22814,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Item_Link]
     ADD CONSTRAINT [fk_Item_Reference_Link_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22678,7 +22823,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Item_Link]
     ADD CONSTRAINT [fk_Item_Reference_Link_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22687,7 +22832,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Item_Link]
     ADD CONSTRAINT [fk_Item_Reference_Link_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22696,7 +22841,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Item_Reference_Link_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Item_Link] WITH NOCHECK
+ALTER TABLE [Entity].[Item_Link]
     ADD CONSTRAINT [fk_Item_Reference_Link_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22705,7 +22850,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Uri_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Uri] WITH NOCHECK
+ALTER TABLE [Entity].[Uri]
     ADD CONSTRAINT [fk_Uri_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Uri_Type] ([Type_ID]);
 
 
@@ -22714,7 +22859,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Uri_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Uri] WITH NOCHECK
+ALTER TABLE [Entity].[Uri]
     ADD CONSTRAINT [fk_Uri_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22723,7 +22868,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Uri_Organization]...';
 
 
 GO
-ALTER TABLE [Entity].[Uri] WITH NOCHECK
+ALTER TABLE [Entity].[Uri]
     ADD CONSTRAINT [fk_Uri_Organization] FOREIGN KEY ([Organization_ID]) REFERENCES [Entity].[Organization] ([Organization_ID]);
 
 
@@ -22732,7 +22877,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Uri_Officer]...';
 
 
 GO
-ALTER TABLE [Entity].[Uri] WITH NOCHECK
+ALTER TABLE [Entity].[Uri]
     ADD CONSTRAINT [fk_Uri_Officer] FOREIGN KEY ([Officer_ID]) REFERENCES [Entity].[Officer] ([Officer_ID]);
 
 
@@ -22741,7 +22886,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Uri_Contact]...';
 
 
 GO
-ALTER TABLE [Entity].[Uri] WITH NOCHECK
+ALTER TABLE [Entity].[Uri]
     ADD CONSTRAINT [fk_Uri_Contact] FOREIGN KEY ([Contact_ID]) REFERENCES [Entity].[Contact] ([Contact_ID]);
 
 
@@ -22750,7 +22895,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Affiliation_Person]...';
 
 
 GO
-ALTER TABLE [Entity].[Affiliation] WITH NOCHECK
+ALTER TABLE [Entity].[Affiliation]
     ADD CONSTRAINT [fk_Affiliation_Person] FOREIGN KEY ([Person_ID]) REFERENCES [Entity].[Person] ([Person_ID]);
 
 
@@ -22759,7 +22904,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Affiliation_Affiliated_Flag]...';
 
 
 GO
-ALTER TABLE [Entity].[Affiliation] WITH NOCHECK
+ALTER TABLE [Entity].[Affiliation]
     ADD CONSTRAINT [fk_Affiliation_Affiliated_Flag] FOREIGN KEY ([Affiliated_Flag_ID]) REFERENCES [Entity].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22768,7 +22913,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Affiliation_Enrolled_Flag]...';
 
 
 GO
-ALTER TABLE [Entity].[Affiliation] WITH NOCHECK
+ALTER TABLE [Entity].[Affiliation]
     ADD CONSTRAINT [fk_Affiliation_Enrolled_Flag] FOREIGN KEY ([Enrolled_Flag_ID]) REFERENCES [Entity].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -22777,7 +22922,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Entity].[Person_Type] ([Type_ID]);
 
 
@@ -22786,7 +22931,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Name_Type]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Name_Type] FOREIGN KEY ([Name_Type_ID]) REFERENCES [Entity].[Name_Type] ([Type_ID]);
 
 
@@ -22795,7 +22940,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Ethnicity_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Ethnicity_Code] FOREIGN KEY ([Ethnicity_Code_ID]) REFERENCES [Entity].[Ethnicity_Code] ([Code_ID]);
 
 
@@ -22804,7 +22949,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Race_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Race_Code] FOREIGN KEY ([Race_Code_ID]) REFERENCES [Entity].[Race_Code] ([Code_ID]);
 
 
@@ -22813,7 +22958,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Sex_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Sex_Code] FOREIGN KEY ([Sex_Code_ID]) REFERENCES [Entity].[Sex_Code] ([Code_ID]);
 
 
@@ -22822,7 +22967,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Gender_Identity_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Gender_Identity_Code] FOREIGN KEY ([Gender_Identity_Code_ID]) REFERENCES [Entity].[Gender_Identity_Code] ([Code_ID]);
 
 
@@ -22831,7 +22976,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Sexual_Orientation_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Sexual_Orientation_Code] FOREIGN KEY ([Sexual_Orientation_Code_ID]) REFERENCES [Entity].[Sexual_Orientation_Code] ([Code_ID]);
 
 
@@ -22840,7 +22985,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Marital_Status_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Marital_Status_Code] FOREIGN KEY ([Marital_Status_Code_ID]) REFERENCES [Entity].[Marital_Status_Code] ([Code_ID]);
 
 
@@ -22849,7 +22994,7 @@ PRINT N'Creating Foreign Key [Entity].[fk_Person_Religion_Code]...';
 
 
 GO
-ALTER TABLE [Entity].[Person] WITH NOCHECK
+ALTER TABLE [Entity].[Person]
     ADD CONSTRAINT [fk_Person_Religion_Code] FOREIGN KEY ([Religion_Code_ID]) REFERENCES [Entity].[Religion_Code] ([Code_ID]);
 
 
@@ -22858,7 +23003,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Note_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Note] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Note]
     ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Epidemiology].[Note_Type] ([Type_ID]);
 
 
@@ -22867,7 +23012,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Note_Lab_Result]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Note] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Note]
     ADD CONSTRAINT [fk_Note_Lab_Result] FOREIGN KEY ([Lab_Result_ID]) REFERENCES [Epidemiology].[Lab_Result] ([Lab_Result_ID]);
 
 
@@ -22876,7 +23021,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Note_Specimen]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Note] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Note]
     ADD CONSTRAINT [fk_Note_Specimen] FOREIGN KEY ([Specimen_ID]) REFERENCES [Epidemiology].[Specimen] ([Specimen_ID]);
 
 
@@ -22885,7 +23030,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Media_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Media] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Media]
     ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Epidemiology].[Media_Type] ([Type_ID]);
 
 
@@ -22894,7 +23039,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Media_Lab_Result]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Media] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Media]
     ADD CONSTRAINT [fk_Media_Lab_Result] FOREIGN KEY ([Lab_Result_ID]) REFERENCES [Epidemiology].[Lab_Result] ([Lab_Result_ID]);
 
 
@@ -22903,7 +23048,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Media_Specimen]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Media] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Media]
     ADD CONSTRAINT [fk_Media_Specimen] FOREIGN KEY ([Specimen_ID]) REFERENCES [Epidemiology].[Specimen] ([Specimen_ID]);
 
 
@@ -22912,7 +23057,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Result_Laboratory]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Result] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Result]
     ADD CONSTRAINT [fk_Lab_Result_Laboratory] FOREIGN KEY ([Laboratory_ID]) REFERENCES [Epidemiology].[Laboratory] ([Laboratory_ID]);
 
 
@@ -22921,7 +23066,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Result_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Result] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Result]
     ADD CONSTRAINT [fk_Lab_Result_Type] FOREIGN KEY ([Result_Type_ID]) REFERENCES [Epidemiology].[Lab_Result_Type] ([Type_ID]);
 
 
@@ -22930,7 +23075,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Laboatory_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Laboratory] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Laboratory]
     ADD CONSTRAINT [fk_Laboatory_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Epidemiology].[Lab_Type] ([Type_ID]);
 
 
@@ -22939,7 +23084,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Laboratory]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Laboratory] FOREIGN KEY ([Laboratory_ID]) REFERENCES [Epidemiology].[Laboratory] ([Laboratory_ID]);
 
 
@@ -22948,7 +23093,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Specimen_Type]..
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Specimen_Type] FOREIGN KEY ([Specimen_Source_Type_ID]) REFERENCES [Epidemiology].[Specimen_Source_Type] ([Type_ID]);
 
 
@@ -22957,7 +23102,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Test_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Test_Type] FOREIGN KEY ([Test_Type_ID]) REFERENCES [Epidemiology].[Lab_Test_Type] ([Type_ID]);
 
 
@@ -22966,7 +23111,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Test_Interpretat
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Test_Interpretation_Code] FOREIGN KEY ([Test_Interpretation_Code_ID]) REFERENCES [Epidemiology].[Lab_Test_Interpretation_Code] ([Code_ID]);
 
 
@@ -22975,7 +23120,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Test_Result_Unit
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Test_Result_Unit_Code] FOREIGN KEY ([Test_Result_Unit_Code_ID]) REFERENCES [Epidemiology].[Unit_Code] ([Code_ID]);
 
 
@@ -22984,7 +23129,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Test_Report_Lab_Type]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Test_Report]
     ADD CONSTRAINT [fk_Lab_Test_Report_Lab_Type] FOREIGN KEY ([Lab_Type_ID]) REFERENCES [Epidemiology].[Lab_Type] ([Type_ID]);
 
 
@@ -22993,7 +23138,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Link_Lab]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Link] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Link]
     ADD CONSTRAINT [fk_Lab_Link_Lab] FOREIGN KEY ([Laboratory_ID]) REFERENCES [Epidemiology].[Laboratory] ([Laboratory_ID]);
 
 
@@ -23002,7 +23147,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Link_Specimen]...';
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Link] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Link]
     ADD CONSTRAINT [fk_Lab_Link_Specimen] FOREIGN KEY ([Specimen_ID]) REFERENCES [Epidemiology].[Specimen] ([Specimen_ID]);
 
 
@@ -23011,7 +23156,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Report_Testing_Performed_Fla
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Report]
     ADD CONSTRAINT [fk_Lab_Report_Testing_Performed_Flag] FOREIGN KEY ([Testing_Performed_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23020,7 +23165,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Report_Laboratory_Confirmed_
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Report]
     ADD CONSTRAINT [fk_Lab_Report_Laboratory_Confirmed_Flag] FOREIGN KEY ([Lab_Confirmed_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23029,7 +23174,7 @@ PRINT N'Creating Foreign Key [Epidemiology].[fk_Lab_Report_Specimen_Sent_Flag]..
 
 
 GO
-ALTER TABLE [Epidemiology].[Lab_Report] WITH NOCHECK
+ALTER TABLE [Epidemiology].[Lab_Report]
     ADD CONSTRAINT [fk_Lab_Report_Specimen_Sent_Flag] FOREIGN KEY ([Specimen_Sent_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23038,7 +23183,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_Element]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
+ALTER TABLE [Generic].[Element_Value]
     ADD CONSTRAINT [fk_Element_Value_Element] FOREIGN KEY ([Element_ID]) REFERENCES [Generic].[Element] ([Element_ID]);
 
 
@@ -23047,7 +23192,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_ID]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
+ALTER TABLE [Generic].[Element_Value]
     ADD CONSTRAINT [fk_Element_Value_ID] FOREIGN KEY ([Type_ID]) REFERENCES [Generic].[Element_Value_Type] ([Type_ID]);
 
 
@@ -23056,7 +23201,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_Entity]...';
 
 
 GO
-ALTER TABLE [Generic].[Element_Value] WITH NOCHECK
+ALTER TABLE [Generic].[Element_Value]
     ADD CONSTRAINT [fk_Element_Value_Entity] FOREIGN KEY ([Entity_Type_ID]) REFERENCES [Entity].[Entity_Type] ([Type_ID]);
 
 
@@ -23065,7 +23210,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Element_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element] WITH NOCHECK
+ALTER TABLE [Generic].[Element]
     ADD CONSTRAINT [fk_Element_Type] FOREIGN KEY ([Group_ID]) REFERENCES [Generic].[Entity] ([Entity_ID]);
 
 
@@ -23074,7 +23219,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Element_Value_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Element] WITH NOCHECK
+ALTER TABLE [Generic].[Element]
     ADD CONSTRAINT [fk_Element_Value_Type] FOREIGN KEY ([Value_Type_ID]) REFERENCES [Generic].[Element_Value_Type] ([Type_ID]);
 
 
@@ -23083,7 +23228,7 @@ PRINT N'Creating Foreign Key [Generic].[fk_Entity_Type]...';
 
 
 GO
-ALTER TABLE [Generic].[Entity] WITH NOCHECK
+ALTER TABLE [Generic].[Entity]
     ADD CONSTRAINT [fk_Entity_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Generic].[Entity_Type] ([Type_ID]);
 
 
@@ -23092,7 +23237,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Note_Type]...';
 
 
 GO
-ALTER TABLE [Geography].[Note] WITH NOCHECK
+ALTER TABLE [Geography].[Note]
     ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Geography].[Note_Type] ([Type_ID]);
 
 
@@ -23101,7 +23246,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Note_Location]...';
 
 
 GO
-ALTER TABLE [Geography].[Note] WITH NOCHECK
+ALTER TABLE [Geography].[Note]
     ADD CONSTRAINT [fk_Note_Location] FOREIGN KEY ([Location_ID]) REFERENCES [Geography].[Location] ([Location_ID]);
 
 
@@ -23110,7 +23255,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Media_Type]...';
 
 
 GO
-ALTER TABLE [Geography].[Media] WITH NOCHECK
+ALTER TABLE [Geography].[Media]
     ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Geography].[Media_Type] ([Type_ID]);
 
 
@@ -23119,7 +23264,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Media_Location]...';
 
 
 GO
-ALTER TABLE [Geography].[Media] WITH NOCHECK
+ALTER TABLE [Geography].[Media]
     ADD CONSTRAINT [fk_Media_Location] FOREIGN KEY ([Location_ID]) REFERENCES [Geography].[Location] ([Location_ID]);
 
 
@@ -23128,7 +23273,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Location_Type]...';
 
 
 GO
-ALTER TABLE [Geography].[Location] WITH NOCHECK
+ALTER TABLE [Geography].[Location]
     ADD CONSTRAINT [fk_Location_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Geography].[Location_Type] ([Type_ID]);
 
 
@@ -23137,7 +23282,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Location_Address_Line]...';
 
 
 GO
-ALTER TABLE [Geography].[Location] WITH NOCHECK
+ALTER TABLE [Geography].[Location]
     ADD CONSTRAINT [fk_Location_Address_Line] FOREIGN KEY ([Address_Line_ID]) REFERENCES [Geography].[Address_Line] ([Address_Line_ID]);
 
 
@@ -23146,7 +23291,7 @@ PRINT N'Creating Foreign Key [Geography].[fk_Location_Address_Structured]...';
 
 
 GO
-ALTER TABLE [Geography].[Location] WITH NOCHECK
+ALTER TABLE [Geography].[Location]
     ADD CONSTRAINT [fk_Location_Address_Structured] FOREIGN KEY ([Address_Structured_ID]) REFERENCES [Geography].[Address_Structured] ([Address_Structured_ID]);
 
 
@@ -23155,7 +23300,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Referral_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Referral] WITH NOCHECK
+ALTER TABLE [Management].[Referral]
     ADD CONSTRAINT [fk_Referral_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23164,7 +23309,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Referral_ReferralType]...';
 
 
 GO
-ALTER TABLE [Management].[Referral] WITH NOCHECK
+ALTER TABLE [Management].[Referral]
     ADD CONSTRAINT [fk_Referral_ReferralType] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Referral_Type] ([Type_ID]);
 
 
@@ -23173,7 +23318,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Disposition_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Disposition] WITH NOCHECK
+ALTER TABLE [Management].[Disposition]
     ADD CONSTRAINT [fk_Disposition_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23182,7 +23327,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_Case_Disposition]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_Case_Disposition] FOREIGN KEY ([Disposition_ID]) REFERENCES [Management].[Disposition] ([Disposition_ID]);
 
 
@@ -23191,7 +23336,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_CasePriorityCode]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_CasePriorityCode] FOREIGN KEY ([Priority_Code_ID]) REFERENCES [Management].[Priority_Code] ([Code_ID]);
 
 
@@ -23200,7 +23345,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_CaseType]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_CaseType] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Case_Type] ([Type_ID]);
 
 
@@ -23209,7 +23354,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_Class_Status]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_Class_Status] FOREIGN KEY ([Class_Status_Code_ID]) REFERENCES [Management].[Status_Code] ([Code_ID]);
 
 
@@ -23218,7 +23363,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_Class_Probable_Reason]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_Class_Probable_Reason] FOREIGN KEY ([Probable_Reason_Code_ID]) REFERENCES [Management].[Probable_Reason_Code] ([Code_ID]);
 
 
@@ -23227,7 +23372,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Case_Class_Detection_Method]...';
 
 
 GO
-ALTER TABLE [Management].[Case] WITH NOCHECK
+ALTER TABLE [Management].[Case]
     ADD CONSTRAINT [fk_Case_Class_Detection_Method] FOREIGN KEY ([Detection_Method_Code_ID]) REFERENCES [Management].[Detection_Method_Code] ([Code_ID]);
 
 
@@ -23236,7 +23381,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Flag_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Flag] WITH NOCHECK
+ALTER TABLE [Management].[Flag]
     ADD CONSTRAINT [fk_Flag_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23245,7 +23390,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Flag_Code]...';
 
 
 GO
-ALTER TABLE [Management].[Flag] WITH NOCHECK
+ALTER TABLE [Management].[Flag]
     ADD CONSTRAINT [fk_Flag_Code] FOREIGN KEY ([Code_ID]) REFERENCES [Management].[Flag_Code] ([Code_ID]);
 
 
@@ -23254,7 +23399,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Assignment_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Assignment] WITH NOCHECK
+ALTER TABLE [Management].[Assignment]
     ADD CONSTRAINT [fk_Assignment_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23263,7 +23408,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Assignment_Referral]...';
 
 
 GO
-ALTER TABLE [Management].[Assignment] WITH NOCHECK
+ALTER TABLE [Management].[Assignment]
     ADD CONSTRAINT [fk_Assignment_Referral] FOREIGN KEY ([Referral_ID]) REFERENCES [Management].[Referral] ([Referral_ID]);
 
 
@@ -23272,7 +23417,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Assignment_Link]...';
 
 
 GO
-ALTER TABLE [Management].[Assignment_Link] WITH NOCHECK
+ALTER TABLE [Management].[Assignment_Link]
     ADD CONSTRAINT [fk_Assignment_Link] FOREIGN KEY ([Assignment_ID]) REFERENCES [Management].[Assignment] ([Assignment_ID]);
 
 
@@ -23281,7 +23426,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Assignment_Link_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Assignment_Link] WITH NOCHECK
+ALTER TABLE [Management].[Assignment_Link]
     ADD CONSTRAINT [fk_Assignment_Link_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23290,7 +23435,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Request_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Request] WITH NOCHECK
+ALTER TABLE [Management].[Request]
     ADD CONSTRAINT [fk_Request_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23299,7 +23444,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Request_Referral_Type]...';
 
 
 GO
-ALTER TABLE [Management].[Request] WITH NOCHECK
+ALTER TABLE [Management].[Request]
     ADD CONSTRAINT [fk_Request_Referral_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Referral_Type] ([Type_ID]);
 
 
@@ -23308,7 +23453,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Request_Service_Code]...';
 
 
 GO
-ALTER TABLE [Management].[Request] WITH NOCHECK
+ALTER TABLE [Management].[Request]
     ADD CONSTRAINT [fk_Request_Service_Code] FOREIGN KEY ([Service_Code_ID]) REFERENCES [Management].[Service_Code] ([Code_ID]);
 
 
@@ -23317,7 +23462,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Request_Referral]...';
 
 
 GO
-ALTER TABLE [Management].[Request] WITH NOCHECK
+ALTER TABLE [Management].[Request]
     ADD CONSTRAINT [fk_Request_Referral] FOREIGN KEY ([Request_ID]) REFERENCES [Management].[Referral] ([Referral_ID]);
 
 
@@ -23326,7 +23471,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Note_Type]...';
 
 
 GO
-ALTER TABLE [Management].[Note] WITH NOCHECK
+ALTER TABLE [Management].[Note]
     ADD CONSTRAINT [fk_Note_Type] FOREIGN KEY ([Note_Type_ID]) REFERENCES [Geography].[Note_Type] ([Type_ID]);
 
 
@@ -23335,7 +23480,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Note_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Note] WITH NOCHECK
+ALTER TABLE [Management].[Note]
     ADD CONSTRAINT [fk_Note_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23344,7 +23489,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Media_Type]...';
 
 
 GO
-ALTER TABLE [Management].[Media] WITH NOCHECK
+ALTER TABLE [Management].[Media]
     ADD CONSTRAINT [fk_Media_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Management].[Media_Type] ([Type_ID]);
 
 
@@ -23353,7 +23498,7 @@ PRINT N'Creating Foreign Key [Management].[fk_Media_Case]...';
 
 
 GO
-ALTER TABLE [Management].[Media] WITH NOCHECK
+ALTER TABLE [Management].[Media]
     ADD CONSTRAINT [fk_Media_Case] FOREIGN KEY ([Case_ID]) REFERENCES [Management].[Case] ([Case_ID]);
 
 
@@ -23362,7 +23507,7 @@ PRINT N'Creating Foreign Key [Message].[fk_Submission_Content_Type]...';
 
 
 GO
-ALTER TABLE [Message].[Submission] WITH NOCHECK
+ALTER TABLE [Message].[Submission]
     ADD CONSTRAINT [fk_Submission_Content_Type] FOREIGN KEY ([Content_Type_ID]) REFERENCES [Message].[Content_Type] ([Type_ID]);
 
 
@@ -23371,7 +23516,7 @@ PRINT N'Creating Foreign Key [Provider].[fk_Provider_Reference_Code]...';
 
 
 GO
-ALTER TABLE [Provider].[Provider_Reference] WITH NOCHECK
+ALTER TABLE [Provider].[Provider_Reference]
     ADD CONSTRAINT [fk_Provider_Reference_Code] FOREIGN KEY ([Provider_Code_ID]) REFERENCES [Provider].[Provider_Code] ([Code_ID]);
 
 
@@ -23380,7 +23525,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Travel_Purpose_Code]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Travel_Detail] WITH NOCHECK
+ALTER TABLE [Surveillance].[Travel_Detail]
     ADD CONSTRAINT [fk_Travel_Purpose_Code] FOREIGN KEY ([Purpose_Code_ID]) REFERENCES [Surveillance].[Travel_Purpose_Code] ([Code_ID]);
 
 
@@ -23389,7 +23534,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Profile_Condition_Profile_Group]
 
 
 GO
-ALTER TABLE [Surveillance].[Profile_Condition] WITH NOCHECK
+ALTER TABLE [Surveillance].[Profile_Condition]
     ADD CONSTRAINT [fk_Profile_Condition_Profile_Group] FOREIGN KEY ([Profile_ID]) REFERENCES [Surveillance].[Profile] ([Profile_ID]);
 
 
@@ -23398,7 +23543,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Profile_ProfileType]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Profile] WITH NOCHECK
+ALTER TABLE [Surveillance].[Profile]
     ADD CONSTRAINT [fk_Profile_ProfileType] FOREIGN KEY ([Profile_Type_ID]) REFERENCES [Surveillance].[Profile_Type] ([Type_ID]);
 
 
@@ -23407,7 +23552,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Question_AnswerType].
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment_Question] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment_Question]
     ADD CONSTRAINT [fk_Assessment_Question_AnswerType] FOREIGN KEY ([Answer_Type_ID]) REFERENCES [Surveillance].[Answer_Type] ([Type_ID]);
 
 
@@ -23416,7 +23561,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Question_Questionnair
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment_Question] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment_Question]
     ADD CONSTRAINT [fk_Assessment_Question_Questionnaire] FOREIGN KEY ([Questionnaire_ID]) REFERENCES [Surveillance].[Assessment_Questionnaire] ([Questionnaire_ID]);
 
 
@@ -23425,7 +23570,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment]...
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment_Answer] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment_Answer]
     ADD CONSTRAINT [fk_Assessment_Answer_Assessment] FOREIGN KEY ([Assessment_ID]) REFERENCES [Surveillance].[Assessment] ([Assessment_ID]);
 
 
@@ -23434,7 +23579,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Answer_Assessment_Que
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment_Answer] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment_Answer]
     ADD CONSTRAINT [fk_Assessment_Answer_Assessment_Question] FOREIGN KEY ([Question_ID]) REFERENCES [Surveillance].[Assessment_Question] ([Question_ID]);
 
 
@@ -23443,7 +23588,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_AssessmentType]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment]
     ADD CONSTRAINT [fk_Assessment_AssessmentType] FOREIGN KEY ([Type_ID]) REFERENCES [Surveillance].[Assessment_Type] ([Type_ID]);
 
 
@@ -23452,7 +23597,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Assessment_Questionnaire]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Assessment] WITH NOCHECK
+ALTER TABLE [Surveillance].[Assessment]
     ADD CONSTRAINT [fk_Assessment_Questionnaire] FOREIGN KEY ([Questionnaire_ID]) REFERENCES [Surveillance].[Assessment_Questionnaire] ([Questionnaire_ID]);
 
 
@@ -23461,7 +23606,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Type]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Type] FOREIGN KEY ([Type_ID]) REFERENCES [Surveillance].[Report_Type] ([Type_ID]);
 
 
@@ -23470,7 +23615,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Setting]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Setting] FOREIGN KEY ([Exposure_Setting_Code_ID]) REFERENCES [Surveillance].[Exposure_Setting_Code] ([Code_ID]);
 
 
@@ -23479,7 +23624,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Illness_Duration_Uni
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Illness_Duration_Unit_Code] FOREIGN KEY ([Illness_Duration_Unit_Code_ID]) REFERENCES [Surveillance].[Unit_Code] ([Code_ID]);
 
 
@@ -23488,7 +23633,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Pregnancy_Status_Fla
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Pregnancy_Status_Flag] FOREIGN KEY ([Pregnancy_Status_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23497,7 +23642,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Hospitalized_Flag]..
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Hospitalized_Flag] FOREIGN KEY ([Hospitalized_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23506,7 +23651,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Subject_Died_Flag]..
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Subject_Died_Flag] FOREIGN KEY ([Subject_Died_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23515,7 +23660,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Case_Report_Deceased_Source_Code
 
 
 GO
-ALTER TABLE [Surveillance].[Case_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Case_Report]
     ADD CONSTRAINT [fk_Case_Report_Deceased_Source_Code] FOREIGN KEY ([Deceased_Source_Code_ID]) REFERENCES [Surveillance].[Jurisdiction_Code] ([Code_ID]);
 
 
@@ -23524,7 +23669,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Location_Report]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Location_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Location_Report]
     ADD CONSTRAINT [fk_Exposure_Location_Report] FOREIGN KEY ([Case_Report_ID]) REFERENCES [Surveillance].[Case_Report] ([Case_Report_ID]);
 
 
@@ -23533,7 +23678,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Type]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Type] FOREIGN KEY ([Contact_Type_ID]) REFERENCES [Surveillance].[Contact_Type] ([Type_ID]);
 
 
@@ -23542,7 +23687,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Flag]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Flag] FOREIGN KEY ([Contact_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23551,7 +23696,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Type_Othe
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Type_Other_Flag] FOREIGN KEY ([Contact_Type_Other_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23560,7 +23705,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Epidemiol
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Epidemiology_Linked_Flag] FOREIGN KEY ([Epidemiology_Linked_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23569,7 +23714,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Case_Link
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Case_Linked_Flag] FOREIGN KEY ([Case_Linked_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23578,7 +23723,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Child_Car
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Child_Care_Linked_Flag] FOREIGN KEY ([Child_Care_Linked_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23587,7 +23732,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Child_Car
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Child_Care_Case_Flag] FOREIGN KEY ([Child_Care_Case_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23596,7 +23741,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Sexual_Pr
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Sexual_Preference_Code] FOREIGN KEY ([Sexual_Preference_Code_ID]) REFERENCES [Surveillance].[Sexual_Preference_Code] ([Code_ID]);
 
 
@@ -23605,7 +23750,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Drug_User
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Drug_User_Flag] FOREIGN KEY ([Drug_Used_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23614,7 +23759,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Drug_Stre
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Drug_Street_User_Flag] FOREIGN KEY ([Drug_Street_Used_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23623,7 +23768,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Traveled_
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Traveled_Flag] FOREIGN KEY ([Traveled_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23632,7 +23777,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Outbreak_
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Source_Flag] FOREIGN KEY ([Outbreak_Source_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23641,7 +23786,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Outbreak_
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Foodborne_Flag] FOREIGN KEY ([Outbreak_Foodborne_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23650,7 +23795,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Outbreak_
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Waterborne_Flag] FOREIGN KEY ([Outbreak_Waterborne_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23659,7 +23804,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Outbreak_
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Unidentified_Flag] FOREIGN KEY ([Outbreak_Unidentified_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23668,7 +23813,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Contact_Report_Contact_Food_Hand
 
 
 GO
-ALTER TABLE [Surveillance].[Contact_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Contact_Report]
     ADD CONSTRAINT [fk_Contact_Report_Contact_Food_Handler_Flag] FOREIGN KEY ([Food_Handler_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23677,7 +23822,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Flag]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Flag] FOREIGN KEY ([Permanent_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23686,7 +23831,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Import_Statu
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Import_Status_Flag] FOREIGN KEY ([Import_Status_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23695,7 +23840,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Exposure_Sou
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Exposure_Source_Code] FOREIGN KEY ([Exposure_Source_Code_ID]) REFERENCES [Surveillance].[Case_Classification_Exposure_Source_Code] ([Code_ID]);
 
 
@@ -23704,7 +23849,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Case_Investi
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Case_Investigation_Stattus_Code] FOREIGN KEY ([Investigation_Status_Code_ID]) REFERENCES [Surveillance].[Case_Investigation_Stattus_Code] ([Code_ID]);
 
 
@@ -23713,7 +23858,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Detection_Me
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Detection_Method_Code] FOREIGN KEY ([Detection_Method_Code_ID]) REFERENCES [Surveillance].[Detection_Method_Code] ([Code_ID]);
 
 
@@ -23722,7 +23867,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_[Transmissio
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_[Transmission_Setting_Code] FOREIGN KEY ([Transmission_Setting_Code_ID]) REFERENCES [Surveillance].[Transmission_Setting_Code] ([Code_ID]);
 
 
@@ -23731,7 +23876,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Age_Setting_
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Age_Setting_Verified_Flag] FOREIGN KEY ([Age_Setting_Verified_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23740,7 +23885,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Complication_Report_Epidemiology
 
 
 GO
-ALTER TABLE [Surveillance].[Complication_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Complication_Report]
     ADD CONSTRAINT [fk_Complication_Report_Epidemiology_Linked_Flag] FOREIGN KEY ([Epidemiology_Linked_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23749,7 +23894,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report]...';
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report] FOREIGN KEY ([Case_Report_ID]) REFERENCES [Surveillance].[Case_Report] ([Case_Report_ID]);
 
 
@@ -23758,7 +23903,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Transmission_Mod
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Transmission_Mode_Code] FOREIGN KEY ([Transmission_Mode_Code_ID]) REFERENCES [Surveillance].[Case_Transmission_Mode_Code] ([Code_ID]);
 
 
@@ -23767,7 +23912,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Class_Status_Cod
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Class_Status_Code] FOREIGN KEY ([Case_Class_Status_Code_ID]) REFERENCES [Surveillance].[Case_Class_Status_Code] ([Code_ID]);
 
 
@@ -23776,7 +23921,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Notify_Immediate
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Notify_Immediate_Flag_Code] FOREIGN KEY ([Notify_Immediate_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23785,7 +23930,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Case_Outbreak_Fl
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Case_Outbreak_Flag_Code] FOREIGN KEY ([Case_Outbreak_Flag_ID]) REFERENCES [Surveillance].[Indicator_Flag_Code] ([Code_ID]);
 
 
@@ -23794,7 +23939,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Notification_Res
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Notification_Result_Status_Code] FOREIGN KEY ([Notification_Result_Code_ID]) REFERENCES [Surveillance].[Result_Status_Code] ([Code_ID]);
 
 
@@ -23803,7 +23948,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Reporting_Source
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Reporting_Source_Type] FOREIGN KEY ([Reporting_Source_Type_ID]) REFERENCES [Surveillance].[Reporting_Source_Type] ([Type_ID]);
 
 
@@ -23812,7 +23957,7 @@ PRINT N'Creating Foreign Key [Surveillance].[fk_Exposure_Report_Reporting_Criter
 
 
 GO
-ALTER TABLE [Surveillance].[Exposure_Report] WITH NOCHECK
+ALTER TABLE [Surveillance].[Exposure_Report]
     ADD CONSTRAINT [fk_Exposure_Report_Reporting_Criteria_Code] FOREIGN KEY ([Reporting_Criteria_Code_ID]) REFERENCES [Surveillance].[Reporting_Criteria_Code] ([Code_ID]);
 
 
@@ -27783,471 +27928,21 @@ INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('ece3d268-c5fd-4067-8d4
 GO
 
 GO
-PRINT N'Checking existing data against newly created constraints';
-
-
-GO
-USE [$(DatabaseName)];
-
-
-GO
-ALTER TABLE [Action].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
-
-ALTER TABLE [Action].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Activity];
-
-ALTER TABLE [Action].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Event];
-
-ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Activity];
-
-ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Type];
-
-ALTER TABLE [Action].[Party] WITH CHECK CHECK CONSTRAINT [fk_Party_Role];
-
-ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Disposition];
-
-ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Priority_Code];
-
-ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Reason_Code];
-
-ALTER TABLE [Action].[Activity] WITH CHECK CHECK CONSTRAINT [fk_Activity_Type];
-
-ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Schedule_Event];
-
-ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Event_Disposition];
-
-ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Event_Priority_Code];
-
-ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Event_Reason_Code];
-
-ALTER TABLE [Action].[Schedule_Event] WITH CHECK CHECK CONSTRAINT [fk_Schedule_Activity];
-
-ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
-
-ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Activity];
-
-ALTER TABLE [Action].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Event];
-
-ALTER TABLE [Action].[Event] WITH CHECK CHECK CONSTRAINT [fk_Event_Activity];
-
-ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Case];
-
-ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Referral];
-
-ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_Application_Contact];
-
-ALTER TABLE [Application].[Session] WITH CHECK CHECK CONSTRAINT [fk_AccessToken_Session];
-
-ALTER TABLE [Article].[Item] WITH CHECK CHECK CONSTRAINT [fk_Item_Type];
-
-ALTER TABLE [Clinical].[Medication] WITH CHECK CHECK CONSTRAINT [fk_Medication_DosageForm];
-
-ALTER TABLE [Clinical].[Infant_Report] WITH CHECK CHECK CONSTRAINT [fk_Infant_Report];
-
-ALTER TABLE [Clinical].[Symptom_Sign] WITH CHECK CHECK CONSTRAINT [fk_Symptom_Sign_Code];
-
-ALTER TABLE [Clinical].[Symptom_Sign] WITH CHECK CHECK CONSTRAINT [fk_Symptom_Sign_Flag];
-
-ALTER TABLE [Clinical].[Maternal_Report] WITH CHECK CHECK CONSTRAINT [fk_Maternal_Report_Prenatal_Visit_Flag];
-
-ALTER TABLE [Clinical].[Maternal_Report] WITH CHECK CHECK CONSTRAINT [fk_Maternal_Report_Prenatal_Trimester];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Donor_Implicated_Flag];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Donor_Flag];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Organ_Transplant_Flag];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Transfusion_Associated_Flag];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Donated_Product];
-
-ALTER TABLE [Clinical].[Blood_Transfusion_Report] WITH CHECK CHECK CONSTRAINT [fk_Blood_Transfusion_Transfused_Product];
-
-ALTER TABLE [Clinical].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_BodyPositionCode];
-
-ALTER TABLE [Clinical].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_BodySiteCode];
-
-ALTER TABLE [Clinical].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_DeviceCode];
-
-ALTER TABLE [Clinical].[Vitals] WITH CHECK CHECK CONSTRAINT [fk_Vitals_UnitCode];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_BodyPositionCode];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_BodySiteCode];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_Disease_Code];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_Jurisdiction];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_Stage_Clinical];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_Stage_Surveillance];
-
-ALTER TABLE [Clinical].[Condition] WITH CHECK CHECK CONSTRAINT [fk_Condition_Duration_Unit];
-
-ALTER TABLE [Clinical].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Vaccine_Type];
-
-ALTER TABLE [Clinical].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Vaccine_Manufacturer_Code];
-
-ALTER TABLE [Clinical].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Vaccine_Event_Source_Code];
-
-ALTER TABLE [Clinical].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Vaccine_Reason_Not_Given_Code];
-
-ALTER TABLE [Clinical].[Immunization] WITH CHECK CHECK CONSTRAINT [fk_Immunization_Vaccinated_Flag];
-
-ALTER TABLE [Clinical].[Finding] WITH CHECK CHECK CONSTRAINT [fk_Finding_Code];
-
-ALTER TABLE [Clinical].[Finding] WITH CHECK CHECK CONSTRAINT [fk_Finding_Flag];
-
-ALTER TABLE [Clinical].[Risk_Factor] WITH CHECK CHECK CONSTRAINT [fk_Risk_Factor_Code];
-
-ALTER TABLE [Clinical].[Risk_Factor] WITH CHECK CHECK CONSTRAINT [fk_Risk_Factor_Flag];
-
-ALTER TABLE [Clinical].[Complication] WITH CHECK CHECK CONSTRAINT [fk_Complication_Code];
-
-ALTER TABLE [Clinical].[Complication] WITH CHECK CHECK CONSTRAINT [fk_Complication_Flag];
-
-ALTER TABLE [Clinical].[Manifestation_Report] WITH CHECK CHECK CONSTRAINT [fk_Manifestation_Report_Code];
-
-ALTER TABLE [Clinical].[Manifestation_Report] WITH CHECK CHECK CONSTRAINT [fk_Manifestation_Report_Flag];
-
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Person];
-
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Organization];
-
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_Officer];
-
-ALTER TABLE [Entity].[Contact] WITH CHECK CHECK CONSTRAINT [fk_Contact_ContactType];
-
-ALTER TABLE [Entity].[Person_Death] WITH CHECK CHECK CONSTRAINT [fk_Person_Death];
-
-ALTER TABLE [Entity].[Person_Flag] WITH CHECK CHECK CONSTRAINT [fk_Person_Flag_FlagCode];
-
-ALTER TABLE [Entity].[Person_Flag] WITH CHECK CHECK CONSTRAINT [fk_Person_Flag_Person];
-
-ALTER TABLE [Entity].[Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Location_Link_Person];
-
-ALTER TABLE [Entity].[Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Location_Link_Organization];
-
-ALTER TABLE [Entity].[Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Location_Link_Officer];
-
-ALTER TABLE [Entity].[Location_Link] WITH CHECK CHECK CONSTRAINT [fk_Location_Link_Contact];
-
-ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Person];
-
-ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Organization];
-
-ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Officer];
-
-ALTER TABLE [Entity].[Identification] WITH CHECK CHECK CONSTRAINT [fk_Identification_Contact];
-
-ALTER TABLE [Entity].[Communication] WITH CHECK CHECK CONSTRAINT [fk_Communication_Person];
-
-ALTER TABLE [Entity].[Communication] WITH CHECK CHECK CONSTRAINT [fk_Communication_Organization];
-
-ALTER TABLE [Entity].[Communication] WITH CHECK CHECK CONSTRAINT [fk_Communication_Officer];
-
-ALTER TABLE [Entity].[Communication] WITH CHECK CHECK CONSTRAINT [fk_Communication_Contact];
-
-ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Type];
-
-ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Organization];
-
-ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Person];
-
-ALTER TABLE [Entity].[Officer] WITH CHECK CHECK CONSTRAINT [fk_Officer_Contact];
-
-ALTER TABLE [Entity].[Contact_Emergency] WITH CHECK CHECK CONSTRAINT [fk_Contact_Emergency_Type];
-
-ALTER TABLE [Entity].[Contact_Emergency] WITH CHECK CHECK CONSTRAINT [fk_Contact_Emergency_Person];
-
-ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Employer];
-
-ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Employee];
-
-ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Type];
-
-ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Industry_Code];
-
-ALTER TABLE [Entity].[Employment] WITH CHECK CHECK CONSTRAINT [fk_Employment_Occupation_Code];
-
-ALTER TABLE [Entity].[Name] WITH CHECK CHECK CONSTRAINT [fk_Name_Type];
-
-ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
-
-ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Person];
-
-ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Organization];
-
-ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Officer];
-
-ALTER TABLE [Entity].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Contact];
-
-ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
-
-ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Person];
-
-ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Organization];
-
-ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Officer];
-
-ALTER TABLE [Entity].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Contact];
-
-ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Person];
-
-ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Organization];
-
-ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Officer];
-
-ALTER TABLE [Entity].[Item_Link] WITH CHECK CHECK CONSTRAINT [fk_Item_Reference_Link_Contact];
-
-ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Type];
-
-ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Person];
-
-ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Organization];
-
-ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Officer];
-
-ALTER TABLE [Entity].[Uri] WITH CHECK CHECK CONSTRAINT [fk_Uri_Contact];
-
-ALTER TABLE [Entity].[Affiliation] WITH CHECK CHECK CONSTRAINT [fk_Affiliation_Person];
-
-ALTER TABLE [Entity].[Affiliation] WITH CHECK CHECK CONSTRAINT [fk_Affiliation_Affiliated_Flag];
-
-ALTER TABLE [Entity].[Affiliation] WITH CHECK CHECK CONSTRAINT [fk_Affiliation_Enrolled_Flag];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Type];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Name_Type];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Ethnicity_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Race_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Sex_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Gender_Identity_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Sexual_Orientation_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Marital_Status_Code];
-
-ALTER TABLE [Entity].[Person] WITH CHECK CHECK CONSTRAINT [fk_Person_Religion_Code];
-
-ALTER TABLE [Epidemiology].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
-
-ALTER TABLE [Epidemiology].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Lab_Result];
-
-ALTER TABLE [Epidemiology].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Specimen];
-
-ALTER TABLE [Epidemiology].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
-
-ALTER TABLE [Epidemiology].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Lab_Result];
-
-ALTER TABLE [Epidemiology].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Specimen];
-
-ALTER TABLE [Epidemiology].[Lab_Result] WITH CHECK CHECK CONSTRAINT [fk_Lab_Result_Laboratory];
-
-ALTER TABLE [Epidemiology].[Lab_Result] WITH CHECK CHECK CONSTRAINT [fk_Lab_Result_Type];
-
-ALTER TABLE [Epidemiology].[Laboratory] WITH CHECK CHECK CONSTRAINT [fk_Laboatory_Type];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Laboratory];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Specimen_Type];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Test_Type];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Test_Interpretation_Code];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Test_Result_Unit_Code];
-
-ALTER TABLE [Epidemiology].[Lab_Test_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Test_Report_Lab_Type];
-
-ALTER TABLE [Epidemiology].[Lab_Link] WITH CHECK CHECK CONSTRAINT [fk_Lab_Link_Lab];
-
-ALTER TABLE [Epidemiology].[Lab_Link] WITH CHECK CHECK CONSTRAINT [fk_Lab_Link_Specimen];
-
-ALTER TABLE [Epidemiology].[Lab_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Report_Testing_Performed_Flag];
-
-ALTER TABLE [Epidemiology].[Lab_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Report_Laboratory_Confirmed_Flag];
-
-ALTER TABLE [Epidemiology].[Lab_Report] WITH CHECK CHECK CONSTRAINT [fk_Lab_Report_Specimen_Sent_Flag];
-
-ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_Element];
-
-ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_ID];
-
-ALTER TABLE [Generic].[Element_Value] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_Entity];
-
-ALTER TABLE [Generic].[Element] WITH CHECK CHECK CONSTRAINT [fk_Element_Type];
-
-ALTER TABLE [Generic].[Element] WITH CHECK CHECK CONSTRAINT [fk_Element_Value_Type];
-
-ALTER TABLE [Generic].[Entity] WITH CHECK CHECK CONSTRAINT [fk_Entity_Type];
-
-ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
-
-ALTER TABLE [Geography].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Location];
-
-ALTER TABLE [Geography].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
-
-ALTER TABLE [Geography].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Location];
-
-ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Type];
-
-ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Address_Line];
-
-ALTER TABLE [Geography].[Location] WITH CHECK CHECK CONSTRAINT [fk_Location_Address_Structured];
-
-ALTER TABLE [Management].[Referral] WITH CHECK CHECK CONSTRAINT [fk_Referral_Case];
-
-ALTER TABLE [Management].[Referral] WITH CHECK CHECK CONSTRAINT [fk_Referral_ReferralType];
-
-ALTER TABLE [Management].[Disposition] WITH CHECK CHECK CONSTRAINT [fk_Disposition_Case];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Case_Disposition];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_CasePriorityCode];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_CaseType];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Class_Status];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Class_Probable_Reason];
-
-ALTER TABLE [Management].[Case] WITH CHECK CHECK CONSTRAINT [fk_Case_Class_Detection_Method];
-
-ALTER TABLE [Management].[Flag] WITH CHECK CHECK CONSTRAINT [fk_Flag_Case];
-
-ALTER TABLE [Management].[Flag] WITH CHECK CHECK CONSTRAINT [fk_Flag_Code];
-
-ALTER TABLE [Management].[Assignment] WITH CHECK CHECK CONSTRAINT [fk_Assignment_Case];
-
-ALTER TABLE [Management].[Assignment] WITH CHECK CHECK CONSTRAINT [fk_Assignment_Referral];
-
-ALTER TABLE [Management].[Assignment_Link] WITH CHECK CHECK CONSTRAINT [fk_Assignment_Link];
-
-ALTER TABLE [Management].[Assignment_Link] WITH CHECK CHECK CONSTRAINT [fk_Assignment_Link_Case];
-
-ALTER TABLE [Management].[Request] WITH CHECK CHECK CONSTRAINT [fk_Request_Case];
-
-ALTER TABLE [Management].[Request] WITH CHECK CHECK CONSTRAINT [fk_Request_Referral_Type];
-
-ALTER TABLE [Management].[Request] WITH CHECK CHECK CONSTRAINT [fk_Request_Service_Code];
-
-ALTER TABLE [Management].[Request] WITH CHECK CHECK CONSTRAINT [fk_Request_Referral];
-
-ALTER TABLE [Management].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Type];
-
-ALTER TABLE [Management].[Note] WITH CHECK CHECK CONSTRAINT [fk_Note_Case];
-
-ALTER TABLE [Management].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Type];
-
-ALTER TABLE [Management].[Media] WITH CHECK CHECK CONSTRAINT [fk_Media_Case];
-
-ALTER TABLE [Message].[Submission] WITH CHECK CHECK CONSTRAINT [fk_Submission_Content_Type];
-
-ALTER TABLE [Provider].[Provider_Reference] WITH CHECK CHECK CONSTRAINT [fk_Provider_Reference_Code];
-
-ALTER TABLE [Surveillance].[Travel_Detail] WITH CHECK CHECK CONSTRAINT [fk_Travel_Purpose_Code];
-
-ALTER TABLE [Surveillance].[Profile_Condition] WITH CHECK CHECK CONSTRAINT [fk_Profile_Condition_Profile_Group];
-
-ALTER TABLE [Surveillance].[Profile] WITH CHECK CHECK CONSTRAINT [fk_Profile_ProfileType];
-
-ALTER TABLE [Surveillance].[Assessment_Question] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Question_AnswerType];
-
-ALTER TABLE [Surveillance].[Assessment_Question] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Question_Questionnaire];
-
-ALTER TABLE [Surveillance].[Assessment_Answer] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Answer_Assessment];
-
-ALTER TABLE [Surveillance].[Assessment_Answer] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Answer_Assessment_Question];
-
-ALTER TABLE [Surveillance].[Assessment] WITH CHECK CHECK CONSTRAINT [fk_Assessment_AssessmentType];
-
-ALTER TABLE [Surveillance].[Assessment] WITH CHECK CHECK CONSTRAINT [fk_Assessment_Questionnaire];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Type];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Setting];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Illness_Duration_Unit_Code];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Pregnancy_Status_Flag];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Hospitalized_Flag];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Subject_Died_Flag];
-
-ALTER TABLE [Surveillance].[Case_Report] WITH CHECK CHECK CONSTRAINT [fk_Case_Report_Deceased_Source_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Location_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Location_Report];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Type];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Type_Other_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Epidemiology_Linked_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Case_Linked_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Child_Care_Linked_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Child_Care_Case_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Sexual_Preference_Code];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Drug_User_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Drug_Street_User_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Traveled_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Source_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Foodborne_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Waterborne_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Outbreak_Unidentified_Flag];
-
-ALTER TABLE [Surveillance].[Contact_Report] WITH CHECK CHECK CONSTRAINT [fk_Contact_Report_Contact_Food_Handler_Flag];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Flag];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Import_Status_Flag];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Exposure_Source_Code];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Case_Investigation_Stattus_Code];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Detection_Method_Code];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_[Transmission_Setting_Code];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Age_Setting_Verified_Flag];
-
-ALTER TABLE [Surveillance].[Complication_Report] WITH CHECK CHECK CONSTRAINT [fk_Complication_Report_Epidemiology_Linked_Flag];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Transmission_Mode_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Class_Status_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Notify_Immediate_Flag_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Case_Outbreak_Flag_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Notification_Result_Status_Code];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Reporting_Source_Type];
-
-ALTER TABLE [Surveillance].[Exposure_Report] WITH CHECK CHECK CONSTRAINT [fk_Exposure_Report_Reporting_Criteria_Code];
+DECLARE @VarDecimalSupported AS BIT;
+
+SELECT @VarDecimalSupported = 0;
+
+IF ((ServerProperty(N'EngineEdition') = 3)
+    AND (((@@microsoftversion / power(2, 24) = 9)
+          AND (@@microsoftversion & 0xffff >= 3024))
+         OR ((@@microsoftversion / power(2, 24) = 10)
+             AND (@@microsoftversion & 0xffff >= 1600))))
+    SELECT @VarDecimalSupported = 1;
+
+IF (@VarDecimalSupported > 0)
+    BEGIN
+        EXECUTE sp_db_vardecimal_storage_format N'$(DatabaseName)', 'ON';
+    END
 
 
 GO

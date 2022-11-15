@@ -2,7 +2,7 @@
    [Provider_Reference_ID] VARCHAR (40) NOT NULL,
    [Alternate_ID]          VARCHAR (40) NULL,
 
-   [Provider_Type_ID]      VARCHAR (40) NULL,
+   [Provider_Code_ID]      VARCHAR (30) NULL,
 
    -- external references
    [Person_ID]             VARCHAR (40) NULL,
@@ -25,7 +25,9 @@
    [Record_Status_Code_ID] CHAR(1) NULL DEFAULT 'A',
    [Session_Updated_ID]    VARCHAR(40) NULL DEFAULT 'E4D32AEC-E7C8-426C-94A6-F0B37F626E67',
 
-   CONSTRAINT [pk_Provider_Reference] PRIMARY KEY CLUSTERED ([Provider_Reference_ID] ASC)
+   CONSTRAINT [pk_Provider_Reference] PRIMARY KEY CLUSTERED ([Provider_Reference_ID] ASC),
+   CONSTRAINT [fk_Provider_Reference_Code] FOREIGN KEY ([Provider_Code_ID])
+      REFERENCES [Provider].[Provider_Code]([Code_ID])
 )
 GO
 
@@ -57,9 +59,9 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Referring Provider Attending Provider Primary Care Provider (PCP)',
+   @name = N'MS_Description', @value = 'Provider Code',
    @level0type = N'SCHEMA',   @level0name = N'Provider',
    @level1type = N'TABLE',    @level1name = N'Provider_Reference',
-   @level2type = N'COLUMN',   @level2name = 'Provider_Type_ID'
+   @level2type = N'COLUMN',   @level2name = 'Provider_Code_ID'
 GO
 
