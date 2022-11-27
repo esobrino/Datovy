@@ -55,6 +55,8 @@
       REFERENCES [Clinical].[Stage_Code]([Code_ID]),
    CONSTRAINT [fk_Condition_Stage_Surveillance] FOREIGN KEY ([Stage_Surveillance_Code_ID])
       REFERENCES [Clinical].[Stage_Code]([Code_ID]),
+   CONSTRAINT [fk_Condition_SeverityCode] FOREIGN KEY ([Severity_Code_ID]) 
+      REFERENCES [Clinical].[Severity_Code] ([Code_ID]),
    CONSTRAINT [fk_Condition_Duration_Unit] FOREIGN KEY ([Duration_Unit_Code_ID])
       REFERENCES [Clinical].[Unit_Code]([Code_ID])
 )

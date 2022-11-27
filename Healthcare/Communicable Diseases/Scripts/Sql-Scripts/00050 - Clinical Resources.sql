@@ -936,7 +936,18 @@ UPDATE [Clinical].[Vaccine_Type]
        Version_Number = 'v12'
 GO
 
+-- NNDSS Event Code
+INSERT INTO [Clinical].[Severity_Code] ([Code_ID], [Description], [CodeSet_Name], [Category_ID]) VALUES
+   ('399166001','Fatal (qualifier value)','SNOMED-CT', 'TB'),
+   ('434081000124108','Patient requires hospitalization (finding)','SNOMED-CT', 'TB')
+GO
 
+   -- update this so we know where the code came from...
+UPDATE [Clinical].[Severity_Code]
+   SET Data_Owner_ID = 'SNOMED-CT',
+       Agency_Reporting_ID = 'SNOMED-CT',
+       Version_Number = 'v1'
+GO
 
 
 

@@ -312,6 +312,7 @@
     <Build Include="Entity\Tables\Religion_Code.sql" />
     <Build Include="Provider\Tables\Provider_Code.sql" />
     <Build Include="Entity\Tables\Smoking_Status_Code.sql" />
+    <Build Include="Clinical\Tables\Severity_Code.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Surveillance\Tables\Assessment_Type.sql" />

@@ -10,3 +10,7 @@ C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\ContactTracing.dll
 C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\ContactTracing.pdb
 C:\Data\Datovy\Healthcare\Communicable Diseases\bin\Debug\ContactTracing.dll
 C:\Data\Datovy\Healthcare\Communicable Diseases\bin\Debug\ContactTracing.pdb
+C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\Model.xml
+C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\refactor.xml
+C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\postdeploy.sql
+C:\Data\Datovy\Healthcare\Communicable Diseases\obj\Debug\predeploy.sql

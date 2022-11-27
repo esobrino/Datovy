@@ -1058,3 +1058,10 @@ INSERT INTO [Entity].[Smoking_Status_Code] ([Code_ID], [Description], [CodeSet_N
    ('449868002',	       'Smokes tobacco daily (finding)',	             'SNOMED-CT'),
    ('266927001',	       'Tobacco smoking consumption (unknown finding)','SNOMED-CT')
 GO
+
+-- update this so we know where the code came from...
+UPDATE [Entity].[Indicator_Flag_Code]
+   SET Data_Owner_ID = 'SNOMED-CT',
+       Agency_Reporting_ID = 'SNOMED-CT',
+       Version_Number = 'v1'
+GO

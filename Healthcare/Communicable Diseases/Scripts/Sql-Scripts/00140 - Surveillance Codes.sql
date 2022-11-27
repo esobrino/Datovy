@@ -483,3 +483,15 @@ UPDATE [Surveillance].[Event_Code]
        Version_Number = 'v2'
 GO
 
+-- NNDSS Event Code
+INSERT INTO [Surveillance].[Severity_Code] ([Code_ID], [Description], [CodeSet_Name], [Category_ID], [Notifiable_Indicator]) VALUES
+   ('399166001','Fatal (qualifier value)','SNOMED-CT', 'TB'),
+   ('434081000124108','Patient requires hospitalization (finding)','SNOMED-CT', 'TB')
+GO
+
+   -- update this so we know where the code came from...
+UPDATE [Surveillance].[Severity_Code]
+   SET Data_Owner_ID = 'SNOMED-CT',
+       Agency_Reporting_ID = 'SNOMED-CT',
+       Version_Number = 'v1'
+GO
