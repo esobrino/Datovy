@@ -1049,3 +1049,12 @@ UPDATE [Entity].[Indicator_Flag_Code]
        Agency_Reporting_ID = 'COMMON',
        Version_Number = 'v1'
 GO
+
+INSERT INTO [Entity].[Smoking_Status_Code] ([Code_ID], [Description], [CodeSet_Name]) VALUES
+   ('428041000124106',	 'Current some day smoker',	                   'SNOMED-CT'),
+   ('8517006',	          'Ex-smoker (finding)',	                         'SNOMED-CT'),
+   ('266919005',	       'Never smoked tobacco (finding)',	             'SNOMED-CT'),
+   ('77176002',	       'Smoker finding',	                            'SNOMED-CT'),
+   ('449868002',	       'Smokes tobacco daily (finding)',	             'SNOMED-CT'),
+   ('266927001',	       'Tobacco smoking consumption (unknown finding)','SNOMED-CT')
+GO

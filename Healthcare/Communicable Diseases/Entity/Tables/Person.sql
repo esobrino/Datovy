@@ -34,6 +34,8 @@
 
    [Marital_Status_Date]             DATE NULL,
    [Marital_Status_Code_ID]          VARCHAR(30)  NULL,
+   [Smoking_Status_Date]             DATE NULL,
+   [Smoking_Status_Code_ID]          VARCHAR(30)  NULL,
 
    [Status_Code_ID]                  VARCHAR(30)  NULL,
    [Status_DateTime]                 DATETIMEOFFSET NULL,
