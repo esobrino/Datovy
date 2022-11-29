@@ -7,7 +7,7 @@
 
 -- Person Name Components
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -15,7 +15,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -23,7 +23,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST_PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -31,7 +31,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -40,7 +40,7 @@ GO
 
 -- Gender/Sex Details
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'PHI, GDPR', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -48,7 +48,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'PHI, GDPR', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -56,7 +56,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'PHI, GDPR', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -64,7 +64,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'PHI, GDPR', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -73,7 +73,7 @@ GO
 
 -- Person Dates
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -81,7 +81,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -89,7 +89,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PHI, GDPR, PII, NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -98,7 +98,7 @@ GO
 
 -- Person Race - Ethnicity
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -106,7 +106,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Communication', 
@@ -115,7 +115,7 @@ GO
 
 -- Phone Numbers (see/use Communication Type table Tags column)
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA, PII, GDPR', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
@@ -124,7 +124,7 @@ GO
 
 -- Person Death
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person_Death', 
@@ -132,7 +132,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person_Death', 
@@ -140,7 +140,7 @@ EXECUTE sp_addextendedproperty
 GO
 
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'HIPAA', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person_Death', 
@@ -149,7 +149,7 @@ GO
 
 -- Person Education Information
 EXECUTE sp_addextendedproperty
-   @name = N'PRIVACY', 
+   @name = N'Privacy', 
    @value = 'NIST-PII', 
    @level0type = N'SCHEMA', @level0name = N'Entity', 
    @level1type = N'TABLE',  @level1name = N'Person', 
