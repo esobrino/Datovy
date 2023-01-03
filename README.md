@@ -101,6 +101,9 @@ Onece those tables grow to a considerable size the table should be partitioned t
 ## <span style="color:skyblue">Record Management</span>
 Enough metadata details about record management are provided as a starting point.  Details about each column could be found in the documentation folder.
 
+## <span style="color:skyblue;font-weight:bold">DICTIONARIES - SCHEMAS</span>
+Associated with this contribution Datovy released a separate project that was used to prepare a full sample of a Data Dictionary, Schemas in various languages including XSD and JSON Schema among other resources.  The EDAM (Enterprise Data Asset Management) Windows (WinUI) desktop App was used to produce these artifacts and can be found as Datovy.Edam.
+
 ## <span style="color:skyblue;font-weight:bold">ROAD MAP</span>
 The following is a tentative plan that will be modified based on the community feedback:
 1) Define the Communicable Disease (CD) Database Schema.
