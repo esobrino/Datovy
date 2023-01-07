@@ -2,6 +2,7 @@
 (
    [Case_Report_ID]         VARCHAR(40) NOT NULL,
    [Report_Date]            DATE NULL,
+   [Reported_Date]          DATE NULL,
 
    [Type_ID]                VARCHAR(30) NULL,
    [Description]            VARCHAR(1024) NULL,
@@ -18,6 +19,9 @@
    [Hospital_Stay_InDays]     INT NULL,
    [Admission_Date]           DATE NULL,
    [Discharged_Date]          DATE NULL,
+
+   [Morbidity_Mortality_Week] INT,
+   [Morbidity_Mortality_Year] INT,
 
    [Exposure_Setting_Code_ID] VARCHAR(30) NULL,
    [Condition_Code_ID]        VARCHAR(30) NULL,
@@ -36,6 +40,7 @@
 
    -- external Case ID reference...
    [Case_State_ID]          VARCHAR(40) NULL,
+   [Case_Local_ID]          VARCHAR(40) NULL,
    [Case_Legacy_ID]         VARCHAR(40) NULL,
    [Case_ID]                VARCHAR(40) NULL,
    [Subject_ID]             VARCHAR(40) NULL,
@@ -75,6 +80,12 @@
 GO
 
 EXECUTE sp_addextendedproperty 
+   @name = N'MS_Description', @value = 'Investigation or case details collected as of a particular date to be reported to an Authority',
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
+   @level1type = N'TABLE',    @level1name = N'Case_Report'
+GO
+
+EXECUTE sp_addextendedproperty 
    @name = N'X_Reference', @value = 'External reference to (Management) Case', 
    @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
    @level1type = N'TABLE',    @level1name = N'Case_Report', 
@@ -88,10 +99,25 @@ EXECUTE sp_addextendedproperty
    @level2type = N'COLUMN',   @level2name = 'Subject_ID'
 GO
 
-EXECUTE sp_addextendedproperty 
-   @name = N'MS_Description', @value = 'Investigation or case details collected as of a particular date to be reported to an Authority',
-   @level0type = N'SCHEMA',   @level0name = N'Surveillance',
-   @level1type = N'TABLE',    @level1name = N'Case_Report'
+EXECUTE sp_addextendedproperty
+   @name = N'MS_Description', @value = 'Date of first report to public health department [77995-9].', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Case_Report',
+   @level2type = N'COLUMN',   @level2name = 'Reported_Date';
+GO
+
+EXECUTE sp_addextendedproperty
+   @name = N'MS_Description', @value = 'Morbidity and Mortality Weekly Report (MMWR) week for which case information is to be counted for MMWR publication [77991-8].', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Case_Report',
+   @level2type = N'COLUMN',   @level2name = 'Morbidity_Mortality_Week';
+GO
+
+EXECUTE sp_addextendedproperty
+   @name = N'MS_Description', @value = 'Morbidity and Mortality Weekly Report (MMWR) year for which case information is included in MMWR publication [77992-6].', 
+   @level0type = N'SCHEMA',   @level0name = N'Surveillance', 
+   @level1type = N'TABLE',    @level1name = N'Case_Report',
+   @level2type = N'COLUMN',   @level2name = 'Morbidity_Mortality_Year';
 GO
 
 EXECUTE sp_addextendedproperty
