@@ -99,6 +99,7 @@
     <Folder Include="Provider\Tables" />
     <Folder Include="Other\Tables" />
     <Folder Include="Other" />
+    <Folder Include="Documentation" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Article\Tables\Item.sql" />
@@ -338,6 +339,7 @@
     <Build Include="Helper\Procedures\Schema_Property_Record_Get.sql" />
     <Build Include="Helper\Procedures\Schema_Property_Value_Get.sql" />
     <None Include="Scripts\Sql-Scripts\00150 - Other Resources.sql" />
+    <None Include="Documentation\RVCT - Report of Verified Case of Tuberculosis .v0.docx" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Disease_Surveillance.refactorlog" />
