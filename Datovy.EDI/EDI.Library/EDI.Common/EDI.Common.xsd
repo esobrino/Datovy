@@ -9,6 +9,9 @@
       <xs:sequence>
          <xs:element ref="edic:ISA-01" minOccurs="1" maxOccurs="1"/>
          <xs:element ref="edic:ISA-02" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="edic:ISA-03" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="edic:ISA-04" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="edic:ISA-05" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 
@@ -37,6 +40,46 @@
                   <xs:appinfo>No Authorization Information Present (No Meaningful Information in I02)</xs:appinfo>
                </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="01">
+               <xs:annotation>
+                  <xs:appinfo>UCS Communications ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+               <xs:annotation>
+                  <xs:appinfo>EDX Communications ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+               <xs:annotation>
+                  <xs:appinfo>Additional Data Identification</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+               <xs:annotation>
+                  <xs:appinfo>Rail Communications ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="05">
+               <xs:annotation>
+                  <xs:appinfo>Department of Defense (DoD) Communication Identifier</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="06">
+               <xs:annotation>
+                  <xs:appinfo>United States Federal Government Communication Identifier</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="07">
+               <xs:annotation>
+                  <xs:appinfo>Truck Communications ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="08">
+               <xs:annotation>
+                  <xs:appinfo>Ocean Communications ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
@@ -47,6 +90,270 @@
             Authorization Information: Information used for additional identification or authorization of the interchange sender or the data in the interchange; the type of information is set by the Authorization Information Qualifier (I01).
          </xs:documentation>
       </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="edic:ID">
+            <xs:minLength value="10"/>
+            <xs:maxLength value="10"/>
+         </xs:restriction>
+      </xs:simpleType>
    </xs:element>
-   
+
+   <xs:element name="ISA-03">
+      <xs:annotation>
+         <xs:documentation>
+            Security Information Qualifier: Code identifying the type of information in the Security Information.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="edic:ID">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+            <xs:enumeration value="00">
+               <xs:annotation>
+                  <xs:appinfo>No Security Information Present (No Meaningful Information in I04)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="01">
+               <xs:annotation>
+                  <xs:appinfo>Password</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="ISA-04" type="xs:string">
+      <xs:annotation>
+         <xs:documentation>
+            Security Information: This is used for identifying the security information about the interchange sender or the data in the interchange; the type of information is set by the Security Information Qualifier (I03).
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="edic:ID">
+            <xs:minLength value="10"/>
+            <xs:maxLength value="10"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="ISA-05">
+      <xs:annotation>
+         <xs:documentation>
+            Interchange ID Qualifier: Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="edic:ID">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+            <xs:enumeration value="01">
+               <xs:annotation>
+                  <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="02">
+               <xs:annotation>
+                  <xs:appinfo>SCAC (Standard Carrier Alpha Code)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="03">
+               <xs:annotation>
+                  <xs:appinfo>FMC (Federal Maritime Commission)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="04">
+               <xs:annotation>
+                  <xs:appinfo>IATA (International Air Transport Association)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="07">
+               <xs:annotation>
+                  <xs:appinfo>
+                     Global Location Number (GLN). A globally unique 13 digit code for the identification of a legal, functional or physical location within the Uniform Code Council (UCC) and International Article Number Association (EAN) numbering system.
+                  </xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="08">
+               <xs:annotation>
+                  <xs:appinfo>UCC EDI Communications ID (Comm ID)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="09">
+               <xs:annotation>
+                  <xs:appinfo>X.121 (CCITT)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="10">
+               <xs:annotation>
+                  <xs:appinfo>Department of Defense (DoD) Activity Address Code</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="11">
+               <xs:annotation>
+                  <xs:appinfo>DEA (Drug Enforcement Administration)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="12">
+               <xs:annotation>
+                  <xs:appinfo>Phone (Telephone Companies)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="13">
+               <xs:annotation>
+                  <xs:appinfo>UCS Code (The UCS Code is a Code Used for UCS Transmissions; it includes the Area Code and Telephone Number of a Modem; it Does Not Include Punctuation, Blanks or Access Code)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="14">
+               <xs:annotation>
+                  <xs:appinfo>Duns Plus Suffix</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="15">
+               <xs:annotation>
+                  <xs:appinfo>Petroleum Accountants Society of Canada Company Code</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="16">
+               <xs:annotation>
+                  <xs:appinfo>Duns Number With 4-Character Suffix</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="17">
+               <xs:annotation>
+                  <xs:appinfo>American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="18">
+               <xs:annotation>
+                  <xs:appinfo>Association of American Railroads (AAR) Standard Distribution Code</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="19">
+               <xs:annotation>
+                  <xs:appinfo>EDI Council of Australia (EDICA) Communications ID Number (COMM ID)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="20">
+               <xs:annotation>
+                  <xs:appinfo>Health Industry Number (HIN)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="21">
+               <xs:annotation>
+                  <xs:appinfo>Integrated Postsecondary Education Data System, or (IPEDS)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22">
+               <xs:annotation>
+                  <xs:appinfo>Federal Interagency Commission on Education, or FICE</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="23">
+               <xs:annotation>
+                  <xs:appinfo>National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes, or NCES</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="24">
+               <xs:annotation>
+                  <xs:appinfo>The College Board's Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="25">
+               <xs:annotation>
+                  <xs:appinfo>ACT, Inc. 4-Digit Code of Postsecondary Institutions.</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="26">
+               <xs:annotation>
+                  <xs:appinfo>Statistics of Canada List of Postsecondary Institutions</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="27">
+               <xs:annotation>
+                  <xs:appinfo>Carrier Identification Number as assigned by Centers for Medicare & Medicaid Services (CMS)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="28">
+               <xs:annotation>
+                  <xs:appinfo>Fiscal Intermediary Identification Number as assigned by Centers for Medicare & Medicaid Services (CMS)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="29">
+               <xs:annotation>
+                  <xs:appinfo>Medicare Provider and Supplier Identification Number as assigned by Centers for Medicare & Medicaid Services (CMS)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="30">
+               <xs:annotation>
+                  <xs:appinfo>U.S. Federal Tax Identification Number</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="31">
+               <xs:annotation>
+                  <xs:appinfo>Jurisdiction Identification Number Plus 4 as assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="32">
+               <xs:annotation>
+                  <xs:appinfo>U.S. Federal Employer Identification Number (FEIN)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="33">
+               <xs:annotation>
+                  <xs:appinfo>National Association of Insurance Commissioners Company Code (NAIC)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="34">
+               <xs:annotation>
+                  <xs:appinfo>Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Centers for Medicare & Medicaid Services (CMS)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="35">
+               <xs:annotation>
+                  <xs:appinfo>Statistics Canada Canadian College Student Information System Institution Codes</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="36">
+               <xs:annotation>
+                  <xs:appinfo>Statistics Canada University Student Information System Institution Codes</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="37">
+               <xs:annotation>
+                  <xs:appinfo>Society of Property Information Compilers and Analysts</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="38">
+               <xs:annotation>
+                  <xs:appinfo>The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AM">
+               <xs:annotation>
+                  <xs:appinfo>Association Mexicana del Codigo de Producto (AMECOP) Communication ID</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NR">
+               <xs:annotation>
+                  <xs:appinfo>National Retail Merchants Association (NRMA) - Assigned</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SA">
+               <xs:annotation>
+                  <xs:appinfo>User Identification Number as assigned by the Safety and Fitness Electronic Records (SAFER) System</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SN">
+               <xs:annotation>
+                  <xs:appinfo>Standard Address Number</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ZZ">
+               <xs:annotation>
+                  <xs:appinfo>Mutually Defined</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
 </xs:schema>
