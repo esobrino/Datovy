@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj": {}
+    "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj": {}
   },
   "projects": {
-    "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj": {
+    "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
+        "projectUniqueName": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
         "projectName": "EDI.Definitions",
-        "projectPath": "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
-        "packagesPath": "C:\\Users\\tprav\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\obj\\",
+        "projectPath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
+        "packagesPath": "C:\\Users\\esobr\\.nuget\\packages\\",
+        "outputPath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\tprav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\esobr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

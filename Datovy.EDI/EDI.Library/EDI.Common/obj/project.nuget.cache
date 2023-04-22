@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y2MeImXywjV005lMO3KHJ+knmWeA5rdqVOV/kCSQy70JcTCnCrwoHhKkyzgPUKm3flOqsQT7+tF0bPUbZMa41w==",
+  "dgSpecHash": "daOYOOrEmGupGfpHorKyn6bucrlHxiNn34fLU6roa/L/JTAphs1IvnfUr/e2vZNMgGCjH1BZQvBNS23nvR0glA==",
   "success": true,
-  "projectFilePath": "C:\\Data\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
+  "projectFilePath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

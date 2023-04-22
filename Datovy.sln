@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Disease_Surveillance", "Healthcare\Communicable Diseases\Disease_Surveillance.sqlproj", "{E75C77A8-0800-47CF-95EF-244893D7D30C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI.Definitions", "Datovy.EDI\EDI.Library\EDI.Common\EDI.Definitions.csproj", "{B266D52B-4440-4589-93C5-629B5B8E051B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{E75C77A8-0800-47CF-95EF-244893D7D30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E75C77A8-0800-47CF-95EF-244893D7D30C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E75C77A8-0800-47CF-95EF-244893D7D30C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B266D52B-4440-4589-93C5-629B5B8E051B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B266D52B-4440-4589-93C5-629B5B8E051B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B266D52B-4440-4589-93C5-629B5B8E051B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B266D52B-4440-4589-93C5-629B5B8E051B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
