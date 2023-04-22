@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.datovy.com/edi/274"
+    elementFormDefault="qualified"
+    xmlns="http://www.datovy.com/edi/274"
+    xmlns:i274="http://www.datovy.com/edi/274"
+    xmlns:edic="http://www.datovy.com/edi/common"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+   <xs:import namespace="http://www.datovy.com/edi/common" schemaLocation="./EDI.Common.xsd"/>
+   
+   <xs:complexType name="Message_">
+      <xs:sequence>
+         <xs:element ref="i274:TSH_ISA_IEA_LOOP" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="TSH_ST_SE_LOOP_">
+      <xs:sequence>
+
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="TSH_GS_GE_LOOP_">
+      <xs:sequence>
+         <xs:element ref="edic:GS" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="i274:TSH_ST_SE_LOOP" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="edic:GE" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="TSH_ISA_IEA_LOOP_">
+      <xs:sequence>
+         <xs:element ref="edic:ISA" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="i274:TSH_GS_GE_LOOP" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="edic:IEA" minOccurs="1" maxOccurs="1"/>             
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:element name="TSH_GS_GE_LOOP" type="i274:TSH_GS_GE_LOOP_"/>
+   <xs:element name="TSH_ST_SE_LOOP" type="i274:TSH_ST_SE_LOOP_"/>
+   <xs:element name="TSH_ISA_IEA_LOOP" type="i274:TSH_ISA_IEA_LOOP_"/>
+
+   <xs:element name="Message" type="i274:Message_"/>
+   
+   
+</xs:schema>
