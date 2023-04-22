@@ -62,6 +62,22 @@
          </xs:documentation>
       </xs:annotation>
    </xs:element>
+
+   <xs:complexType name="GE_">
+      <xs:sequence>
+         <xs:element ref="edic:GE-01" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:element name ="GE" type="edic:GE_">
+      <xs:annotation>
+         <xs:documentation>
+            GS Functional Group Trailer
+         </xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   
+   
    
    <xs:simpleType name="ID">
       <xs:annotation>
@@ -1034,6 +1050,34 @@
                   <xs:appinfo>Account Analysis (822)</xs:appinfo>
                </xs:annotation>
             </xs:enumeration>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="GE-01">
+      <xs:annotation>
+         <xs:documentation>
+            Number of Transaction Sets Included: Total number of transaction sets included in the functional group or interchange (transmission) group terminated by the trailer containing this data element.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999999"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="GE-02">
+      <xs:annotation>
+         <xs:documentation>
+            Group Control Number: Assigned number originated and maintained by the sender.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:integer">
+            <xs:minInclusive value="000000001"/>
+            <xs:maxInclusive value="999999000"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
