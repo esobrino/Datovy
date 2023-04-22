@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://www.datovy.com/edi/274"
+<xs:schema targetNamespace="http://www.datovy.com/edi/i274"
     elementFormDefault="qualified"
-    xmlns="http://www.datovy.com/edi/274"
-    xmlns:i274="http://www.datovy.com/edi/274"
+    xmlns:i274="http://www.datovy.com/edi/i274"
     xmlns:edic="http://www.datovy.com/edi/common"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >

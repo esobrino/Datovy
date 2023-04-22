@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema targetNamespace="http://www.datovy.com/edi/common"
     elementFormDefault="qualified"
-    xmlns="http://www.datovy.com/edi/common"
     xmlns:edic="http://www.datovy.com/edi/common"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
@@ -646,7 +645,7 @@
       </xs:restriction>
    </xs:simpleType>
    
-   <xs:element name="ISA-07" type="ISA-07__">
+   <xs:element name="ISA-07" type="edic:ISA-07__">
       <xs:annotation>
          <xs:documentation>
             Interchange ID Qualifier: Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified.
