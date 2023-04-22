@@ -42,5 +42,4 @@
 
    <xs:element name="Message" type="i274:Message_"/>
    
-   
 </xs:schema>

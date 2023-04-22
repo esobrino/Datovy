@@ -76,9 +76,7 @@
          </xs:documentation>
       </xs:annotation>
    </xs:element>
-   
-   
-   
+
    <xs:simpleType name="ID">
       <xs:annotation>
          <xs:documentation>
@@ -89,64 +87,64 @@
       </xs:restriction>
    </xs:simpleType>
 
-   <xs:element name="ISA-01">
+   <xs:simpleType name="ISA-01__">
       <xs:annotation>
          <xs:documentation>
             Authorization Information Qualifier: Code identifying the type of information in the Authorization Information.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
-            <xs:enumeration value="00">
-               <xs:annotation>
-                  <xs:appinfo>No Authorization Information Present (No Meaningful Information in I02)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="01">
-               <xs:annotation>
-                  <xs:appinfo>UCS Communications ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="02">
-               <xs:annotation>
-                  <xs:appinfo>EDX Communications ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="03">
-               <xs:annotation>
-                  <xs:appinfo>Additional Data Identification</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="04">
-               <xs:annotation>
-                  <xs:appinfo>Rail Communications ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="05">
-               <xs:annotation>
-                  <xs:appinfo>Department of Defense (DoD) Communication Identifier</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="06">
-               <xs:annotation>
-                  <xs:appinfo>United States Federal Government Communication Identifier</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="07">
-               <xs:annotation>
-                  <xs:appinfo>Truck Communications ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="08">
-               <xs:annotation>
-                  <xs:appinfo>Ocean Communications ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
-   </xs:element>
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="2"/>
+         <xs:maxLength value="2"/>
+         <xs:enumeration value="00">
+            <xs:annotation>
+               <xs:appinfo>No Authorization Information Present (No Meaningful Information in I02)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="01">
+            <xs:annotation>
+               <xs:appinfo>UCS Communications ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="02">
+            <xs:annotation>
+               <xs:appinfo>EDX Communications ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="03">
+            <xs:annotation>
+               <xs:appinfo>Additional Data Identification</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="04">
+            <xs:annotation>
+               <xs:appinfo>Rail Communications ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="05">
+            <xs:annotation>
+               <xs:appinfo>Department of Defense (DoD) Communication Identifier</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="06">
+            <xs:annotation>
+               <xs:appinfo>United States Federal Government Communication Identifier</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="07">
+            <xs:annotation>
+               <xs:appinfo>Truck Communications ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="08">
+            <xs:annotation>
+               <xs:appinfo>Ocean Communications ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:element name="ISA-01" type="edic:ISA-01__"/>
 
    <xs:element name="ISA-02">
       <xs:annotation>
@@ -200,223 +198,224 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-05">
+   <xs:simpleType name="ISA-05__">
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="2"/>
+         <xs:maxLength value="2"/>
+         <xs:enumeration value="01">
+            <xs:annotation>
+               <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="02">
+            <xs:annotation>
+               <xs:appinfo>SCAC (Standard Carrier Alpha Code)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="03">
+            <xs:annotation>
+               <xs:appinfo>FMC (Federal Maritime Commission)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="04">
+            <xs:annotation>
+               <xs:appinfo>IATA (International Air Transport Association)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="07">
+            <xs:annotation>
+               <xs:appinfo>Global Location Number (GLN). A globally unique 13 digit code for the identification of a legal, functional or physical location within the Uniform Code Council (UCC) and International Article Number Association (EAN) numbering system</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="08">
+            <xs:annotation>
+               <xs:appinfo>UCC EDI Communications ID (Comm ID)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="09">
+            <xs:annotation>
+               <xs:appinfo>X.121 (CCITT)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="10">
+            <xs:annotation>
+               <xs:appinfo>Department of Defense (DoD) Activity Address Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="11">
+            <xs:annotation>
+               <xs:appinfo>DEA (Drug Enforcement Administration)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="12">
+            <xs:annotation>
+               <xs:appinfo>Phone (Telephone Companies)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="13">
+            <xs:annotation>
+               <xs:appinfo>UCS Code (The UCS Code is a Code Used for UCS Transmissions; it includes the Area Code and Telephone Number of a Modem; it Does Not Include Punctuation, Blanks or Access Code)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="14">
+            <xs:annotation>
+               <xs:appinfo>Duns Plus Suffix</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="15">
+            <xs:annotation>
+               <xs:appinfo>Petroleum Accountants Society of Canada Company Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="16">
+            <xs:annotation>
+               <xs:appinfo>Duns Number With 4-Character Suffix</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="17">
+            <xs:annotation>
+               <xs:appinfo>American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="18">
+            <xs:annotation>
+               <xs:appinfo>Association of American Railroads (AAR) Standard Distribution Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="19">
+            <xs:annotation>
+               <xs:appinfo>EDI Council of Australia (EDICA) Communications ID Number (COMM ID)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="20">
+            <xs:annotation>
+               <xs:appinfo>Health Industry Number (HIN)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="21">
+            <xs:annotation>
+               <xs:appinfo>Integrated Postsecondary Education Data System, or (IPEDS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="22">
+            <xs:annotation>
+               <xs:appinfo>Federal Interagency Commission on Education, or FICE</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="23">
+            <xs:annotation>
+               <xs:appinfo>National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes, or NCES</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="24">
+            <xs:annotation>
+               <xs:appinfo>The College Board&apos; Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="25">
+            <xs:annotation>
+               <xs:appinfo>ACT, Inc. 4-Digit Code of Postsecondary Institutions.</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="26">
+            <xs:annotation>
+               <xs:appinfo>Statistics of Canada List of Postsecondary Institutions</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="27">
+            <xs:annotation>
+               <xs:appinfo>Carrier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="28">
+            <xs:annotation>
+               <xs:appinfo>Fiscal Intermediary Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="29">
+            <xs:annotation>
+               <xs:appinfo>Medicare Provider and Supplier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="30">
+            <xs:annotation>
+               <xs:appinfo>U.S. Federal Tax Identification Number</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="31">
+            <xs:annotation>
+               <xs:appinfo>Jurisdiction Identification Number Plus 4 as assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="32">
+            <xs:annotation>
+               <xs:appinfo>U.S. Federal Employer Identification Number (FEIN)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="33">
+            <xs:annotation>
+               <xs:appinfo>National Association of Insurance Commissioners Company Code (NAIC)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="34">
+            <xs:annotation>
+               <xs:appinfo>Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="35">
+            <xs:annotation>
+               <xs:appinfo>Statistics Canada Canadian College Student Information System Institution Codes</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="36">
+            <xs:annotation>
+               <xs:appinfo>Statistics Canada University Student Information System Institution Codes</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="37">
+            <xs:annotation>
+               <xs:appinfo>Society of Property Information Compilers and Analysts</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="38">
+            <xs:annotation>
+               <xs:appinfo>The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AM">
+            <xs:annotation>
+               <xs:appinfo>Association Mexicana del Codigo de Producto (AMECOP) Communication ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NR">
+            <xs:annotation>
+               <xs:appinfo>National Retail Merchants Association (NRMA) - Assigned</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SA">
+            <xs:annotation>
+               <xs:appinfo>User Identification Number as assigned by the Safety and Fitness Electronic Records (SAFER) System</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SN">
+            <xs:annotation>
+               <xs:appinfo>Standard Address Number</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZZ">
+            <xs:annotation>
+               <xs:appinfo>Mutually Defined</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   
+   <xs:element name="ISA-05" type="edic:ISA-05__">
       <xs:annotation>
          <xs:documentation>
             Interchange ID Qualifier: Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
-            <xs:enumeration value="01">
-               <xs:annotation>
-                  <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="02">
-               <xs:annotation>
-                  <xs:appinfo>SCAC (Standard Carrier Alpha Code)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="03">
-               <xs:annotation>
-                  <xs:appinfo>FMC (Federal Maritime Commission)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="04">
-               <xs:annotation>
-                  <xs:appinfo>IATA (International Air Transport Association)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="07">
-               <xs:annotation>
-                  <xs:appinfo>Global Location Number (GLN). A globally unique 13 digit code for the identification of a legal, functional or physical location within the Uniform Code Council (UCC) and International Article Number Association (EAN) numbering system</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="08">
-               <xs:annotation>
-                  <xs:appinfo>UCC EDI Communications ID (Comm ID)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="09">
-               <xs:annotation>
-                  <xs:appinfo>X.121 (CCITT)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="10">
-               <xs:annotation>
-                  <xs:appinfo>Department of Defense (DoD) Activity Address Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="11">
-               <xs:annotation>
-                  <xs:appinfo>DEA (Drug Enforcement Administration)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="12">
-               <xs:annotation>
-                  <xs:appinfo>Phone (Telephone Companies)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="13">
-               <xs:annotation>
-                  <xs:appinfo>UCS Code (The UCS Code is a Code Used for UCS Transmissions; it includes the Area Code and Telephone Number of a Modem; it Does Not Include Punctuation, Blanks or Access Code)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="14">
-               <xs:annotation>
-                  <xs:appinfo>Duns Plus Suffix</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="15">
-               <xs:annotation>
-                  <xs:appinfo>Petroleum Accountants Society of Canada Company Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="16">
-               <xs:annotation>
-                  <xs:appinfo>Duns Number With 4-Character Suffix</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="17">
-               <xs:annotation>
-                  <xs:appinfo>American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="18">
-               <xs:annotation>
-                  <xs:appinfo>Association of American Railroads (AAR) Standard Distribution Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="19">
-               <xs:annotation>
-                  <xs:appinfo>EDI Council of Australia (EDICA) Communications ID Number (COMM ID)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="20">
-               <xs:annotation>
-                  <xs:appinfo>Health Industry Number (HIN)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="21">
-               <xs:annotation>
-                  <xs:appinfo>Integrated Postsecondary Education Data System, or (IPEDS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="22">
-               <xs:annotation>
-                  <xs:appinfo>Federal Interagency Commission on Education, or FICE</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="23">
-               <xs:annotation>
-                  <xs:appinfo>National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes, or NCES</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="24">
-               <xs:annotation>
-                  <xs:appinfo>The College Board&apos; Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="25">
-               <xs:annotation>
-                  <xs:appinfo>ACT, Inc. 4-Digit Code of Postsecondary Institutions.</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="26">
-               <xs:annotation>
-                  <xs:appinfo>Statistics of Canada List of Postsecondary Institutions</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="27">
-               <xs:annotation>
-                  <xs:appinfo>Carrier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="28">
-               <xs:annotation>
-                  <xs:appinfo>Fiscal Intermediary Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="29">
-               <xs:annotation>
-                  <xs:appinfo>Medicare Provider and Supplier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="30">
-               <xs:annotation>
-                  <xs:appinfo>U.S. Federal Tax Identification Number</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="31">
-               <xs:annotation>
-                  <xs:appinfo>Jurisdiction Identification Number Plus 4 as assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="32">
-               <xs:annotation>
-                  <xs:appinfo>U.S. Federal Employer Identification Number (FEIN)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="33">
-               <xs:annotation>
-                  <xs:appinfo>National Association of Insurance Commissioners Company Code (NAIC)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="34">
-               <xs:annotation>
-                  <xs:appinfo>Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="35">
-               <xs:annotation>
-                  <xs:appinfo>Statistics Canada Canadian College Student Information System Institution Codes</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="36">
-               <xs:annotation>
-                  <xs:appinfo>Statistics Canada University Student Information System Institution Codes</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="37">
-               <xs:annotation>
-                  <xs:appinfo>Society of Property Information Compilers and Analysts</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="38">
-               <xs:annotation>
-                  <xs:appinfo>The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="AM">
-               <xs:annotation>
-                  <xs:appinfo>Association Mexicana del Codigo de Producto (AMECOP) Communication ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="NR">
-               <xs:annotation>
-                  <xs:appinfo>National Retail Merchants Association (NRMA) - Assigned</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="SA">
-               <xs:annotation>
-                  <xs:appinfo>User Identification Number as assigned by the Safety and Fitness Electronic Records (SAFER) System</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="SN">
-               <xs:annotation>
-                  <xs:appinfo>Standard Address Number</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="ZZ">
-               <xs:annotation>
-                  <xs:appinfo>Mutually Defined</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
    </xs:element>
 
    <xs:element name="ISA-06">
@@ -433,225 +432,226 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-07">
+   <xs:simpleType name="ISA-07__">
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="2"/>
+         <xs:maxLength value="2"/>
+         <xs:enumeration value="01">
+            <xs:annotation>
+               <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="02">
+            <xs:annotation>
+               <xs:appinfo>SCAC (Standard Carrier Alpha Code)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="03">
+            <xs:annotation>
+               <xs:appinfo>FMC (Federal Maritime Commission)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="04">
+            <xs:annotation>
+               <xs:appinfo>IATA (International Air Transport Association)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="07">
+            <xs:annotation>
+               <xs:appinfo>
+                  Global Location Number (GLN). A globally unique 13 digit code for the identification of a legal, functional or physical location within the Uniform Code Council (UCC) and International Article Number Association (EAN) numbering system.
+               </xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="08">
+            <xs:annotation>
+               <xs:appinfo>UCC EDI Communications ID (Comm ID)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="09">
+            <xs:annotation>
+               <xs:appinfo>X.121 (CCITT)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="10">
+            <xs:annotation>
+               <xs:appinfo>Department of Defense (DoD) Activity Address Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="11">
+            <xs:annotation>
+               <xs:appinfo>DEA (Drug Enforcement Administration)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="12">
+            <xs:annotation>
+               <xs:appinfo>Phone (Telephone Companies)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="13">
+            <xs:annotation>
+               <xs:appinfo>UCS Code (The UCS Code is a Code Used for UCS Transmissions; it includes the Area Code and Telephone Number of a Modem; it Does Not Include Punctuation, Blanks or Access Code)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="14">
+            <xs:annotation>
+               <xs:appinfo>Duns Plus Suffix</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="15">
+            <xs:annotation>
+               <xs:appinfo>Petroleum Accountants Society of Canada Company Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="16">
+            <xs:annotation>
+               <xs:appinfo>Duns Number With 4-Character Suffix</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="17">
+            <xs:annotation>
+               <xs:appinfo>American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="18">
+            <xs:annotation>
+               <xs:appinfo>Association of American Railroads (AAR) Standard Distribution Code</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="19">
+            <xs:annotation>
+               <xs:appinfo>EDI Council of Australia (EDICA) Communications ID Number (COMM ID)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="20">
+            <xs:annotation>
+               <xs:appinfo>Health Industry Number (HIN)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="21">
+            <xs:annotation>
+               <xs:appinfo>Integrated Postsecondary Education Data System, or (IPEDS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="22">
+            <xs:annotation>
+               <xs:appinfo>Federal Interagency Commission on Education, or FICE</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="23">
+            <xs:annotation>
+               <xs:appinfo>National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes, or NCES</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="24">
+            <xs:annotation>
+               <xs:appinfo>The College Board&apos;s Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="25">
+            <xs:annotation>
+               <xs:appinfo>ACT, Inc. 4-Digit Code of Postsecondary Institutions.</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="26">
+            <xs:annotation>
+               <xs:appinfo>Statistics of Canada List of Postsecondary Institutions</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="27">
+            <xs:annotation>
+               <xs:appinfo>Carrier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="28">
+            <xs:annotation>
+               <xs:appinfo>Fiscal Intermediary Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="29">
+            <xs:annotation>
+               <xs:appinfo>Medicare Provider and Supplier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="30">
+            <xs:annotation>
+               <xs:appinfo>U.S. Federal Tax Identification Number</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="31">
+            <xs:annotation>
+               <xs:appinfo>Jurisdiction Identification Number Plus 4 as assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="32">
+            <xs:annotation>
+               <xs:appinfo>U.S. Federal Employer Identification Number (FEIN)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="33">
+            <xs:annotation>
+               <xs:appinfo>National Association of Insurance Commissioners Company Code (NAIC)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="34">
+            <xs:annotation>
+               <xs:appinfo>Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="35">
+            <xs:annotation>
+               <xs:appinfo>Statistics Canada Canadian College Student Information System Institution Codes</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="36">
+            <xs:annotation>
+               <xs:appinfo>Statistics Canada University Student Information System Institution Codes</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="37">
+            <xs:annotation>
+               <xs:appinfo>Society of Property Information Compilers and Analysts</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="38">
+            <xs:annotation>
+               <xs:appinfo>The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AM">
+            <xs:annotation>
+               <xs:appinfo>Association Mexicana del Codigo de Producto (AMECOP) Communication ID</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NR">
+            <xs:annotation>
+               <xs:appinfo>National Retail Merchants Association (NRMA) - Assigned</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SA">
+            <xs:annotation>
+               <xs:appinfo>User Identification Number as assigned by the Safety and Fitness Electronic Records (SAFER) System</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SN">
+            <xs:annotation>
+               <xs:appinfo>Standard Address Number</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ZZ">
+            <xs:annotation>
+               <xs:appinfo>Mutually Defined</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   
+   <xs:element name="ISA-07" type="ISA-07__">
       <xs:annotation>
          <xs:documentation>
             Interchange ID Qualifier: Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
-            <xs:enumeration value="01">
-               <xs:annotation>
-                  <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="02">
-               <xs:annotation>
-                  <xs:appinfo>SCAC (Standard Carrier Alpha Code)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="03">
-               <xs:annotation>
-                  <xs:appinfo>FMC (Federal Maritime Commission)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="04">
-               <xs:annotation>
-                  <xs:appinfo>IATA (International Air Transport Association)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="07">
-               <xs:annotation>
-                  <xs:appinfo>
-                     Global Location Number (GLN). A globally unique 13 digit code for the identification of a legal, functional or physical location within the Uniform Code Council (UCC) and International Article Number Association (EAN) numbering system.
-                  </xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="08">
-               <xs:annotation>
-                  <xs:appinfo>UCC EDI Communications ID (Comm ID)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="09">
-               <xs:annotation>
-                  <xs:appinfo>X.121 (CCITT)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="10">
-               <xs:annotation>
-                  <xs:appinfo>Department of Defense (DoD) Activity Address Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="11">
-               <xs:annotation>
-                  <xs:appinfo>DEA (Drug Enforcement Administration)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="12">
-               <xs:annotation>
-                  <xs:appinfo>Phone (Telephone Companies)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="13">
-               <xs:annotation>
-                  <xs:appinfo>UCS Code (The UCS Code is a Code Used for UCS Transmissions; it includes the Area Code and Telephone Number of a Modem; it Does Not Include Punctuation, Blanks or Access Code)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="14">
-               <xs:annotation>
-                  <xs:appinfo>Duns Plus Suffix</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="15">
-               <xs:annotation>
-                  <xs:appinfo>Petroleum Accountants Society of Canada Company Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="16">
-               <xs:annotation>
-                  <xs:appinfo>Duns Number With 4-Character Suffix</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="17">
-               <xs:annotation>
-                  <xs:appinfo>American Bankers Association (ABA) Transit Routing Number (Including Check Digit, 9 Digit)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="18">
-               <xs:annotation>
-                  <xs:appinfo>Association of American Railroads (AAR) Standard Distribution Code</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="19">
-               <xs:annotation>
-                  <xs:appinfo>EDI Council of Australia (EDICA) Communications ID Number (COMM ID)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="20">
-               <xs:annotation>
-                  <xs:appinfo>Health Industry Number (HIN)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="21">
-               <xs:annotation>
-                  <xs:appinfo>Integrated Postsecondary Education Data System, or (IPEDS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="22">
-               <xs:annotation>
-                  <xs:appinfo>Federal Interagency Commission on Education, or FICE</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="23">
-               <xs:annotation>
-                  <xs:appinfo>National Center for Education Statistics Common Core of Data 12-Digit Number for Pre-K-Grade 12 Institutes, or NCES</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="24">
-               <xs:annotation>
-                  <xs:appinfo>The College Board&apos;s Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="25">
-               <xs:annotation>
-                  <xs:appinfo>ACT, Inc. 4-Digit Code of Postsecondary Institutions.</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="26">
-               <xs:annotation>
-                  <xs:appinfo>Statistics of Canada List of Postsecondary Institutions</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="27">
-               <xs:annotation>
-                  <xs:appinfo>Carrier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="28">
-               <xs:annotation>
-                  <xs:appinfo>Fiscal Intermediary Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="29">
-               <xs:annotation>
-                  <xs:appinfo>Medicare Provider and Supplier Identification Number as assigned by Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="30">
-               <xs:annotation>
-                  <xs:appinfo>U.S. Federal Tax Identification Number</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="31">
-               <xs:annotation>
-                  <xs:appinfo>Jurisdiction Identification Number Plus 4 as assigned by the International Association of Industrial Accident Boards and Commissions (IAIABC)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="32">
-               <xs:annotation>
-                  <xs:appinfo>U.S. Federal Employer Identification Number (FEIN)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="33">
-               <xs:annotation>
-                  <xs:appinfo>National Association of Insurance Commissioners Company Code (NAIC)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="34">
-               <xs:annotation>
-                  <xs:appinfo>Medicaid Provider and Supplier Identification Number as assigned by individual State Medicaid Agencies in conjunction with Centers for Medicare &amp; Medicaid Services (CMS)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="35">
-               <xs:annotation>
-                  <xs:appinfo>Statistics Canada Canadian College Student Information System Institution Codes</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="36">
-               <xs:annotation>
-                  <xs:appinfo>Statistics Canada University Student Information System Institution Codes</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="37">
-               <xs:annotation>
-                  <xs:appinfo>Society of Property Information Compilers and Analysts</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="38">
-               <xs:annotation>
-                  <xs:appinfo>The College Board and ACT, Inc. 6-Digit Code List of Secondary Institutions</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="AM">
-               <xs:annotation>
-                  <xs:appinfo>Association Mexicana del Codigo de Producto (AMECOP) Communication ID</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="NR">
-               <xs:annotation>
-                  <xs:appinfo>National Retail Merchants Association (NRMA) - Assigned</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="SA">
-               <xs:annotation>
-                  <xs:appinfo>User Identification Number as assigned by the Safety and Fitness Electronic Records (SAFER) System</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="SN">
-               <xs:annotation>
-                  <xs:appinfo>Standard Address Number</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="ZZ">
-               <xs:annotation>
-                  <xs:appinfo>Mutually Defined</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
    </xs:element>
 
    <xs:element name="ISA-08">
@@ -710,209 +710,209 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-12">
+   <xs:simpleType name="ISA-12__">
       <xs:annotation>
          <xs:documentation>
             Interchange Control Version Number Code: Code specifying the version number of the interchange control segments, the version of the data elements within the control segments, and the code values within those data elements.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="5"/>
-            <xs:maxLength value="5"/>
-            <xs:enumeration value="00200">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 1987</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00201">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved by ASC X12 Through August 1988</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00204">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved by ASC X12 Through May 1989</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00300">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 1992</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00301">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1990</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00302">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1991</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00303">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1992</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00304">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1993</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00305">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1994</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00306">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1995</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00307">
-               <xs:annotation>
-                  <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1996</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00400">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 1997</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00401">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1997</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00402">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1997</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00403">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1999</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00404">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2000</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00405">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2001</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00406">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2002</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00500">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 2003</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00501">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2003</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00502">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2004</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00503">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2005</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00504">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2006</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00505">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2007</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00600">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 2008</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00601">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2008</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00602">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2009</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00603">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2010</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00604">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2011</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00605">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2012</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00700">
-               <xs:annotation>
-                  <xs:appinfo>ASC X12 Standards Issued by ANSI in 2013</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00701">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2013</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00702">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2014</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00703">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2015</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00704">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2016</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00705">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2017</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00706">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2018</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="00801">
-               <xs:annotation>
-                  <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2019</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
-   </xs:element>
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="5"/>
+         <xs:maxLength value="5"/>
+         <xs:enumeration value="00200">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 1987</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00201">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved by ASC X12 Through August 1988</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00204">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved by ASC X12 Through May 1989</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00300">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 1992</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00301">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1990</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00302">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1991</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00303">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board Through October 1992</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00304">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1993</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00305">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1994</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00306">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1995</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00307">
+            <xs:annotation>
+               <xs:appinfo>Draft Standards for Trial Use Approved for Publication by ASC X12 Procedures Review Board through October 1996</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00400">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 1997</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00401">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1997</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00402">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1997</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00403">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 1999</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00404">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2000</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00405">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2001</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00406">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2002</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00500">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 2003</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00501">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2003</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00502">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2004</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00503">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2005</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00504">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2006</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00505">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2007</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00600">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 2008</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00601">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2008</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00602">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2009</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00603">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2010</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00604">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2011</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00605">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2012</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00700">
+            <xs:annotation>
+               <xs:appinfo>ASC X12 Standards Issued by ANSI in 2013</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00701">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2013</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00702">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2014</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00703">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2015</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00704">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2016</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00705">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2017</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00706">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2018</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="00801">
+            <xs:annotation>
+               <xs:appinfo>Standards Approved for Publication by ASC X12 Procedures Review Board through October 2019</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:element name="ISA-12" type="edic:ISA-12__"/>
 
    <xs:element name="ISA-13">
       <xs:annotation>
@@ -928,70 +928,70 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-14">
+   <xs:simpleType name="ISA-14__">
       <xs:annotation>
          <xs:documentation>
             Interchange Usage Indicator Code: Code indicating whether data enclosed by this interchange envelope is test, production or information.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="1"/>
-            <xs:maxLength value="1"/>
-            <xs:enumeration value="0">
-               <xs:annotation>
-                  <xs:appinfo>No Interchange Acknowledgment Requested</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="1">
-               <xs:annotation>
-                  <xs:appinfo>Interchange Acknowledgment Requested (TA1)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="2">
-               <xs:annotation>
-                  <xs:appinfo>Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors"</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="3">
-               <xs:annotation>
-                  <xs:appinfo>
-                     Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors" or "Accepted but Errors are Noted"
-                  </xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
-   </xs:element>
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="1"/>
+         <xs:maxLength value="1"/>
+         <xs:enumeration value="0">
+            <xs:annotation>
+               <xs:appinfo>No Interchange Acknowledgment Requested</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="1">
+            <xs:annotation>
+               <xs:appinfo>Interchange Acknowledgment Requested (TA1)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="2">
+            <xs:annotation>
+               <xs:appinfo>Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors"</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="3">
+            <xs:annotation>
+               <xs:appinfo>
+                  Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors" or "Accepted but Errors are Noted"
+               </xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
 
-   <xs:element name="ISA-15">
+   <xs:element name="ISA-14" type="edic:ISA-14__"/>
+
+   <xs:simpleType name="ISA-15__">
       <xs:annotation>
          <xs:documentation>
             Interchange Usage Indicator Code: Code indicating whether data enclosed by this interchange envelope is test, production or information.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="1"/>
-            <xs:maxLength value="1"/>
-            <xs:enumeration value="I">
-               <xs:annotation>
-                  <xs:appinfo>Information</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="P">
-               <xs:annotation>
-                  <xs:appinfo>Production Data</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="T">
-               <xs:annotation>
-                  <xs:appinfo>Test Data</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
-   </xs:element>
+      <xs:restriction base="edic:ID">
+         <xs:minLength value="1"/>
+         <xs:maxLength value="1"/>
+         <xs:enumeration value="I">
+            <xs:annotation>
+               <xs:appinfo>Information</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="P">
+            <xs:annotation>
+               <xs:appinfo>Production Data</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="T">
+            <xs:annotation>
+               <xs:appinfo>Test Data</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:element name="ISA-15" type="edic:ISA-15__" />
 
    <xs:element name="ISA-16">
       <xs:annotation>
