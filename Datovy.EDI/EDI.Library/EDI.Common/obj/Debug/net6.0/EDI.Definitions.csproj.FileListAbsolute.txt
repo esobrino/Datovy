@@ -1,0 +1,12 @@
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\bin\Debug\net6.0\EDI.Definitions.deps.json
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\bin\Debug\net6.0\EDI.Definitions.dll
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\bin\Debug\net6.0\EDI.Definitions.pdb
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.csproj.AssemblyReference.cache
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.AssemblyInfoInputs.cache
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.AssemblyInfo.cs
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.csproj.CoreCompileInputs.cache
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.dll
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\refint\EDI.Definitions.dll
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\EDI.Definitions.pdb
+C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\obj\Debug\net6.0\ref\EDI.Definitions.dll

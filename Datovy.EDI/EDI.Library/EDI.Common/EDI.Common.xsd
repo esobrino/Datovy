@@ -32,7 +32,14 @@
          <xs:element ref="edic:IEA-01" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
+
+   <xs:complexType name="GS_">
+      <xs:sequence>
+         <xs:element ref="edic:GS-01" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
    
+
    <xs:simpleType name="ID">
       <xs:annotation>
          <xs:documentation>
@@ -41,8 +48,8 @@
       </xs:annotation>
       <xs:restriction base="xs:string">
       </xs:restriction>
-   </xs:simpleType>   
-   
+   </xs:simpleType>
+
    <xs:element name="ISA-01">
       <xs:annotation>
          <xs:documentation>
@@ -102,14 +109,14 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-02" type="xs:string">
+   <xs:element name="ISA-02">
       <xs:annotation>
          <xs:documentation>
             Authorization Information: Information used for additional identification or authorization of the interchange sender or the data in the interchange; the type of information is set by the Authorization Information Qualifier (I01).
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="10"/>
             <xs:maxLength value="10"/>
          </xs:restriction>
@@ -140,14 +147,14 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-04" type="xs:string">
+   <xs:element name="ISA-04">
       <xs:annotation>
          <xs:documentation>
             Security Information: This is used for identifying the security information about the interchange sender or the data in the interchange; the type of information is set by the Security Information Qualifier (I03).
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="10"/>
             <xs:maxLength value="10"/>
          </xs:restriction>
@@ -373,14 +380,14 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-06" type="xs:string">
+   <xs:element name="ISA-06">
       <xs:annotation>
          <xs:documentation>
             Interchange Sender ID: Identification code published by the sender for other parties to use as the receiver ID to route data to them; the sender always codes this value in the sender ID element.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="15"/>
             <xs:maxLength value="15"/>
          </xs:restriction>
@@ -506,7 +513,7 @@
             </xs:enumeration>
             <xs:enumeration value="24">
                <xs:annotation>
-                  <xs:appinfo>The College Board&apos; Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
+                  <xs:appinfo>The College Board&apos;s Admission Testing Program 4-Digit Code of Postsecondary Institutes, or ATP</xs:appinfo>
                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="25">
@@ -607,62 +614,63 @@
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
-   <xs:element name="ISA-08" type="xs:string">
+
+   <xs:element name="ISA-08">
       <xs:annotation>
          <xs:documentation>
             Interchange Receiver ID: AIdentification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="15"/>
             <xs:maxLength value="15"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   <xs:element name="ISA-09" type="xs:string">
+   
+   <xs:element name="ISA-09">
       <xs:annotation>
          <xs:documentation>
             Interchange Date: Date of the interchange.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="6"/>
             <xs:maxLength value="6"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-10" type="xs:string">
+   <xs:element name="ISA-10">
       <xs:annotation>
          <xs:documentation>
             Interchange Time: Time of the interchange.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="4"/>
             <xs:maxLength value="4"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="ISA-11" type="xs:string">
+   <xs:element name="ISA-11">
       <xs:annotation>
          <xs:documentation>
             Repetition Separator: Type is not applicable; the repetition separator is a delimiter and not a data element; this field provides the delimiter used to separate repeated occurrences of a simple data element or a composite data structure; this value must be different than the data element separator, component element separator, and the segment terminator.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="1"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
+
    <xs:element name="ISA-12">
       <xs:annotation>
          <xs:documentation>
@@ -866,21 +874,21 @@
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
-   <xs:element name="ISA-13" type="xs:string">
+
+   <xs:element name="ISA-13">
       <xs:annotation>
          <xs:documentation>
             Interchange Control Number: A control number assigned by the interchange sender.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="9"/>
             <xs:maxLength value="9"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
+
    <xs:element name="ISA-14">
       <xs:annotation>
          <xs:documentation>
@@ -909,13 +917,14 @@
             <xs:enumeration value="3">
                <xs:annotation>
                   <xs:appinfo>
-                     Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors" or "Accepted but Errors are Noted"                </xs:appinfo>
+                     Interchange Acknowledgment Requested only when Interchange is "Rejected Because Of Errors" or "Accepted but Errors are Noted"
+                  </xs:appinfo>
                </xs:annotation>
             </xs:enumeration>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
+
    <xs:element name="ISA-15">
       <xs:annotation>
          <xs:documentation>
@@ -944,45 +953,64 @@
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
-   
-   <xs:element name="ISA-16" type="xs:string">
+
+   <xs:element name="ISA-16">
       <xs:annotation>
          <xs:documentation>
             Component Element Separator: Type is not applicable; the component element separator is a delimiter and not a data element; this field provides the delimiter used to separate component data elements within a composite data structure; this value must be different than the data element separator and the segment terminator.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
+         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="1"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="IEA-01" type="xs:integer">
+   <xs:element name="IEA-01">
       <xs:annotation>
          <xs:documentation>
             Number of Functional Groups: A count of the number of functional groups included in the interchange.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:minLength value="1"/>
-            <xs:maxLength value="5"/>
+         <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99999"/>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="IEA-02" type="xs:string">
+   <xs:element name="IEA-02">
       <xs:annotation>
          <xs:documentation>
             Interchange Control Number: A control number assigned by the interchange sender.
          </xs:documentation>
       </xs:annotation>
       <xs:simpleType>
+         <xs:restriction base="xs:integer">
+            <xs:minInclusive value="000000001"/>
+            <xs:maxInclusive value="999999000"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="GS-01">
+      <xs:annotation>
+         <xs:documentation>
+            Functional Identifier Code: Code identifying a group of application related transaction sets.
+         </xs:documentation>
+      </xs:annotation>
+      <xs:simpleType>
          <xs:restriction base="edic:ID">
-            <xs:minLength value="9"/>
-            <xs:maxLength value="9"/>
+            <xs:minLength value="2"/>
+            <xs:maxLength value="2"/>
+            <xs:enumeration value="AA">
+               <xs:annotation>
+                  <xs:appinfo>Account Analysis (822)</xs:appinfo>
+               </xs:annotation>
+            </xs:enumeration>
          </xs:restriction>
       </xs:simpleType>
    </xs:element>
