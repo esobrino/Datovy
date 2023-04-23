@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.datovy.com/edi/i834"
+    elementFormDefault="qualified"
+    xmlns:i834="http://www.datovy.com/edi/i834"
+    xmlns:edic="http://www.datovy.com/edi/common"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+   <xs:import namespace="http://www.datovy.com/edi/common" schemaLocation="../edi.schemas/edi.common.xsd"/>
+   
+   <xs:complexType name="Message_">
+      <xs:sequence>
+         <xs:element ref="i834:LOOP_ISA_IEA" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="LOOP_ST_SE_">
+      <xs:sequence>
+
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="LOOP_GS_GE_">
+      <xs:sequence>
+         <xs:element ref="edic:GS" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="i834:LOOP_ST_SE" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="edic:GE" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="LOOP_ISA_IEA_">
+      <xs:sequence>
+         <xs:element ref="edic:ISA" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="i834:LOOP_GS_GE" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="edic:IEA" minOccurs="1" maxOccurs="1"/>             
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:element name="LOOP_ISA_IEA" type="i834:LOOP_ISA_IEA_"/>
+   <xs:element name="LOOP_GS_GE" type="i834:LOOP_GS_GE_"/>
+   <xs:element name="LOOP_ST_SE" type="i834:LOOP_ST_SE_"/>
+
+   <xs:element name="Message" type="i834:Message_"/>
+   
+</xs:schema>
