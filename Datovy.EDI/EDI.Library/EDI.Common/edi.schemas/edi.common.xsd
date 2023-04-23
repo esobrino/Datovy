@@ -36,7 +36,7 @@
    <xs:complexType name="IEA_">
       <xs:sequence>
          <xs:element ref="edic:IEA-01" minOccurs="1" maxOccurs="1"/>
-         <xs:element ref="edic:IEA-01" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="edic:IEA-02" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 
@@ -51,6 +51,7 @@
    <xs:complexType name="GS_">
       <xs:sequence>
          <xs:element ref="edic:GS-01" minOccurs="1" maxOccurs="1"/>
+
       </xs:sequence>
    </xs:complexType>
 
@@ -194,6 +195,11 @@
    </xs:element>
 
    <xs:simpleType name="ISA-05__">
+      <xs:annotation>
+         <xs:documentation>
+            Interchange ID Qualifier: Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified.
+         </xs:documentation>
+      </xs:annotation>
       <xs:restriction base="edic:ID">
          <xs:enumeration value="01">
             <xs:annotation>
@@ -426,6 +432,11 @@
    </xs:element>
 
    <xs:simpleType name="ISA-07__">
+      <xs:annotation>
+         <xs:documentation>
+            Interchange Receiver ID: Identification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them.
+         </xs:documentation>
+      </xs:annotation>
       <xs:restriction base="edic:ID">
          <xs:enumeration value="01">
             <xs:annotation>
@@ -1020,22 +1031,1327 @@
       </xs:simpleType>
    </xs:element>
 
-   <xs:element name="GS-01">
+   <xs:simpleType name="GS-01__">
       <xs:annotation>
          <xs:documentation>
             Functional Identifier Code: Code identifying a group of application related transaction sets.
          </xs:documentation>
       </xs:annotation>
-      <xs:simpleType>
-         <xs:restriction base="edic:ID">
-            <xs:enumeration value="AA">
-               <xs:annotation>
-                  <xs:appinfo>Account Analysis (822)</xs:appinfo>
-               </xs:annotation>
-            </xs:enumeration>
-         </xs:restriction>
-      </xs:simpleType>
-   </xs:element>
+      <xs:restriction base="edic:ID">
+         <xs:enumeration value="AA">
+            <xs:annotation>
+               <xs:appinfo>Account Analysis (822)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AB">
+            <xs:annotation>
+               <xs:appinfo>Logistics Service Request (219)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AC">
+            <xs:annotation>
+               <xs:appinfo>Associated Data (102)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AD|Individual Life, Annuity and Disability Application (267)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AE">
+            <xs:annotation>
+               <xs:appinfo>Premium Audit Request and Return (187)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AF">
+            <xs:annotation>
+               <xs:appinfo>Application for Admission to Educational Institutions (189)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AG">
+            <xs:annotation>
+               <xs:appinfo>Application Advice (824)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AH">
+            <xs:annotation>
+               <xs:appinfo>Logistics Service Response (220)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AI">
+            <xs:annotation>
+               <xs:appinfo>Automotive Inspection Detail (928)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AK">
+            <xs:annotation>
+               <xs:appinfo>Student Educational Record (Transcript) Acknowledgment (131)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AL">
+            <xs:annotation>
+               <xs:appinfo>Set Cancellation (998)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AM">
+            <xs:annotation>
+               <xs:appinfo>Item Information Request (893)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AN">
+            <xs:annotation>
+               <xs:appinfo>Return Merchandise Authorization and Notification (180)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AO">
+            <xs:annotation>
+               <xs:appinfo>Income or Asset Offset (521)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AP">
+            <xs:annotation>
+               <xs:appinfo>Abandoned Property Filings (103)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AQ">
+            <xs:annotation>
+               <xs:appinfo>Customs Manifest (309)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AR">
+            <xs:annotation>
+               <xs:appinfo>Warehouse Stock Transfer Shipment Advice (943)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AS">
+            <xs:annotation>
+               <xs:appinfo>Transportation Appointment Schedule Information (163)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AT">
+            <xs:annotation>
+               <xs:appinfo>Animal Toxicological Data (249)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AU">
+            <xs:annotation>
+               <xs:appinfo>Customs Status Information (350)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AV">
+            <xs:annotation>
+               <xs:appinfo>Customs Carrier General Order Status (352)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AW">
+            <xs:annotation>
+               <xs:appinfo>Warehouse Inventory Adjustment Advice (947)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AX">
+            <xs:annotation>
+               <xs:appinfo>Customs Events Advisory Details (353)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AY">
+            <xs:annotation>
+               <xs:appinfo>Customs Automated Manifest Archive Status (354)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AZ">
+            <xs:annotation>
+               <xs:appinfo>Customs Acceptance/Rejection (355)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BA">
+            <xs:annotation>
+               <xs:appinfo>Customs Permit to Transfer Request (356)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BB">
+            <xs:annotation>
+               <xs:appinfo>Customs In-Bond Information (357)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BC">
+            <xs:annotation>
+               <xs:appinfo>Business Credit Report (155)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BD">
+            <xs:annotation>
+               <xs:appinfo>Customs Consist Information (358)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BE">
+            <xs:annotation>
+               <xs:appinfo>Benefit Enrollment and Maintenance (834)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BF">
+            <xs:annotation>
+               <xs:appinfo>Business Entity Filings (105)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BG">
+            <xs:annotation>
+               <xs:appinfo>Customs Customer Profile Management (359)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BL">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Bill of Lading (211)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BS">
+            <xs:annotation>
+               <xs:appinfo>Shipment and Billing Notice (857)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CA">
+            <xs:annotation>
+               <xs:appinfo>Purchase Order Change Acknowledgment/Request - Seller Initiated (865)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CB">
+            <xs:annotation>
+               <xs:appinfo>Unemployment Insurance Tax Claim or Charge Information (153)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CC">
+            <xs:annotation>
+               <xs:appinfo>Clauses and Provisions (504)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CD">
+            <xs:annotation>
+               <xs:appinfo>Credit/Debit Adjustment (812)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CE">
+            <xs:annotation>
+               <xs:appinfo>Cartage Work Assignment (222)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CF">
+            <xs:annotation>
+               <xs:appinfo>Corporate Financial Adjustment Information (844 and 849)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CH">
+            <xs:annotation>
+               <xs:appinfo>Car Handling Information (420)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CI">
+            <xs:annotation>
+               <xs:appinfo>Consolidated Service Invoice/Statement (811)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CJ">
+            <xs:annotation>
+               <xs:appinfo>Manufacturer Coupon Family Code Structure (877)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CK">
+            <xs:annotation>
+               <xs:appinfo>Manufacturer Coupon Redemption Detail (881)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CL">
+            <xs:annotation>
+               <xs:appinfo>Election Campaign and Lobbyist Reporting (113)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CM">
+            <xs:annotation>
+               <xs:appinfo>Component Parts Content (871)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CN">
+            <xs:annotation>
+               <xs:appinfo>Coupon Notification (887)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CO">
+            <xs:annotation>
+               <xs:appinfo>Cooperative Advertising Agreements (290)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CP|Electronic Proposal Information (251, 805)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CQ">
+            <xs:annotation>
+               <xs:appinfo>Commodity Movement Services Response (874)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CR">
+            <xs:annotation>
+               <xs:appinfo>Rail Carhire Settlements (414)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CS">
+            <xs:annotation>
+               <xs:appinfo>Cryptographic Service Message (815)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CT">
+            <xs:annotation>
+               <xs:appinfo>Application Control Totals (831)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CU">
+            <xs:annotation>
+               <xs:appinfo>Commodity Movement Services (873)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CV">
+            <xs:annotation>
+               <xs:appinfo>Commercial Vehicle Safety and Credentials Information Exchange (285)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CW">
+            <xs:annotation>
+               <xs:appinfo>Educational Institution Record (133)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="D3">
+            <xs:annotation>
+               <xs:appinfo>Contract Completion Status (567)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="D4|Contract Abstract (561, 890)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="D5">
+            <xs:annotation>
+               <xs:appinfo>Contract Payment Management Report (568)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DA">
+            <xs:annotation>
+               <xs:appinfo>Debit Authorization (828)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DD">
+            <xs:annotation>
+               <xs:appinfo>Shipment Delivery Discrepancy Information (854)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DF">
+            <xs:annotation>
+               <xs:appinfo>Market Development Fund Allocation (883)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DI">
+            <xs:annotation>
+               <xs:appinfo>Dealer Information (128)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DM">
+            <xs:annotation>
+               <xs:appinfo>Equipment Order (422)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DS">
+            <xs:annotation>
+               <xs:appinfo>Data Status Tracking (242)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="DX|Direct Exchange Delivery and Return Information (894, 895)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EC">
+            <xs:annotation>
+               <xs:appinfo>Educational Course Inventory (188)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ED">
+            <xs:annotation>
+               <xs:appinfo>Student Educational Record (Transcript) (130)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EI">
+            <xs:annotation>
+               <xs:appinfo>Railroad Equipment Inquiry or Advice (456)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EN">
+            <xs:annotation>
+               <xs:appinfo>Equipment Inspection (228)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EO">
+            <xs:annotation>
+               <xs:appinfo>Transportation Equipment Registration (603)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EP">
+            <xs:annotation>
+               <xs:appinfo>Environmental Compliance Reporting (179)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ER">
+            <xs:annotation>
+               <xs:appinfo>Revenue Receipts Statement (170)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ES">
+            <xs:annotation>
+               <xs:appinfo>Notice of Employment Status (540)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EV">
+            <xs:annotation>
+               <xs:appinfo>Railroad Event Report (451)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="EX">
+            <xs:annotation>
+               <xs:appinfo>Excavation Communication (620)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FA|Functional or Implementation Acknowledgment Transaction Sets (997, 999)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FB">
+            <xs:annotation>
+               <xs:appinfo>Freight Invoice (859)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FC|Court and Law Enforcement Information (175, 176)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FG">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Loading and Route Guide (217)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FR|Financial Reporting (821, 827)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="FT">
+            <xs:annotation>
+               <xs:appinfo>File Transfer (996)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GC|Damage Claim Transaction Sets (920, 924, 925, 926)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GE|General Request, Response or Confirmation (814)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GF">
+            <xs:annotation>
+               <xs:appinfo>Response to a Load Tender (990)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GL">
+            <xs:annotation>
+               <xs:appinfo>Intermodal Group Loading Plan (715)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GP">
+            <xs:annotation>
+               <xs:appinfo>Grocery Products Invoice (880)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GR">
+            <xs:annotation>
+               <xs:appinfo>Statistical Government Information (152)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="GT">
+            <xs:annotation>
+               <xs:appinfo>Grant or Assistance Application (194)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HB|Eligibility, Coverage or Benefit Information (271)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HC">
+            <xs:annotation>
+               <xs:appinfo>Health Care Claim (837)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HI">
+            <xs:annotation>
+               <xs:appinfo>Health Care Services Review Information (278)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HN">
+            <xs:annotation>
+               <xs:appinfo>Health Care Information Status Notification (277)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HP">
+            <xs:annotation>
+               <xs:appinfo>Health Care Claim Payment/Advice (835)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HR">
+            <xs:annotation>
+               <xs:appinfo>Health Care Claim Status Request (276)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HS|Eligibility, Coverage or Benefit Inquiry (270)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HU">
+            <xs:annotation>
+               <xs:appinfo>Human Resource Information (132)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="HV">
+            <xs:annotation>
+               <xs:appinfo>Health Care Benefit Coordination Verification (269)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IA|Air Freight Details and Invoice (110, 980)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IB">
+            <xs:annotation>
+               <xs:appinfo>Inventory Inquiry/Advice (846)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IC">
+            <xs:annotation>
+               <xs:appinfo>Rail Advance Interchange Consist (418)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ID">
+            <xs:annotation>
+               <xs:appinfo>Insurance/Annuity Application Status (273)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IE">
+            <xs:annotation>
+               <xs:appinfo>Insurance Producer Administration (252)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IF">
+            <xs:annotation>
+               <xs:appinfo>Individual Insurance Policy and Client Information (111)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IG">
+            <xs:annotation>
+               <xs:appinfo>Direct Store Delivery Summary Information (882)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IH">
+            <xs:annotation>
+               <xs:appinfo>Commercial Vehicle Safety Reports (284)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IJ|Report of Injury, Illness or Incident (148)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IM|Motor Carrier Freight Details and Invoice (210, 980)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IN">
+            <xs:annotation>
+               <xs:appinfo>Invoice Information (810)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IO|Ocean Shipment Billing Details (310, 312, 980)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IR|Rail Carrier Freight Details and Invoice (410, 980)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="IS">
+            <xs:annotation>
+               <xs:appinfo>Estimated Time of Arrival and Car Scheduling (421)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="JB">
+            <xs:annotation>
+               <xs:appinfo>Joint Interest Billing and Operating Expense Statement (819)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="KM">
+            <xs:annotation>
+               <xs:appinfo>Commercial Vehicle Credentials (286)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LA">
+            <xs:annotation>
+               <xs:appinfo>Federal Communications Commission (FCC) License Application (195)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LB">
+            <xs:annotation>
+               <xs:appinfo>Lockbox (823)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LI">
+            <xs:annotation>
+               <xs:appinfo>Locomotive Information (436)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LN">
+            <xs:annotation>
+               <xs:appinfo>Property and Casualty Loss Notification (272)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LR">
+            <xs:annotation>
+               <xs:appinfo>Logistics Reassignment (536)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LS">
+            <xs:annotation>
+               <xs:appinfo>Asset Schedule (851)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="LT">
+            <xs:annotation>
+               <xs:appinfo>Student Loan Transfer and Status Verification (144)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MA">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Summary Freight Bill Manifest (224)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MC">
+            <xs:annotation>
+               <xs:appinfo>Request for Motor Carrier Rate Proposal (107)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MD">
+            <xs:annotation>
+               <xs:appinfo>Department of Defense Inventory Management (527)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ME|Mortgage Origination (198, 200, 201, 245, 261, 262, 263, 833, 872)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MF">
+            <xs:annotation>
+               <xs:appinfo>Market Development Fund Settlement (884)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MG|Mortgage Servicing Transaction Sets (203, 206, 259, 260, 264, 266)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MH">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Rate Proposal (106)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MI">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Shipment Status Inquiry (213)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MJ">
+            <xs:annotation>
+               <xs:appinfo>Secondary Mortgage Market Loan Delivery (202)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MK">
+            <xs:annotation>
+               <xs:appinfo>Response to a Motor Carrier Rate Proposal (108)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MM">
+            <xs:annotation>
+               <xs:appinfo>Medical Event Reporting (500)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MN">
+            <xs:annotation>
+               <xs:appinfo>Mortgage Note (205)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MO">
+            <xs:annotation>
+               <xs:appinfo>Maintenance Service Order (650)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MP">
+            <xs:annotation>
+               <xs:appinfo>Motion Picture Booking Confirmation (159)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MQ">
+            <xs:annotation>
+               <xs:appinfo>Consolidators Freight Bill and Invoice (223)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MR">
+            <xs:annotation>
+               <xs:appinfo>Multilevel Railcar Load Details (125)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MS">
+            <xs:annotation>
+               <xs:appinfo>Material Safety Data Sheet (848)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MT">
+            <xs:annotation>
+               <xs:appinfo>Electronic Form Structure (868)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MV">
+            <xs:annotation>
+               <xs:appinfo>Material Obligation Validation (517)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MW">
+            <xs:annotation>
+               <xs:appinfo>Rail Waybill Response (427)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MX">
+            <xs:annotation>
+               <xs:appinfo>Material Claim (847)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MY">
+            <xs:annotation>
+               <xs:appinfo>Response to a Cartage Work Assignment (225)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="MZ">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Package Status (240)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NC">
+            <xs:annotation>
+               <xs:appinfo>Nonconformance Report (842)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NL">
+            <xs:annotation>
+               <xs:appinfo>Name and Address Lists (101)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NP">
+            <xs:annotation>
+               <xs:appinfo>Notice of Power of Attorney (157)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NR">
+            <xs:annotation>
+               <xs:appinfo>Secured Receipt or Acknowledgment (993)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="NT">
+            <xs:annotation>
+               <xs:appinfo>Notice of Tax Adjustment or Assessment (149)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="OC">
+            <xs:annotation>
+               <xs:appinfo>Cargo Insurance Advice of Shipment (362)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="OG|Order Group - Grocery (875, 876)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="OR">
+            <xs:annotation>
+               <xs:appinfo>Organizational Relationships (816)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="OW">
+            <xs:annotation>
+               <xs:appinfo>Warehouse Shipping Order (940)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PA">
+            <xs:annotation>
+               <xs:appinfo>Price Authorization Acknowledgment/Status (845)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PB">
+            <xs:annotation>
+               <xs:appinfo>Railroad Parameter Trace Registration (455)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PC">
+            <xs:annotation>
+               <xs:appinfo>Purchase Order Change Request - Buyer Initiated (860)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PD">
+            <xs:annotation>
+               <xs:appinfo>Product Activity Data (852)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PE">
+            <xs:annotation>
+               <xs:appinfo>Periodic Compensation (256)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PF">
+            <xs:annotation>
+               <xs:appinfo>Annuity Activity (268)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PG">
+            <xs:annotation>
+               <xs:appinfo>Insurance Plan Description (100)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PH">
+            <xs:annotation>
+               <xs:appinfo>Pricing History (503)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PI">
+            <xs:annotation>
+               <xs:appinfo>Patient Information (275)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PJ">
+            <xs:annotation>
+               <xs:appinfo>Project Schedule Reporting (806)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PK">
+            <xs:annotation>
+               <xs:appinfo>Project Cost Reporting (839) and Contractor Cost Data Reporting (196)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PL">
+            <xs:annotation>
+               <xs:appinfo>Railroad Problem Log Inquiry or Advice (452)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PN">
+            <xs:annotation>
+               <xs:appinfo>Product Source Information (244)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PO">
+            <xs:annotation>
+               <xs:appinfo>Purchase Order (850)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PQ">
+            <xs:annotation>
+               <xs:appinfo>Property Damage Report (112)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PR">
+            <xs:annotation>
+               <xs:appinfo>Purchase Order Acknowledgment (855)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PS">
+            <xs:annotation>
+               <xs:appinfo>Planning Schedule with Release Capability (830)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PT">
+            <xs:annotation>
+               <xs:appinfo>Product Transfer and Resale Report (867)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PU">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Shipment Pickup Notification (216)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PV">
+            <xs:annotation>
+               <xs:appinfo>Purchase Order Shipment Management Document (250)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PW">
+            <xs:annotation>
+               <xs:appinfo>Healthcare Provider Information (274)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="PY">
+            <xs:annotation>
+               <xs:appinfo>Payment Cancellation Request (829)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="QG|Product Information (878, 879, 888, 889, 896)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="QM">
+            <xs:annotation>
+               <xs:appinfo>Transportation Carrier Shipment Status Message (214)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="QO|Ocean Shipment Status Information (313, 315)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RA">
+            <xs:annotation>
+               <xs:appinfo>Payment Order/Remittance Advice (820)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RB">
+            <xs:annotation>
+               <xs:appinfo>Railroad Clearance (470)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RC">
+            <xs:annotation>
+               <xs:appinfo>Receiving Advice/Acceptance Certificate (861)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RD">
+            <xs:annotation>
+               <xs:appinfo>Royalty Regulatory Report (185)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RE">
+            <xs:annotation>
+               <xs:appinfo>Warehouse Stock Receipt Advice (944)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RF">
+            <xs:annotation>
+               <xs:appinfo>Request for Routing Instructions (753)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RG">
+            <xs:annotation>
+               <xs:appinfo>Routing Instructions (754)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RH">
+            <xs:annotation>
+               <xs:appinfo>Railroad Reciprocal Switch File (433)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RI">
+            <xs:annotation>
+               <xs:appinfo>Routing and Carrier Instruction (853)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RJ">
+            <xs:annotation>
+               <xs:appinfo>Railroad Mark Register Update Activity (434)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RK">
+            <xs:annotation>
+               <xs:appinfo>Standard Transportation Commodity Code Master (435)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RL">
+            <xs:annotation>
+               <xs:appinfo>Rail Industrial Switch List (423)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RM">
+            <xs:annotation>
+               <xs:appinfo>Railroad Station Master File (431)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RN">
+            <xs:annotation>
+               <xs:appinfo>Requisition Transaction (511)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RO|Ocean Booking Information (300, 301, 303)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RP">
+            <xs:annotation>
+               <xs:appinfo>Commission Sales Report (818)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RQ">
+            <xs:annotation>
+               <xs:appinfo>Request for Quotation (840) and Procurement Notices (836)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RR">
+            <xs:annotation>
+               <xs:appinfo>Response to Request For Quotation (843)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RS|Order Status Information (869, 870)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RT">
+            <xs:annotation>
+               <xs:appinfo>Report of Test Results (863)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RU">
+            <xs:annotation>
+               <xs:appinfo>Railroad Retirement Activity (429)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RV">
+            <xs:annotation>
+               <xs:appinfo>Railroad Junctions and Interchanges Activity (437)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RW">
+            <xs:annotation>
+               <xs:appinfo>Rail Revenue Waybill (426)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RX">
+            <xs:annotation>
+               <xs:appinfo>Rail Car Hire Rate Negotiation</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RY">
+            <xs:annotation>
+               <xs:appinfo>Request for Student Educational Record (Transcript) (146)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="RZ">
+            <xs:annotation>
+               <xs:appinfo>Response to Request for Student Educational Record (Transcript) (147)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SA">
+            <xs:annotation>
+               <xs:appinfo>Air Shipment Information (104)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SB">
+            <xs:annotation>
+               <xs:appinfo>Rail Carrier Services Settlement (424)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SC|Price/Sales Catalog (832, 897)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SD">
+            <xs:annotation>
+               <xs:appinfo>Student Loan Pre-Claims and Claims (191)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SE">
+            <xs:annotation>
+               <xs:appinfo>Shipper's Export Declaration (601)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SF">
+            <xs:annotation>
+               <xs:appinfo>Customs Manifest (309)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SH">
+            <xs:annotation>
+               <xs:appinfo>Ship Notice/Manifest (856)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SI">
+            <xs:annotation>
+               <xs:appinfo>Shipment Information (858)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SJ">
+            <xs:annotation>
+               <xs:appinfo>Transportation Automatic Equipment Identification (160)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SL|Student Aid Origination Record (135, 139)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SM">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Load Tender (204)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SN">
+            <xs:annotation>
+               <xs:appinfo>Rail Route File Maintenance (475)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SO|Ocean Shipment Information (304, 311, 317, 319, 322, 323, 324, 325, 326, 361)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SP">
+            <xs:annotation>
+               <xs:appinfo>Specifications/Technical Information (841)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SQ">
+            <xs:annotation>
+               <xs:appinfo>Production Sequence (866)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SR|Rail Carrier Shipment Information (404, 419)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SS">
+            <xs:annotation>
+               <xs:appinfo>Shipping Schedule (862)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ST">
+            <xs:annotation>
+               <xs:appinfo>Railroad Service Commitment Advice (453)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SU">
+            <xs:annotation>
+               <xs:appinfo>Account Assignment/Inquiry and Service/Status (248)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SV">
+            <xs:annotation>
+               <xs:appinfo>Student Enrollment Verification (190)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="SW">
+            <xs:annotation>
+               <xs:appinfo>Warehouse Shipping Advice (945)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TA">
+            <xs:annotation>
+               <xs:appinfo>Electronic Filing of Tax Return Data Acknowledgment (151)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TB">
+            <xs:annotation>
+               <xs:appinfo>Trailer or Container Repair Billing (412)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TD">
+            <xs:annotation>
+               <xs:appinfo>Trading Partner Profile (838)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TE">
+            <xs:annotation>
+               <xs:appinfo>Tax or Fee Exemption Certification (283)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TF">
+            <xs:annotation>
+               <xs:appinfo>Electronic Filing of Tax Return Data (813)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TI">
+            <xs:annotation>
+               <xs:appinfo>Tax Information Exchange (826)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TJ">
+            <xs:annotation>
+               <xs:appinfo>Tax Jurisdiction Sourcing (158)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TM">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Delivery Trailer Manifest (212)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TN">
+            <xs:annotation>
+               <xs:appinfo>Tax Rate Notification (150)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TO|Real Estate Title Services (197, 199, 265, 485, 486)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TP|Rail Rate Transactions (460, 463, 466, 468, 485, 486, 490, 492, 494)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TR">
+            <xs:annotation>
+               <xs:appinfo>Train Sheet (161)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TT">
+            <xs:annotation>
+               <xs:appinfo>Educational Testing and Prospect Request and Report (138)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TU">
+            <xs:annotation>
+               <xs:appinfo>Trailer Usage Report (227)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="TX">
+            <xs:annotation>
+               <xs:appinfo>Text Message (864)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UA">
+            <xs:annotation>
+               <xs:appinfo>Retail Account Characteristics (885)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UB">
+            <xs:annotation>
+               <xs:appinfo>Customer Call Reporting (886)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UC">
+            <xs:annotation>
+               <xs:appinfo>Secured Interest Filing (154)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UD">
+            <xs:annotation>
+               <xs:appinfo>Deduction Research Report (891)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UI">
+            <xs:annotation>
+               <xs:appinfo>Underwriting Information Services (255)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UP">
+            <xs:annotation>
+               <xs:appinfo>Motor Carrier Pickup Manifest (215)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="UW">
+            <xs:annotation>
+               <xs:appinfo>Insurance Underwriting Requirements Reporting (186)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VA">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Application Advice (126)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VB">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Baying Order (127)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VC">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Shipping Order (120)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VD">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Damage (124)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VE">
+            <xs:annotation>
+               <xs:appinfo>Vessel Content Details (109)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VH">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Carrier Rate Update (129)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VI">
+            <xs:annotation>
+               <xs:appinfo>Voter Registration Information (280)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="VS">
+            <xs:annotation>
+               <xs:appinfo>Vehicle Service (121)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WA|Product Service Transaction Sets (140, 141, 142, 143)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WB">
+            <xs:annotation>
+               <xs:appinfo>Rail Carrier Waybill Interchange (417)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WG|Vendor Performance Review (501, 892)">
+            <xs:annotation>
+               <xs:appinfo></xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WI">
+            <xs:annotation>
+               <xs:appinfo>Wage Determination (288)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WL">
+            <xs:annotation>
+               <xs:appinfo>Well Information (625)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WR">
+            <xs:annotation>
+               <xs:appinfo>Shipment Weights (440)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="WT">
+            <xs:annotation>
+               <xs:appinfo>Rail Waybill Request (425)</xs:appinfo>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   
+   <xs:element name="GS-01" type="edic:GS-01__"/>
 
    <xs:element name="GE-01">
       <xs:annotation>
