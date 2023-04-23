@@ -9,35 +9,35 @@
    
    <xs:complexType name="Message_">
       <xs:sequence>
-         <xs:element ref="i274:TSH_ISA_IEA_LOOP" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="i274:LOOP_ISA_IEA" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    
-   <xs:complexType name="TSH_ST_SE_LOOP_">
+   <xs:complexType name="LOOP_ST_SE_">
       <xs:sequence>
 
       </xs:sequence>
    </xs:complexType>
 
-   <xs:complexType name="TSH_GS_GE_LOOP_">
+   <xs:complexType name="LOOP_GS_GE_">
       <xs:sequence>
          <xs:element ref="edic:GS" minOccurs="1" maxOccurs="1"/>
-         <xs:element ref="i274:TSH_ST_SE_LOOP" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="i274:LOOP_ST_SE" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element ref="edic:GE" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 
-   <xs:complexType name="TSH_ISA_IEA_LOOP_">
+   <xs:complexType name="LOOP_ISA_IEA_">
       <xs:sequence>
          <xs:element ref="edic:ISA" minOccurs="1" maxOccurs="1"/>
-         <xs:element ref="i274:TSH_GS_GE_LOOP" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element ref="i274:LOOP_GS_GE" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element ref="edic:IEA" minOccurs="1" maxOccurs="1"/>             
       </xs:sequence>
    </xs:complexType>
 
-   <xs:element name="TSH_ISA_IEA_LOOP" type="i274:TSH_ISA_IEA_LOOP_"/>
-   <xs:element name="TSH_GS_GE_LOOP" type="i274:TSH_GS_GE_LOOP_"/>
-   <xs:element name="TSH_ST_SE_LOOP" type="i274:TSH_ST_SE_LOOP_"/>
+   <xs:element name="LOOP_ISA_IEA" type="i274:LOOP_ISA_IEA_"/>
+   <xs:element name="LOOP_GS_GE" type="i274:LOOP_GS_GE_"/>
+   <xs:element name="LOOP_ST_SE" type="i274:LOOP_ST_SE_"/>
 
    <xs:element name="Message" type="i274:Message_"/>
    
