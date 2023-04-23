@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI.Library", "EDI.Library"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI.Consoles", "EDI.Consoles", "{53ECC882-09F0-4A8F-AC6B-A503B410D00A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI.Definitions", "EDI.Library\EDI.Common\EDI.Definitions.csproj", "{CD96B9D7-28B8-4D19-8104-7CF491A3FBB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edi.Schemas", "EDI.Library\EDI.Common\Edi.Schemas.csproj", "{CD96B9D7-28B8-4D19-8104-7CF491A3FBB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

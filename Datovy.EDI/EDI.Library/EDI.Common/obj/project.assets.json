@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
-      "projectName": "EDI.Definitions",
-      "projectPath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\EDI.Definitions.csproj",
+      "projectUniqueName": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\Edi.Schemas.csproj",
+      "projectName": "Edi.Schemas",
+      "projectPath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\Edi.Schemas.csproj",
       "packagesPath": "C:\\Users\\esobr\\.nuget\\packages\\",
       "outputPath": "C:\\prjs\\Datovy\\Datovy.EDI\\EDI.Library\\EDI.Common\\obj\\",
       "projectStyle": "PackageReference",

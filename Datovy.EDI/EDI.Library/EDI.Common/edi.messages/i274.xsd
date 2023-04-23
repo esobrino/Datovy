@@ -5,7 +5,7 @@
     xmlns:edic="http://www.datovy.com/edi/common"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
-   <xs:import namespace="http://www.datovy.com/edi/common" schemaLocation="./EDI.Common.xsd"/>
+   <xs:import namespace="http://www.datovy.com/edi/common" schemaLocation="../edi.schemas/edi.common.xsd"/>
    
    <xs:complexType name="Message_">
       <xs:sequence>
@@ -35,9 +35,9 @@
       </xs:sequence>
    </xs:complexType>
 
+   <xs:element name="TSH_ISA_IEA_LOOP" type="i274:TSH_ISA_IEA_LOOP_"/>
    <xs:element name="TSH_GS_GE_LOOP" type="i274:TSH_GS_GE_LOOP_"/>
    <xs:element name="TSH_ST_SE_LOOP" type="i274:TSH_ST_SE_LOOP_"/>
-   <xs:element name="TSH_ISA_IEA_LOOP" type="i274:TSH_ISA_IEA_LOOP_"/>
 
    <xs:element name="Message" type="i274:Message_"/>
    

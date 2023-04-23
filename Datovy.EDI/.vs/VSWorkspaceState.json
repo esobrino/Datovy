@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\EDI.Library",
-    "\\EDI.Library\\EDI.Common"
+    "\\EDI.Library\\EDI.Common",
+    "\\EDI.Library\\EDI.Common\\edi.schemas"
   ],
+  "SelectedNode": "\\EDI.Library\\EDI.Common\\edi.schemas\\EDI.Common.xsd",
   "PreviewInSolutionExplorer": false
 }
