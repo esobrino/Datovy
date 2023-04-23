@@ -93,8 +93,6 @@
          </xs:documentation>
       </xs:annotation>
       <xs:restriction base="edic:ID">
-         <xs:minLength value="2"/>
-         <xs:maxLength value="2"/>
          <xs:enumeration value="00">
             <xs:annotation>
                <xs:appinfo>No Authorization Information Present (No Meaningful Information in I02)</xs:appinfo>
@@ -167,8 +165,6 @@
       </xs:annotation>
       <xs:simpleType>
          <xs:restriction base="edic:ID">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
             <xs:enumeration value="00">
                <xs:annotation>
                   <xs:appinfo>No Security Information Present (No Meaningful Information in I04)</xs:appinfo>
@@ -199,8 +195,6 @@
 
    <xs:simpleType name="ISA-05__">
       <xs:restriction base="edic:ID">
-         <xs:minLength value="2"/>
-         <xs:maxLength value="2"/>
          <xs:enumeration value="01">
             <xs:annotation>
                <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
@@ -433,8 +427,6 @@
 
    <xs:simpleType name="ISA-07__">
       <xs:restriction base="edic:ID">
-         <xs:minLength value="2"/>
-         <xs:maxLength value="2"/>
          <xs:enumeration value="01">
             <xs:annotation>
                <xs:appinfo>Duns (Dun &amp; Bradstreet)</xs:appinfo>
@@ -716,8 +708,6 @@
          </xs:documentation>
       </xs:annotation>
       <xs:restriction base="edic:ID">
-         <xs:minLength value="5"/>
-         <xs:maxLength value="5"/>
          <xs:enumeration value="00200">
             <xs:annotation>
                <xs:appinfo>ASC X12 Standards Issued by ANSI in 1987</xs:appinfo>
@@ -934,8 +924,6 @@
          </xs:documentation>
       </xs:annotation>
       <xs:restriction base="edic:ID">
-         <xs:minLength value="1"/>
-         <xs:maxLength value="1"/>
          <xs:enumeration value="0">
             <xs:annotation>
                <xs:appinfo>No Interchange Acknowledgment Requested</xs:appinfo>
@@ -970,8 +958,6 @@
          </xs:documentation>
       </xs:annotation>
       <xs:restriction base="edic:ID">
-         <xs:minLength value="1"/>
-         <xs:maxLength value="1"/>
          <xs:enumeration value="I">
             <xs:annotation>
                <xs:appinfo>Information</xs:appinfo>
@@ -1042,8 +1028,6 @@
       </xs:annotation>
       <xs:simpleType>
          <xs:restriction base="edic:ID">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="2"/>
             <xs:enumeration value="AA">
                <xs:annotation>
                   <xs:appinfo>Account Analysis (822)</xs:appinfo>
