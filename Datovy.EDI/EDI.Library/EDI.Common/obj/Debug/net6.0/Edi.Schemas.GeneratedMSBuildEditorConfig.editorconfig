@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Edi.Schemas
-build_property.ProjectDir = C:\Data\Datovy\Datovy.EDI\EDI.Library\EDI.Common\
+build_property.ProjectDir = C:\prjs\Datovy\Datovy.EDI\EDI.Library\EDI.Common\
