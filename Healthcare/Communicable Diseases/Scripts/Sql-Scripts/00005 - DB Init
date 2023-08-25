@@ -1,0 +1,25 @@
+IF NOT EXISTS(SELECT name FROM master.sys.databases
+           WHERE name = 'HealthCaseDB')
+BEGIN
+   CREATE DATABASE HealthCaseDB;
+END
+GO
+
+USE HealthCaseDB
+GO
+
+/*
+CREATE PROCEDURE RunScript
+   @scriptName VARCHAR(256)
+AS
+BEGIN
+   SET NOCOUNT ON
+   DECLARE @SQL varchar(MAX)
+   SELECT @SQL = BulkColumn
+     FROM OPENROWSET
+     (    BULK 'FilePath', SINGLE_BLOB ) AS MYTABLE
+   --PRINT @sql
+   EXEC (@sql)
+END
+ */
+ 

@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ed/Documents/GitHub/Datovy/Healthcare/Communicable Diseases/Disease_Surveillance.sqlproj": {}
+  },
+  "projects": {
+    "/Users/ed/Documents/GitHub/Datovy/Healthcare/Communicable Diseases/Disease_Surveillance.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ed/Documents/GitHub/Datovy/Healthcare/Communicable Diseases/Disease_Surveillance.sqlproj",
+        "projectName": "ContactTracing",
+        "projectPath": "/Users/ed/Documents/GitHub/Datovy/Healthcare/Communicable Diseases/Disease_Surveillance.sqlproj",
+        "packagesPath": "/Users/ed/.nuget/packages/",
+        "outputPath": "/Users/ed/Documents/GitHub/Datovy/Healthcare/Communicable Diseases/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/ed/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
